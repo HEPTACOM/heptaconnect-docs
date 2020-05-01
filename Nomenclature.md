@@ -10,13 +10,17 @@ A `Portal` is the implementation of an endpoint to connect it via HEPTAConnect. 
 
 A `Portal` is not the connection to an endpoint but the implementation of an endpoint. A `Portal` can then be configured with customizable fields. These fields may hold information like API-URLs, user credentials, file locations and so on. A configured `Portal` that is ready to communicate to an endpoint or data storage is called a `PortalNode`. A single `Portal` can potentially be used for many `PortalNodes`.
 
+### PortalNodeService
+
+The `PortalNodeService` is provided by HEPTAConnect and can be used as a factory for `PortalNodes`. When a component has an identifier of a `PortalNode` and needs the corresponding instance to interact with it, this service should be used to retrieve the instance.
+
 ### Emitter
 
-An `Emitter` reads data from the endpoint or data storage of a `PortalNode`, prepares the data in a structured form and the emits these structs. An `Emitter` can also choose, which data types it supports. When it is asked to read data, a collection of `Mappings` and a `PortalNode` identifier are passed to its `emit` method. The `Emitter` will then read the data identified by the `Mappings` using the connection configuration of the passed `PortalNode` and create a collection of `DatasetEntities` that hold the data in a structured form. Finally the collection of `DatasetEntities` and the `PortalNode` identifier need to be passed to the `Courier` .
+An `Emitter` reads data from the endpoint or data storage of a `PortalNode`, prepares the data in a structured form and the emits these structs. An `Emitter` can also choose, which data types it supports. When it is asked to read data, a collection of `Mappings` is passed to its `emit` method. The `Emitter` will then read the data identified by the `Mappings` using the connection configuration of the corresponding `PortalNode` (derived from the `Mappings`) and create a collection of `DatasetEntities` that hold the data in a structured form. Finally the collection of `DatasetEntities` and the `PortalNode` identifier need to be passed to the `Courier` .
 
 ### Receiver
 
-A `Receiver` unfolds `DatasetEntities` and writes the data to the endpoint or data storage of a `PortalNode`. A `Receiver` can also choose, which data types it supports. When it is asked to write data, a `PortalNode` identifier and a collection of structs containing both a `DatasetEntity` and a `Mapping` are passed to its `receive` method. These structs associate a `DatasetEntity` with a `Mapping` to make bulk processing easier. The `Receiver` will then write the data of each `DatasetEntity` using the connection configuration of the passed `PortalNode` and update the respective `Mappings` with external identifiers accordingly. Finally the updated `Mappings` need to be passed to the `MappingService`, so the external identifers can be persisted.
+A `Receiver` unfolds `DatasetEntities` and writes the data to the endpoint or data storage of a `PortalNode`. A `Receiver` can also choose, which data types it supports. When it is asked to write data, a collection of structs containing both a `DatasetEntity` and a `Mapping` is passed to its `receive` method. These structs associate a `DatasetEntity` with a `Mapping` to make bulk processing easier. The `Receiver` will then write the data of each `DatasetEntity` using the connection configuration of the corresponding `PortalNode` (derived from the `Mappings`) and update the respective `Mappings` with external identifiers accordingly. Finally the updated `Mappings` need to be passed to the `MappingService`, so the external identifers can be persisted.
 
 ### Courier
 
