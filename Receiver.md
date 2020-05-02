@@ -40,6 +40,10 @@ class OrderReceiver implements ReceiverInterface
                 $mapping->getPortalNodeId()
             );
 
+            if (!$portalNode instanceof ExamplePortal) {
+                continue;
+            }
+
             $externalId = $portalNode->writeOrder($entity);
             $mapping->setExternalId($externalId);
 
