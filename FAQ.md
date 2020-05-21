@@ -3,12 +3,12 @@
 ## What minimum frequency for the cronjobs is supported?
 
 In the best case no cronjob is needed at all.
-The main goal is to work on events to achieve an almost live transfer can be achieved and no keep-updated cronjob is required.
-There are portals that need cronjobs as their system does not support events on changes by default. 
+The main goal is to work on events to achieve an almost live transfer and no keep-updated cronjob is required.
+There are portals that need cronjobs as their system does not support events on changes by default.
 
 ## Why is there no mono-repository?
 
-Connecting everything inherits requiring a lot of dependencies 
+Connecting everything inherits requiring a lot of dependencies.
 
 ## Can I add custom structures?
 
