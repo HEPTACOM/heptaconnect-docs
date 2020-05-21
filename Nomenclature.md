@@ -64,4 +64,8 @@ A `Route` defines a direction for data to flow from one `PortalNode` to another.
 
 ## Storage
 
-TODO: Text about different components of a storage.
+HEPTAConnect requires a form of storage in order to be functional. The storage is used to keep track of mappings, configurations and other data that is relevant to the system. All access to a storage provider is abstracted in the storage base and the core only relies on these interfaces.
+
+### Keys
+
+The storage provider alone has data sovereignty over the keys that are used to persist entities in the data storage. `Keys` can be obtained by a factory that is provided by the storage provider. A `Key` is a small data structure that is a valid identifier in its origin storage (e. g. an auto-incremented integer or a UUIDv4). The existence of a `Key` itself guarantees its validity.
