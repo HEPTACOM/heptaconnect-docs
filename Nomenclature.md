@@ -4,7 +4,7 @@ There are several types of classes or entities referenced throughout this docume
 
 ## Portal
 
-A `Portal` is the implementation of an endpoint to connect it via HEPTAConnect. When you want to provide connectivity for an external API or some other form of data storage, you implement a portal. So a portal is just a name for the composition of code (e. g. a composer package) that is necessary for HEPTAConnect to communicate with an endpoint.
+A `Portal` is the implementation of an endpoint to connect it via HEPTAConnect. When you want to provide connectivity for an external API or some other form of data storage, you implement a portal. So a portal is just a name for the composition of code (e.g. a composer package) that is necessary for HEPTAConnect to communicate with an endpoint.
 
 ### PortalNode
 
@@ -32,11 +32,11 @@ The `Publisher` is a central service that can be accessed by a `Bridge` to creat
 
 ### Morpher
 
-A `Morpher` is a special form of `PortalNode`. `Morphers` can receive various data types and store the entities temporarily. When certain conditions are met, the `Morpher` triggers its own `Emitter` to emit processed data. This could be used to collect different aspects of an entity and resolve dependencies. A `Morpher` could e. g. collect orders, addresses and customers and keep the data to itself until every sub-entity of the order has been received (a. k. a. all dependencies are resolved). After that the `Morpher` will emit a compound `DatasetEntity` with all the necessary data.
+A `Morpher` is a special form of `PortalNode`. `Morphers` can receive various data types and store the entities temporarily. When certain conditions are met, the `Morpher` triggers its own `Emitter` to emit processed data. This could be used to collect different aspects of an entity and resolve dependencies. A `Morpher` could e.g. collect orders, addresses and customers and keep the data to itself until every sub-entity of the order has been received (a. k. a. all dependencies are resolved). After that the `Morpher` will emit a compound `DatasetEntity` with all the necessary data.
 
 ## Dataset
 
-A `Dataset` is a collection of common data structs that various `Portals` can rely on. There are different `Datasets` for different use cases and even some compound `Datasets` (e. g. `ecommerce`) that consist of multiple smaller `Datasets` (e. g. `physical-location`). `Datasets` are required by `Portals` to have a shared understanding of data and to establish communication between them.
+A `Dataset` is a collection of common data structs that various `Portals` can rely on. There are different `Datasets` for different use cases and even some compound `Datasets` (e.g. `ecommerce`) that consist of multiple smaller `Datasets` (e.g. `physical-location`). `Datasets` are required by `Portals` to have a shared understanding of data and to establish communication between them.
 
 ### DatasetEntity
 
@@ -68,4 +68,4 @@ HEPTAConnect requires a form of storage in order to be functional. The storage i
 
 ### Keys
 
-The storage provider alone has data sovereignty over the keys that are used to persist entities in the data storage. `Keys` can be obtained by a factory that is provided by the storage provider. A `Key` is a small data structure that is a valid identifier in its origin storage (e. g. an auto-incremented integer or a UUIDv4). The existence of a `Key` itself guarantees its validity.
+The storage provider alone has data sovereignty over the keys that are used to persist entities in the data storage. `Keys` can be obtained by a factory that is provided by the storage provider. A `Key` is a small data structure that is a valid identifier in its origin storage (e.g. an auto-incremented integer or a UUIDv4). The existence of a `Key` itself guarantees its validity.
