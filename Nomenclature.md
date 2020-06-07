@@ -24,7 +24,7 @@ A `Receiver` receives a collection of `DatasetEntities` and writes the data to t
 
 ### Bridge
 
-TODO: Text about what a bridge is.
+The `Bridge` implements the core functionality in a certain environment by providing services for behaviours of the core that are dependent on the runtime of the surrounding application. As HEPTAConnect is environment agnostic it is not specified by default which database server, ORM, message broker, request cycle manager, request routing or file storage is in use.
 
 ### Publisher
 
