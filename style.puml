@@ -1,0 +1,20 @@
+@startuml
+
+skinparam shadowing false
+
+skinparam RectangleBackgroundColor #3c3c3c
+skinparam RectangleBorderColor #3c3c3c
+skinparam RectangleFontColor white
+skinparam RectangleFontName Arial
+skinparam RectangleFontStyle bold
+
+skinparam NodeBackgroundColor #5f5e5e
+skinparam NodeBorderColor #3c3c3c
+skinparam NodeFontColor white
+skinparam NodeFontName Arial
+skinparam NodeFontStyle bold
+
+skinparam ArrowColor #3c3c3c
+skinparam ArrowThickness 2
+
+@enduml
