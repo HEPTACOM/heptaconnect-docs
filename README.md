@@ -5,6 +5,7 @@
 ### [Package structure](./PackageStructure.md)
 ### [FAQ](./FAQ.md)
 ### [Mappings](./Mapping.md)
+### [Contributing](./Contributing.md)
 
 
 ## License
