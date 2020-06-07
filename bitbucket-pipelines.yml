@@ -15,9 +15,19 @@ pipelines:
                         - git push --force origin gh-pages
         gh-pages:
             -   step:
+                    name: Skip for manual step
+                    script:
+                        - echo "hello"
+            -   step:
                     name: Publish to github
                     deployment: production
-                    step: manual
+                    trigger: manual
                     script:
+                        - apk add --no-cache bash git openssh-client
                         - git remote add github git@github.com:HEPTACOM/heptaconnect-docs.git
+                        - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+                        - git remote update
+                        - git fetch --all
+                        - git push --force github gh-pages
+                        - git checkout --track origin/master
                         - git push --force github master
