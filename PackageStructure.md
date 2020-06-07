@@ -28,8 +28,6 @@ A single dataset can hold a number of classes for different data types. Datasets
 
 ### Portal
 
-Since HEPTAConnect itself is not much more than a framework, it does not come with any external connectivity. To connect an external API, you will need to provide a portal for this API. A portal has to require the portal base and whatever datasets it may supports. The portal base comes with structs and interfaces that a portal will need in order to work.
-
 Because HEPTAConnect should bring data of different systems together, it has to be someone's responsibility to actually connect to different systems. This is where portals come into play. A portal is a package with emitters and receivers that can read data from and write data to an endpoint. In most cases this endpoint is an API of some sort, but it does not have to be one. In theory this can also be an access to a static local file or a local database. The important part is that a portal connects an external system with the HEPTAConnect ecosystem. The portal has to require all its supported datasets. Portals with shared supported datasets are natively compatible with each other, as their data can be easily transferred from one portal to the other.
 
 ### Integration
