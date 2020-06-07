@@ -11,5 +11,5 @@ pipelines:
                         - PLANTUML="java -Djava.awt.headless=true -jar /tmp/plantuml.jar" make build
                         - git checkout -b gh-pages
                         - git add --all
-                        - git commit -m "Build gh-pages"
+                        - test $(git diff --name-only --cached | wc -l) -eq 0 || git commit -m "Build gh-pages"
                         - git push --force origin gh-pages
