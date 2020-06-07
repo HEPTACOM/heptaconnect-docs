@@ -14,6 +14,11 @@ skinparam NodeFontColor white
 skinparam NodeFontName Arial
 skinparam NodeFontStyle bold
 
+skinparam FolderBorderColor #3c3c3c
+skinparam FolderFontColor #3c3c3c
+skinparam FolderFontName Arial
+skinparam FolderFontStyle bold
+
 skinparam ArrowColor #3c3c3c
 skinparam ArrowThickness 2
 
