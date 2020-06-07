@@ -2,6 +2,7 @@
 #### This is part of HEPTACOM solutions for medium and large enterprises.
 
 ### [Nomenclature](./Nomenclature.md)
+### [Requirements | How to be a HEPTAConnect developer](./HowToBeAHeptaConnectDeveloper.md)
 ### [Package structure](./PackageStructure.md)
 ### [FAQ](./FAQ.md)
 ### [Mappings](./Mapping.md)
