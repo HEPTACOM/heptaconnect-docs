@@ -2,7 +2,7 @@
 #### This is part of HEPTACOM solutions for medium and large enterprises.
 
 ### [Nomenclature](./Nomenclature.md)
-### [Package structure](./Package structure.md)
+### [Package structure](./PackageStructure.md)
 ### [FAQ](./FAQ.md)
 ### [Mappings](./Mapping.md)
 
