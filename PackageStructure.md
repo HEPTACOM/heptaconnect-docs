@@ -18,7 +18,7 @@ rectangle "Bridge-ShopwarePlatform" as BSP #007aff
 
 ### Core
 
-At its core HEPTAConnect manages data streams between different endpoints via asynchronously handled messages. One side goes though its entities for a dataset and emits whatever it can find. The other side receives these entities and saves them to another endpoint. It is the core's job to coordinate this traffic and keep things organized. So the core provides a router, a mapping service, an emit service, a receive service, a webhook service and other tooling.
+At its core HEPTAConnect manages data streams between different endpoints via asynchronously handled messages. One side goes through its entities for a dataset and emits whatever it can find. The other side receives these entities and saves them to an other endpoint. It is the core's job to coordinate this traffic and keep things organized. So the core provides a router, a mapping service, an emit service, a receive service, a webhook service and other tooling.
 
 <!--
 ```
@@ -75,7 +75,7 @@ BSP ---|> SB
 
 ### Dataset-Base
 
-HEPTAConnect is all about data. Reading data, moving it from one point to another and writing it again. To make different portals understand each other, they use common datasets. A dataset is a group of class definitions for a type of data. Usually these data types are grouped into sets by their topic. The dataset base consists of interfaces and helper classes to make up a base for the individual datasets.
+HEPTAConnect is all about data. Reading data, moving it from one point to an other and writing it again. To make different portals understand each other, they use common datasets. A dataset is a group of class definitions for a type of data. Usually these data types are grouped into sets by their topic. The dataset base consists of interfaces and helper classes to make up a base for the individual datasets.
 
 <!--
 ```
