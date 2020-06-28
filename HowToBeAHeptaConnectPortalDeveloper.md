@@ -233,12 +233,10 @@ class BottleWithContentEmitter extends AbstractEmitter
 
             if (\count($data) > 0) {
                 // assign extra data to the already emitted entity
-                $mappedEntity->getEntity()->attach(
-                    'content',
-                    (new BottleContent())
-                        ->setContent(new Liter($data['content']))
-                );
-            }           
+                $content = (new BottleContent())
+                    ->setContent(new Liter($data['content']));
+                $mappedEntity->getEntity()->attach($content);
+            }
 
             yield $mappedEntity;
         }

@@ -85,5 +85,5 @@ class BottleContent extends DatasetEntity
 }
 
 $bottle = new Bottle();
-$bottle->attach('content', new BottleContent());
+$bottle->attach(new BottleContent());
 ```
