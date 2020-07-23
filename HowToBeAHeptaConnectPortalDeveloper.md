@@ -1,6 +1,6 @@
 # How to be a HEPTAConnect portal developer
 
-This is all about the guidelines to structure a portal or portal extensions. Be sure to know then general thoughts and requirements to be a [HEPTAConnect developer](./HowToBeAHeptaConnectDeveloper.md) and have a basic understanding what a dataset is and what it means to [develop one](./HowToBeAHeptaConnectPortalDeveloper.md).
+This is all about the guidelines to structure a portal or portal extensions. Be sure to know then general thoughts and requirements to be a [HEPTAConnect developer](./HowToBeAHeptaConnectDeveloper.md) and have a basic understanding what a dataset is and what it means to [develop one](./HowToBeAHeptaConnectDatasetDeveloper.md).
 
 ### Composer
 
