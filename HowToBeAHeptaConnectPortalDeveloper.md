@@ -39,7 +39,7 @@ It is recommended to add the keyword `heptaconnect-portal` to the composer packa
 A portal provides several emitters and receivers to communicate a certain set of dataset entities from an API towards HEPTAConnect and back. In the case of the bottle dataset we need an emitter and receiver to transfer bottle data. The portal class that is referenced in the composer json extra populates every class that shall be part of the HEPTAConnect processes:
 
 ```php
-class BottlesLocalPortal extends AbstractPortalNode
+class BottlesLocalPortal extends AbstractPortal
 {
     public function getEmitters(): EmitterCollection
     {
@@ -72,10 +72,10 @@ class BottleReceiver extends AbstractReceiver
         // iterate through all entities with a mapping to be transferred
         foreach ($mappedDatasetEntities as $mappedEntity) {
             $mapping = $mappedEntity->getMapping();
-            // get the specific portalNode that is targeted
-            $portalNode = $context->getPortalNode($mapping);
+            // get the specific portal that is targeted
+            $portal = $context->getPortal($mapping);
             
-            if (!$portalNode instanceof BottlesLocalPortal) {
+            if (!$portal instanceof BottlesLocalPortal) {
                 // mark the mapping having an error
                 $context->markAsFailed($mapping, new InvalidPortalException());
                 continue;
@@ -87,7 +87,7 @@ class BottleReceiver extends AbstractReceiver
 
             try {
                 // get portal specific API client to communicate the data from the contexts configuration
-                $portalNode->getApiClient($context->getConfig($mapping))
+                $portal->getApiClient($context->getConfig($mapping))
                     ->upsert([
                         'id' => $id,
                         'cap' => $entity->getCap()->getType(),
@@ -128,15 +128,15 @@ class BottleEmitter extends AbstractEmitter
     ): iterable {
         // iterate through all requested mappings to be processed
         foreach ($mappings as $mapping) {
-            // get the specific portalNode that is targeted
-            $portalNode = $context->getPortalNode($mapping);
+            // get the specific portal that is targeted
+            $portal = $context->getPortal($mapping);
             
-            if (!$portalNode instanceof BottlesLocalPortal) {
+            if (!$portal instanceof BottlesLocalPortal) {
                 continue;
             }
 
             // get portal specific API client to communicate the data from the contexts configuration
-            $data = $portalNode->getApiClient($context->getConfig($mapping))
+            $data = $portal->getApiClient($context->getConfig($mapping))
                 ->select($mapping->getExternalId());
 
             if (\count($data) === 0) {
@@ -192,7 +192,7 @@ A dataset sometimes is not able to hold data that is needed for an integration t
 The portal extension has to specify which portal it extends and which classes shall be injected into the decoration chain:
 
 ```php
-class BottlesWithContentPortal extends AbstractPortalNodeExtension
+class BottlesWithContentPortal extends AbstractPortalExtension
 {
     public function getEmitterDecorators(): EmitterCollection;
     {
@@ -220,15 +220,15 @@ class BottleWithContentEmitter extends AbstractEmitter
     ): iterable {
         // iterate through all requested mappings to be processed
         foreach ($stack->next($mappings, $context) as $mappedEntity) {
-            // get the specific portalNode that is targeted
-            $portalNode = $context->getPortalNode($mappedEntity->getMapping());
+            // get the specific portal that is targeted
+            $portal = $context->getPortal($mappedEntity->getMapping());
             
-            if (!$portalNode instanceof BottlesLocalPortal) {
+            if (!$portal instanceof BottlesLocalPortal) {
                 continue;
             }
 
             // get portal specific API client to communicate the extra data from the contexts configuration
-            $data = $portalNode->getApiClient($context->getConfig($mappedEntity->getMapping()))
+            $data = $portal->getApiClient($context->getConfig($mappedEntity->getMapping()))
                 ->selectContentData($mappedEntity-getMapping()->getExternalId());
 
             if (\count($data) > 0) {
