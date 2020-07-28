@@ -10,9 +10,9 @@ A `Portal` is the implementation of an endpoint to connect it via HEPTAConnect. 
 
 A `Portal` is not the connection to an endpoint but the implementation of an endpoint. A `Portal` can then be configured with customizable fields. These fields may hold information like API-URLs, user credentials, file locations and so on. A configured `Portal` that is ready to communicate to an endpoint or data storage is called a `PortalNode`. A single `Portal` can potentially be used for many `PortalNodes`.
 
-### PortalNodeService
+### PortalRegistry
 
-The `PortalNodeService` is provided by HEPTAConnect and can be used as a factory for `PortalNodes`. When a component has an identifier of a `PortalNode` and needs the corresponding instance to interact with it, this service should be used to retrieve the instance.
+The `PortalRegistry` is provided by HEPTAConnect and can be used as a factory for `PortalNodes`. When a component has an identifier of a `PortalNode` and needs the corresponding instance to interact with it, this service should be used to retrieve the instance.
 
 ### Emitter
 
