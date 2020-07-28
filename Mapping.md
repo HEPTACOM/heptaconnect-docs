@@ -14,7 +14,7 @@ To make HEPTAConnect aware of an entity inside a PortalNode, that entity has to 
 
 ### Exploration
 
-A recommended step in adding a new PortalNode into a HEPTAConnect ecosystem is the exploration. A portal can ship multiple explorers that will each publish every entity of a certain type from its PortalNode. While this process could in theory be done manually, it is recommended to create classes implementing the ExplorerInterface. The benefit is a better integration into automated processes of HEPTAConnect, so your exploration process can be triggered by the system rather than relying on a manual trigger.
+A recommended step in adding a new PortalNode into a HEPTAConnect ecosystem is the exploration. A portal can ship multiple explorers that will each publish every entity of a certain type from its PortalNode. While this process could in theory be done manually, it is recommended to create classes implementing the ExplorerContract. The benefit is a better integration into automated processes of HEPTAConnect, so your exploration process can be triggered by the system rather than relying on a manual trigger.
 
 ### MappingService
 
