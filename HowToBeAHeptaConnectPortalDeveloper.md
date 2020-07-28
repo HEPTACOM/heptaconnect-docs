@@ -39,8 +39,15 @@ It is recommended to add the keyword `heptaconnect-portal` to the composer packa
 A portal provides several emitters and receivers to communicate a certain set of dataset entities from an API towards HEPTAConnect and back. In the case of the bottle dataset we need an emitter and receiver to transfer bottle data. The portal class that is referenced in the composer json extra populates every class that shall be part of the HEPTAConnect processes:
 
 ```php
-class BottlesLocalPortal extends AbstractPortal
+class BottlesLocalPortal extends PortalContract
 {
+    public function getExplorers(): ExplorerCollection
+    {
+        return new ExplorerCollection([
+            new BottleExplorer(),
+        ]);
+    }
+
     public function getEmitters(): EmitterCollection
     {
         return new EmitterCollection([
@@ -55,7 +62,15 @@ class BottlesLocalPortal extends AbstractPortal
         ]);
     }
 
-    public function getApiClient(array $config): AcmeApiClient;
+    /**
+     * This method is unique for this portal implementation.
+     * It is not defined in the PortalContract.
+     */
+    public function getApiClient(array $config): AcmeApiClient
+    {
+        // create and configure api client
+        return new AcmeApiClient();
+    }
 }
 ```
 
