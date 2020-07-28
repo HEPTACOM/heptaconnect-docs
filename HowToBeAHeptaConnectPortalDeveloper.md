@@ -77,7 +77,7 @@ class BottlesLocalPortal extends PortalContract
 A receiver gets data from HEPTAConnect is to be told to communicate towards the API it wraps. A common implementation is to let the portal provide an custom API client and let the receiver do the translation work from dataset structures to API structures:
 
 ```php
-class BottleReceiver extends AbstractReceiver
+class BottleReceiver extends ReceiverContract
 {
     public function receive(
         MappedDatasetEntityCollection $mappedDatasetEntities,
@@ -134,7 +134,7 @@ class BottleReceiver extends AbstractReceiver
 As we just read how a receiver is reduced to the case of communication we can compare it to an emitter that loads data from an API and feeds it into HEPTAConnect.
 
 ```php
-class BottleEmitter extends AbstractEmitter
+class BottleEmitter extends EmitterContract
 {
     public function emit(
         MappingCollection $mappings,
@@ -209,7 +209,7 @@ The portal extension has to specify which portal it extends and which classes sh
 ```php
 class BottlesWithContentPortal extends AbstractPortalExtension
 {
-    public function getEmitterDecorators(): EmitterCollection;
+    public function getEmitterDecorators(): EmitterCollection
     {
         return new EmitterCollection([
             new BottleWithContentEmitter(),
@@ -226,7 +226,7 @@ class BottlesWithContentPortal extends AbstractPortalExtension
 The emitter decorator will be injected into the call chain and can now alter the mappings to be read from the original and add new data.
 
 ```php
-class BottleWithContentEmitter extends AbstractEmitter
+class BottleWithContentEmitter extends EmitterContract
 {
     public function emit(
         MappingCollection $mappings,
