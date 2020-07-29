@@ -207,7 +207,7 @@ A dataset sometimes is not able to hold data that is needed for an integration t
 The portal extension has to specify which portal it extends and which classes shall be injected into the decoration chain:
 
 ```php
-class BottlesWithContentPortal extends AbstractPortalExtension
+class BottlesWithContentPortal extends PortalExtensionContract
 {
     public function getEmitterDecorators(): EmitterCollection
     {
