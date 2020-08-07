@@ -8,13 +8,13 @@ HEPTAconnect is designed to be able to adopt to its surrounding software. Theref
 
 <!--
 ```
-@startuml packageStructureBridgeShopwarePlatform
+@startuml assets/packageStructure/BridgeShopwarePlatform
 !include style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP #007aff
 @enduml
 ```
 -->
-![](packageStructureBridgeShopwarePlatform.svg)
+![](assets/packageStructure/BridgeShopwarePlatform.svg)
 
 ### Core
 
@@ -22,7 +22,7 @@ At its core HEPTAconnect manages data streams between different endpoints via as
 
 <!--
 ```
-@startuml packageStructureCore
+@startuml assets/packageStructure/Core
 !include style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C #007aff
@@ -30,7 +30,7 @@ BSP --|> C
 @enduml
 ```
 -->
-![](packageStructureCore.svg)
+![](assets/packageStructure/Core.svg)
 
 ### Storage-Base
 
@@ -38,7 +38,7 @@ Certain components of HEPTAconnect require a form of persistent storage. An exam
 
 <!--
 ```
-@startuml packageStructureStorageBase
+@startuml assets/packageStructure/StorageBase
 !include style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C
@@ -49,7 +49,7 @@ BSP --|> SB
 @enduml
 ```
 -->
-![](packageStructureStorageBase.svg)
+![](assets/packageStructure/StorageBase.svg)
 
 ### Portal-Base
 
@@ -57,7 +57,7 @@ Since HEPTAconnect itself is not much more than a framework, it does not come wi
 
 <!--
 ```
-@startuml packageStructurePortalBase
+@startuml assets/packageStructure/PortalBase
 !include style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C
@@ -71,7 +71,7 @@ BSP ---|> SB
 @enduml
 ```
 -->
-![](packageStructurePortalBase.svg)
+![](assets/packageStructure/PortalBase.svg)
 
 ### Dataset-Base
 
@@ -79,7 +79,7 @@ HEPTAconnect is all about data. Reading data, moving it from one point to an oth
 
 <!--
 ```
-@startuml packageStructureDatasetBase
+@startuml assets/packageStructure/DatasetBase
 !include style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C
@@ -97,7 +97,7 @@ BSP ---|> SB
 @enduml
 ```
 -->
-![](packageStructureDatasetBase.svg)
+![](assets/packageStructure/DatasetBase.svg)
 
 ### Dataset
 
@@ -105,7 +105,7 @@ A single dataset can hold a number of classes for different data types. Datasets
 
 <!--
 ```
-@startuml packageStructureDatasets
+@startuml assets/packageStructure/Datasets
 !include style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C
@@ -136,7 +136,7 @@ BSP ---|> SB
 @enduml
 ```
 -->
-![](packageStructureDatasets.svg)
+![](assets/packageStructure/Datasets.svg)
 
 ### Portal
 
@@ -144,7 +144,7 @@ Because HEPTAconnect should bring data of different systems together, it has to 
 
 <!--
 ```
-@startuml packageStructurePortals
+@startuml assets/packageStructure/Portals
 !include style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C
@@ -181,7 +181,7 @@ BSP ---|> SB
 @enduml
 ```
 -->
-![](packageStructurePortals.svg)
+![](assets/packageStructure/Portals.svg)
 
 ### Integration
 
@@ -189,7 +189,7 @@ The integration is the one package that holds it all together. It is a compositi
 
 <!--
 ```
-@startuml packageStructureShopwarePlatformBusinessCentralIntegration
+@startuml assets/packageStructure/ShopwarePlatformBusinessCentralIntegration
 !include style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C
@@ -230,4 +230,4 @@ SPBBC --0 PBC
 @enduml
 ```
 -->
-![](packageStructureShopwarePlatformBusinessCentralIntegration.svg)
+![](assets/packageStructure/ShopwarePlatformBusinessCentralIntegration.svg)
