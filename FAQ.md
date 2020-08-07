@@ -12,7 +12,7 @@ Connecting everything inherits requiring a lot of dependencies.
 
 ## Can I add custom structures?
 
-Yes, every dataset provider can provide new dataset entities that can be managed by HEPTAConnect.
+Yes, every dataset provider can provide new dataset entities that can be managed by HEPTAconnect.
 
 ## Can I add data to existing structures?
 

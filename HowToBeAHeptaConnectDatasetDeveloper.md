@@ -1,6 +1,6 @@
-# How to be a HEPTAConnect dataset developer
+# How to be a HEPTAconnect dataset developer
 
-This is all about the guidelines to structure a dataset. Be sure to know then general thoughts and requirements to be a [HEPTAConnect developer](./HowToBeAHeptaConnectDeveloper.md).
+This is all about the guidelines to structure a dataset. Be sure to know then general thoughts and requirements to be a [HEPTAconnect developer](./HowToBeAHeptaConnectDeveloper.md).
 
 ### Composer
 
@@ -9,7 +9,7 @@ It is recommended to add the keyword `heptaconnect-dataset` to the composer pack
 ```json
 {
     "name": "acme/heptaconnect-dataset-bottle",
-    "description": "HEPTAConnect dataset package to provide bottles",
+    "description": "HEPTAconnect dataset package to provide bottles",
     "type": "library",
     "keywords": [
         "heptaconnect-dataset"
@@ -47,7 +47,7 @@ class Bottle extends DatasetEntity
 }
 ```
 
-It is important to use the base class `DatasetEntity` and use `protected` fields for internal processing in HEPTAConnect to work.
+It is important to use the base class `DatasetEntity` and use `protected` fields for internal processing in HEPTAconnect to work.
 
 There are supporting classes to build up structures to use throughout any dataset. As internationalization (i18n) faces everyone during a data transport we offer helpful types to make translatable fields easier to handle.
 

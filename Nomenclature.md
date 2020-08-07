@@ -4,7 +4,7 @@ There are several types of classes or entities referenced throughout this docume
 
 ## Portal
 
-A `Portal` is the implementation of an endpoint to connect it via HEPTAConnect. When you want to provide connectivity for an external API or some other form of data storage, you implement a portal. So a portal is just a name for the composition of code (e.g. a composer package) that is necessary for HEPTAConnect to communicate with an endpoint.
+A `Portal` is the implementation of an endpoint to connect it via HEPTAconnect. When you want to provide connectivity for an external API or some other form of data storage, you implement a portal. So a portal is just a name for the composition of code (e.g. a composer package) that is necessary for HEPTAconnect to communicate with an endpoint.
 
 ### PortalNode
 
@@ -12,7 +12,7 @@ A `Portal` is not the connection to an endpoint but the implementation of an end
 
 ### PortalRegistry
 
-The `PortalRegistry` is provided by HEPTAConnect and can be used as a factory for `PortalNodes`. When a component has an identifier of a `PortalNode` and needs the corresponding instance to interact with it, this service should be used to retrieve the instance.
+The `PortalRegistry` is provided by HEPTAconnect and can be used as a factory for `PortalNodes`. When a component has an identifier of a `PortalNode` and needs the corresponding instance to interact with it, this service should be used to retrieve the instance.
 
 ### Emitter
 
@@ -24,11 +24,11 @@ A `Receiver` receives a collection of `DatasetEntities` and writes the data to t
 
 ### Bridge
 
-The `Bridge` implements the core functionality in a certain environment by providing services for behaviours of the core that are dependent on the runtime of the surrounding application. As HEPTAConnect is environment agnostic it is not specified by default which database server, ORM, message broker, request cycle manager, request routing or file storage is in use.
+The `Bridge` implements the core functionality in a certain environment by providing services for behaviours of the core that are dependent on the runtime of the surrounding application. As HEPTAconnect is environment agnostic it is not specified by default which database server, ORM, message broker, request cycle manager, request routing or file storage is in use.
 
 ### Publisher
 
-The `Publisher` is a central service that can be accessed by a `Bridge` to create `Mappings` for new entities. Publishing means, you target one specific object inside one specific `PortalNode` and have HEPTAConnect create a `Mapping` for it. The `Publisher` will prepare and schedule the freshly created `Mapping` for the `Emitter`. This happens asynchronously, so a `Publisher` will not take up a lot of computing time and it can be called during a web request with minimal performance impact.
+The `Publisher` is a central service that can be accessed by a `Bridge` to create `Mappings` for new entities. Publishing means, you target one specific object inside one specific `PortalNode` and have HEPTAconnect create a `Mapping` for it. The `Publisher` will prepare and schedule the freshly created `Mapping` for the `Emitter`. This happens asynchronously, so a `Publisher` will not take up a lot of computing time and it can be called during a web request with minimal performance impact.
 
 ### Morpher
 
@@ -44,7 +44,7 @@ A single entity in a `Dataset` is called a `DatasetEntity`. They are used to hav
 
 ## Mapping
 
-A `Mapping` is used to identify an entity in a `PortalNode`. It has an external identifier that points to the foreign entity, a `PortalNode` identifier that points to the `PortalNode` and a `MappingNode`. A mapping can also exist without an external identifier when the goal is to describe the connection between a `DatasetEntity` and a `PortalNode` before the foreign entity exists in the `PortalNode`. In practise this is used with `Receivers` when the foreign entity is yet to be created. HEPTAConnect will prepare a `Mapping` with the `PortalNode` identifier and a `MappingNode` but it will leave the external identifier empty. After the `Reciever` has created the foreign entity and has stored its identifier as external identifier in the `Mapping`, the MappingService will save the `Mapping` with its external identifier.
+A `Mapping` is used to identify an entity in a `PortalNode`. It has an external identifier that points to the foreign entity, a `PortalNode` identifier that points to the `PortalNode` and a `MappingNode`. A mapping can also exist without an external identifier when the goal is to describe the connection between a `DatasetEntity` and a `PortalNode` before the foreign entity exists in the `PortalNode`. In practise this is used with `Receivers` when the foreign entity is yet to be created. HEPTAconnect will prepare a `Mapping` with the `PortalNode` identifier and a `MappingNode` but it will leave the external identifier empty. After the `Reciever` has created the foreign entity and has stored its identifier as external identifier in the `Mapping`, the MappingService will save the `Mapping` with its external identifier.
 
 ### MappingNode
 
@@ -64,7 +64,7 @@ A `Route` defines a direction for data to flow from one `PortalNode` to another.
 
 ## Storage
 
-HEPTAConnect requires a form of storage in order to be functional. The storage is used to keep track of mappings, configurations and other data that is relevant to the system. All access to a storage provider is abstracted in the storage base and the core only relies on these interfaces.
+HEPTAconnect requires a form of storage in order to be functional. The storage is used to keep track of mappings, configurations and other data that is relevant to the system. All access to a storage provider is abstracted in the storage base and the core only relies on these interfaces.
 
 ### Keys
 

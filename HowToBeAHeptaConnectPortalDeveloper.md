@@ -1,6 +1,6 @@
-# How to be a HEPTAConnect portal developer
+# How to be a HEPTAconnect portal developer
 
-This is all about the guidelines to structure a portal or portal extensions. Be sure to know then general thoughts and requirements to be a [HEPTAConnect developer](./HowToBeAHeptaConnectDeveloper.md) and have a basic understanding what a dataset is and what it means to [develop one](./HowToBeAHeptaConnectDatasetDeveloper.md).
+This is all about the guidelines to structure a portal or portal extensions. Be sure to know then general thoughts and requirements to be a [HEPTAconnect developer](./HowToBeAHeptaConnectDeveloper.md) and have a basic understanding what a dataset is and what it means to [develop one](./HowToBeAHeptaConnectDatasetDeveloper.md).
 
 ### Composer
 
@@ -9,7 +9,7 @@ It is recommended to add the keyword `heptaconnect-portal` to the composer packa
 ```json
 {
     "name": "acme/heptaconnect-portal-bottle",
-    "description": "HEPTAConnect portal to provide bottles from bottles.local",
+    "description": "HEPTAconnect portal to provide bottles from bottles.local",
     "type": "library",
     "keywords": [
         "heptaconnect-portal"
@@ -36,7 +36,7 @@ It is recommended to add the keyword `heptaconnect-portal` to the composer packa
 
 ### Structure
 
-A portal provides several emitters and receivers to communicate a certain set of dataset entities from an API towards HEPTAConnect and back. In the case of the bottle dataset we need an emitter and receiver to transfer bottle data. The portal class that is referenced in the composer json extra populates every class that shall be part of the HEPTAConnect processes:
+A portal provides several emitters and receivers to communicate a certain set of dataset entities from an API towards HEPTAconnect and back. In the case of the bottle dataset we need an emitter and receiver to transfer bottle data. The portal class that is referenced in the composer json extra populates every class that shall be part of the HEPTAconnect processes:
 
 ```php
 class BottlesLocalPortal extends PortalContract
@@ -74,7 +74,7 @@ class BottlesLocalPortal extends PortalContract
 }
 ```
 
-A receiver gets data from HEPTAConnect is to be told to communicate towards the API it wraps. A common implementation is to let the portal provide an custom API client and let the receiver do the translation work from dataset structures to API structures:
+A receiver gets data from HEPTAconnect is to be told to communicate towards the API it wraps. A common implementation is to let the portal provide an custom API client and let the receiver do the translation work from dataset structures to API structures:
 
 ```php
 class BottleReceiver extends ReceiverContract
@@ -125,13 +125,13 @@ class BottleReceiver extends ReceiverContract
 
     public function supports(): array
     {
-        // tells HEPTAConnect to use this receiver for bottles only
+        // tells HEPTAconnect to use this receiver for bottles only
         return [Bottle::class];
     }
 }
 ``` 
 
-As we just read how a receiver is reduced to the case of communication we can compare it to an emitter that loads data from an API and feeds it into HEPTAConnect.
+As we just read how a receiver is reduced to the case of communication we can compare it to an emitter that loads data from an API and feeds it into HEPTAconnect.
 
 ```php
 class BottleEmitter extends EmitterContract
@@ -176,7 +176,7 @@ class BottleEmitter extends EmitterContract
 
     public function supports(): array
     {
-        // tells HEPTAConnect to use this emitter for bottles only
+        // tells HEPTAconnect to use this emitter for bottles only
         return [Bottle::class];
     }
 }
@@ -263,7 +263,7 @@ class BottleWithContentEmitter extends EmitterContract
 
     public function supports(): array
     {
-        // tells HEPTAConnect to use this emitter for bottles only
+        // tells HEPTAconnect to use this emitter for bottles only
         return [Bottle::class];
     }
 }

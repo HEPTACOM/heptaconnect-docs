@@ -1,10 +1,10 @@
-# HEPTAConnect Documentation
+# HEPTAconnect Documentation
 #### This is part of HEPTACOM solutions for medium and large enterprises.
 
 ### [Nomenclature](./Nomenclature.md)
-### [Requirements | How to be a HEPTAConnect developer](./HowToBeAHeptaConnectDeveloper.md)
-### [How to be a HEPTAConnect dataset developer](./HowToBeAHeptaConnectDatasetDeveloper.md)
-### [How to be a HEPTAConnect portal developer](./HowToBeAHeptaConnectPortalDeveloper.md)
+### [Requirements | How to be a HEPTAconnect developer](./HowToBeAHeptaConnectDeveloper.md)
+### [How to be a HEPTAconnect dataset developer](./HowToBeAHeptaConnectDatasetDeveloper.md)
+### [How to be a HEPTAconnect portal developer](./HowToBeAHeptaConnectPortalDeveloper.md)
 ### [Package structure](./PackageStructure.md)
 ### [FAQ](./FAQ.md)
 ### [Mappings](./Mapping.md)
