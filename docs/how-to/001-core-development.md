@@ -3,9 +3,9 @@
 This is all about setting up a development environment to work on HEPTAconnect projects.
 
 ## Technical requirements
- 
-* php 7.4 or above
-* composer 1.8 or above
+
+* PHP 7.4 or above
+* Composer 1.8 or above
 
 ## Used tools, technologies and techniques
 
