@@ -41,7 +41,7 @@ heptaconnect-sdk sdk:install
 
 The installation wizard will ask you for database credentials of your MySQL server. Afterwards it will setup the database.
 
-✅ Great job! You installed the SDK. Let's make a package now.
+?> ✅ Great job! You installed the SDK. Let's make a package now.
 
 ### Building your own portal
 
@@ -84,7 +84,7 @@ Your `<target-dir>` should now have the following contents:
     └── ...
 ```
 
-✅ You successfully created your first portal!
+?> ✅ You successfully created your first portal!
 
 ### Adding your package to the SDK runtime
 
@@ -100,4 +100,4 @@ You should see Composer updating the SDK with your package as a dependency. The 
 heptaconnect-sdk heptaconnect:portal:list
 ```
 
-✅ Your portal is now available in the SDK!
+?> ✅ Your portal is now available in the SDK!
