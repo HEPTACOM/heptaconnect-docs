@@ -1,0 +1,49 @@
+@import "~docsify/themes/vue.css";
+
+:root {
+  --toc-width: 380px;
+}
+
+.page_toc {
+  display: none;
+  margin: 0 80px;
+}
+
+@media print {
+  .content {
+    left: 0;
+    display: block !important;
+  }
+
+  .markdown-section {
+    margin: 0 !important;
+    max-width: none;
+  }
+}
+
+@media screen {
+  .markdown-section {
+    width: 100%;
+    margin: 0 auto !important;
+    max-width: 720px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .markdown-section {
+    width: 80%;
+    margin: 0 auto 0 80px !important;
+  }
+}
+
+@media screen and (min-width: 1301px) {
+  .page_toc {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  :root {
+    --toc-width: 480px;
+  }
+}

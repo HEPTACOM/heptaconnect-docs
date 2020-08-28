@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HEPTAconnect Docs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+<body>
+<div id="app"></div>
+<script type="application/javascript" src="assets/extra.js"></script>
+<script type="application/javascript">
+    window.$docsify = {
+        'name': 'HEPTAconnect Docs',
+        'repo': 'heptacom/heptaconnect-docs',
+        'relativePath': true,
+        'loadSidebar': true,
+        'loadNavbar': true,
+        'auto2top': true,
+        'pagination': {
+            'crossChapter': true,
+            'crossChapterText': true,
+        },
+        'page-toc': {
+            'tocMaxLevel': 3,
+            'target': 'h1, h2, h3'
+        },
+        'plantuml': {
+            'skin': 'default',
+        },
+        'plugins': [
+            EditOnGithubPlugin.create('https://github.com/HEPTACOM/heptaconnect-docs/blob/gh-pages/', null, '📝 Edit on GitHub')
+        ],
+    }
+</script>
+<script type="application/javascript" src="assets/app.js"></script>
+</body>
+</html>
