@@ -8,7 +8,6 @@ HEPTAconnect is designed to be able to adopt to its surrounding software. Theref
 
 ```plantuml
 @startuml assets/packageStructure/BridgeShopwarePlatform
-!include https://raw.githubusercontent.com/HEPTACOM/heptaconnect-docs/gh-pages/style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP #007aff
 @enduml
 ```
@@ -19,7 +18,6 @@ At its core HEPTAconnect manages data streams between different endpoints via as
 
 ```plantuml
 @startuml assets/packageStructure/Core
-!include https://raw.githubusercontent.com/HEPTACOM/heptaconnect-docs/gh-pages/style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C #007aff
 BSP --|> C
@@ -32,7 +30,6 @@ Certain components of HEPTAconnect require a form of persistent storage. An exam
 
 ```plantuml
 @startuml assets/packageStructure/StorageBase
-!include https://raw.githubusercontent.com/HEPTACOM/heptaconnect-docs/gh-pages/style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C
 rectangle "Storage-Base" as SB #007aff
@@ -48,7 +45,6 @@ Since HEPTAconnect itself is not much more than a framework, it does not come wi
 
 ```plantuml
 @startuml assets/packageStructure/PortalBase
-!include https://raw.githubusercontent.com/HEPTACOM/heptaconnect-docs/gh-pages/style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C
 rectangle "Portal-Base" as PB #007aff
@@ -67,7 +63,6 @@ HEPTAconnect is all about data. Reading data, moving it from one point to an oth
 
 ```plantuml
 @startuml assets/packageStructure/DatasetBase
-!include https://raw.githubusercontent.com/HEPTACOM/heptaconnect-docs/gh-pages/style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C
 rectangle "Dataset-Base" as DB #007aff
@@ -90,7 +85,6 @@ A single dataset can hold a number of classes for different data types. Datasets
 
 ```plantuml
 @startuml assets/packageStructure/Datasets
-!include https://raw.githubusercontent.com/HEPTACOM/heptaconnect-docs/gh-pages/style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C
 rectangle "Dataset-Base" as DB
@@ -126,7 +120,6 @@ Because HEPTAconnect should bring data of different systems together, it has to 
 
 ```plantuml
 @startuml assets/packageStructure/Portals
-!include https://raw.githubusercontent.com/HEPTACOM/heptaconnect-docs/gh-pages/style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C
 rectangle "Dataset-Base" as DB
@@ -168,7 +161,6 @@ The integration is the one package that holds it all together. It is a compositi
 
 ```plantuml
 @startuml assets/packageStructure/ShopwarePlatformBusinessCentralIntegration
-!include https://raw.githubusercontent.com/HEPTACOM/heptaconnect-docs/gh-pages/style.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Core" as C
 rectangle "Dataset-Base" as DB
