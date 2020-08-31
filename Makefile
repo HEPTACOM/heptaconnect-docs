@@ -8,7 +8,7 @@ endif
 ifndef PLANTUML_PARAMS
 	PLANTUML_PARAMS := -tsvg
 endif
-MARKDOWN_FILES := $(wildcard *.md)
+MARKDOWN_FILES := $(shell find . -name '*.md' -type f)
 
 .PHONY: all
 all: build
