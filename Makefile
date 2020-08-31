@@ -7,5 +7,8 @@ endif
 all: build
 
 .PHONY: build
-build:
+build: node_modules
 	$(NPM) run prod
+
+node_modules:
+	$(NPM) ci

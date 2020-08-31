@@ -30,3 +30,10 @@ pipelines:
                         - git push --force github gh-pages
                         - git checkout --track origin/master
                         - git push --force github master
+    pull-requests:
+        '**':
+            -   step:
+                    name: 'Test building'
+                    script:
+                        - apk add --no-cache make bash
+                        - make all
