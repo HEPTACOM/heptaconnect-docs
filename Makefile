@@ -2,6 +2,13 @@ SHELL := /bin/bash
 ifndef NPM
 	NPM := npm
 endif
+ifndef PLANTUML
+	PLANTUML := plantuml
+endif
+ifndef PLANTUML_PARAMS
+	PLANTUML_PARAMS := -tsvg
+endif
+MARKDOWN_FILES := $(wildcard *.md)
 
 .PHONY: all
 all: build
@@ -12,3 +19,10 @@ build: node_modules
 
 node_modules:
 	$(NPM) ci
+
+.PHONY: uml
+uml: $(MARKDOWN_FILES)
+
+.PHONY: $(MARKDOWN_FILES)
+$(MARKDOWN_FILES):
+	$(PLANTUML) $(PLANTUML_PARAMS) "$@" || echo "Markdown $@ has no diagrams"
