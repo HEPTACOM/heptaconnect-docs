@@ -1,4 +1,7 @@
 SHELL := /bin/bash
+ifndef NPM
+	NPM := npm
+endif
 ifndef PLANTUML
 	PLANTUML := plantuml
 endif
@@ -11,7 +14,14 @@ MARKDOWN_FILES := $(wildcard *.md)
 all: build
 
 .PHONY: build
-build: $(MARKDOWN_FILES)
+build: node_modules
+	$(NPM) run prod
+
+node_modules:
+	$(NPM) ci
+
+.PHONY: uml
+uml: $(MARKDOWN_FILES)
 
 .PHONY: $(MARKDOWN_FILES)
 $(MARKDOWN_FILES):
