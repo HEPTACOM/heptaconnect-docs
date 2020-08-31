@@ -37,3 +37,5 @@ pipelines:
                     script:
                         - apk add --no-cache make bash
                         - make all
+                    artifacts:
+                        - 'docs/**'
