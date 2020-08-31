@@ -1,5 +1,7 @@
 # HEPTAconnect
 
+> This software is part of HEPTACOM solutions for medium and large enterprises.
+
 In the past we have enabled numerous integrations of third-party systems for Shopware. Throughout various projects it has become our specialty to connect Shopware with different ERP, CRM or PIM systems used in middle class and enterprise businesses. But crafting the entire solution from scratch every time has proven to be both time consuming and to some extend repetitive. That is the reason why we wanted to create a common framework that makes connecting systems easier.
 
 A lot of work went into the concept of this product. We wanted this foundation to go beyond just Shopware, so we designed it to be system agnostic. This means that the core of HEPTAconnect can be run in basically any PHP application. We also provide bridges to popular systems, to reduce redundant code throughout different projects.
