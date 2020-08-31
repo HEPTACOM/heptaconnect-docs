@@ -1,8 +1,8 @@
 # How to be a HEPTAconnect portal developer
 
-This is all about the guidelines to structure a portal or portal extensions. Be sure to know then general thoughts and requirements to be a [HEPTAconnect developer](./HowToBeAHeptaConnectDeveloper.md) and have a basic understanding what a dataset is and what it means to [develop one](./HowToBeAHeptaConnectDatasetDeveloper.md).
+This is all about the guidelines to structure a portal or portal extensions. Be sure to know then general thoughts and requirements to be a [HEPTAconnect developer](./001-core-development.md) and have a basic understanding what a dataset is and what it means to [develop one](./002-dataset-development.md).
 
-### Composer
+## Composer
 
 It is recommended to add the keyword `heptaconnect-portal` to the composer package that provides one or more portals. This way more people can easily find your portal on packagist. A common `composer.json` for a portal providing package may look like this:
 
@@ -34,7 +34,7 @@ It is recommended to add the keyword `heptaconnect-portal` to the composer packa
 }
 ```
 
-### Structure
+## Structure
 
 A portal provides several emitters and receivers to communicate a certain set of dataset entities from an API towards HEPTAconnect and back. In the case of the bottle dataset we need an emitter and receiver to transfer bottle data. The portal class that is referenced in the composer json extra populates every class that shall be part of the HEPTAconnect processes:
 
@@ -182,7 +182,7 @@ class BottleEmitter extends EmitterContract
 }
 ```
 
-### Extend portals via attachments
+## Extend portals via attachments
 
 A dataset sometimes is not able to hold data that is needed for an integration to work. The dataset author might have not thought of this case or evaluated it as an edge case. In these situations you are about to create an emitter decorator via a portal extension. A portal extension is published similar to a portal via the extra section in a composer package.
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <title>HEPTAconnect Docs</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="assets/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="assets/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#0070c9">
+
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+<body>
+<div id="app"></div>
+<script type="application/javascript" src="assets/extra.js"></script>
+<script type="application/javascript">
+    window.$docsify = {
+        'name': 'HEPTAconnect Docs',
+        'repo': 'heptacom/heptaconnect-docs',
+        'logo': 'assets/logo.png',
+        'relativePath': true,
+        'loadSidebar': true,
+        'loadNavbar': true,
+        'auto2top': true,
+        'pagination': {
+            'crossChapter': true,
+            'crossChapterText': true,
+        },
+        'page-toc': {
+            'tocMaxLevel': 3,
+            'target': 'h1, h2, h3'
+        },
+        'plantuml': {
+            'skin': 'default',
+        },
+        'plugins': [
+            EditOnGithubPlugin.create('https://github.com/HEPTACOM/heptaconnect-docs/blob/gh-pages/', null, '📝 Edit on GitHub')
+        ],
+    }
+</script>
+<script type="application/javascript" src="assets/app.js"></script>
+</body>
+</html>

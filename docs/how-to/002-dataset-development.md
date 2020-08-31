@@ -1,8 +1,8 @@
 # How to be a HEPTAconnect dataset developer
 
-This is all about the guidelines to structure a dataset. Be sure to know then general thoughts and requirements to be a [HEPTAconnect developer](./HowToBeAHeptaConnectDeveloper.md).
+This is all about the guidelines to structure a dataset. Be sure to know then general thoughts and requirements to be a [HEPTAconnect developer](./001-core-development.md).
 
-### Composer
+## Composer
 
 It is recommended to add the keyword `heptaconnect-dataset` to the composer package that provides a dataset. This way more people can easily find your dataset on packagist. A common `composer.json` for a dataset providing package may look like this:
 
@@ -26,7 +26,7 @@ It is recommended to add the keyword `heptaconnect-dataset` to the composer pack
 }
 ```
 
-### Structure
+## Structure
 
 Datasets describe a collection of structures that express common properties of familiar complex structures. These are the building blocks for portals. A dataset should be as common as possible. You don't have to include all possibilities at once.
 
@@ -74,7 +74,7 @@ class LabelCollection extends DatasetEntityCollection
 
 The usage of typed enumerations is discouraged as these are very difficult to impossible to extend. We prefer to use constant strings. In best case it is just a UUID as value. This way the string value can receive new values if anyone needs to extend your dataset later on.
 
-### Extend datasets with attachments
+## Extend datasets with attachments
 
 A dataset sometimes is not able to hold data that is needed for an integration to work. The dataset author might have not thought of this case or evaluated it as an edge case. In these situations you are about to extend dataset entities. To provide additional data for the bottle entity you have to create a custom structure that holds the additional data you need. A data extension is just an other dataset entities that can be attached to an existing entity. As they share the same base class existing entities can be plugged into an other entity with just a few actions. 
 

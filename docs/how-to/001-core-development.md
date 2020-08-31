@@ -2,13 +2,12 @@
 
 This is all about setting up a development environment to work on HEPTAconnect projects.
 
-### Technical requirements
- 
-* php 7.4 or above
-* composer 1.8 or above
+## Technical requirements
 
+* PHP 7.4 or above
+* Composer 1.8 or above
 
-### Used tools, technologies and techniques
+## Used tools, technologies and techniques
 
 Adding static type hints with psalm and phpstan helps us to provide safe and more comprehensive code. Using these tools adds generics and class string functionalities that helps understanding code without an execution context.
 
