@@ -1,6 +1,6 @@
 # Getting Started
 
-There are two ways to quickly get started with HEPTAconnect. If you would like a setup with pre-configured portals and a working runtime, you should check out the playground. If you want to develop you own packages for HEPTAconnect, you should install the SDK first.
+There are two ways to quickly get started with HEPTAconnect. If you would like a setup with pre-configured portals and a working runtime, you should check out the playground. If you want to develop your own packages for HEPTAconnect, you should install the SDK first.
 
 ## Playground
 
