@@ -8,7 +8,7 @@ endif
 ifndef PLANTUML_PARAMS
 	PLANTUML_PARAMS := -tsvg
 endif
-MARKDOWN_FILES := $(shell find . -name '*.md' -type f)
+MARKDOWN_FILES := $(shell find docs -name '*.md' -type f)
 
 .PHONY: all
 all: build
