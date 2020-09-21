@@ -18,6 +18,7 @@ pipelines:
                         - apk add --no-cache git make bash openssh-client
                         - make build
                         - git checkout -b gh-pages
+                        - mv .gh-pages-gitignore .gitignore
                         - git add --all
                         - test $(git diff --name-only --cached | wc -l) -eq 0 || git commit -m "Build gh-pages"
                         - git push --force origin gh-pages
