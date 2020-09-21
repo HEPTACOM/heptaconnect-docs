@@ -11,6 +11,8 @@ HEPTAconnect is designed to be able to adopt to its surrounding software. Theref
 @startuml ../assets/plantuml/packageStructure/BridgeShopwarePlatform
 !include ../../src/skin.puml
 rectangle "Bridge-ShopwarePlatform" as BSP #007aff
+rectangle "Storage-ShopwareDal" as SSD #007aff
+BSP --|> SSD 
 @enduml
 ```
 -->
@@ -25,7 +27,9 @@ At its core HEPTAconnect manages data streams between different endpoints via as
 @startuml ../assets/plantuml/packageStructure/Core
 !include ../../src/skin.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
+rectangle "Storage-ShopwareDal" as SSD
 rectangle "Core" as C #007aff
+BSP --|> SSD 
 BSP --|> C
 @enduml
 ```
@@ -34,18 +38,21 @@ BSP --|> C
 
 ### Storage-Base
 
-Certain components of HEPTAconnect require a form of persistent storage. An example is the mapping of entities. To remember which records of different portal nodes are actually the same entity, a mapping is created and stored in a storage. Since the bridge is the only package that actually knows the surrounding runtime, only it can implement a storage adapter. The storage base will only provide interfaces for the storage, so the core can interact with the storage but does not need to know the actual implementation.
+Certain components of HEPTAconnect require a form of persistent storage. An example is the mapping of entities. To remember which records of different portal nodes are actually the same entity, a mapping is created and stored in a storage. The storage base will only provide interfaces for the storage, so the core can interact with the storage but does not need to know the actual implementation.
 
 <!--
 ```plantuml
 @startuml ../assets/plantuml/packageStructure/StorageBase
 !include ../../src/skin.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
+rectangle "Storage-ShopwareDal" as SSD
 rectangle "Core" as C
 rectangle "Storage-Base" as SB #007aff
+BSP --|> SSD
 C --|> SB
 BSP --|> C
 BSP --|> SB
+SSD --|> SB
 @enduml
 ```
 -->
@@ -60,12 +67,15 @@ Since HEPTAconnect itself is not much more than a framework, it does not come wi
 @startuml ../assets/plantuml/packageStructure/PortalBase
 !include ../../src/skin.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
+rectangle "Storage-ShopwareDal" as SSD
 rectangle "Core" as C
 rectangle "Portal-Base" as PB #007aff
 rectangle "Storage-Base" as SB
+BSP --|> SSD 
 C --|> SB
 C --|> PB
 SB --|> PB
+SSD --|> SB
 BSP ---|> C
 BSP ---|> SB
 @enduml
@@ -82,16 +92,19 @@ HEPTAconnect is all about data. Reading data, moving it from one point to an oth
 @startuml ../assets/plantuml/packageStructure/DatasetBase
 !include ../../src/skin.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
+rectangle "Storage-ShopwareDal" as SSD
 rectangle "Core" as C
 rectangle "Dataset-Base" as DB #007aff
 rectangle "Portal-Base" as PB
 rectangle "Storage-Base" as SB
+BSP --|> SSD 
 C --|> SB
 C --|> PB
 C --|> DB
 SB --|> DB
 SB --|> PB
 PB --|> DB
+SSD --|> SB
 BSP ---|> C
 BSP ---|> SB
 @enduml
@@ -108,6 +121,7 @@ A single dataset can hold a number of classes for different data types. Datasets
 @startuml ../assets/plantuml/packageStructure/Datasets
 !include ../../src/skin.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
+rectangle "Storage-ShopwareDal" as SSD
 rectangle "Core" as C
 rectangle "Dataset-Base" as DB
 rectangle "Dataset-Ecommerce" as DE #007aff
@@ -116,6 +130,7 @@ rectangle "Dataset-Product" as DP #007aff
 rectangle "Dataset-Social" as DS #007aff
 rectangle "Portal-Base" as PB
 rectangle "Storage-Base" as SB
+BSP --|> SSD 
 C --|> SB
 C --|> PB
 C --|> DB
@@ -131,6 +146,7 @@ DE --|> DS
 SB --|> DB
 SB --|> PB
 PB --|> DB
+SSD --|> SB
 BSP ---|> C
 BSP ---|> SB
 @enduml
@@ -147,6 +163,7 @@ Because HEPTAconnect should bring data of different systems together, it has to 
 @startuml ../assets/plantuml/packageStructure/Portals
 !include ../../src/skin.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
+rectangle "Storage-ShopwareDal" as SSD
 rectangle "Core" as C
 rectangle "Dataset-Base" as DB
 rectangle "Dataset-Ecommerce" as DE
@@ -157,6 +174,7 @@ rectangle "Portal-Base" as PB
 rectangle "Portal-BusinessCentral" as PBC #007aff
 rectangle "Portal-ShopwarePlatform" as PSP #007aff
 rectangle "Storage-Base" as SB
+BSP --|> SSD 
 C --|> SB
 C --|> PB
 C --|> DB
@@ -176,6 +194,7 @@ PBC --|> PB
 PBC --|> DE
 PSP --|> PB
 PSP --|> DE
+SSD --|> SB
 BSP ---|> C
 BSP ---|> SB
 @enduml
@@ -192,6 +211,7 @@ The integration is the one package that holds it all together. It is a compositi
 @startuml ../assets/plantuml/packageStructure/ShopwarePlatformBusinessCentralIntegration
 !include ../../src/skin.puml
 rectangle "Bridge-ShopwarePlatform" as BSP
+rectangle "Storage-ShopwareDal" as SSD
 rectangle "Core" as C
 rectangle "Dataset-Base" as DB
 rectangle "Dataset-Ecommerce" as DE
@@ -203,6 +223,7 @@ rectangle "Portal-BusinessCentral" as PBC
 rectangle "Portal-ShopwarePlatform" as PSP
 rectangle "Storage-Base" as SB
 node "Shopware Plugin BC Integration" as SPBBC #007aff
+BSP --|> SSD 
 C --|> SB
 C --|> PB
 C --|> DB
@@ -222,6 +243,7 @@ PBC --|> PB
 PBC --|> DE
 PSP --|> PB
 PSP --|> DE
+SSD --|> SB
 BSP ---|> C
 BSP ---|> SB
 SPBBC --0 BSP
