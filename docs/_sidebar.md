@@ -16,6 +16,9 @@
     - [Core Development](/how-to/001-core-development.md)
     - [Dataset Development](/how-to/002-dataset-development.md)
     - [Portal Development](/how-to/003-portal-development.md)
+- Architecture decisions
+    - [Architecture decision records](/adr/2020-08-10-architecture-decision-records.md)
+    - [Parallelization locks](/adr/2020-08-28-parallelization-locks.md)
 - [FAQ](/faq.md)
 - [Contributing](/contributing.md)
     - [Contributor License Agreement](/cla.md)
