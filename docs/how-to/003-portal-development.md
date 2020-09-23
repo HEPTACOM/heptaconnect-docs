@@ -79,48 +79,29 @@ A receiver gets data from HEPTAconnect is to be told to communicate towards the 
 ```php
 class BottleReceiver extends ReceiverContract
 {
-    public function receive(
-        MappedDatasetEntityCollection $mappedDatasetEntities,
-        ReceiveContextInterface $context,
-        ReceiverStackInterface $stack
-    ): iterable {
-        // iterate through all entities with a mapping to be transferred
-        foreach ($mappedDatasetEntities as $mappedEntity) {
-            $mapping = $mappedEntity->getMapping();
-            // get the specific portal that is targeted
-            $portal = $context->getPortal($mapping);
-            
-            if (!$portal instanceof BottlesLocalPortal) {
-                // mark the mapping having an error
-                $context->markAsFailed($mapping, new InvalidPortalException());
-                continue;
-            }
-
-            /* @var Bottle $entity */
-            $entity = $mappedEntity->getEntity();
-            $id = $mapping->getExternalId() ?? Uuid::uuid4()->toString();
-
-            try {
-                // get portal specific API client to communicate the data from the contexts configuration
-                $portal->getApiClient($context->getConfig($mapping))
-                    ->upsert([
-                        'id' => $id,
-                        'cap' => $entity->getCap()->getType(),
-                        'volume' => $entity->getCapacity()->as(Liter::class),
-                    ]);
-            } catch (\Throwable $t) {
-                // mark the mapping having an error
-                $context->markAsFailed($mapping, $t);
-                continue;
-            }
-            
-            // mark the mapping as successfully transferred and yield the positive result 
-            $mapping->setExternalId($id);
-            yield $mapping;
+    /**
+     * @param Bottle $entity  
+     */
+    protected function run(
+        PortalContract $portal,
+        MappingInterface $mapping,
+        DatasetEntityInterface $entity,
+        ReceiveContextInterface $context
+    ): void {
+        if (!$portal instanceof BottlesLocalPortal) {
+            throw new UnexpectedPortalNodeException();
         }
 
-        // call any other bottle receiver in the chain
-        yield from $stack->next($mappedDatasetEntities, $context);
+        $id = $mapping->getExternalId() ?? Uuid::uuid4()->toString();
+        // get portal specific API client to communicate the data from the contexts configuration
+        $portal->getApiClient($context->getConfig($mapping))->upsert([
+            'id' => $id,
+            'cap' => $entity->getCap()->getType(),
+            'volume' => $entity->getCapacity()->as(Liter::class),
+        ]);
+        
+        // mark the mapping as successfully transferred 
+        $mapping->setExternalId($id);
     }
 
     public function supports(): array
@@ -136,42 +117,25 @@ As we just read how a receiver is reduced to the case of communication we can co
 ```php
 class BottleEmitter extends EmitterContract
 {
-    public function emit(
-        MappingCollection $mappings,
-        EmitContextInterface $context,
-        EmitterStackInterface $stack
-    ): iterable {
-        // iterate through all requested mappings to be processed
-        foreach ($mappings as $mapping) {
-            // get the specific portal that is targeted
-            $portal = $context->getPortal($mapping);
-            
-            if (!$portal instanceof BottlesLocalPortal) {
-                continue;
-            }
-
-            // get portal specific API client to communicate the data from the contexts configuration
-            $data = $portal->getApiClient($context->getConfig($mapping))
-                ->select($mapping->getExternalId());
-
-            if (\count($data) === 0) {
-                continue;
-            }           
-
-            // yield the read data and connect it to the mapping
-            yield new MappedDatasetEntityStruct(
-                $mapping,
-                (new Bottle())
-                    ->setCap(
-                        (new Cap())
-                            ->setName($data['cap'])
-                    )
-                    ->setCapacity(new Liter($data['volumne']))
-            );
+    protected function run(
+        PortalContract $portal,
+        MappingInterface $mapping,
+        EmitContextInterface $context
+    ): ?DatasetEntityInterface {        
+        if (!$portal instanceof BottlesLocalPortal) {
+            throw new UnexpectedPortalNodeException();
         }
 
-        // call any other bottle emitter in the chain
-        yield from $stack->next($mappings, $context);
+        // get portal specific API client to communicate the data from the contexts configuration
+        $data = $portal->getApiClient($context->getConfig($mapping))->select($mapping->getExternalId());
+
+        if (\count($data) === 0) {
+            return null;
+        }           
+
+        return (new Bottle())
+            ->setCap((new Cap())->setName($data['cap']))
+            ->setCapacity(new Liter($data['volume']));
     }
 
     public function supports(): array
