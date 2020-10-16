@@ -8,6 +8,7 @@
     - [Key-Value-Storage](/portal-development/006-key-value-storage.md)
     - [Cronjobs](/portal-development/007-cronjobs.md)
     - [Webhooks](/portal-development/008-webhooks.md)
+    - [Status reporters](/portal-development/009-status-reporting.md)
 - General Resources
     - [Nomenclature](/general-resources/001-nomenclature.md)
     - [Package Structure](/general-resources/002-package-structure.md)
@@ -19,6 +20,7 @@
 - Architecture decisions
     - [Architecture decision records](/adr/2020-08-10-architecture-decision-records.md)
     - [Parallelization locks](/adr/2020-08-28-parallelization-locks.md)
+    - [Portal status reporters](/adr/2020-10-15-portal-status-reporters.md)
 - [FAQ](/faq.md)
 - [Contributing](/contributing.md)
     - [Contributor License Agreement](/cla.md)

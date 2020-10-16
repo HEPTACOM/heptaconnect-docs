@@ -62,6 +62,13 @@ class BottlesLocalPortal extends PortalContract
         ]);
     }
 
+    public function getStatusReporters(): StatusReporterCollection
+    {
+        return new StatusReporterCollection([
+            new BottleHealthStatusReporter(),
+        ]);
+    }
+
     /**
      * This method is unique for this portal implementation.
      * It is not defined in the PortalContract.
@@ -142,6 +149,28 @@ class BottleEmitter extends EmitterContract
     {
         // tells HEPTAconnect to use this emitter for bottles only
         return [Bottle::class];
+    }
+}
+```
+
+## Expose status for administration
+
+As the portal node is about to get setup or is in usage an administrator needs to find out about its status regarding a correct configuration or the connectivity state of the underlying datasource. A status reporter is meant to get information about a certain topic. Every portal should expose a health status reporter and when a data source is used that depends on IO operations like file or network access.   
+
+```php
+class BottleHealthStatusReporter extends StatusReporterContract
+{
+    public function supportsTopic(): string
+    {
+        return self::TOPIC_HEALTH;
+    }
+
+    public function run(PortalContract $portal, StatusReportingContextInterface $context): array
+    {
+        return [
+            $this->supportsTopic() => true,
+            'bottleCount' => $portal->getApiClient($context->getConfig())->count(),
+        ];
     }
 }
 ```
