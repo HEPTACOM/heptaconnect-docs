@@ -11,14 +11,14 @@ A good state can differ from the point of perspective. A configuration might be 
 * A portal and the portal extension have to be able to provide new status topics and have impact on the contents they report
 * Every reporter has to expose JSON serializable content for easy automation access
 * Every reporter should expose a boolean value keyed with the topics' key to determine whether the report displays a good state
-* Every portal should expose a status reporter for topic `healthy` when the portal interacts with a datasource connected via IO operations to determine correct configuration and connectivity 
+* Every portal should expose a status reporter for topic `health` when the portal interacts with a datasource connected via IO operations to determine correct configuration and connectivity 
 * Portal extensions have to prefix their own keys they expose with a reasonable 
 * Every topic should be accessible on their own
 * A status report should act fast and use as little IO operations as possible to allow frequent health checks
 * A status report should be promoted for the following use cases:
     * static information that are not part of the providing composer package
     * health check of the datasource connection
-    * portal internal behaviour analysis (last time usage, remained API called by time limitations)
+    * portal internal behaviour analysis (last time usage, remaining API calls by time limitations)
     * configuration support
 
 ## Consequences
