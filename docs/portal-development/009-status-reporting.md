@@ -7,8 +7,9 @@
 | Removed     | -     |
 | Replacement | -     |
 
-Status reporting provide JSON serializable data so it can be processed easily for many services. It is divided into multiple topics. There are four core topics to define a common set that probably every portal needs:
-* **health** Provide hints about IO connectivity
+Status reporting provides JSON serializable data, so it can be processed easily by many services. It is divided into multiple topics. There are four core topics to define a common set that probably every portal needs:
+
+* **health** Provide hints about I/O connectivity
 * **config** Provide hints about configuration choices
 * **analysis** Provide hints about usage statistics
 * **info** Provide static data that does not fit into a composer package structure
@@ -17,9 +18,9 @@ Any portal and portal extension provides status reporters for any topic they wan
 
 ## Intention
 
-Status reporters are intended for the usage of the four core reportings. It is fine to add new topics but some tooling might not support it out of the box.
+Status reporters are intended for the usage of the four core reportings. It is fine to add new topics, but some tooling might not support it out of the box.
 
-This way a portal can communicate how to configure a portal node in a multistep configuration setup or inform about the health status of the connected datasource for monitoring in every day usage. 
+This way a portal can communicate how to configure a portal node in a multi-step configuration setup or inform about the health status of the connected datasource for monitoring in everyday usage.
 
 ## Usage
 

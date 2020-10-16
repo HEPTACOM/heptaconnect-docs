@@ -155,7 +155,7 @@ class BottleEmitter extends EmitterContract
 
 ## Expose status for administration
 
-As the portal node is about to get setup or is in usage an administrator needs to find out about its status regarding a correct configuration or the connectivity state of the underlying datasource. A status reporter is meant to get information about a certain topic. Every portal should expose a health status reporter and when a data source is used that depends on IO operations like file or network access.   
+As the portal node is about to get setup or is in usage an administrator needs to find out about its status regarding a correct configuration or the connectivity state of the underlying datasource. A status reporter is meant to get information about a certain topic. Every portal should expose a health status reporter and when a data source is used that depends on I/O operations like file or network access.   
 
 ```php
 class BottleHealthStatusReporter extends StatusReporterContract
