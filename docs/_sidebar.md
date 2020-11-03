@@ -21,6 +21,7 @@
     - [Architecture decision records](/adr/2020-08-10-architecture-decision-records.md)
     - [Parallelization locks](/adr/2020-08-28-parallelization-locks.md)
     - [Portal status reporters](/adr/2020-10-15-portal-status-reporters.md)
+    - [Job messages and payloads](/adr/2020-10-30-job-messages-and-payloads.md)
 - [FAQ](/faq.md)
 - [Contributing](/contributing.md)
     - [Contributor License Agreement](/cla.md)
