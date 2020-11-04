@@ -39,3 +39,5 @@ A good state can differ from the point of perspective. A configuration might be 
 
 A command like `heptaconnect:portal-node:status PortalNode:123 health | jq -e .health` as a simple health check condition can be setup as crontab entry.
 An other example is `heptaconnect:portal-node:status PortalNode:123 config` to display possible values for further configuration. 
+
+Regarding the usage of behaviour analysis it is suggested to compare the intended functionality to be achieved is compared against the [telemetry feature](./2020-01-27-telemetry-recording.md) as this allows a very specific way to deal with behaviour analysis. 
