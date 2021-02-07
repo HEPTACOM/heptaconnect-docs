@@ -24,10 +24,10 @@ definitions:
                 name: Commit docs
                 script:
                     - apk add --no-cache git openssh-client
+                    - mv .gh-pages-gitignore .gitignore
                     - git stash
                     - git checkout -b gh-pages
                     - git stash apply
-                    - mv .gh-pages-gitignore .gitignore
                     - git add --all
                     - test $(git diff --name-only --cached | wc -l) -eq 0 || git commit -m "Build gh-pages"
                     - git push --force origin gh-pages
