@@ -16,6 +16,7 @@ all: build
 .PHONY: build
 build: node_modules
 	$(NPM) run prod
+	$(NPM) run rss
 
 node_modules:
 	$(NPM) ci
