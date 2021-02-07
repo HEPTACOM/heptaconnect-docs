@@ -23,3 +23,10 @@ If two portals don't share a common supported data set, they are incompatible by
 ## Is it scalable?
 
 The backbone of HEPTAconnect is a message queue. This means for any object that is transfered there is a job waiting to be executed by a worker process. Our tests show a linear scalability when adding more worker processes. Essentially it depends on the number of CPU cores you throw at it. So yes, HEPTAconnect scales really well.
+
+## Where can I sign up?
+
+Drop us a mail to [info@heptacom.de](mailto:info@heptacom.de) and ask your questions or choose one of the following news feed formats:
+* [RSS](feed/rss2.xml)
+* [Atom](feed/atom1.xml)
+* [JSON](feed/json1.json)

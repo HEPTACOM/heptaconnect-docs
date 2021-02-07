@@ -18,3 +18,7 @@ Yes, every dataset provider can provide new dataset entities that can be managed
 
 Yes, every connectable structure has a field for additional data that any service can read and change to their needs.
 This allows changes for systems that do not follow the given standard from a dataset.
+
+## Do you have a news format?
+
+Yes, we have an RSS feed format in the schemas [RSS](feed/rss2.xml), [Atom](feed/atom1.xml) and [JSON](feed/json1.json) that supply useful hints about our development and further changes regarding the whole project.
