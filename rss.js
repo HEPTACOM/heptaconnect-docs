@@ -40,7 +40,7 @@ const rss = new Feed({
 
 let posts = [];
 
-for (const file of list_files('docs/feed').sort((a, b) => a.localeCompare(b))) {
+for (const file of list_files('docs/feed').filter(a => a.endsWith('.md')).sort((a, b) => a.localeCompare(b))) {
     const content = fs.readFileSync(file, { encoding: 'utf8', flag: 'r' });
     const [ md, metadata ] = content.split('---', 2).reverse();
     const parsedMd = new MarkdownIt().render(md);
