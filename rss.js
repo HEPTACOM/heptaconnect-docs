@@ -64,13 +64,16 @@ for (const post of posts) {
 
     rss.addItem({
         title: post.title,
-        id: 'https://connect.heptacom.de/#/' + post.file,
+        id: post.file,
         link: 'https://connect.heptacom.de/#/' + post.file,
         description: post.summary,
         content: post.content,
         date: new Date(post.date)
     });
 }
+
+const listing = rss.items.map(a => `* [${a.title}](${a.id})`);
+fs.writeFileSync('docs/feed/index.md', '# HEPTAconnect Feed\n\n' + listing.join('\n') + '\n');
 
 fs.writeFileSync('docs/feed/atom1.xml', rss.atom1());
 fs.writeFileSync('docs/feed/rss2.xml', rss.rss2());
