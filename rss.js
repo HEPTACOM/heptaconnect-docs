@@ -68,7 +68,8 @@ for (const post of posts) {
         link: 'https://connect.heptacom.de/#/' + post.file,
         description: post.summary,
         content: post.content,
-        date: new Date(post.date)
+        date: new Date(post.date),
+        author: [{ name: post.author }]
     });
 }
 
