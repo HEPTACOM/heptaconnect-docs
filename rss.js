@@ -40,7 +40,7 @@ const rss = new Feed({
 
 let posts = [];
 
-for (const file of list_files('docs/feed').filter(a => a.endsWith('.md')).sort((a, b) => a.localeCompare(b))) {
+for (const file of list_files('feed').filter(a => a.endsWith('.md')).sort((a, b) => a.localeCompare(b))) {
     const content = fs.readFileSync(file, { encoding: 'utf8', flag: 'r' });
     const [ md, metadata ] = content.split('---', 2).reverse();
     const parsedMd = new MarkdownIt().render(md);
@@ -49,6 +49,7 @@ for (const file of list_files('docs/feed').filter(a => a.endsWith('.md')).sort((
     posts.push({
         ...parsedMetadata,
         content: parsedMd,
+        markdown: md,
         file
     });
 }
@@ -56,7 +57,11 @@ for (const file of list_files('docs/feed').filter(a => a.endsWith('.md')).sort((
 posts = posts.filter(a => a.date);
 posts.sort((a, b) => a.date.localeCompare(b.date))
 
+fs.mkdirSync('docs/feed', { recursive: true });
+
 for (const post of posts) {
+    fs.writeFileSync('docs/' + post.file, post.markdown.trim());
+
     rss.addItem({
         title: post.title,
         id: 'https://connect.heptacom.de/#/' + post.file,
@@ -64,7 +69,7 @@ for (const post of posts) {
         description: post.summary,
         content: post.content,
         date: new Date(post.date)
-    })
+    });
 }
 
 fs.writeFileSync('docs/feed/atom1.xml', rss.atom1());
