@@ -21,4 +21,4 @@ This allows changes for systems that do not follow the given standard from a dat
 
 ## Do you have a news format?
 
-Yes, we have an RSS feed format in the schemas [RSS](/feed/rss2.xml ':ignore'), [Atom](/feed/atom1.xml ':ignore') and [JSON](/feed/json1.json ':ignore') that supply useful hints about our development and further changes regarding the whole project.
+Yes, we have an RSS feed format in the schemas [RSS](feed/rss2.xml ':ignore'), [Atom](feed/atom1.xml ':ignore') and [JSON](feed/json1.json ':ignore') that supply useful hints about our development and further changes regarding the whole project.

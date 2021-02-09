@@ -23,14 +23,15 @@ const list_files = function(dirPath, result = undefined) {
     return result;
 }
 
+const domain = fs.readFileSync('docs/CNAME', { encoding: 'utf8', flag: 'r' }).trim();
 const rss = new Feed({
     title: 'HEPTAconnect feed',
     description: 'A newsfeed regarding changes in HEPTAconnect that are worthwhile a note',
-    id: 'https://connect.heptacom.de/',
-    link: 'https://connect.heptacom.de/',
+    id: `https://${domain}/`,
+    link: `https://${domain}/`,
     language: 'en',
-    image: 'https://connect.heptacom.de/assets/logo.png',
-    favicon: 'https://connect.heptacom.de/assets/img/favicon/favicon-32x32.png',
+    image: `https://${domain}/assets/logo.png`,
+    favicon: `https://${domain}/assets/img/favicon/favicon-32x32.png`,
     copyright: 'HEPTACOM GmbH',
     author: {
         name: 'HEPTACOM GmbH',
@@ -65,7 +66,7 @@ for (const post of posts) {
     rss.addItem({
         title: post.title,
         id: post.file,
-        link: 'https://connect.heptacom.de/#/' + post.file,
+        link: `https://${domain}/#/${post.file}`,
         description: post.summary,
         content: post.content,
         date: new Date(post.date),
@@ -73,7 +74,7 @@ for (const post of posts) {
     });
 }
 
-const listing = rss.items.map(a => `* [${a.title}](${a.id})`);
+const listing = rss.items.map(a => `* [${a.title}](${a.id.substr('feed/'.length)})`);
 fs.writeFileSync('docs/feed/index.md', '# HEPTAconnect Feed\n\n' + listing.join('\n') + '\n');
 
 fs.writeFileSync('docs/feed/atom1.xml', rss.atom1());

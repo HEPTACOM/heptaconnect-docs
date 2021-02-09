@@ -27,6 +27,6 @@ The backbone of HEPTAconnect is a message queue. This means for any object that 
 ## Where can I sign up?
 
 Drop us a mail to [info@heptacom.de](mailto:info@heptacom.de) and ask your questions or choose one of the following news feed formats:
-* [RSS](/feed/rss2.xml ':ignore')
-* [Atom](/feed/atom1.xml ':ignore')
-* [JSON](/feed/json1.json ':ignore')
+* [RSS](feed/rss2.xml ':ignore')
+* [Atom](feed/atom1.xml ':ignore')
+* [JSON](feed/json1.json ':ignore')
