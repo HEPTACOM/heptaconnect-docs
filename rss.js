@@ -61,7 +61,7 @@ posts.sort((a, b) => a.date.localeCompare(b.date))
 fs.mkdirSync('docs/feed', { recursive: true });
 
 for (const post of posts) {
-    fs.writeFileSync('docs/' + post.file, '#' + post.title + '\n\n' + post.markdown.trim());
+    fs.writeFileSync('docs/' + post.file, '# ' + post.title + '\n\n' + post.markdown.trim());
 
     rss.addItem({
         title: post.title,
