@@ -226,32 +226,35 @@ class BottleWithContentEmitter extends EmitterContract
         EmitContextInterface $context,
         EmitterStackInterface $stack
     ): iterable {
-        // iterate through all requested mappings to be processed
-        foreach ($stack->next($mappings, $context) as $mappedEntity) {
-            // get the specific portal that is targeted
-            $portal = $context->getPortal($mappedEntity->getMapping());
-            
-            if (!$portal instanceof BottlesLocalPortal) {
-                continue;
-            }
-
-            // get portal specific API client to communicate the extra data from the contexts configuration
-            $data = $portal->getApiClient($context->getConfig($mappedEntity->getMapping()))
-                ->selectContentData($mappedEntity-getMapping()->getExternalId());
-
-            if (\count($data) > 0) {
-                // assign extra data to the already emitted entity
-                $content = (new BottleContent())
-                    ->setContent(
-                        (new Volume)
-                            ->setContent($data['content'])
-                            ->setUnit(Volume::UNIT_LITER)
-                    );
-                $mappedEntity->getDatasetEntity()->attach($content);
-            }
-
-            yield $mappedEntity;
+        return $this->emitNextToExtend($stack, $mappings, $context);
+    }
+    
+    protected function runToExtend(
+        PortalContract $portal,
+        MappingInterface $mapping,
+        DatasetEntityContract $entity,
+        EmitContextInterface $context
+    ) : ?DatasetEntityContract {
+        if (!$portal instanceof BottlesLocalPortal) {
+            return $entity;
         }
+
+        // get portal specific API client to communicate the extra data from the contexts configuration
+        $data = $portal->getApiClient($context->getConfig($mapping))
+            ->selectContentData($mapping->getExternalId());
+
+        if (\count($data) > 0) {
+            // assign extra data to the already emitted entity
+            $content = (new BottleContent())
+                ->setContent(
+                    (new Volume)
+                        ->setContent($data['content'])
+                        ->setUnit(Volume::UNIT_LITER)
+                );
+            $entity->attach($content);
+        }
+
+        return $entity;
     }
 
     public function supports(): array

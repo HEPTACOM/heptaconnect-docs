@@ -10,6 +10,7 @@
     - [Webhooks](/portal-development/008-webhooks.md)
     - [Status reporters](/portal-development/009-status-reporting.md)
     - [Explorer decoration](/portal-development/011-explorer-decoration.md)
+    - [Emitter decoration](/portal-development/012-emitter-decoration.md)
 - General Resources
     - [Nomenclature](/general-resources/001-nomenclature.md)
     - [Package Structure](/general-resources/002-package-structure.md)
