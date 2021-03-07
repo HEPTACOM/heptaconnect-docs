@@ -41,14 +41,11 @@ public function receive(
  * @param Bottle $entity  
  */
 protected function run(
-    PortalContract $portal,
     MappingInterface $mapping,
     DatasetEntityInterface $entity,
     ReceiveContextInterface $context
 ): void {
-    if (!$portal instanceof BottlesLocalPortal) {
-        throw new UnexpectedPortalNodeException();
-    }
+    $portal = $context->getContainer()->get('portal');
 
     if ($entity->getPrimaryKey() === null) {
         return;

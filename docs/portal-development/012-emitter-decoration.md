@@ -26,14 +26,10 @@ To prevent duplicate emission you can add a check whether this is the right enti
 
 ```php
 protected function run(
-    PortalContract $portal,
     MappingInterface $mapping,
     EmitContextInterface $context
-): ?DatasetEntityInterface {        
-    if (!$portal instanceof BottlePortal) {
-        throw new UnexpectedPortalNodeException();
-    }
-    
+): ?DatasetEntityInterface {
+    $portal = $context->getContainer()->get('portal');
     // get portal specific API client to communicate the data from the contexts configuration
     $credentials = $context->getConfig($mapping)['credentials'];
     $client = $portal->getClient($credentials);
@@ -77,15 +73,11 @@ In the following example we add additives we only allow bottles that contain caf
 
 ```php
 protected function runToExtend(
-    PortalContract $portal,
     MappingInterface $mapping,
     DatasetEntityContract $entity,
     EmitContextInterface $context
 ): ?DatasetEntityContract {
-    if (!$portal instanceof BottlePortal) {
-        throw new UnexpectedPortalNodeException();
-    }
-    
+    $portal = $context->getContainer()->get('portal');
     $credentials = $context->getConfig($mapping)['credentials'];
     $client = $portal->getClient($credentials);
     

@@ -90,15 +90,11 @@ class BottleReceiver extends ReceiverContract
      * @param Bottle $entity  
      */
     protected function run(
-        PortalContract $portal,
         MappingInterface $mapping,
         DatasetEntityInterface $entity,
         ReceiveContextInterface $context
     ): void {
-        if (!$portal instanceof BottlesLocalPortal) {
-            throw new UnexpectedPortalNodeException();
-        }
-
+        $portal = $context->getContainer()->get('portal');
         $id = $mapping->getExternalId() ?? Uuid::uuid4()->toString();
         // get portal specific API client to communicate the data from the contexts configuration
         $portal->getApiClient($context->getConfig($mapping))->upsert([
@@ -124,15 +120,9 @@ As we just read how a receiver is reduced to the case of communication we can co
 ```php
 class BottleEmitter extends EmitterContract
 {
-    protected function run(
-        PortalContract $portal,
-        MappingInterface $mapping,
-        EmitContextInterface $context
-    ): ?DatasetEntityInterface {        
-        if (!$portal instanceof BottlesLocalPortal) {
-            throw new UnexpectedPortalNodeException();
-        }
-
+    protected function run(MappingInterface $mapping, EmitContextInterface $context): ?DatasetEntityInterface
+    {        
+        $portal = $context->getContainer()->get('portal');
         // get portal specific API client to communicate the data from the contexts configuration
         $data = $portal->getApiClient($context->getConfig($mapping))->select($mapping->getExternalId());
 
@@ -165,8 +155,10 @@ class BottleHealthStatusReporter extends StatusReporterContract
         return self::TOPIC_HEALTH;
     }
 
-    public function run(PortalContract $portal, StatusReportingContextInterface $context): array
+    public function run(StatusReportingContextInterface $context): array
     {
+        $portal = $context->getContainer()->get('portal');
+
         return [
             $this->supportsTopic() => true,
             'bottleCount' => $portal->getApiClient($context->getConfig())->count(),
@@ -230,15 +222,11 @@ class BottleWithContentEmitter extends EmitterContract
     }
     
     protected function runToExtend(
-        PortalContract $portal,
         MappingInterface $mapping,
         DatasetEntityContract $entity,
         EmitContextInterface $context
     ) : ?DatasetEntityContract {
-        if (!$portal instanceof BottlesLocalPortal) {
-            return $entity;
-        }
-
+        $portal = $context->getContainer()->get('portal');
         // get portal specific API client to communicate the extra data from the contexts configuration
         $data = $portal->getApiClient($context->getConfig($mapping))
             ->selectContentData($mapping->getExternalId());

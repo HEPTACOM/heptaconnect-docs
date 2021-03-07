@@ -38,11 +38,9 @@ class HealthStatusReporter extends StatusReporterContract
         return self::TOPIC_HEALTH;
     }
 
-    /**
-     * @param Portal $portal
-     */
-    protected function run(PortalContract $portal, StatusReportingContextInterface $context): array
+    protected function run(StatusReportingContextInterface $context): array
     {
+        $portal = $context->getContainer()->get('portal');
         $result = [$this->supportsTopic() => true];
 
         try {
@@ -71,11 +69,9 @@ class ConfigurationStatusReporter extends StatusReporterContract
         return self::TOPIC_CONFIG;
     }
 
-    /**
-     * @param Portal $portal
-     */
-    protected function run(PortalContract $portal, StatusReportingContextInterface $context): array
+    protected function run(StatusReportingContextInterface $context): array
     {
+        $portal = $context->getContainer()->get('portal');
         $result = [$this->supportsTopic() => true];
 
         try {
@@ -105,11 +101,10 @@ class AnalysisStatusReporter extends StatusReporterContract
         return self::TOPIC_ANALYSIS;
     }
 
-    /**
-     * @param Portal $portal
-     */
-    protected function run(PortalContract $portal, StatusReportingContextInterface $context): array
+    protected function run(StatusReportingContextInterface $context): array
     {
+        $portal = $context->getContainer()->get('portal');
+
         return [
             $this->supportsTopic() => true,
             'lastClientUsageTimestamp' => $context->getStorage()->get('apiClientLastUsage'),
@@ -132,11 +127,10 @@ class InformationStatusReporter extends StatusReporterContract
         return self::TOPIC_INFO;
     }
 
-    /**
-     * @param Portal $portal
-     */
-    protected function run(PortalContract $portal, StatusReportingContextInterface $context): array
+    protected function run(StatusReportingContextInterface $context): array
     {
+        $portal = $context->getContainer()->get('portal');
+
         return [
             $this->supportsTopic() => true,
             'demo' => [

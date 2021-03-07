@@ -27,14 +27,9 @@ public function supports(): string
 The `run` method is used to iterate over objects in your data source and return them as data set entities. It is crucial to set the primary key of these entities. Everything else will be ignored.
 
 ```php
-protected function run(
-    PortalContract $portal,
-    ExploreContextInterface $context
-): iterable {
-    if (!$portal instanceof BottlePortal) {
-        throw new UnexpectedPortalNodeException();
-    }
-    
+protected function run(ExploreContextInterface $context): iterable
+{
+    $portal = $context->getPortal();
     $credentials = $context->getConfig()['credentials'];
     $client = $portal->getClient($credentials);
     

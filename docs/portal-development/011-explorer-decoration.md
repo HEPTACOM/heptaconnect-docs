@@ -23,14 +23,9 @@ A portal extension must include each of its explorer decorators in the result of
 Implementing `run` in an explorer decorator like this will add further elements to the exploration process.
 
 ```php
-protected function run(
-    PortalContract $portal,
-    ExploreContextInterface $context
-): iterable {
-    if (!$portal instanceof BottlePortal) {
-        throw new UnexpectedPortalNodeException();
-    }
-    
+protected function run(ExploreContextInterface $context): iterable
+{
+    $portal = $context->getPortal();
     $credentials = $context->getConfig()['credentials'];
     $client = $portal->getClient($credentials);
     
@@ -63,15 +58,9 @@ As long as the `exploreNextIfAllowed` method is used the `isAllowed` method is i
 In the following example we only allow bottles that contain caffeinated beverages.
 
 ```php
-protected function isAllowed(
-    DatasetEntityContract $entity,
-    PortalContract $portal,
-    ExploreContextInterface $context
-): bool {
-    if (!$portal instanceof BottlePortal) {
-        throw new UnexpectedPortalNodeException();
-    }
-    
+protected function isAllowed(DatasetEntityContract $entity, ExploreContextInterface $context): bool
+{
+    $portal = $context->getPortal();
     $credentials = $context->getConfig()['credentials'];
     $client = $portal->getClient($credentials);
     
