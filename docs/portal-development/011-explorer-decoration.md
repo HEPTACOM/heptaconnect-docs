@@ -50,7 +50,7 @@ For a scenario to skip elements that should not be discovered anymore by the ext
 ```php
 public function explore(ExploreContextInterface $context, ExplorerStackInterface $stack): iterable
 {
-    return $this->exploreNextIfAllowed($stack, $context);
+    return $this->exploreNextIfAllowed($context, $stack);
 }
 ```
 
