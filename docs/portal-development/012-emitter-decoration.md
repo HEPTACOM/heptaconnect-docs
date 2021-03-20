@@ -55,24 +55,11 @@ In the example above we call `$portal->getClient(...)`, which is not part of the
 The emitter will then check if this is an other bottle that has been explored by the explorer decorator first and load it.
 Otherwise skip it by returning `null`.
 
-For a scenario to add further data to already emitted elements by the extended portal you have to implement `emit` and `runToExtend`.
-`emit` has to be adjusted to not execute the default `run` method but the `runToExtend` instead.
-
-```php
-public function emit(
-    MappingCollection $mappings,
-    EmitContextInterface $context,
-    EmitterStackInterface $stack
-): iterable {
-    return $this->emitNextToExtend($stack, $mappings, $context);
-}
-```
-
-As long as the `emitNextToExtend` method is used the `runToExtend` method is invoked for each entry the decorated emitter yields to allow further data assignments.
+For a scenario to add further data to already emitted elements by the extended portal you have to implement `extend` instead of `run`.
 In the following example we add additives we only allow bottles that contain caffeinated beverages.
 
 ```php
-protected function runToExtend(
+protected function extend(
     MappingInterface $mapping,
     DatasetEntityContract $entity,
     EmitContextInterface $context

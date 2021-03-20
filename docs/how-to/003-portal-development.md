@@ -213,15 +213,7 @@ The emitter decorator will be injected into the call chain and can now alter the
 ```php
 class BottleWithContentEmitter extends EmitterContract
 {
-    public function emit(
-        MappingCollection $mappings,
-        EmitContextInterface $context,
-        EmitterStackInterface $stack
-    ): iterable {
-        return $this->emitNextToExtend($stack, $mappings, $context);
-    }
-    
-    protected function runToExtend(
+    protected function extend(
         MappingInterface $mapping,
         DatasetEntityContract $entity,
         EmitContextInterface $context
