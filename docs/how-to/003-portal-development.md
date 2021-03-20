@@ -107,10 +107,10 @@ class BottleReceiver extends ReceiverContract
         $mapping->setExternalId($id);
     }
 
-    public function supports(): array
+    public function supports(): string
     {
-        // tells HEPTAconnect to use this receiver for bottles only
-        return [Bottle::class];
+        // tells HEPTAconnect to use this receiver for bottles
+        return Bottle::class;
     }
 }
 ``` 
@@ -135,10 +135,10 @@ class BottleEmitter extends EmitterContract
             ->setCapacity(new Liter($data['volume']));
     }
 
-    public function supports(): array
+    public function supports(): string
     {
-        // tells HEPTAconnect to use this emitter for bottles only
-        return [Bottle::class];
+        // tells HEPTAconnect to use this emitter for bottles
+        return Bottle::class;
     }
 }
 ```
@@ -245,10 +245,10 @@ class BottleWithContentEmitter extends EmitterContract
         return $entity;
     }
 
-    public function supports(): array
+    public function supports(): string
     {
-        // tells HEPTAconnect to use this emitter for bottles only
-        return [Bottle::class];
+        // tells HEPTAconnect to use this emitter for bottles
+        return Bottle::class;
     }
 }
 ```
