@@ -16,6 +16,7 @@
     - [Nomenclature](/general-resources/001-nomenclature.md)
     - [Package Structure](/general-resources/002-package-structure.md)
     - [Mapping](/general-resources/003-mapping.md)
+    - [Data flow](/general-resources/004-data-flow.md)
 - How To
     - [Core Development](/how-to/001-core-development.md)
     - [Dataset Development](/how-to/002-dataset-development.md)

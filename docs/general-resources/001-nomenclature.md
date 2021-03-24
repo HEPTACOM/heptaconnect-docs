@@ -14,9 +14,17 @@ A `Portal` is not the connection to an endpoint but the implementation of an end
 
 The `PortalRegistry` is provided by HEPTAconnect and can be used as a factory for `PortalNodes`. When a component has an identifier of a `PortalNode` and needs the corresponding instance to interact with it, this service should be used to retrieve the instance.
 
+### Explorer
+
+An `Explorer` reads ids from the source and publishes them for emission. This is suitable for initial object discovery in the data source and successive data transfer via emissions.
+
 ### Emitter
 
 An `Emitter` reads data from the endpoint or data storage of a `PortalNode`, prepares the data in a structured form and then emits these structs. When it is asked to read data, a collection of `Mappings` is passed to its `emit` method. It is the `Emitters` job to connect to its data source and read the data (identified by the passed `Mappings`). The data should then be structured as a collection of `MappedDatasetEntityStructs` and returned or yielded.
+
+### Direct Emitter
+
+An `Explorer` that does the work like an `Emitter` as it reads and yields complete objects instead of ids from the source and release them for emission. This is suitable for faster object transfer or transfer that is triggered only by the source portal.
 
 ### Receiver
 
