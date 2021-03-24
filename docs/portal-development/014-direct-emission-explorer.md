@@ -14,7 +14,7 @@ To solve this we allow explorers to emit as well.
 
 ## Intention
 
-Beside the intentions of a regular [explorer](./002-explorer.md) this can be used for rather static data or difficult/unefficient to access data sources as this is also allowed to do an [emission](../general-resources/004-data-flow.md).
+Beside the intentions of a regular [explorer](./002-explorer.md) this can be used for rather static data or difficult/inefficient to access data sources as this is also allowed to do an [emission](../general-resources/004-data-flow.md).
 
 ## Usage
 

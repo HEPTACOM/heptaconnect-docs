@@ -21,7 +21,7 @@ Portal extension are able to interact with the same APIs like their supported po
 ### Pros
 
 * Portal developers can decide what is allowed to be changed
-* Portal and portal extension developers can use the commonly known container way of publishing services within an applicatioin
+* Portal and portal extension developers can use the commonly known container way of publishing services within an application
 
 
 ### Cons
