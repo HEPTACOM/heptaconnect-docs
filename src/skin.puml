@@ -2,24 +2,30 @@
 
 skinparam shadowing false
 
-skinparam RectangleBackgroundColor #3c3c3c
-skinparam RectangleBorderColor #3c3c3c
-skinparam RectangleFontColor white
-skinparam RectangleFontName Arial
-skinparam RectangleFontStyle bold
+!$fontFamily = "Arial"
+!$fontStyle = "bold"
+!$colorGray = "#3c3c3c"
+!$colorLightGray = "#5f5e5e"
+!$colorLight = "white"
 
-skinparam NodeBackgroundColor #5f5e5e
-skinparam NodeBorderColor #3c3c3c
-skinparam NodeFontColor white
-skinparam NodeFontName Arial
-skinparam NodeFontStyle bold
+skinparam RectangleBackgroundColor $colorGray
+skinparam RectangleBorderColor $colorGray
+skinparam RectangleFontColor $colorLight
+skinparam RectangleFontName $fontFamily
+skinparam RectangleFontStyle $fontStyle
 
-skinparam FolderBorderColor #3c3c3c
-skinparam FolderFontColor #3c3c3c
-skinparam FolderFontName Arial
-skinparam FolderFontStyle bold
+skinparam NodeBackgroundColor $colorLightGray
+skinparam NodeBorderColor $colorGray
+skinparam NodeFontColor $colorLight
+skinparam NodeFontName $fontFamily
+skinparam NodeFontStyle $fontStyle
 
-skinparam ArrowColor #3c3c3c
+skinparam FolderBorderColor $colorGray
+skinparam FolderFontColor $colorGray
+skinparam FolderFontName $fontFamily
+skinparam FolderFontStyle $fontStyle
+
+skinparam ArrowColor $colorGray
 skinparam ArrowThickness 2
 
 @enduml
