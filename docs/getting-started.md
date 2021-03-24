@@ -30,7 +30,7 @@ The SDK is similar to the playground as it also comes with a minimal Shopware 6 
 You can install the SDK in a directory of your choice. Upon installation it will create a symlink to the `heptaconnect-sdk` binary file in a directory of your `PATH` environment variable, so you can access it from anywhere in your terminal using `heptaconnect-sdk`. Start the installation like so.
 
 ```sh
-composer create-project heptacom/heptaconnect-sdk:dev-master heptaconnect-sdk
+composer create-project heptacom/heptaconnect-sdk:dev-master
 ```
 
 If you are using Composer 2.x, the installation wizard should start immediately. If you are using Composer 1.x, it will ask you to execute the wizard manually using this command.
