@@ -40,7 +40,7 @@ P2 <<- HC: Store data in portal 2
 
 This is a condensed form of the three-step as the first two steps are merged into one.
 A very useful pattern for sources that do not differ between gathering selecting primary keys and their corresponding data on it.
-For this flow you only need to implement [explorers](../portal-development/002-explorer.md) and [receivers](../portal-development/004-receiver.md).
+For this flow you only need to implement [explorers](../portal-development/002-explorer.md) as [direct emission explorers](../portal-development/014-direct-emission-explorer.md) and [receivers](../portal-development/004-receiver.md).
 To ensure other flows like the next one you still have to provide an [emitter](../portal-development/003-emitter.md) which can be omitted otherwise.
 
 <!--
