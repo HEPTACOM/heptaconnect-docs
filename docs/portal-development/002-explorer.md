@@ -13,7 +13,7 @@ Publishing a primary key means to check whether a mapping for it already exists 
 
 ## Intention
 
-An explorer is primarily used after a new portal node has been created.
+An explorer is a flow component that is primarily used after a new portal node has been created.
 At this moment there are no mappings in HEPTAconnect (for that portal node) but objects are already present in the data source.
 To get all these objects into the system, an explorer iterates over all of their identifiers and publishes them.
 

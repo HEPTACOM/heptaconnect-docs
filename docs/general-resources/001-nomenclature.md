@@ -2,17 +2,7 @@
 
 There are several types of classes or entities referenced throughout this documentation. To have a uniform understanding of their meanings they are listed here with a short definition and explanation.
 
-## Portal
-
-A `Portal` is the implementation of an endpoint to connect it via HEPTAconnect. When you want to provide connectivity for an external API or some other form of data storage, you implement a portal. So a portal is just a name for the composition of code (e.g. a composer package) that is necessary for HEPTAconnect to communicate with an endpoint.
-
-### PortalNode
-
-A `Portal` is not the connection to an endpoint but the implementation of an endpoint. A `Portal` can then be configured with customizable fields. These fields may hold information like API-URLs, user credentials, file locations and so on. A configured `Portal` that is ready to communicate to an endpoint or data storage is called a `PortalNode`. A single `Portal` can potentially be used for many `PortalNodes`.
-
-### PortalRegistry
-
-The `PortalRegistry` is provided by HEPTAconnect and can be used as a factory for `PortalNodes`. When a component has an identifier of a `PortalNode` and needs the corresponding instance to interact with it, this service should be used to retrieve the instance.
+## Flow components
 
 ### Explorer
 
@@ -29,6 +19,18 @@ An `Explorer` that does the work like an `Emitter` as it reads and yields comple
 ### Receiver
 
 A `Receiver` receives a collection of `DatasetEntities` and writes the data to the endpoint or data storage of a `PortalNode`.  When it is asked to write data, it traverses over the given collection, writes the data and retrieves an external identifier from the endpoint of the `PortalNode`. This identifier is then set in the given mapping and the collection of mappings is returned or yielded.
+
+## Portal
+
+A `Portal` is the implementation of an endpoint to connect it via HEPTAconnect. When you want to provide connectivity for an external API or some other form of data storage, you implement a portal. So a portal is just a name for the composition of code (e.g. a composer package) that is necessary for HEPTAconnect to communicate with an endpoint.
+
+### PortalNode
+
+A `Portal` is not the connection to an endpoint but the implementation of an endpoint. A `Portal` can then be configured with customizable fields. These fields may hold information like API-URLs, user credentials, file locations and so on. A configured `Portal` that is ready to communicate to an endpoint or data storage is called a `PortalNode`. A single `Portal` can potentially be used for many `PortalNodes`.
+
+### PortalRegistry
+
+The `PortalRegistry` is provided by HEPTAconnect and can be used as a factory for `PortalNodes`. When a component has an identifier of a `PortalNode` and needs the corresponding instance to interact with it, this service should be used to retrieve the instance.
 
 ### Bridge
 
