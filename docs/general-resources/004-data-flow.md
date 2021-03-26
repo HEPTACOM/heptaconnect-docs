@@ -5,14 +5,14 @@ The main steps are exploration, emission and reception.
 The exploration can be triggered from different places and will follow in emissions and receptions when the data routes exists. 
 In the following paragraphs you will see what kind of data flows can occur:
 
-## Three-set
+## Basic flow
 
-The basic three-set of the previous mentioned steps exploration, emission and reception in their most common form.
+The basic flow of the previous mentioned steps exploration, emission and reception in their most common form.
 For this you need to implement a handler for each step: An [explorer](../portal-development/002-explorer.md), an [emitter](../portal-development/003-emitter.md) and a [receiver](../portal-development/004-receiver.md).
 
 <!--
 ```plantuml
-@startuml ../assets/plantuml/dataFlow/threeSet
+@startuml ../assets/plantuml/dataFlow/basicFlow
 !include ../../src/skin.puml
 database "Portal 1" as P1
 database "Portal 2" as P2
@@ -34,11 +34,11 @@ P2 <<- HC: Store data in portal 2
 @enduml
 ```
 -->
-![](../assets/plantuml/dataFlow/threeSet.svg)
+![](../assets/plantuml/dataFlow/basicFlow.svg)
 
-## Direct emission
+## Direct emission flow
 
-This is a condensed form of the three-step as the first two steps are merged into one.
+This is a condensed form of the basic flow as the first two steps are merged into one.
 A very useful pattern for sources that do not differ between gathering selecting primary keys and their corresponding data on it.
 For this flow you only need to implement [explorers](../portal-development/002-explorer.md) as [direct emission explorers](../portal-development/014-direct-emission-explorer.md) and [receivers](../portal-development/004-receiver.md).
 To ensure other flows like the next one you still have to provide an [emitter](../portal-development/003-emitter.md) which can be omitted otherwise.
@@ -63,14 +63,14 @@ P2 <<- HC: Store data in portal 2
 -->
 ![](../assets/plantuml/dataFlow/directEmissionFlow.svg)
 
-## Reverse publication
+## Reverse publication flow
 
 The reverse publication is requesting data from a previously running transfer a second time to keep data up-to-date.
 This is useful for any event driven data transfer that has to happen on demand.
 
 <!--
 ```plantuml
-@startuml ../assets/plantuml/dataFlow/reversePublication
+@startuml ../assets/plantuml/dataFlow/reversePublicationFlow
 !include ../../src/skin.puml
 database "Portal 1" as P1
 database "Portal 2" as P2
@@ -92,4 +92,4 @@ P2 <<- HC: Store data in portal 2
 @enduml
 ```
 -->
-![](../assets/plantuml/dataFlow/reversePublication.svg)
+![](../assets/plantuml/dataFlow/reversePublicationFlow.svg)
