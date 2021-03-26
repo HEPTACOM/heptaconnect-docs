@@ -44,6 +44,18 @@ The `Publisher` is a central service that can be accessed by a `Bridge` to creat
 
 A `Morpher` is a special form of `PortalNode`. `Morphers` can receive various data types and store the entities temporarily. When certain conditions are met, the `Morpher` triggers its own `Emitter` to emit processed data. This could be used to collect different aspects of an entity and resolve dependencies. A `Morpher` could e.g. collect orders, addresses and customers and keep the data to itself until every sub-entity of the order has been received (a. k. a. all dependencies are resolved). After that the `Morpher` will emit a compound `DatasetEntity` with all the necessary data.
 
+### Packer
+
+A `Packer` is a class that supports `Flow components` like `Direct Emitter` and `Emitter` packing API specific data into `DatasetEntities`.
+This naming has been really helpful in the past to find the right entrypoint when extending other portals.
+There is no interface or contract to follow.
+
+### Unpacker
+
+An `Unpacker` is a class that supports `Flow components` like `Receiver` unpacking `DatasetEntities` into portal API specific payloads.
+This naming has been really helpful in the past to find the right entrypoint when extending other portals.
+There is no interface or contract to follow.
+
 ## Dataset
 
 A `Dataset` is a collection of common data structs that various `Portals` can rely on. There are different `Datasets` for different use cases and even some compound `Datasets` (e.g. `ecommerce`) that consist of multiple smaller `Datasets` (e.g. `physical-location`). `Datasets` are required by `Portals` to have a shared understanding of data and to establish communication between them.
