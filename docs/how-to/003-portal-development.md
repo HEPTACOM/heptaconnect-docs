@@ -220,7 +220,7 @@ class BottleWithContentEmitter extends EmitterContract
     ) : ?DatasetEntityContract {
         $portal = $context->getContainer()->get('portal');
         // get portal specific API client to communicate the extra data from the contexts configuration
-        $data = $portal->getApiClient($context->getConfig($mapping))
+        $data = $portal->getApiClient($context->getConfig())
             ->selectContentData($mapping->getExternalId());
 
         if (\count($data) > 0) {

@@ -31,7 +31,7 @@ protected function run(
 ): ?DatasetEntityInterface {
     $portal = $context->getContainer()->get('portal');
     // get portal specific API client to communicate the data from the contexts configuration
-    $credentials = $context->getConfig($mapping)['credentials'];
+    $credentials = $context->getConfig()['credentials'];
     $client = $portal->getClient($credentials);
 
     if (!$client->isOtherBottle($mapping->getExternalId())) {
@@ -65,7 +65,7 @@ protected function extend(
     EmitContextInterface $context
 ): ?DatasetEntityContract {
     $portal = $context->getContainer()->get('portal');
-    $credentials = $context->getConfig($mapping)['credentials'];
+    $credentials = $context->getConfig()['credentials'];
     $client = $portal->getClient($credentials);
     
     $entity->attach($client->getBottleAdditives($entity->getPrimaryKey()));
