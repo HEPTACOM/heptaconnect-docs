@@ -55,8 +55,10 @@ In the example above we call `$portal->getClient(...)`, which is not part of the
 The emitter will then check if this is an other bottle that has been explored by the explorer decorator first and load it.
 Otherwise skip it by returning `null`.
 
+---
+
 For a scenario to add further data to already emitted elements by the extended portal you have to implement `extend` instead of `run`.
-In the following example we add additives we only allow bottles that contain caffeinated beverages.
+In the following example we add additives to the previously emitted bottle.
 
 ```php
 protected function extend(
