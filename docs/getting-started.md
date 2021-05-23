@@ -4,24 +4,10 @@ There are two ways to quickly get started with HEPTAconnect. If you would like a
 
 ## Playground
 
-The playground is a minimal Shopware 6 system with a build-in integration for HEPTAconnect. This is a great way to showcase what HEPTAconnect can do today and to learn about the intentions and internal processes of the system. You can install it like so.
+The playground provides environments (e.g. Shopware 6) for you to try out and fiddle with HEPTAconnect for different occasions.
+It is the easiest way to get your hands on a simple environment and test some portals you found online.
+Read more in the [playground articles](./playground/001-introduction.md).
 
-```sh
-git clone git@github.com:HEPTACOM/heptaconnect-playground.git
-cd heptaconnect-playground
-make shopware-platform
-```
-
-This setup has these requirements for your host system:
-
-* Make
-* PHP >= 7.4
-* Composer >= 1.8
-* MySQL >=5.7
-
-It is also assumed that your MySQL server is accessible with the following credentials: `mysql://root:root@localhost:3306/heptaconnect_shopware_platform`. If your MySQL server has different credentials, you can change it in `shopware-platform/.env` by editing the `DATABASE_URL`
-
-The playground comes with a fully functional example portal and data set. This portal uses static data as its data source. While this will probably never be an actual use-case, it makes things very predictable and easy to comprehend.
 
 ## SDK
 

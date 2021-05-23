@@ -11,6 +11,9 @@ When you want to …
 * contribute to the HEPTAconnect packages itself and need a basic environment, …
 
 this is where you should be able to try it without building an integrated system yourself.
+The playground comes with a fully functional example portal and data set: the bottle portal.
+This portal uses static data as its data source.
+While this will probably never be an actual use-case, it makes things very predictable and easy to comprehend.
 
 
 ## What can I expect?

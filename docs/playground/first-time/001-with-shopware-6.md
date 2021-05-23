@@ -15,8 +15,9 @@ When you choose to use a Shopware 6 as environment you have:
 To have your first Shopware 6 setup in your playground copy you need to fulfil the following requirements:
 
 * PHP 7.4+
+* Composer 2+
 * At least 256MB memory limit for PHP processes
-* Shopware 6 suitable database (see [their requirements](https://developer.shopware.com/docs/guides/installation/overview#system-requirements))
+* Shopware 6 suitable database (e.g. MySQL 5.7, see [their requirements](https://developer.shopware.com/docs/guides/installation/overview#system-requirements))
 
 When you have an environment that supports hosting of a PHP application you can point it to the directory as root `shopware-platform/public`.
 The default settings for the database credentials are:
