@@ -4,16 +4,15 @@
 
 To discover what other portals you can try out you can query different package and code distributing platforms for the tag `heptaconnect-portal`.
 
-### Add portals from GitHub
-Let's take a look at the results at [GitHub](https://github.com/topics/heptaconnect-portal).
-This will contain our [local-shopware-platform](https://github.com/HEPTACOM/heptaconnect-portal-local-shopware-platform) that can be used within a Shopware 6 application as self-hosted app/plugin.
 
-Let's see how we can get it in there.
-In that example I will add it to the shopware-platform project within the playground.
-You have to adjust paths to your project.
+### Add portals from GitHub
+
+Let's take a look at the results at [GitHub](https://github.com/topics/heptaconnect-portal).
+You can probably take any repository and clone it into the `/repos/` folder that is at the root directory of the playground.
+
 ```shell
-composer config -d ./shopware-platform/ repositories.local-shopware-platform vcs https://github.com/HEPTACOM/heptaconnect-portal-local-shopware-platform
-composer require -d ./shopware-platform/ heptacom/heptaconnect-portal-local-shopware-platform
+git clone https://github.com/example/repo repos/example-repo
+composer require -d ./shopware-platform/ example/repo
 ```
 
 ## See the new portals

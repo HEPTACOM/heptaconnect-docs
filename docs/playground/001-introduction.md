@@ -8,7 +8,7 @@ When you want to …
 * use HEPTAconnect for the first time, … 
 * try out a portal you found online, …
 * debug into some default HEPTAconnect flows, …
-* contribute to the HEPTAconnect packages itself and need a basic environment, …
+* contribute to the HEPTAconnect packages and need a basic environment, …
 
 this is where you should be able to try it without building an integrated system yourself.
 The playground comes with a fully functional example portal and data set: the bottle portal.
@@ -27,11 +27,11 @@ When you are already familiar with HEPTAconnect you can use it to [contribute](.
 ## What will I miss?
 
 There are …
-* no optimized message brokers configured
+* no optimizations for message broker
 * no additional caching techniques
 * no cluster configurations
-* public "secrets" that must not be used in production environments
+* public "secrets" that **must not be used in production** environments
 
-Having an easy entry with predefined configurations has it drawbacks for other cases.
+Having an easy entry with predefined configurations has its drawbacks for other cases.
 You should not expect these project skeletons to be similar to a production ready environment.
 They are configured to be run on a single machine with only a few additional dependencies to lower the initial hurdle.

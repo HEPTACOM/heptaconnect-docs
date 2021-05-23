@@ -4,7 +4,7 @@
 
 When you choose to use a Shopware 6 as environment you have:
 
-* Shopware 6 integration, commandline, storefront and administration
+* Shopware 6 integration, commandline and administration
 * Preconfigured Shopware 6 portal node (alias `shopware`)
 * Preconfigured Bottle portal node (alias `bottle`)
 * Preconfigured administration credentials (user `admin` password `shopware`)
@@ -29,11 +29,10 @@ The default settings for the database credentials are:
 * **database** – `heptaconnect_shopware_platform`
 
 When this differs from your available database you can change an environment variable to override the default connection.
-
 ```shell
 DATABASE_URL=mysql://root:root@localhost:3306/heptaconnect_shopware_platform
 ```
-
+Either change the entry in the `shopware-platform/.env` or `export` that statement for a single shell session.
 
 ## Set up the playground
 

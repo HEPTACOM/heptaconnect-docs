@@ -3,7 +3,7 @@
 ## Environments
 
 Your commandline entrypoint depends on the environment you chose before.
-See below the binaries to try out:
+See below the executables to try out:
 
 * Shopware 6 `shopware-platform/bin/shopware`
 
