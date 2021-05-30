@@ -44,7 +44,28 @@
             'target': 'h1, h2, h3'
         },
         'plugins': [
-            EditOnGithubPlugin.create('https://github.com/HEPTACOM/heptaconnect-docs/blob/master/docs/', null, '📝 Edit on GitHub')
+            EditOnGithubPlugin.create('https://github.com/HEPTACOM/heptaconnect-docs/blob/master/docs/', null, '📝 Edit on GitHub'),
+            hook => {
+                hook.ready(() => {
+                    /** @var normalLogo {HTMLImageElement} */
+                    const normalLogo = document.body.querySelector('main aside h1.app-name img');
+                    /** @var logoParent {HTMLElement} */
+                    const logoParent = normalLogo.parentElement || normalLogo.parentNode;
+
+                    logoParent.removeChild(normalLogo);
+
+                    /** @var pictureWrapper {HTMLPictureElement} */
+                    const pictureWrapper = document.createElement('picture');
+                    /** @var darkModeSource {HTMLSourceElement} */
+                    const darkModeSource = document.createElement('source');
+                    darkModeSource.srcset = normalLogo.src.replace(/(:\/\/.*\/.*)\.(.+)$/s, '$1_dark.$2')
+                    darkModeSource.media = '(prefers-color-scheme: dark)';
+
+                    pictureWrapper.appendChild(darkModeSource);
+                    pictureWrapper.appendChild(normalLogo);
+                    logoParent.appendChild(pictureWrapper);
+                });
+            },
         ],
     }
 </script>

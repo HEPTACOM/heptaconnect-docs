@@ -5,6 +5,11 @@
     --theme-color: #0070C9;
 }
 
+.content {
+    background: #fff;
+    overflow-y: auto;
+}
+
 .page_toc {
     display: none;
     margin: 0 80px;
@@ -55,5 +60,11 @@
 @media screen and (min-width: 1601px) {
     :root {
         --toc-width: 480px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        filter: invert(1) hue-rotate(180deg);
     }
 }
