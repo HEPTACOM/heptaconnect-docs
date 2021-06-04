@@ -40,11 +40,8 @@ public function receive(
 /**
  * @param Bottle $entity  
  */
-protected function run(
-    MappingInterface $mapping,
-    DatasetEntityInterface $entity,
-    ReceiveContextInterface $context
-): void {
+protected function run(DatasetEntityInterface $entity, ReceiveContextInterface $context): void
+{
     $portal = $context->getContainer()->get('portal');
 
     if ($entity->getPrimaryKey() === null) {
@@ -58,7 +55,7 @@ protected function run(
     }
 
     // get portal specific API client to communicate the data from the contexts configuration
-    $portal->getApiClient($context->getConfig($mapping))->upsert(
+    $portal->getApiClient($context->getConfig())->upsert(
         $additives->map(static fn (Additive $a): array => [        
             'additiveName' => $a->getName(),
             'bottleId' => $entity->getPrimaryKey(),

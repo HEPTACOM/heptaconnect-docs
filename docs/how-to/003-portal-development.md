@@ -90,21 +90,20 @@ class BottleReceiver extends ReceiverContract
      * @param Bottle $entity  
      */
     protected function run(
-        MappingInterface $mapping,
         DatasetEntityInterface $entity,
         ReceiveContextInterface $context
     ): void {
         $portal = $context->getContainer()->get('portal');
-        $id = $mapping->getExternalId() ?? Uuid::uuid4()->toString();
+        $id = $entity->getPrimaryKey() ?? Uuid::uuid4()->toString();
         // get portal specific API client to communicate the data from the contexts configuration
-        $portal->getApiClient($context->getConfig($mapping))->upsert([
+        $portal->getApiClient($context->getConfig())->upsert([
             'id' => $id,
             'cap' => $entity->getCap()->getType(),
             'volume' => $entity->getCapacity()->as(Liter::class),
         ]);
         
-        // mark the mapping as successfully transferred 
-        $mapping->setExternalId($id);
+        // mark the entity as successfully transferred 
+        $entity->setPrimaryKey($id);
     }
 
     public function supports(): string
@@ -120,11 +119,11 @@ As we just read how a receiver is reduced to the case of communication we can co
 ```php
 class BottleEmitter extends EmitterContract
 {
-    protected function run(MappingInterface $mapping, EmitContextInterface $context): ?DatasetEntityInterface
+    protected function run(string $externalId, EmitContextInterface $context): ?DatasetEntityInterface
     {        
         $portal = $context->getContainer()->get('portal');
         // get portal specific API client to communicate the data from the contexts configuration
-        $data = $portal->getApiClient($context->getConfig($mapping))->select($mapping->getExternalId());
+        $data = $portal->getApiClient($context->getConfig())->select($externalId);
 
         if (\count($data) === 0) {
             return null;
@@ -214,14 +213,13 @@ The emitter decorator will be injected into the call chain and can now alter the
 class BottleWithContentEmitter extends EmitterContract
 {
     protected function extend(
-        MappingInterface $mapping,
         DatasetEntityContract $entity,
         EmitContextInterface $context
     ) : ?DatasetEntityContract {
         $portal = $context->getContainer()->get('portal');
         // get portal specific API client to communicate the extra data from the contexts configuration
         $data = $portal->getApiClient($context->getConfig())
-            ->selectContentData($mapping->getExternalId());
+            ->selectContentData($entity->getPrimaryKey());
 
         if (\count($data) > 0) {
             // assign extra data to the already emitted entity
