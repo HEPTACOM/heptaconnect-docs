@@ -89,10 +89,8 @@ class BottleReceiver extends ReceiverContract
     /**
      * @param Bottle $entity  
      */
-    protected function run(
-        DatasetEntityInterface $entity,
-        ReceiveContextInterface $context
-    ): void {
+    protected function run(DatasetEntityContract $entity, ReceiveContextInterface $context): void
+    {
         $portal = $context->getContainer()->get('portal');
         $id = $entity->getPrimaryKey() ?? Uuid::uuid4()->toString();
         // get portal specific API client to communicate the data from the contexts configuration
@@ -119,7 +117,7 @@ As we just read how a receiver is reduced to the case of communication we can co
 ```php
 class BottleEmitter extends EmitterContract
 {
-    protected function run(string $externalId, EmitContextInterface $context): ?DatasetEntityInterface
+    protected function run(string $externalId, EmitContextInterface $context): ?DatasetEntityContract
     {        
         $portal = $context->getContainer()->get('portal');
         // get portal specific API client to communicate the data from the contexts configuration

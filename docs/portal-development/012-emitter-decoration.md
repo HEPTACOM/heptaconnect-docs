@@ -25,7 +25,7 @@ This is useful when more entities are explored first otherwise we run into confu
 To prevent duplicate emission you can add a check whether this is the right entity to process and otherwise return `null`.
 
 ```php
-protected function run(string $externalId, EmitContextInterface $context): ?DatasetEntityInterface
+protected function run(string $externalId, EmitContextInterface $context): ?DatasetEntityContract
 {
     $portal = $context->getContainer()->get('portal');
     // get portal specific API client to communicate the data from the contexts configuration

@@ -40,7 +40,7 @@ public function receive(
 /**
  * @param Bottle $entity  
  */
-protected function run(DatasetEntityInterface $entity, ReceiveContextInterface $context): void
+protected function run(DatasetEntityContract $entity, ReceiveContextInterface $context): void
 {
     $portal = $context->getContainer()->get('portal');
 
