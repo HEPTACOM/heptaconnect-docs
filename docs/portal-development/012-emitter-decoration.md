@@ -25,20 +25,18 @@ This is useful when more entities are explored first otherwise we run into confu
 To prevent duplicate emission you can add a check whether this is the right entity to process and otherwise return `null`.
 
 ```php
-protected function run(
-    MappingInterface $mapping,
-    EmitContextInterface $context
-): ?DatasetEntityInterface {
+protected function run(string $externalId, EmitContextInterface $context): ?DatasetEntityContract
+{
     $portal = $context->getContainer()->get('portal');
     // get portal specific API client to communicate the data from the contexts configuration
     $credentials = $context->getConfig()['credentials'];
     $client = $portal->getClient($credentials);
 
-    if (!$client->isOtherBottle($mapping->getExternalId())) {
+    if (!$client->isOtherBottle($externalId)) {
         return null;
     }
 
-    $data = $client->select($mapping->getExternalId());
+    $data = $client->select($externalId);
 
     if (\count($data) === 0) {
         return null;
@@ -61,11 +59,8 @@ For a scenario to add further data to already emitted elements by the extended p
 In the following example we add additives to the previously emitted bottle.
 
 ```php
-protected function extend(
-    MappingInterface $mapping,
-    DatasetEntityContract $entity,
-    EmitContextInterface $context
-): ?DatasetEntityContract {
+protected function extend(DatasetEntityContract $entity, EmitContextInterface $context): ?DatasetEntityContract
+{
     $portal = $context->getContainer()->get('portal');
     $credentials = $context->getConfig()['credentials'];
     $client = $portal->getClient($credentials);
