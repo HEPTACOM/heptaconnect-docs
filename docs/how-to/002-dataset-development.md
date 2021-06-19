@@ -33,7 +33,7 @@ Datasets describe a collection of structures that express common properties of f
 In case of describing data about bottles a single bottle can be described as the following:
 
 ```php
-class Bottle extends DatasetEntity
+class Bottle extends DatasetEntityContract
 {
     protected Volume $capacity;
 
@@ -52,7 +52,7 @@ It is important to use the base class `DatasetEntity` and use `protected` fields
 There are supporting classes to build up structures to use throughout any dataset. As internationalization (i18n) faces everyone during a data transport we offer helpful types to make translatable fields easier to handle.
 
 ```php
-class Label extends DatasetEntity
+class Label extends DatasetEntityContract
 {
     protected TranslatableString $text;
 
@@ -79,7 +79,7 @@ The usage of typed enumerations is discouraged as these are very difficult to im
 A dataset sometimes is not able to hold data that is needed for an integration to work. The dataset author might have not thought of this case or evaluated it as an edge case. In these situations you are about to extend dataset entities. To provide additional data for the bottle entity you have to create a custom structure that holds the additional data you need. A data extension is just an other dataset entities that can be attached to an existing entity. As they share the same base class existing entities can be plugged into an other entity with just a few actions. 
 
 ```php
-class BottleContent extends DatasetEntity
+class BottleContent extends DatasetEntityContract
 {
     protected Volume $capacity;
 }
