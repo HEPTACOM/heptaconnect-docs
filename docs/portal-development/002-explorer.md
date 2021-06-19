@@ -30,7 +30,7 @@ public function supports(): string
 }
 ```
 
-The `run` method is used to iterate over primary keys in your data source and yield them.
+The `run` method iterates over primary keys in your data source and yield them.
 
 ```php
 protected function run(ExploreContextInterface $context): iterable

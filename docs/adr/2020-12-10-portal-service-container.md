@@ -28,7 +28,7 @@ Portal extension are able to interact with the same APIs like their supported po
 
 * Portal developers have to publish every implementation to allow being changed
 * Containers have to be managed per stack to prevent
-* To have static typing you have to add additionalm `instanceof` checks or trust type hints
+* To have static typing you have to add additional `instanceof` checks or trust type hints
 
 
 ## Related thoughts
