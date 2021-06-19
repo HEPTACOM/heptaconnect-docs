@@ -20,8 +20,6 @@ A decorating receiver can:
 ## Usage
 
 Decorating receiver must follow the same basics as normal receivers so be sure to read the [receiver explanation](./004-receiver.md) page first.
-The main difference is in their registration.
-A portal extension must include each of its receiver decorators in the result of `getReceiverDecorators`.
 
 Implementing `run` in a receiver decorator like a normal receiver will receive first all elements before the decorated receiver.
 
@@ -42,8 +40,6 @@ public function receive(
  */
 protected function run(DatasetEntityContract $entity, ReceiveContextInterface $context): void
 {
-    $portal = $context->getContainer()->get('portal');
-
     if ($entity->getPrimaryKey() === null) {
         return;
     }
@@ -54,8 +50,10 @@ protected function run(DatasetEntityContract $entity, ReceiveContextInterface $c
         return;
     }
 
+    $credentials = $context->getConfig()['credentials'];
+    $client = new ApiClient($credentials);
     // get portal specific API client to communicate the data from the contexts configuration
-    $portal->getApiClient($context->getConfig())->upsert(
+    $client->upsert(
         $additives->map(static fn (Additive $a): array => [        
             'additiveName' => $a->getName(),
             'bottleId' => $entity->getPrimaryKey(),
@@ -64,6 +62,4 @@ protected function run(DatasetEntityContract $entity, ReceiveContextInterface $c
 }
 ```
 
-The `$portal` should technically always be an instance of the extended portal.
-In the example above we call `$portal->getApiClient(...)`, which is not part of the `PortalContract` but instead a custom public method of the `BottleLocalPortal`.
-The receiver will then check if this entity has been received by the receiver decorator first and save additional data.
+The receiver will check if this entity has been received by the receiver decorator first and save additional data.

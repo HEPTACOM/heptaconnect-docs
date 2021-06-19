@@ -34,3 +34,5 @@ Portal extension are able to interact with the same APIs like their supported po
 ## Related thoughts
 
 One could use inheritance and decoration pattern to allow portal extension claim to be the supported portal but this moves all the development overhead to the developer
+
+There is a follow up to this regarding the exact [implementation](./2021-04-13-portal-dependency-injection-implementation.md).

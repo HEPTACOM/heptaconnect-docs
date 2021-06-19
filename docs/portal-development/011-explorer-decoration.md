@@ -18,16 +18,14 @@ A decorating explorer can list additional entries and skip unwanted entries.
 
 Decorating explorers must follow the same basics as normal explorers so be sure to read the [explorer explanation](./002-explorer.md) page first.
 The main difference is in their registration.
-A portal extension must include each of its explorer decorators in the result of `getExplorerDecorators`.
 
 Implementing `run` in an explorer decorator like this will add further elements to the exploration process.
 
 ```php
 protected function run(ExploreContextInterface $context): iterable
 {
-    $portal = $context->getPortal();
     $credentials = $context->getConfig()['credentials'];
-    $client = $portal->getClient($credentials);
+    $client = new ApiClient($credentials);
     
     foreach ($client->getOtherBottles() as $bottle)
     {
@@ -39,9 +37,7 @@ protected function run(ExploreContextInterface $context): iterable
 }
 ```
 
-The `$portal` should technically always be an instance of the extended portal.
-In the example above we call `$portal->getClient(...)`, which is not part of the `PortalContract` but instead a custom public method of the `BottlePortal`.
-The explorer will then iterate over the result of `$client->getOtherBottles()` and construct a data set entity for every item.
+The explorer will iterate over the result of `$client->getOtherBottles()` and construct a data set entity for every item.
 The primary key is set and the entity is then yielded.
 
 For a scenario to skip elements that should not be discovered anymore by the extended portal you have to implement `isAllowed` instead of `run`.
@@ -51,9 +47,8 @@ In the following example we only allow bottles that contain caffeinated beverage
 ```php
 protected function isAllowed(string $externalId, ?DatasetEntityContract $entity, ExploreContextInterface $context): bool
 {
-    $portal = $context->getPortal();
     $credentials = $context->getConfig()['credentials'];
-    $client = $portal->getClient($credentials);
+    $client = new ApiClient($credentials);
     
     return $client->getBottleAdditives($externalId)->contains('caffeine');
 }

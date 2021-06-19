@@ -24,7 +24,7 @@ This way a portal can communicate how to configure a portal node in a multi-step
 
 ## Usage
 
-To register a status reporter a portal they implement the method `getStatusReporters` and return all the status reporter instances they provide.
+A status reporter needs to extend the `StatusReporterContract` and implement the `run` method.
 
 ### Health
 
@@ -40,11 +40,11 @@ class HealthStatusReporter extends StatusReporterContract
 
     protected function run(StatusReportingContextInterface $context): array
     {
-        $portal = $context->getContainer()->get('portal');
         $result = [$this->supportsTopic() => true];
 
         try {
-            $portal->getApiClient($context->getConfig())->commonReadonlyEndpoint();
+            $apiClient = new ApiClient($context->getConfig()['credentials']);
+            $apiClient->commonReadonlyEndpoint();
         } catch (\Throwable $exception) {
             $result[$this->supportsTopic()] = false;
             $result['message'] = $exception->getMessage();
@@ -55,7 +55,8 @@ class HealthStatusReporter extends StatusReporterContract
 }
 ```
 
-This status reporter uses the topic key to communicate the evaluation of the portal node topics' well-being. It also uses a common endpoint on the data source to validate the configuration is usable in a production scenario and therefore validates the health state of the underlying API of the datasource.
+This status reporter uses the topic key to communicate the evaluation of the portal node topics' well-being.
+It also uses a common endpoint on the data source to validate the configuration is usable in a production scenario and therefore validates the health state of the underlying API of the datasource.
 
 ### Configuration
 
@@ -71,12 +72,12 @@ class ConfigurationStatusReporter extends StatusReporterContract
 
     protected function run(StatusReportingContextInterface $context): array
     {
-        $portal = $context->getContainer()->get('portal');
         $result = [$this->supportsTopic() => true];
 
         try {
-            $nodes = $portal->getApiClient($context->getConfig())->getSubnodes();
-            $result['nodes'] = array_map(fn (Node $node) => $node->getId(), $nodes);
+            $apiClient = new ApiClient($context->getConfig()['credentials']);
+            $nodes = $apiClient->getSubnodes();
+            $result['nodes'] = array_map(static fn (Node $node): string => $node->getId(), $nodes);
         } catch (\Throwable $exception) {
             $result[$this->supportsTopic()] = false;
             $result['message'] = $exception->getMessage();
@@ -103,8 +104,6 @@ class AnalysisStatusReporter extends StatusReporterContract
 
     protected function run(StatusReportingContextInterface $context): array
     {
-        $portal = $context->getContainer()->get('portal');
-
         return [
             $this->supportsTopic() => true,
             'lastClientUsageTimestamp' => $context->getStorage()->get('apiClientLastUsage'),
@@ -129,8 +128,6 @@ class InformationStatusReporter extends StatusReporterContract
 
     protected function run(StatusReportingContextInterface $context): array
     {
-        $portal = $context->getContainer()->get('portal');
-
         return [
             $this->supportsTopic() => true,
             'demo' => [
