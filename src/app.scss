@@ -13,6 +13,10 @@
 .page_toc {
     display: none;
     margin: 0 80px;
+
+    div[class^="lv"] a {
+        font-weight: 400 !important;
+    }
 }
 
 @media print {
