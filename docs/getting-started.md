@@ -64,7 +64,7 @@ Your `<target-dir>` should now have the following contents:
 ├── composer.json
 ├── composer.lock
 ├── src
-│   └── Portal.php
+│   └── Portal.php
 └── vendor
     └── autoload.php
     └── ...
