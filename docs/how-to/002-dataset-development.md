@@ -107,20 +107,21 @@ This way the string value can receive new values if anyone needs to extend your 
 
 ## Extend datasets with attachments
 
-A dataset sometimes is not able to hold data that is needed for an integration to work.
+A dataset is sometimes not able to hold data that is needed for an integration to work.
 The dataset author might have not thought of this case or evaluated it as an edge case.
-In these situations you are about to extend dataset entities.
+In these situations you are able to extend dataset entities.
 To provide additional data for the bottle entity you have to create a custom structure that holds the additional data you need.
-A data extension is just an other dataset entities that can be attached to an existing entity.
-As they share the same base class existing entities can be plugged into an other entity with just a few actions.
+A data extension can be any class that implements the `AttachableInterface`.
+They can be attached to an existing entity using the `attach` method.
+The `DatasetEntityContract` already implements this interface, so existing entities can be plugged into another entity with just a few actions.
 
 ```php
 namespace Acme\Dataset\Bottle;
 
 use Acme\Dataset\Bottle\Volume;
-use Heptacom\HeptaConnect\Dataset\Base\Contract\DatasetEntityContract;
+use Heptacom\HeptaConnect\Dataset\Base\Contract\AttachableInterface;
 
-class BottleContent extends DatasetEntityContract
+class BottleContent implements AttachableInterface
 {
     protected Volume $capacity;
 }
