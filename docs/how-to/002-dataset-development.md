@@ -39,6 +39,14 @@ You don't have to include all possibilities at once.
 In case of describing data about bottles a single bottle can be described as the following:
 
 ```php
+namespace Acme\Dataset\Bottle;
+
+use Acme\Dataset\Bottle\BottleShape;
+use Acme\Dataset\Bottle\Cap;
+use Acme\Dataset\Bottle\LabelCollection;
+use Acme\Dataset\Bottle\Volume;
+use Heptacom\HeptaConnect\Dataset\Base\Contract\DatasetEntityContract;
+
 class Bottle extends DatasetEntityContract
 {
     protected Volume $capacity;
@@ -59,6 +67,11 @@ There are supporting classes to build up structures to use throughout any datase
 As internationalization (i18n) faces everyone during a data transport we offer helpful types to make translatable fields easier to handle.
 
 ```php
+namespace Acme\Dataset\Bottle;
+
+use Heptacom\HeptaConnect\Dataset\Base\Contract\DatasetEntityContract;
+use Heptacom\HeptaConnect\Dataset\Base\Translatable\TranslatableString;
+
 class Label extends DatasetEntityContract
 {
     protected TranslatableString $text;
@@ -73,6 +86,11 @@ They contain psalm hints about types and just have to know the contents type to 
 Types like `StringCollection`, `IntegerCollection` and `DateTimeCollection` are already shipped in the dataset base to help building up a custom dataset very quickly.
 
 ```php
+namespace Acme\Dataset\Bottle;
+
+use Acme\Dataset\Bottle\Label;
+use Heptacom\HeptaConnect\Dataset\Base\DatasetEntityCollection;
+
 class LabelCollection extends DatasetEntityCollection
 {
     protected function getT(): string
@@ -97,6 +115,11 @@ A data extension is just an other dataset entities that can be attached to an ex
 As they share the same base class existing entities can be plugged into an other entity with just a few actions.
 
 ```php
+namespace Acme\Dataset\Bottle;
+
+use Acme\Dataset\Bottle\Volume;
+use Heptacom\HeptaConnect\Dataset\Base\Contract\DatasetEntityContract;
+
 class BottleContent extends DatasetEntityContract
 {
     protected Volume $capacity;
