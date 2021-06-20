@@ -1,15 +1,19 @@
 # How to be a HEPTAconnect portal developer
 
-This is all about the guidelines to structure a portal or portal extensions. Be sure to know then general thoughts and requirements to be a [HEPTAconnect developer](./001-core-development.md) and have a basic understanding what a dataset is and what it means to [develop one](./002-dataset-development.md).
+This is all about the guidelines to structure a portal or portal extensions.
+Be sure to know the general thoughts and requirements to be a [HEPTAconnect developer](./001-core-development.md) and have a basic understanding what a dataset is and what it means to [develop one](./002-dataset-development.md).
 
 ## Composer
 
-It is recommended to add the keyword `heptaconnect-portal` to the composer package that provides one or more portals. This way more people can easily find your portal on packagist. A common `composer.json` for a portal providing package may look like this:
+It is mandatory to add the keyword `heptaconnect-portal` to the composer package that provides one or more portals.
+This way HEPTAconnect can find your portal and register portal nodes for it.
+Also more people can easily find your portal on packagist.
+A common `composer.json` for a portal providing package may look like this:
 
 ```json
 {
     "name": "acme/heptaconnect-portal-bottle",
-    "description": "HEPTAconnect portal to provide bottles from bottles.local",
+    "description": "HEPTAconnect portal to provide bottles",
     "type": "library",
     "keywords": [
         "heptaconnect-portal"
@@ -27,7 +31,7 @@ It is recommended to add the keyword `heptaconnect-portal` to the composer packa
     "extra": {
         "heptaconnect": {
             "portals": [
-                "Acme\\Portal\\Bottle\\BottlesLocalPortal"
+                "Acme\\Portal\\Bottle\\BottlePortal"
             ]
         }
     }
@@ -36,54 +40,33 @@ It is recommended to add the keyword `heptaconnect-portal` to the composer packa
 
 ## Structure
 
-A portal provides several emitters and receivers to communicate a certain set of dataset entities from an API towards HEPTAconnect and back. In the case of the bottle dataset we need an emitter and receiver to transfer bottle data. The portal class that is referenced in the composer json extra populates every class that shall be part of the HEPTAconnect processes:
+The entry point of your portal is an implementation of the `PortalContract`.
+It can implement a method to provide a configuration template or some custom methods to use in your flow components.
+None of these methods are mandatory, therefore the minimum valid portal class would look like this:
 
 ```php
-class BottlesLocalPortal extends PortalContract
+namespace Acme\Portal\Bottle;
+
+use Heptacom\HeptaConnect\Portal\Base\Portal\Contract\PortalContract;
+
+class BottlePortal extends PortalContract
 {
-    public function getExplorers(): ExplorerCollection
-    {
-        return new ExplorerCollection([
-            new BottleExplorer(),
-        ]);
-    }
-
-    public function getEmitters(): EmitterCollection
-    {
-        return new EmitterCollection([
-            new BottleEmitter(),
-        ]);
-    }
-
-    public function getReceivers(): ReceiverCollection
-    {
-        return new ReceiverCollection([
-            new BottleReceiver(),
-        ]);
-    }
-
-    public function getStatusReporters(): StatusReporterCollection
-    {
-        return new StatusReporterCollection([
-            new BottleHealthStatusReporter(),
-        ]);
-    }
-
-    /**
-     * This method is unique for this portal implementation.
-     * It is not defined in the PortalContract.
-     */
-    public function getApiClient(array $config): AcmeApiClient
-    {
-        // create and configure api client
-        return new AcmeApiClient();
-    }
 }
 ```
 
-A receiver gets data from HEPTAconnect is to be told to communicate towards the API it wraps. A common implementation is to let the portal provide an custom API client and let the receiver do the translation work from dataset structures to API structures:
+A receiver that gets data from HEPTAconnect is to be told to communicate towards the API it wraps.
+A common implementation is to use a custom API client and let the receiver do the translation work from dataset structures to API structures:
 
 ```php
+namespace Acme\Portal\Bottle\Receiver;
+
+use Acme\Portal\Bottle\Http\ApiClient;
+use Heptacom\HeptaConnect\Dataset\Base\Contract\DatasetEntityContract;
+use Heptacom\HeptaConnect\Playground\Dataset\Bottle;
+use Heptacom\HeptaConnect\Portal\Base\Reception\Contract\ReceiveContextInterface;
+use Heptacom\HeptaConnect\Portal\Base\Reception\Contract\ReceiverContract;
+use Ramsey\Uuid\Uuid;
+
 class BottleReceiver extends ReceiverContract
 {
     /**
@@ -91,16 +74,20 @@ class BottleReceiver extends ReceiverContract
      */
     protected function run(DatasetEntityContract $entity, ReceiveContextInterface $context): void
     {
-        $portal = $context->getContainer()->get('portal');
+        // get API client to send the data to
+        $apiClient = new ApiClient();
+
+        // either the entity already has an ID or we create a new one
         $id = $entity->getPrimaryKey() ?? Uuid::uuid4()->toString();
-        // get portal specific API client to communicate the data from the contexts configuration
-        $portal->getApiClient($context->getConfig())->upsert([
+        
+        // translate entity to arbitrary structure and send it to the API
+        $apiClient->upsert([
             'id' => $id,
             'cap' => $entity->getCap()->getType(),
-            'volume' => $entity->getCapacity()->as(Liter::class),
+            'volume' => $entity->getCapacity()->getAmount(),
         ]);
         
-        // mark the entity as successfully transferred 
+        // save the primary key, so a mapping is created
         $entity->setPrimaryKey($id);
     }
 
@@ -115,21 +102,38 @@ class BottleReceiver extends ReceiverContract
 As we just read how a receiver is reduced to the case of communication we can compare it to an emitter that loads data from an API and feeds it into HEPTAconnect.
 
 ```php
+namespace Acme\Portal\Bottle\Emitter;
+
+use Acme\Portal\Bottle\Http\ApiClient;
+use Heptacom\HeptaConnect\Dataset\Base\Contract\DatasetEntityContract;
+use Heptacom\HeptaConnect\Playground\Dataset\Bottle;
+use Heptacom\HeptaConnect\Playground\Dataset\Cap;
+use Heptacom\HeptaConnect\Playground\Dataset\Volume;
+use Heptacom\HeptaConnect\Portal\Base\Emission\Contract\EmitContextInterface;
+use Heptacom\HeptaConnect\Portal\Base\Emission\Contract\EmitterContract;
+
 class BottleEmitter extends EmitterContract
 {
     protected function run(string $externalId, EmitContextInterface $context): ?DatasetEntityContract
-    {        
-        $portal = $context->getContainer()->get('portal');
-        // get portal specific API client to communicate the data from the contexts configuration
-        $data = $portal->getApiClient($context->getConfig())->select($externalId);
+    {
+        // get API client to read the data from
+        $apiClient = new ApiClient();
+ 
+        // read data from API client
+        $data = $apiClient->select($externalId);
 
         if (\count($data) === 0) {
             return null;
         }           
 
+        // translate arbitrary data structure to entity
         return (new Bottle())
-            ->setCap((new Cap())->setName($data['cap']))
-            ->setCapacity(new Liter($data['volume']));
+            ->setCap((new Cap())->setType($data['cap']))
+            ->setCapacity((new Volume())
+                ->setAmount($data['volume'])
+                ->setUnit(Volume::UNIT_LITER)
+            )
+        ;
     }
 
     public function supports(): string
@@ -142,9 +146,17 @@ class BottleEmitter extends EmitterContract
 
 ## Expose status for administration
 
-As the portal node is about to get setup or is in usage an administrator needs to find out about its status regarding a correct configuration or the connectivity state of the underlying datasource. A status reporter is meant to get information about a certain topic. Every portal should expose a health status reporter and when a data source is used that depends on I/O operations like file or network access.   
+As the portal node is about to get setup or is in usage an administrator needs to find out about its status regarding a correct configuration or the connectivity state of the underlying data source.
+A status reporter is meant to get information about a certain topic.
+Every portal should expose a health status reporter when a data source is used that depends on I/O operations like file or network access.
 
 ```php
+namespace Acme\Portal\Bottle\StatusReporter;
+
+use Acme\Portal\Bottle\Http\ApiClient;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReporterContract;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReportingContextInterface;
+
 class BottleHealthStatusReporter extends StatusReporterContract
 {
     public function supportsTopic(): string
@@ -154,11 +166,12 @@ class BottleHealthStatusReporter extends StatusReporterContract
 
     public function run(StatusReportingContextInterface $context): array
     {
-        $portal = $context->getContainer()->get('portal');
+        // get API client
+        $apiClient = new ApiClient();
 
         return [
             $this->supportsTopic() => true,
-            'bottleCount' => $portal->getApiClient($context->getConfig())->count(),
+            'bottleCount' => $apiClient->count(),
         ];
     }
 }
@@ -166,41 +179,53 @@ class BottleHealthStatusReporter extends StatusReporterContract
 
 ## Extend portals via attachments
 
-A dataset sometimes is not able to hold data that is needed for an integration to work. The dataset author might have not thought of this case or evaluated it as an edge case. In these situations you are about to create an emitter decorator via a portal extension. A portal extension is published similar to a portal via the extra section in a composer package.
+A dataset sometimes is not able to hold data that is needed for an integration to work.
+The dataset author might have not thought of this case or evaluated it as an edge case.
+In these situations you are about to create an emitter decorator via a portal extension.
+A portal extension is published similar to a portal via the extra section in a composer package.
 
 ```json
 {
+    "name": "acme/heptaconnect-portal-bottles-with-content",
+    "description": "HEPTAconnect portal extension to provide content for bottles",
+    "type": "library",
     "keywords": [
         "heptaconnect-portal-extension"
     ],
     "require": {
-        "acme/heptaconnect-portal-bottle": ">=1"
+        "php": ">=7.4",
+        "acme/heptaconnect-portal-bottle": ">=1",
+        "acme/heptaconnect-dataset-bottle": ">=1",
+        "heptacom/heptaconnect-portal-base": ">=1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Acme\\PortalExtension\\Bottle\\": "src/"
+        }
     },
     "extra": {
         "heptaconnect": {
             "portalExtensions": [
-                "Acme\\Portal\\Bottle\\BottlesWithContentPortal"
+                "Acme\\PortalExtension\\Bottle\\BottlesWithContentPortal"
             ]
         }
     }
 }
 ```
 
-The portal extension has to specify which portal it extends and which classes shall be injected into the decoration chain:
+The portal extension has to specify which portal it extends:
 
 ```php
+namespace Acme\PortalExtension\Bottle;
+
+use Acme\Portal\Bottle\BottlePortal;
+use Heptacom\HeptaConnect\Portal\Base\Portal\Contract\PortalExtensionContract;
+
 class BottlesWithContentPortal extends PortalExtensionContract
 {
-    public function getEmitterDecorators(): EmitterCollection
-    {
-        return new EmitterCollection([
-            new BottleWithContentEmitter(),
-        ]);
-    }
-
     public function supports(): string
     {
-        return BottlesLocalPortal::class;
+        return BottlePortal::class;
     }
 }
 ```
@@ -208,23 +233,34 @@ class BottlesWithContentPortal extends PortalExtensionContract
 The emitter decorator will be injected into the call chain and can now alter the mappings to be read from the original and add new data.
 
 ```php
+namespace Acme\PortalExtension\Bottle\Emitter;
+
+use Acme\Portal\Bottle\Http\ApiClient;
+use Heptacom\HeptaConnect\Dataset\Base\Contract\DatasetEntityContract;
+use Heptacom\HeptaConnect\Playground\Dataset\Bottle;
+use Heptacom\HeptaConnect\Playground\Dataset\Volume;
+use Heptacom\HeptaConnect\Playground\PortalExtension\Dataset\BottleContent;
+use Heptacom\HeptaConnect\Portal\Base\Emission\Contract\EmitContextInterface;
+use Heptacom\HeptaConnect\Portal\Base\Emission\Contract\EmitterContract;
+
 class BottleWithContentEmitter extends EmitterContract
 {
     protected function extend(
         DatasetEntityContract $entity,
         EmitContextInterface $context
-    ) : ?DatasetEntityContract {
-        $portal = $context->getContainer()->get('portal');
-        // get portal specific API client to communicate the extra data from the contexts configuration
-        $data = $portal->getApiClient($context->getConfig())
-            ->selectContentData($entity->getPrimaryKey());
+    ) : DatasetEntityContract {
+        // get API client
+        $apiClient = new ApiClient();
+
+        // read extra data from the API client
+        $data = $apiClient->selectContentData($entity->getPrimaryKey());
 
         if (\count($data) > 0) {
             // assign extra data to the already emitted entity
             $content = (new BottleContent())
                 ->setContent(
                     (new Volume)
-                        ->setContent($data['content'])
+                        ->setAmount($data['content'])
                         ->setUnit(Volume::UNIT_LITER)
                 );
             $entity->attach($content);

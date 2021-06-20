@@ -36,6 +36,7 @@
     - [Portal status reporters](/adr/2020-10-15-portal-status-reporters.md)
     - [Job messages and payloads](/adr/2020-10-30-job-messages-and-payload.md)
     - [Portal service container](/adr/2020-12-10-portal-service-container.md)
+    - [Portal dependency injection](/adr/2021-04-13-portal-dependency-injection-implementation.md)
     - [Direct emission exploration](/adr/2021-02-03-direct-emission-exploration.md)
 - [FAQ](/faq.md)
 - [Contributing](/contributing.md)

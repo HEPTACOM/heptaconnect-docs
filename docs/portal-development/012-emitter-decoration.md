@@ -17,8 +17,6 @@ A decorating emitter can change values of existing scalar values and add further
 ## Usage
 
 Decorating emitters must follow the same basics as normal emitters so be sure to read the [emitter explanation](./003-emitter.md) page first.
-The main difference is in their registration.
-A portal extension must include each of its emitter decorators in the result of `getEmitterDecorators`.
 
 Implementing `run` in an emitter decorator like a normal emitter will add further elements to the emission process.
 This is useful when more entities are explored first otherwise we run into confusion for the further processing as for the same primary key there will be two different filled values emitted.
@@ -27,10 +25,9 @@ To prevent duplicate emission you can add a check whether this is the right enti
 ```php
 protected function run(string $externalId, EmitContextInterface $context): ?DatasetEntityContract
 {
-    $portal = $context->getContainer()->get('portal');
     // get portal specific API client to communicate the data from the contexts configuration
     $credentials = $context->getConfig()['credentials'];
-    $client = $portal->getClient($credentials);
+    $client = new ApiClient($credentials);
 
     if (!$client->isOtherBottle($externalId)) {
         return null;
@@ -48,9 +45,7 @@ protected function run(string $externalId, EmitContextInterface $context): ?Data
 }
 ```
 
-The `$portal` should technically always be an instance of the extended portal.
-In the example above we call `$portal->getClient(...)`, which is not part of the `PortalContract` but instead a custom public method of the `BottlePortal`.
-The emitter will then check if this is an other bottle that has been explored by the explorer decorator first and load it.
+The emitter will check if this is an other bottle that has been explored by the explorer decorator first and load it.
 Otherwise skip it by returning `null`.
 
 ---
@@ -61,9 +56,8 @@ In the following example we add additives to the previously emitted bottle.
 ```php
 protected function extend(DatasetEntityContract $entity, EmitContextInterface $context): ?DatasetEntityContract
 {
-    $portal = $context->getContainer()->get('portal');
     $credentials = $context->getConfig()['credentials'];
-    $client = $portal->getClient($credentials);
+    $client = new ApiClient($credentials);
     
     $entity->attach($client->getBottleAdditives($entity->getPrimaryKey()));
     

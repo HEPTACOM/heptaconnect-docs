@@ -18,7 +18,9 @@ Beside the intentions of a regular [explorer](./002-explorer.md) this can be use
 
 ## Usage
 
-Explorers must implement the `ExplorerContract`. A portal must include each of its explorers in the result of `getExplorers`. Every explorer must define which data type it supports. In the following example we see an explorer that supports the data type `Bottle`.
+Explorers must implement the `ExplorerContract`.
+Every explorer must define which data type it supports.
+In the following example we see an explorer that supports the data type `Bottle`.
 
 ```php
 public function supports(): string
@@ -27,15 +29,14 @@ public function supports(): string
 }
 ```
 
-The `run` method is used to iterate over objects in your data source and return them as dataset entities.
+The `run` method iterates over objects in your data source and return them as dataset entities.
 It is crucial to set the primary key of these entities.
 
 ```php
 protected function run(ExploreContextInterface $context): iterable
 {
-    $portal = $context->getPortal();
     $credentials = $context->getConfig()['credentials'];
-    $client = $portal->getClient($credentials);
+    $client = new ApiClient($credentials);
     
     foreach ($client->getBottles() as $bottle)
     {
@@ -48,9 +49,5 @@ protected function run(ExploreContextInterface $context): iterable
 }
 ```
 
-The `$portal` should technically always be an instance of your portal.
-But for type safety you should always include the `instanceof` check and throw an `UnexpectedPortalNodeException` if there is a type mismatch.
-This allows your explorer to call custom public methods of your portal.
-In the example above we call `$portal->getClient(...)`, which is not part of the `PortalContract` but instead a custom public method of the `BottlePortal`.
-The explorer will then iterate over the result of `$client->getBottles()` and construct a data set entity for every item.
+The explorer will iterate over the result of `$client->getBottles()` and construct a data set entity for every item.
 The primary key is set and the entity is then yielded and passed into an [emission](../general-resources/004-data-flow.md).
