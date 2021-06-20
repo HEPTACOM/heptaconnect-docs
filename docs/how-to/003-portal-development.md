@@ -1,10 +1,13 @@
 # How to be a HEPTAconnect portal developer
 
-This is all about the guidelines to structure a portal or portal extensions. Be sure to know then general thoughts and requirements to be a [HEPTAconnect developer](./001-core-development.md) and have a basic understanding what a dataset is and what it means to [develop one](./002-dataset-development.md).
+This is all about the guidelines to structure a portal or portal extensions.
+Be sure to know then general thoughts and requirements to be a [HEPTAconnect developer](./001-core-development.md) and have a basic understanding what a dataset is and what it means to [develop one](./002-dataset-development.md).
 
 ## Composer
 
-It is recommended to add the keyword `heptaconnect-portal` to the composer package that provides one or more portals. This way more people can easily find your portal on packagist. A common `composer.json` for a portal providing package may look like this:
+It is recommended to add the keyword `heptaconnect-portal` to the composer package that provides one or more portals.
+This way more people can easily find your portal on packagist.
+A common `composer.json` for a portal providing package may look like this:
 
 ```json
 {
@@ -53,7 +56,8 @@ class BottlesLocalPortal extends PortalContract
 }
 ```
 
-A receiver gets data from HEPTAconnect is to be told to communicate towards the API it wraps. A common implementation is to let the portal provide an custom API client and let the receiver do the translation work from dataset structures to API structures:
+A receiver gets data from HEPTAconnect is to be told to communicate towards the API it wraps.
+A common implementation is to let the portal provide an custom API client and let the receiver do the translation work from dataset structures to API structures:
 
 ```php
 class BottleReceiver extends ReceiverContract
@@ -126,7 +130,9 @@ class BottleEmitter extends EmitterContract
 
 ## Expose status for administration
 
-As the portal node is about to get setup or is in usage an administrator needs to find out about its status regarding a correct configuration or the connectivity state of the underlying datasource. A status reporter is meant to get information about a certain topic. Every portal should expose a health status reporter and when a data source is used that depends on I/O operations like file or network access.   
+As the portal node is about to get setup or is in usage an administrator needs to find out about its status regarding a correct configuration or the connectivity state of the underlying datasource.
+A status reporter is meant to get information about a certain topic.
+Every portal should expose a health status reporter and when a data source is used that depends on I/O operations like file or network access.
 
 ```php
 class BottleHealthStatusReporter extends StatusReporterContract
@@ -155,7 +161,10 @@ class BottleHealthStatusReporter extends StatusReporterContract
 
 ## Extend portals via attachments
 
-A dataset sometimes is not able to hold data that is needed for an integration to work. The dataset author might have not thought of this case or evaluated it as an edge case. In these situations you are about to create an emitter decorator via a portal extension. A portal extension is published similar to a portal via the extra section in a composer package.
+A dataset sometimes is not able to hold data that is needed for an integration to work.
+The dataset author might have not thought of this case or evaluated it as an edge case.
+In these situations you are about to create an emitter decorator via a portal extension.
+A portal extension is published similar to a portal via the extra section in a composer package.
 
 ```json
 {
