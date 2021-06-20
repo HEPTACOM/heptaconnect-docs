@@ -4,7 +4,7 @@
 
 ### Psr\Http\Client\ClientInterface
 
-An [PSR-18](https://www.php-fig.org/psr/psr-18/) HTTP client which implementation is based upon the choice of the bridge.
+A [PSR-18](https://www.php-fig.org/psr/psr-18/) HTTP client whose implementation is based upon the choice of the bridge.
 Reliable service to do HTTP requests with.
 
 
@@ -33,7 +33,7 @@ It is also aliased with the real class so it works with auto-wiring.
 
 ### Heptacom\HeptaConnect\Portal\Base\Portal\PortalExtensionCollection
 
-The list of active portal extension within this container.
+The list of active portal extensions within this container.
 
 
 ### Heptacom\HeptaConnect\Portal\Base\StatusReporting\StatusReporterCollection

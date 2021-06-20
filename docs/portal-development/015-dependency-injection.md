@@ -11,12 +11,12 @@ The following sections require you to know basic knowledge about the Symfony pac
 
 Every service container is using a zero-configuration to allow a seamless entry into portal development.
 This means auto-configuration, auto-wiring and automatic PSR-4 resource loading is active by default.
-These features enable dependency injection without any future setup steps for the developer.
+These features enable dependency injection without any setup steps for the developer.
 
 
 ## How to get a service?
 
-There are multiple utility service that are available for every portal node service container.
+There are multiple utility services available for every portal node service container.
 Checkout the [next page](./016-default-utilities.md) for a complete overview of all utility services.
 The examples in this section work with the [PSR-3](https://www.php-fig.org/psr/psr-3/) `LoggerInterface`.
 
@@ -76,7 +76,7 @@ class HealthStatusReporter extends StatusReporterContract implements LoggerAware
 ```
 
 There is an auto-configuration rule for the `\Psr\Log\LoggerAwareInterface` interface which will later call the `setLogger` method on the instance of this class.
-In the snippet above there is no visible setLogger implementation.
+In the snippet above there is no visible `setLogger` implementation.
 The missing implementation is covered by the `\Psr\Log\LoggerAwareTrait`.
 Eventually it is a similar way to the constructor as the logger is set right after the constructor has been called.
 
@@ -175,7 +175,9 @@ A common pattern is to have repositories for each API resources.
 In the following scenario they all share the same interface `ApiResourceInterface`.
 When you have multiple services with the same interface, auto-wiring can't decide properly which service is the right one.
 In these situations it is handy to use argument aliases, so the argument names can help out.
-This is the very first moment where a custom service container definition is needed.
+This is the very first moment you need a custom service container definition.
+
+To load your service definition file it must be named `services.{xml,yml,yaml,php}` and it must be located inside the directory `resources/config`.
 
 The file structure should look similar to this:
 

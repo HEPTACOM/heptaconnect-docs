@@ -26,8 +26,9 @@ There is the [PSR-11](https://www.php-fig.org/psr/psr-11/) standard to define a 
 ### Pros
 
 * Portal developers are most likely familiar with Symfony dependency injection
-* Using service definitions based on xml or yaml do not require a tight composer dependency and can be fluent used with different Symfony versions
+* Using service definitions based on xml or yaml do not require a tight composer dependency and can be used fluently with different Symfony versions
 * Symfony's dependency injection has a very good documentation
+* Symfony's dependency injection supports [tagged services](https://symfony.com/doc/current/service_container/tags.html)
 * Symfony's auto-wiring, auto-configuration and resource auto-loading allows for zero-configuration dependency injection out of the box for portal developers
 
 

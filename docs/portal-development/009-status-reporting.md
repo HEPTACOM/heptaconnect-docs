@@ -24,7 +24,7 @@ This way a portal can communicate how to configure a portal node in a multi-step
 
 ## Usage
 
-A status reporter needs to extend the `StatusReporterContract` and implement the `run` method.
+A status reporter must extend the `StatusReporterContract` and should implement the `run` method.
 
 ### Health
 
