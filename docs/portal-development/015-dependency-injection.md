@@ -26,6 +26,12 @@ The examples in this section work with the [PSR-3](https://www.php-fig.org/psr/p
 The following small status reporter implementation shows how to get an instance of a logger into the status reporter by auto-wiring:
 
 ```php
+namespace FooBar\StatusReporter;
+
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReporterContract;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReportingContextInterface;
+use Psr\Log\LoggerInterface;
+
 class HealthStatusReporter extends StatusReporterContract
 {
     private LoggerInterface $logger;
@@ -57,6 +63,13 @@ Auto-wiring detected the `\Psr\Log\LoggerInterface` in the constructor and autom
 The following small status reporter implementation shows how to get an instance of a logger into the status reporter by auto-configuration:
 
 ```php
+namespace FooBar\StatusReporter;
+
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReporterContract;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReportingContextInterface;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
+
 class HealthStatusReporter extends StatusReporterContract implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
@@ -86,6 +99,12 @@ Eventually it is a similar way to the constructor as the logger is set right aft
 Any flow component context allows you direct access to the [PSR-11](https://www.php-fig.org/psr/psr-11/) service container.
 
 ```php
+namespace FooBar\StatusReporter;
+
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReporterContract;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReportingContextInterface;
+use Psr\Log\LoggerInterface;
+
 class HealthStatusReporter extends StatusReporterContract
 {
     public function supportsTopic(): string
@@ -138,6 +157,8 @@ The portal now has three services available:
 Auto-wiring can now automatically inject an `ApiClient` instance into the `HealthStatusReporter`.
 
 ```php
+namespace FooBar\AcmeApi;
+
 class ApiClient
 {
     public function ping(): bool
@@ -148,6 +169,12 @@ class ApiClient
 ```
 
 ```php
+namespace FooBar\StatusReporter;
+
+use FooBar\AcmeApi\ApiClient;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReporterContract;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReportingContextInterface;
+
 class HealthStatusReporter extends StatusReporterContract
 {
     private ApiClient $client;
@@ -190,6 +217,7 @@ The file structure should look similar to this:
 └── src
     ├── AcmeApi
     │   ├── ApiClient.php
+    │   └── ApiResourceInterface.php
     │   ├── AppleRepository.php
     │   └── OrangeRepository.php
     ├── StatusReporter
@@ -200,6 +228,8 @@ The file structure should look similar to this:
 The two repositories look quite similar and are interchangeable with each other.
 
 ```php
+namespace FooBar\AcmeApi;
+
 class AppleRepository implements ApiResourceInterface
 {
     private ApiClient $client;
@@ -217,6 +247,8 @@ class AppleRepository implements ApiResourceInterface
 ```
 
 ```php
+namespace FooBar\AcmeApi;
+
 class OrangeRepository implements ApiResourceInterface
 {
     private ApiClient $client;
@@ -233,17 +265,27 @@ class OrangeRepository implements ApiResourceInterface
 }
 ```
 
-Now the `HealthStatusReporter` requires both repositories and will render the auto-wiring invalid: 
+Now the `HealthStatusReporter` requires both repositories and will render the auto-wiring invalid:
 
 ```php
+namespace FooBar\StatusReporter;
+
+use FooBar\AcmeApi\ApiClient;
+use FooBar\AcmeApi\ApiResourceInterface;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReporterContract;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReportingContextInterface;
+
 class HealthStatusReporter extends StatusReporterContract
 {
+    private ApiClient $client;
+
     private ApiResourceInterface $apples;
     
     private ApiResourceInterface $oranges;
 
-    public function __construct(ApiResourceInterface $apples, ApiResourceInterface $oranges)
+    public function __construct(ApiClient $client, ApiResourceInterface $apples, ApiResourceInterface $oranges)
     {
+        $this->client = $client;
         $this->apples = $apples;
         $this->oranges = $oranges;
     }

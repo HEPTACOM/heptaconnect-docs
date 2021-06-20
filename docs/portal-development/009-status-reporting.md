@@ -34,6 +34,12 @@ A status reporter must extend the `StatusReporterContract` and should implement 
 A health status reporter can look like this:
 
 ```php
+namespace FooBar\StatusReporter;
+
+use FooBar\AcmeApi\ApiClient;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReporterContract;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReportingContextInterface;
+
 class HealthStatusReporter extends StatusReporterContract
 {
     public function supportsTopic(): string
@@ -66,6 +72,13 @@ It also uses a common endpoint on the data source to validate the configuration 
 A configuration status reporter can look like this:
 
 ```php
+namespace FooBar\StatusReporter;
+
+use FooBar\AcmeApi\ApiClient;
+use FooBar\AcmeApi\Node;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReporterContract;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReportingContextInterface;
+
 class ConfigurationStatusReporter extends StatusReporterContract
 {
     public function supportsTopic(): string
@@ -98,6 +111,11 @@ It requests with the already existing configuration further resources (e.g. node
 An analysis status reporter can look like this:
 
 ```php
+namespace FooBar\StatusReporter;
+
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReporterContract;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReportingContextInterface;
+
 class AnalysisStatusReporter extends StatusReporterContract
 {
     public function supportsTopic(): string
@@ -123,6 +141,11 @@ This way you can track the API clients behaviour.
 An information status reporter can look like this:
 
 ```php
+namespace FooBar\StatusReporter;
+
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReporterContract;
+use Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReportingContextInterface;
+
 class InformationStatusReporter extends StatusReporterContract
 {
     public function supportsTopic(): string
