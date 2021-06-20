@@ -19,6 +19,8 @@
     - [Emitter decoration](/portal-development/012-emitter-decoration.md)
     - [Receiver decoration](/portal-development/013-receiver-decoration.md)
     - [Direct emission explorer](/portal-development/014-direct-emission-explorer.md)
+    - [Dependency injection](/portal-development/015-dependency-injection.md)
+    - [Default utilities list](/portal-development/016-default-utilities.md)
 - General Resources
     - [Nomenclature](/general-resources/001-nomenclature.md)
     - [Package Structure](/general-resources/002-package-structure.md)
