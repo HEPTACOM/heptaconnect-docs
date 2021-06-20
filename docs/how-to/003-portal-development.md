@@ -4,7 +4,7 @@ This is all about the guidelines to structure a portal or portal extensions.
 Be sure to know the general thoughts and requirements to be a [HEPTAconnect developer](./001-core-development.md) and have a basic understanding what a dataset is and what it means to [develop one](./002-dataset-development.md).
 
 ## Composer
-f
+
 It is mandatory to add the keyword `heptaconnect-portal` to the composer package that provides one or more portals.
 This way HEPTAconnect can find your portal and register portal nodes for it.
 Also more people can easily find your portal on packagist.
@@ -148,7 +148,7 @@ class BottleEmitter extends EmitterContract
 
 As the portal node is about to get setup or is in usage an administrator needs to find out about its status regarding a correct configuration or the connectivity state of the underlying data source.
 A status reporter is meant to get information about a certain topic.
-Every portal should expose a health status reporter and when a data source is used that depends on I/O operations like file or network access.
+Every portal should expose a health status reporter when a data source is used that depends on I/O operations like file or network access.
 
 ```php
 namespace Acme\Portal\Bottle\StatusReporter;
