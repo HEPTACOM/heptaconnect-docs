@@ -10,4 +10,4 @@ This has multiple advantages:
 
 Looking at the third point we can now easily see that we have a versioned copy of the package.
 With a copy at almost root level of the project you can easily apply changes without diving into the depth of a composer vendor folder and can check it working in any playground environment.
-Now with the copy being a versioned copy you can commit your changes and prepare a pull request for us to look at.  
+Now with the copy being a versioned copy you can commit your changes and prepare a pull request for us to look at.

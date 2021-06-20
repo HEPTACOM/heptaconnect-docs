@@ -9,7 +9,7 @@ The usage of these resources should be known to a certain degree for monitoring 
 ## Decision
 
 The information have to be connected to a portal node and its structural resource subdivision.
-There is no context given as it is just about when and what kind of categories are affected.  
+There is no context given as it is just about when and what kind of categories are affected.
 For example a processing involving the transport of a file does not not contain the complete file but can be tagged with e.g. the mime type or encoding, ….
 There need to be common decorators for common implementations to simplify automatic recording like PSR HTTP client.
 Adding common decorators in a global registry simplifies the usage of portal node developer that can depend on common decorator implementations.
@@ -17,7 +17,7 @@ The telemetry entry only represents a single direction in a synchronous interact
 Incoming web requests and cronjob runs are automatically recorded.
 Telemetry has to be optional by core configuration as the storage is impacted heavily and it can affect the performance.
 Storing telemetry data is not allowed to break the portal node flow by e.g. throwing an exception.
-Recording describes an incrementable reference object that stores the timestamps of each increment and is taggable. 
+Recording describes an incrementable reference object that stores the timestamps of each increment and is taggable.
 
 The exact way for analysis of the recorded data is up to discussion and postponed to a different point in time.
 

@@ -49,7 +49,7 @@ class HealthStatusReporter extends StatusReporterContract
 }
 ```
 
-Auto-wiring detected the `\Psr\Log\LoggerInterface` in the constructor and automatically decided to go for the logger implementation that is already available for every portal node. 
+Auto-wiring detected the `\Psr\Log\LoggerInterface` in the constructor and automatically decided to go for the logger implementation that is already available for every portal node.
 
 
 ### Auto-configuration

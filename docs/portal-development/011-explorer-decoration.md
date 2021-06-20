@@ -8,7 +8,7 @@
 | Replacement | -     |
 
 A portal extension allows further customizations in behaviour.
-This includes changing the discovery of elements. 
+This includes changing the discovery of elements.
 
 ## Intention
 

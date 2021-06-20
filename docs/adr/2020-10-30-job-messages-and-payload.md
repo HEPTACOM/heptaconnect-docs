@@ -3,7 +3,7 @@
 ## Context
 
 In case of a structural change in a dataset you might need to migrate serialized data in a way to make in work with the latest code.
-The data that is affected of the structural change can still be within a message queue provider and is often out of access until message handling. 
+The data that is affected of the structural change can still be within a message queue provider and is often out of access until message handling.
 You could unintentionally send duplicated messages to drain performance and increase IO operations overall.
 
 

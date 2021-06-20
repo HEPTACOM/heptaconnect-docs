@@ -14,14 +14,14 @@ Reliable service to do HTTP requests with.
 
 > Psr\Http\Message\RequestFactoryInterface
 
-A [PSR-17](https://www.php-fig.org/psr/psr-17/) compliant factory that builds [PSR-7](https://www.php-fig.org/psr/psr-7/) HTTP requests for the `Psr\Http\Client\ClientInterface` service. 
+A [PSR-17](https://www.php-fig.org/psr/psr-17/) compliant factory that builds [PSR-7](https://www.php-fig.org/psr/psr-7/) HTTP requests for the `Psr\Http\Client\ClientInterface` service.
 
 
 ### UriFactoryInterface
 
 > Psr\Http\Message\UriFactoryInterface
 
-A [PSR-17](https://www.php-fig.org/psr/psr-17/) compliant factory that builds [PSR-7](https://www.php-fig.org/psr/psr-7/) URIs for the `Psr\Http\Message\RequestFactoryInterface` service. 
+A [PSR-17](https://www.php-fig.org/psr/psr-17/) compliant factory that builds [PSR-7](https://www.php-fig.org/psr/psr-7/) URIs for the `Psr\Http\Message\RequestFactoryInterface` service.
 
 
 ### LoggerInterface

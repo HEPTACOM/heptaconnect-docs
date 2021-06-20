@@ -5,7 +5,7 @@
 Data sources like plain tables (.csv, .tsv, .txt, .json, .xml) and slow/rate-limited APIs both share the fact that you want to keep the interaction count low.
 Plain tables need to be parsed and are missing an index for fast navigation wich reduces speed in reading and often uses computation time and memory.
 Rate-limited APIs should not be consumed twice for the same information.
-When they allow retrieving list data similar to single entries that should be preferred to allow for smart rate-limit usage. 
+When they allow retrieving list data similar to single entries that should be preferred to allow for smart rate-limit usage.
 
 
 ## Decision

@@ -6,7 +6,10 @@ In horizontally scaled processes problems of parallelization can happen like rac
 
 ## Decision
 
-To support horizontal scaling there is also the need to allow resource locking. As the resource accessing is part of transmitting data over time or space, the storages and portals should be able to use this feature. Therefore we will put in the contracts into the portal-base. As locks need some sort of storage to maintain a lock state an additional repository has to be added to the storages.
+To support horizontal scaling there is also the need to allow resource locking.
+As the resource accessing is part of transmitting data over time or space, the storages and portals should be able to use this feature.
+Therefore we will put in the contracts into the portal-base.
+As locks need some sort of storage to maintain a lock state an additional repository has to be added to the storages.
 
 The featured methods shall be:
 
@@ -14,7 +17,7 @@ The featured methods shall be:
 * lock
 * release
 
-A utility class or methods to easily write spinlocks by time or iteration shall be added.  
+A utility class or methods to easily write spinlocks by time or iteration shall be added.
 
 Locks shall rather run out of time or a different measurement instead to unintentionally lock a resource.
 

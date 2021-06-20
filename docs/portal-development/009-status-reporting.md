@@ -7,7 +7,9 @@
 | Removed     | -     |
 | Replacement | -     |
 
-Status reporting provides JSON serializable data, so it can be processed easily by many services. It is divided into multiple topics. There are four core topics to define a common set that probably every portal needs:
+Status reporting provides JSON serializable data, so it can be processed easily by many services.
+It is divided into multiple topics.
+There are four core topics to define a common set that probably every portal needs:
 
 * **health** Provide hints about I/O connectivity
 * **config** Provide hints about configuration choices
@@ -18,7 +20,8 @@ Any portal and portal extension provides status reporters for any topic they wan
 
 ## Intention
 
-Status reporters are intended for the usage of the four core reportings. It is fine to add new topics, but some tooling might not support it out of the box.
+Status reporters are intended for the usage of the four core reportings.
+It is fine to add new topics, but some tooling might not support it out of the box.
 
 This way a portal can communicate how to configure a portal node in a multi-step configuration setup or inform about the health status of the connected datasource for monitoring in everyday usage.
 
@@ -112,7 +115,8 @@ class AnalysisStatusReporter extends StatusReporterContract
 }
 ```
 
-This status reporter relies on a feature the API client needs to implement as well: writing the last unix timestamp into the portal node storage. This way you can track the API clients behaviour.
+This status reporter relies on a feature the API client needs to implement as well: writing the last unix timestamp into the portal node storage.
+This way you can track the API clients behaviour.
 
 ### Information
 
@@ -139,4 +143,5 @@ class InformationStatusReporter extends StatusReporterContract
 }
 ```
 
-The status reporter provides static information about possible debug configuration that does not need to be calculated. This can contain various of different types of information that suits the portal needs.
+The status reporter provides static information about possible debug configuration that does not need to be calculated.
+This can contain various of different types of information that suits the portal needs.

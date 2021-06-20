@@ -8,7 +8,7 @@
 | Replacement | -     |
 
 A portal extension allows further customizations in behaviour.
-This includes adding further writes when receiving data from elements. 
+This includes adding further writes when receiving data from elements.
 
 ## Intention
 

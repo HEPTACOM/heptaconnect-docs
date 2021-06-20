@@ -2,7 +2,7 @@
 
 In HEPTAconnect we separate different steps where data processing is happening to have different entry points for developers and enable horizontal scaling for each step.
 The main steps are exploration, emission and reception.
-The exploration can be triggered from different places and will follow in emissions and receptions when the data routes exists. 
+The exploration can be triggered from different places and will follow in emissions and receptions when the data routes exists.
 In the following paragraphs you will see what kind of data flows can occur:
 
 ## Basic flow
