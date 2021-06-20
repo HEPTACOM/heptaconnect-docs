@@ -1,12 +1,13 @@
 # How to be a HEPTAconnect portal developer
 
 This is all about the guidelines to structure a portal or portal extensions.
-Be sure to know then general thoughts and requirements to be a [HEPTAconnect developer](./001-core-development.md) and have a basic understanding what a dataset is and what it means to [develop one](./002-dataset-development.md).
+Be sure to know the general thoughts and requirements to be a [HEPTAconnect developer](./001-core-development.md) and have a basic understanding what a dataset is and what it means to [develop one](./002-dataset-development.md).
 
 ## Composer
-
-It is recommended to add the keyword `heptaconnect-portal` to the composer package that provides one or more portals.
-This way more people can easily find your portal on packagist.
+f
+It is mandatory to add the keyword `heptaconnect-portal` to the composer package that provides one or more portals.
+This way HEPTAconnect can find your portal and register portal nodes for it.
+Also more people can easily find your portal on packagist.
 A common `composer.json` for a portal providing package may look like this:
 
 ```json
@@ -39,50 +40,41 @@ A common `composer.json` for a portal providing package may look like this:
 
 ## Structure
 
-A portal can provide supporting methods that can later be used within the FlowComponents:
+The entry point of your portal is an implementation of the `PortalContract`.
+It can implement a method to provide a configuration template or some custom methods to use in your flow components.
+None of these methods are mandatory, therefore the minimum valid portal class would look like this:
 
 ```php
 class BottlesLocalPortal extends PortalContract
 {
-    /**
-     * This method is unique for this portal implementation.
-     * It is not defined in the PortalContract.
-     */
-    public function getApiClient(array $config): AcmeApiClient
-    {
-        // create and configure api client
-        return new AcmeApiClient();
-    }
 }
 ```
 
-A receiver gets data from HEPTAconnect is to be told to communicate towards the API it wraps.
-A common implementation is to let the portal provide an custom API client and let the receiver do the translation work from dataset structures to API structures:
+A receiver that gets data from HEPTAconnect is to be told to communicate towards the API it wraps.
+A common implementation is to use a custom API client and let the receiver do the translation work from dataset structures to API structures:
 
 ```php
 class BottleReceiver extends ReceiverContract
 {
-    private BottlesLocalPortal $portal;
-    
-    public function __construct(BottlesLocalPortal $portal)
-    {
-        $this->portal = $portal;
-    }
-
     /**
      * @param Bottle $entity  
      */
     protected function run(DatasetEntityContract $entity, ReceiveContextInterface $context): void
     {
+        // get API client to send the data to
+        $apiClient = new ApiClient();
+
+        // either the entity already has an ID or we create a new one
         $id = $entity->getPrimaryKey() ?? Uuid::uuid4()->toString();
-        // get portal specific API client to communicate the data from the contexts configuration
-        $this->portal->getApiClient($context->getConfig())->upsert([
+        
+        // translate entity to arbitrary structure and send it to the API
+        $apiClient->upsert([
             'id' => $id,
             'cap' => $entity->getCap()->getType(),
             'volume' => $entity->getCapacity()->as(Liter::class),
         ]);
         
-        // mark the entity as successfully transferred 
+        // save the primary key, so a mapping is created
         $entity->setPrimaryKey($id);
     }
 
@@ -99,22 +91,19 @@ As we just read how a receiver is reduced to the case of communication we can co
 ```php
 class BottleEmitter extends EmitterContract
 {
-    private BottlesLocalPortal $portal;
-    
-    public function __construct(BottlesLocalPortal $portal)
-    {
-        $this->portal = $portal;
-    }
-
     protected function run(string $externalId, EmitContextInterface $context): ?DatasetEntityContract
-    {        
-        // get portal specific API client to communicate the data from the contexts configuration
-        $data = $this->portal->getApiClient($context->getConfig())->select($externalId);
+    {
+        // get API client to read the data from
+        $apiClient = new ApiClient();
+ 
+        // read data from API client
+        $data = $apiClient->select($externalId);
 
         if (\count($data) === 0) {
             return null;
         }           
 
+        // translate arbitrary data structure to entity
         return (new Bottle())
             ->setCap((new Cap())->setName($data['cap']))
             ->setCapacity(new Liter($data['volume']));
@@ -130,20 +119,13 @@ class BottleEmitter extends EmitterContract
 
 ## Expose status for administration
 
-As the portal node is about to get setup or is in usage an administrator needs to find out about its status regarding a correct configuration or the connectivity state of the underlying datasource.
+As the portal node is about to get setup or is in usage an administrator needs to find out about its status regarding a correct configuration or the connectivity state of the underlying data source.
 A status reporter is meant to get information about a certain topic.
 Every portal should expose a health status reporter and when a data source is used that depends on I/O operations like file or network access.
 
 ```php
 class BottleHealthStatusReporter extends StatusReporterContract
 {
-    private BottlesLocalPortal $portal;
-    
-    public function __construct(BottlesLocalPortal $portal)
-    {
-        $this->portal = $portal;
-    }
-
     public function supportsTopic(): string
     {
         return self::TOPIC_HEALTH;
@@ -151,9 +133,12 @@ class BottleHealthStatusReporter extends StatusReporterContract
 
     public function run(StatusReportingContextInterface $context): array
     {
+        // get API client
+        $apiClient = new ApiClient();
+
         return [
             $this->supportsTopic() => true,
-            'bottleCount' => $this->portal->getApiClient($context->getConfig())->count(),
+            'bottleCount' => $apiClient->count(),
         ];
     }
 }
@@ -201,20 +186,15 @@ The emitter decorator will be injected into the call chain and can now alter the
 ```php
 class BottleWithContentEmitter extends EmitterContract
 {
-    private BottlesLocalPortal $portal;
-    
-    public function __construct(BottlesLocalPortal $portal)
-    {
-        $this->portal = $portal;
-    }
-
     protected function extend(
         DatasetEntityContract $entity,
         EmitContextInterface $context
     ) : ?DatasetEntityContract {
-        // get portal specific API client to communicate the extra data from the contexts configuration
-        $data = $this->portal->getApiClient($context->getConfig())
-            ->selectContentData($entity->getPrimaryKey());
+        // get API client
+        $apiClient = new ApiClient();
+
+        // read extra data from the API client
+        $data = $apiClient->selectContentData($entity->getPrimaryKey());
 
         if (\count($data) > 0) {
             // assign extra data to the already emitted entity
