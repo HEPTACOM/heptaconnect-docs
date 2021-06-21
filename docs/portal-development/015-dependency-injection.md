@@ -316,8 +316,8 @@ Having the following service definition it is possible to determine the differen
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <services>
-        <service alias="AcmeApi\AppleRepository" id="ApiResourceInterface $apples"/>
-        <service alias="AcmeApi\OrangeRepository" id="ApiResourceInterface $oranges"/>
+        <service alias="AcmeApi\AppleRepository" id="FooBar\AcmeApi\ApiResourceInterface $apples"/>
+        <service alias="AcmeApi\OrangeRepository" id="FooBar\AcmeApi\ApiResourceInterface $oranges"/>
     </services>
 </container>
 ```
