@@ -41,10 +41,6 @@ In case of describing data about bottles a single bottle can be described as the
 ```php
 namespace Acme\Dataset\Bottle;
 
-use Acme\Dataset\Bottle\BottleShape;
-use Acme\Dataset\Bottle\Cap;
-use Acme\Dataset\Bottle\LabelCollection;
-use Acme\Dataset\Bottle\Volume;
 use Heptacom\HeptaConnect\Dataset\Base\Contract\DatasetEntityContract;
 
 class Bottle extends DatasetEntityContract
@@ -88,7 +84,6 @@ Types like `StringCollection`, `IntegerCollection` and `DateTimeCollection` are 
 ```php
 namespace Acme\Dataset\Bottle;
 
-use Acme\Dataset\Bottle\Label;
 use Heptacom\HeptaConnect\Dataset\Base\DatasetEntityCollection;
 
 class LabelCollection extends DatasetEntityCollection
@@ -118,7 +113,6 @@ The `DatasetEntityContract` already implements this interface, so existing entit
 ```php
 namespace Acme\Dataset\Bottle;
 
-use Acme\Dataset\Bottle\Volume;
 use Heptacom\HeptaConnect\Dataset\Base\Contract\AttachableInterface;
 
 class BottleContent implements AttachableInterface
