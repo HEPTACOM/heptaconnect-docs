@@ -31,6 +31,37 @@ A [PSR-17](https://www.php-fig.org/psr/psr-17/) compliant factory that builds [P
 A [PSR-3](https://www.php-fig.org/psr/psr-3/) compliant logging service that logs your messages accordingly to your runtime setup.
 
 
+## HEPTAconnect portal utilities
+
+### NormalizationRegistryContract
+
+> Heptacom\HeptaConnect\Portal\Base\Serialization\Contract\NormalizationRegistryContract
+
+Service to allow different normalization strategies.
+Useful to serialize objects and streams.
+
+
+### DeepCloneContract
+
+> Heptacom\HeptaConnect\Portal\Base\Support\Contract\DeepCloneContract
+
+Service to clone objects.
+
+
+### DeepObjectIteratorContract
+
+> Heptacom\HeptaConnect\Portal\Base\Support\Contract\DeepObjectIteratorContract
+
+Service to iterate objects like trees.
+
+
+### ProfilerContract
+
+> Heptacom\HeptaConnect\Portal\Base\Profiling\ProfilerContract
+
+Service to access the profiling component to provide further detailed profiling info.
+
+
 ## HEPTAconnect portal node stack specific services
 
 ### PortalContract
@@ -118,34 +149,3 @@ Supports time-to-live attributes on entries to allow caching functionality.
 > Heptacom\HeptaConnect\Portal\Base\Parallelization\Support\ResourceLockFacade 
 
 A service that allows resource locking functionality to better interrupt between parallel steps.
-
-
-## HEPTAconnect portal utilities
-
-### NormalizationRegistryContract
-
-> Heptacom\HeptaConnect\Portal\Base\Serialization\Contract\NormalizationRegistryContract
-
-Service to allow different normalization strategies.
-Useful to serialize objects and streams.
-
-
-### DeepCloneContract
-
-> Heptacom\HeptaConnect\Portal\Base\Support\Contract\DeepCloneContract
-
-Service to clone objects.
-
-
-### DeepObjectIteratorContract
-
-> Heptacom\HeptaConnect\Portal\Base\Support\Contract\DeepObjectIteratorContract
-
-Service to iterate objects like trees.
-
-
-### ProfilerContract
-
-> Heptacom\HeptaConnect\Portal\Base\Profiling\ProfilerContract
-
-Service to access the profiling component to provide further detailed profiling info.
