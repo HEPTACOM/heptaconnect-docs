@@ -32,7 +32,7 @@ Depending on the capabilities of the storage it is even possible to store files 
 ## Error handling
 
 In theory an implementation of the Key-Value-Storage should be able to handle any kind of data.
-In practise though, whether or not a certain set of data can be stored depends on the available storage strategies.
+In practise though, whether a certain set of data can be stored depends on the available storage strategies.
 Providing these strategies is the responsibility of the storage, so a portal cannot influence these.
-If a portal tries to store a value that cannot be handled by any abailable strategy, the Key-Value-Storage will throw an exception.
+If a portal tries to store a value that cannot be handled by any available strategy, the Key-Value-Storage will throw an exception.
 Similarly, if a portal tried to read a value that cannot be handled by any strategy (maybe the corresponding denormalizer has been removed with a recent update), the Key-Value-Storage will throw an exception as well.
