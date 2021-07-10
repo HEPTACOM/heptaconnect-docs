@@ -144,6 +144,14 @@ A service to store data in a key-value manner.
 Supports time-to-live attributes on entries to allow caching functionality.
 
 
+### PublisherInterface
+
+> Heptacom\HeptaConnect\Portal\Base\Publication\Contract\PublisherInterface
+
+A service to inform HEPTAconnect about the existence of entities.
+The publication will send an entity via an event driven flow.
+
+
 ### ResourceLockFacade 
 
 > Heptacom\HeptaConnect\Portal\Base\Parallelization\Support\ResourceLockFacade 
