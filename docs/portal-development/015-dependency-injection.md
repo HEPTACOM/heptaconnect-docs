@@ -259,22 +259,22 @@ When you have multiple services with the same interface, auto-wiring can't decid
 In these situations it is handy to use argument aliases, so the argument names can help out.
 This is the very first moment you need a custom service container definition.
 
-To load your service definition file it must be named `services.{xml,yml,yaml,php}` and it must be located inside the directory `resources/config`.
+To load your service definition file it must be named `services.{xml,yml,yaml,php}` and it must be located inside the directory `src/Resources/config`.
 
 The file structure should look similar to this:
 
 ```
 <portal-dir>
 ├── composer.json
-├── resources
-│   └── config
-│       └── services.xml
 └── src
     ├── AcmeApi
     │   ├── ApiClient.php
     │   └── ApiResourceInterface.php
     │   ├── AppleRepository.php
     │   └── OrangeRepository.php
+    ├── Resources
+    │   └── config
+    │       └── services.xml
     ├── StatusReporter
     │   └── HealthStatusReporter.php
     └── Portal.php
