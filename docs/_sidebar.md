@@ -21,6 +21,7 @@
     - [Direct emission explorer](/portal-development/014-direct-emission-explorer.md)
     - [Dependency injection](/portal-development/015-dependency-injection.md)
     - [Default utilities list](/portal-development/016-default-utilities.md)
+    - [Short notation for flow components](/portal-development/017-short-notation-for-flow-components.md)
 - General Resources
     - [Nomenclature](/general-resources/001-nomenclature.md)
     - [Package Structure](/general-resources/002-package-structure.md)
@@ -40,6 +41,7 @@
     - [Portal service container](/adr/2020-12-10-portal-service-container.md)
     - [Portal dependency injection](/adr/2021-04-13-portal-dependency-injection-implementation.md)
     - [Direct emission exploration](/adr/2021-02-03-direct-emission-exploration.md)
+    - [Flow component short notation](/adr/2021-06-17-flow-component-short-notation.md)
 - [FAQ](/faq.md)
 - [Contributing](/contributing.md)
     - [Contributor License Agreement](/cla.md)
