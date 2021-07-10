@@ -149,7 +149,15 @@ Supports time-to-live attributes on entries to allow caching functionality.
 > Heptacom\HeptaConnect\Portal\Base\Publication\Contract\PublisherInterface
 
 A service to inform HEPTAconnect about the existence of entities.
-The publication will send an entity via an event driven flow.
+A publication will trigger an emission of an entity via an event driven flow.
+
+
+### DirectEmissionFlowContract
+
+> Heptacom\HeptaConnect\Portal\Base\Flow\DirectEmission\DirectEmissionFlowContract
+
+A service to directly emit entities.
+This will skip the source emitter in a regular emission stack while the decorators will still be executed.
 
 
 ### ResourceLockFacade 
