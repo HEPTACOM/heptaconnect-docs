@@ -2,7 +2,7 @@
 
 ## Context
 
-This is a follow up to [the ADR about general service containers](./2020-12-10-portal-service-container.md).
+This is a follow-up to [the ADR about general service containers](./2020-12-10-portal-service-container.md).
 
 Dependency injection is a common pattern to create reusable components that can build upon each other.
 Portals will have to communicate with their API of choice in different flow components.
