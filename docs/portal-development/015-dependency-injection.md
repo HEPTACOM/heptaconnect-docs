@@ -7,10 +7,11 @@ We decided to use the Symfony dependency injection package.
 Read more in [the ADR section](../adr/2021-04-13-portal-dependency-injection-implementation.md) about our thoughts for our decisions.
 The following sections require you to know basic knowledge about the Symfony package which are documented very well [here](https://symfony.com/doc/current/components/dependency_injection.html).
 
+
 ## Zero-configuration setup
 
 Every service container is using a zero-configuration to allow a seamless entry into portal development.
-This means auto-configuration, auto-wiring and automatic PSR-4 resource loading is active by default.
+This means auto-configuration, auto-wiring, auto-binding and automatic PSR-4 resource loading is active by default.
 These features enable dependency injection without any setup steps for the developer.
 
 
@@ -92,6 +93,60 @@ There is an auto-configuration rule for the `\Psr\Log\LoggerAwareInterface` inte
 In the snippet above there is no visible `setLogger` implementation.
 The missing implementation is covered by the `\Psr\Log\LoggerAwareTrait`.
 Eventually it is a similar way to the constructor as the logger is set right after the constructor has been called.
+
+
+### Auto-binding
+
+The following is an example about accessing files.
+For this scenario an instance of `\League\Flysystem\FilesystemInterface` is needed to access the files of the portal node and a configuration entry for the filename to be read from.
+
+At first the portal definition states the `filename` as configuration:
+
+```php
+namespace FooBar;
+
+use Heptacom\HeptaConnect\Portal\Base\Portal\Contract\PortalContract;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class Portal extends PortalContract
+{
+    public function getConfigurationTemplate() : OptionsResolver
+    {
+        return parent::getConfigurationTemplate()
+            ->setDefault('filename', 'foobar.json')
+            ->setAllowedTypes('filename', 'string');
+    }
+}
+```
+
+The next snippet shows a service that will act as a centralized component to access the underlying data source; a JSON file:
+
+```php
+namespace FooBar\Service;
+
+use League\Flysystem\FilesystemInterface;
+
+class File
+{
+    private FilesystemInterface $filesystem;
+    
+    private string $configFilename;
+    
+    public function __construct(FilesystemInterface $filesystem, string $configFilename)
+    {
+        $this->filesystem = $filesystem;
+        $this->configFilename = $configFilename;
+    }
+    
+    public function readAll(): array
+    {
+        return (array) \json_decode($this->filesystem->read($this->configFilename) ?: '[]');
+    }
+}
+```
+
+This service uses auto-binding to read the values from the portal node configuration and inject it as variable into the service.
+The variable naming follows the pattern to add `config` as prefix and the configuration name in camelCase.
 
 
 ### Service container
