@@ -1,7 +1,7 @@
 {
     "date": "2021-07-12",
     "title": "Short notation for flow components",
-    "summary": "Gain more ",
+    "summary": "Reduce the lines of code for connecting your API to HEPTAconnect",
     "author": "Joshua Behrens"
 }
 ---
