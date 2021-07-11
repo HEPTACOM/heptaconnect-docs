@@ -18,7 +18,7 @@ For this feature a plain php file within the folder `src/Resources/flow-componen
             └── foobar.php
 ```
 
-`foobar.php` will be loaded and introduces a `FlowComponent` building utility.
+`foobar.php` will be loaded and uses a newly introduced `FlowComponent` building utility.
 Every callback that is given into that builder can make use of every [dependency injection](./015-dependency-injection.md) feature.
 The following section will show how to use each flow component with a file accessing scenario. 
 

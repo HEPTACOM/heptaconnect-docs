@@ -54,7 +54,7 @@ Boilerplate code is code we want to eliminate.
 
 ## Decision
 
-* Allow declaration of flow components in callback registration way.
+* Allow declaration of flow components in a callback registration way.
 
 
 ## Consequences
