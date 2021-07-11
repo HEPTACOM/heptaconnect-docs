@@ -25,7 +25,7 @@ Previously you had to write:
 ```php
 <?php
 
-define(string_types=1);
+declare(strict_types=1);
 
 namespace FooBar\Emitter;
 
@@ -54,19 +54,20 @@ class BottleEmitter extends EmitterContract
 }
 ```
 
-Sieve out the boilerplate-y lines and you have:
+Sieve out the boilerplate lines and you have:
 
 ```php
 <?php
 
-define(string_types=1);
+declare(strict_types=1);
 
 use FooBar\Packer\BottlePacker;
 use FooBar\Service\ApiClient;
 use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
 
-FlowComponent::emitter(Bottle::class)
-    ->run(fn (ApiClient $client, BottlePacker $packer, string $id) => $packer->pack($client->getBottleData($id)));
+FlowComponent::emitter(Bottle::class)->run(
+    fn (ApiClient $client, BottlePacker $packer, string $id) => $packer->pack($client->getBottleData($id))
+);
 ```
 
 When this reminds you of Laravel routes and commands, you are right.

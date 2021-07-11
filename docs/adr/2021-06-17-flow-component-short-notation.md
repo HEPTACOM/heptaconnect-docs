@@ -37,6 +37,7 @@ class BottleEmitter extends EmitterContract
 ```
 
 This sample emitter of about 30 lines of code only consists of, when trimmed down to the essentials, two lines of instructions.
+
 Acquisition of dependencies:
 
 ```php
@@ -44,6 +45,7 @@ public function __construct(ApiClient $client, BottlePacker $packer/*, string $e
 ```
 
 Wiring everything into an emitter run method:
+
 ```php
 return $this->packer->pack($this->client->getBottleData($externalId));
 ```

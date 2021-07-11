@@ -62,6 +62,22 @@ Service to iterate objects like trees.
 Service to access the profiling component to provide further detailed profiling info.
 
 
+### PublisherInterface
+
+> Heptacom\HeptaConnect\Portal\Base\Publication\Contract\PublisherInterface
+
+A service to inform HEPTAconnect about the existence of entities.
+A publication will trigger an emission of an entity via an event driven flow.
+
+
+### DirectEmissionFlowContract
+
+> Heptacom\HeptaConnect\Portal\Base\Flow\DirectEmission\DirectEmissionFlowContract
+
+A service to directly emit entities.
+This will skip the source emitter in a regular emission stack while the decorators will still be executed.
+
+
 ## HEPTAconnect portal node stack specific services
 
 ### PortalContract
@@ -142,22 +158,6 @@ This can be used with multiple HEPTAconnect services and is a dependency for the
 
 A service to store data in a key-value manner.
 Supports time-to-live attributes on entries to allow caching functionality.
-
-
-### PublisherInterface
-
-> Heptacom\HeptaConnect\Portal\Base\Publication\Contract\PublisherInterface
-
-A service to inform HEPTAconnect about the existence of entities.
-A publication will trigger an emission of an entity via an event driven flow.
-
-
-### DirectEmissionFlowContract
-
-> Heptacom\HeptaConnect\Portal\Base\Flow\DirectEmission\DirectEmissionFlowContract
-
-A service to directly emit entities.
-This will skip the source emitter in a regular emission stack while the decorators will still be executed.
 
 
 ### ResourceLockFacade 

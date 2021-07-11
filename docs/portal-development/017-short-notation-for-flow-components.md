@@ -32,11 +32,13 @@ use Heptacom\HeptaConnect\Playground\Dataset\Bottle;
 use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
 use League\Flysystem\FilesystemInterface;
 
-FlowComponent::explorer(Bottle::class)
-    ->run(fn (FilesystemInterface $fs): iterable => array_column($fs->listContents(), 'path'));
+FlowComponent::explorer(Bottle::class)->run(
+    fn (FilesystemInterface $fs): iterable => array_column($fs->listContents(), 'path')
+);
 
-FlowComponent::explorer(Bottle::class)
-    ->isAllowed(fn (FilesystemInterface $fs, string $id): bool => $fs->getSize($id) > 0);
+FlowComponent::explorer(Bottle::class)->isAllowed(
+    fn (FilesystemInterface $fs, string $id): bool => $fs->getSize($id) > 0
+);
 ```
 
 
@@ -51,15 +53,19 @@ use Heptacom\HeptaConnect\Playground\Dataset\Volume;
 use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
 use League\Flysystem\FilesystemInterface;
 
-FlowComponent::emitter(Bottle::class)
-    ->run(fn (FilesystemInterface $fs, BottlePacker $packer, string $id): ?Bottle => $packer->pack($fs->read($id) ?: null));
+FlowComponent::emitter(Bottle::class)->run(
+    fn (FilesystemInterface $fs, BottlePacker $packer, string $id): ?Bottle => $packer->pack(
+        $fs->read($id) ?: null
+    )
+);
 
-FlowComponent::emitter(Bottle::class)
-    ->extend(fn (FilesystemInterface $fs, Bottle $bottle): ?Bottle => $bottle->setCapacity(
+FlowComponent::emitter(Bottle::class)->extend(
+    fn (FilesystemInterface $fs, Bottle $bottle): ?Bottle => $bottle->setCapacity(
         (new Volume())
             ->setAmount($fs->getSize($bottle->getPrimaryKey()))
             ->setUnit('byte')
-    ));
+    )
+);
 ```
 
 
@@ -73,11 +79,12 @@ use Heptacom\HeptaConnect\Playground\Dataset\Bottle;
 use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
 use League\Flysystem\FilesystemInterface;
 
-FlowComponent::receiver(Bottle::class)
-    ->run(function (FilesystemInterface $fs, BottleUnpacker $unpacker, Bottle $bottle): void {    
+FlowComponent::receiver(Bottle::class)->run(
+    function (FilesystemInterface $fs, BottleUnpacker $unpacker, Bottle $bottle): void {    
         ['id' => $id, 'payload' => $payload] = $unpacker->unpack($bottle);
         $fs->write($id, $payload);
-    });
+    }
+);
 ```
 
 
@@ -89,11 +96,13 @@ FlowComponent::receiver(Bottle::class)
 use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
 use League\Flysystem\FilesystemInterface;
 
-FlowComponent::statusReporter('health')
-    ->run(function (FilesystemInterface $fs): bool => !empty($fs->listContents()));
+FlowComponent::statusReporter('health')->run(
+    fn (FilesystemInterface $fs): bool => !empty($fs->listContents())
+);
 
-FlowComponent::statusReporter('info')
-    ->run(function (FilesystemInterface $fs): array => [
+FlowComponent::statusReporter('info')->run(
+    fn (FilesystemInterface $fs): array => [
         'count' => count($fs->listContents()),
-    ]);
+    ]
+);
 ```
