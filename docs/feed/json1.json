@@ -1,0 +1,90 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "HEPTAconnect feed",
+    "home_page_url": "https://connect.heptacom.de/",
+    "description": "A newsfeed regarding changes in HEPTAconnect that are worthwhile a note",
+    "icon": "https://connect.heptacom.de/assets/logo.png",
+    "author": {
+        "name": "HEPTACOM GmbH",
+        "url": "https://www.heptacom.de"
+    },
+    "items": [
+        {
+            "id": "https://connect.heptacom.de/#/feed/2021-02-02-init",
+            "content_html": "<p>To react to community feedback we will start a feed to summarize every now and then interesting changes in this feed.</p>\n<p>This does not replace the <a href=\"https://connect.heptacom.de/#/adr/2020-08-10-architecture-decision-records\">ADR</a> section at all.\nAs we have a lot of repositories and this will be a channel to summarize the news that are shared across the packages.\nThis will also be the way to get informed about new packages as we follow our <a href=\"https://connect.heptacom.de/#/general-resources/002-package-structure\">flexible package structure</a>.</p>\n",
+            "url": "https://connect.heptacom.de/#/feed/2021-02-02-init",
+            "title": "Initialization of a feed",
+            "summary": "To react to community feedback we will start a feed to summarize every now and then interesting changes in this feed",
+            "date_modified": "2021-02-02T00:00:00.000Z",
+            "author": {
+                "name": "Joshua Behrens"
+            }
+        },
+        {
+            "id": "https://connect.heptacom.de/#/feed/2021-02-08-shopcast",
+            "content_html": "<p>Edin Dedagic - host at the German podcast shopcast.fm - invited us to have a talk about HEPTACOM as part of the Shopware community and the guest Joshua Behrens.\nIt was inevitable to talk as well about HEPTAconnect.\nA lot about HEPTAconnect which even results in a split into two parts.</p>\n<p>Have a deep dive into two hours of HEPTAconnect knowledge and its creators:</p>\n<ul>\n<li><a href=\"https://shopcast.fm/casts/017-interview-joschua-pt-1/\">Part 1</a></li>\n<li><a href=\"https://shopcast.fm/casts/018-interview-joschua-pt-2/\">Part 2</a></li>\n</ul>\n",
+            "url": "https://connect.heptacom.de/#/feed/2021-02-08-shopcast",
+            "title": "shopcast.fm appearance",
+            "summary": "Joshua Behrens had the chance to talk about HEPTAconnect on shopcast.fm",
+            "date_modified": "2021-02-08T00:00:00.000Z",
+            "author": {
+                "name": "Joshua Behrens"
+            }
+        },
+        {
+            "id": "https://connect.heptacom.de/#/feed/2021-03-23-data-flow-explorer",
+            "content_html": "<p>In the recent past we decided to allow <a href=\"https://connect.heptacom.de/#/portal-development/002-explorer.md\">explorers</a> behave like <a href=\"https://connect.heptacom.de/#/portal-development/003-emitter.md\">emitters</a> to allow easier processing of inefficient-to-read data sources.\nWe call this direct emission.\nHow to prepare your explorer for a direct emission is explained in the <a href=\"https://connect.heptacom.de/#/portal-development/014-direct-emission-explorer.md\">direct emission explorer</a> page.\nTo show the differences in the data flow we introduce a place where you can find multiple scenarios on the new <a href=\"https://connect.heptacom.de/#/general-resources/004-data-flow.md\">data flow</a> overview.</p>\n<p><strong>Coming soon</strong>:\nWe are currently setting up an integration guide that holds up our integration knowledge and explains our decisions that you should consider as well.\nStay tuned to let your next project experience the full data transfer expertise.</p>\n",
+            "url": "https://connect.heptacom.de/#/feed/2021-03-23-data-flow-explorer",
+            "title": "Data flows and direct emission exploration",
+            "summary": "Introduction to data flows and direct emission exploration",
+            "date_modified": "2021-03-23T00:00:00.000Z",
+            "author": {
+                "name": "Joshua Behrens"
+            }
+        },
+        {
+            "id": "https://connect.heptacom.de/#/feed/2021-05-23-playground-shopware-6-4",
+            "content_html": "<p>A wave of huge changes hit the playground and ironed some kinks.</p>\n<p><strong>The major update at Shopware from 6.3 to 6.4 has been rolled out onto the HEPTAconnect packages.</strong>\nTo experience Shopware 6.4 with HEPTAconnect you can now easily grab yourself a fresh copy of the <a href=\"https://connect.heptacom.de/#/playground/001-introduction\">playground</a> and dive in.\nTo allow the playground be used with your <a href=\"https://connect.heptacom.de/#/playground/first-time/001-with-shopware-6\">familiar ecommerce framework</a> in a more complete manner you will now find an integrated <code>shopware/administration</code>.\nThis way you can use the playground to fiddle with HEPTAconnect within Shopware and in addition also with Shopware itself after importing your favorite data.</p>\n<p><strong>How to get your favorite data in, you might ask?</strong>\nJust use the bundled shopware platform portal.\nOn creating the shopware instance in the playground you will get a portal node for the shopware instance as well as for the artificial portal for bottles.\nRequire other portals you can already find online on GitHub under the tag <a href=\"https://github.com/topics/heptaconnect-portal\">heptaconnect-portal</a> into the shopware composer.json.\nThey are automatically discovered for you to draw your first routes between the portal nodes.</p>\n<p><strong>What is that /repos/ folder at root level?</strong>\nWe had a look at the <a href=\"https://connect.heptacom.de/#/playground/005-contribution\">contribution and experimenting flow</a> we currently provide and chose to rework that.\nThe new folder contains every HEPTAconnect package as a clone from GitHub.\nThey are linked into the vendor folder.\nHaving the different packages on this directory level makes it much easier to discover and change HEPTAconnect.\nAs they are clones from GitHub it also allows a direct way to share your work on HEPTAconnect in a bleeding edge manner.</p>\n<p><strong>How can you know all of this?</strong> The documentation got a truck load of new content about:</p>\n<ul>\n<li><a href=\"https://connect.heptacom.de/#/playground/001-introduction\">the playground</a></li>\n<li><a href=\"https://connect.heptacom.de/#/playground/003-command-line\">commands</a></li>\n</ul>\n<p>Some of these new pages are also linked within this article so have a look around.</p>\n",
+            "url": "https://connect.heptacom.de/#/feed/2021-05-23-playground-shopware-6-4",
+            "title": "HEPTAconnect and playground support for Shopware 6.4",
+            "summary": "The playground supports Shopware 6.4 and the docs will tell you how to use it in just a few steps",
+            "date_modified": "2021-05-23T00:00:00.000Z",
+            "author": {
+                "name": "Joshua Behrens"
+            }
+        },
+        {
+            "id": "https://connect.heptacom.de/#/feed/2021-05-31-queue-and-job-storage",
+            "content_html": "<p>This week we completed our <a href=\"https://connect.heptacom.de/#/adr/2020-10-30-job-messages-and-payload.md\">ADR about jobs</a>.\nWorking on that issue really created lots of space for further tasks in the architecture of HEPTAconnect as well as on the storage layer used for the message broker.</p>\n<p>In detail, we've been using the message broker to completely keep the data in question for each transfer.\nRead our <a href=\"https://connect.heptacom.de/#/adr/2020-10-30-job-messages-and-payload.md\">ADR about jobs and their payloads</a> to follow our thoughts but here are the basic pros:</p>\n<ul>\n<li>When emptying a message queue, the messages can be reconstructed</li>\n<li>The message provider has fewer data to store</li>\n<li>It is easy to change job types and payload structures</li>\n</ul>\n<p>We were testing the storage sizes on a default Shopware 6 setup.\nIt uses php serialization to store messages on the database.\nAfter our change we only store a job reference in the message and store the payload on the database.\nOur referenced payload takes up from 40% to 95% less memory on the same database driver than in the message table.\nThe following tasks benefit from the size difference:</p>\n<ul>\n<li>database query times</li>\n<li>database backup sizes</li>\n<li>message broking on various providers</li>\n<li>restoring and duplicating systems</li>\n</ul>\n<p>Above mentioned the architecture also draws a big benefit from that change:\nAs we now have the job payloads separated from their execution scheduling, it is easier to add reference between these jobs.\nThis is especially useful for <a href=\"https://en.wikipedia.org/wiki/Boolean_satisfiability_problem\">SAT</a> algorithms that will make their way into HEPTAconnect one day.</p>\n",
+            "url": "https://connect.heptacom.de/#/feed/2021-05-31-queue-and-job-storage",
+            "title": "Queue and job memory utilization reduction up to 95%",
+            "summary": "Switching to dedicated job storages reduced the memory utilization and improves job management",
+            "date_modified": "2021-05-31T00:00:00.000Z",
+            "author": {
+                "name": "Joshua Behrens"
+            }
+        },
+        {
+            "id": "https://connect.heptacom.de/#/feed/2021-06-21-symfony-dependency-injection",
+            "content_html": "<h2>TL;DR</h2>\n<p>Write less. <br>\nAchieve more in less time. <br>\nLook at your results faster.</p>\n<p>Read more about <a href=\"https://connect.heptacom.de/#/portal-development/015-dependency-injection\">Dependency injection</a> and the new <a href=\"https://connect.heptacom.de/#/portal-development/016-default-utilities\">default utilities</a>.</p>\n<h2>Preamble</h2>\n<p>One of our main goals for HEPTAconnect is the ability to replace lots of different implementations to gain a frictionless integrability.\nWhen we were looking for the service container feature, we had an issue to solve:\nAs service container builders have not been addressed in the <a href=\"https://www.php-fig.org/psr/psr-11/\">PSR-11</a>, we had to implement service container and builder.\nThe custom implementation holds a 47 lines-of-code container implementation, a 36 lines-of-code container builder and a single entry point for portal developers in their code.</p>\n<h2>What we achieved</h2>\n<p>We were able to get yet another PSR compatibility and its benefits: build and share reusable components.\nBy now our implementation of a service container is about half a year old, and we are missing features.\nWe didn't expect our small implementation to have it all right away, but it is a bit impractical in daily usage.</p>\n<ul>\n<li>Tagged services are missing</li>\n<li>Every service had to have a service definition</li>\n<li>Service decoration was possible but very unpleasant</li>\n<li>Services could only be pulled out of the container</li>\n</ul>\n<p>It served the purpose, but it wasn't quite right.</p>\n<h2>What we were looking for</h2>\n<p>Basically we were looking for what we were missing:</p>\n<ul>\n<li>Tagged services</li>\n<li>Write no boilerplate service definitions (in the best case)</li>\n<li>Easy service decoration</li>\n<li>Dependency injection (instead of pulling)</li>\n</ul>\n<p>We were accustomed to the Symfony and Laravel worlds having all these features.\nLaravel didn't make the cut for us as it is difficult to pull Illuminate components out of their ecosystem.\nSymfony gave us similar expectations back when we noticed Bundles are part of the HttpKernel and also quite baked into the Symfony framework <code>/rant</code>.</p>\n<h2>The future is now</h2>\n<p>On our search for a good implementation for service containers with dependency injection we stumbled upon <a href=\"https://kocsismate.github.io/php-di-container-benchmarks/benchmark.html\">a benchmark</a>.\nThe Symfony implementation was most of the time in second place but had all we ever wanted.\nSo we revisited that package and were happy to see that it had barely any dependencies which is good for an almost frictionless package.\nHaving the service definition files based on xml and yml also allows portal developers to define services without knowing the exact Symfony version behind the scenes.</p>\n<p>We gave the implementation a try and got hooked right back into it.\nEnabling all the nice things and sprinkling some more educated guesses into the container builder gave us the shiny new developer experience for portal developers we always wanted to provide:</p>\n<ul>\n<li>Even in bigger scenarios there is no definition file needed as we are using the composer.json of the portal for prototyping definitions</li>\n<li>Auto-wiring allows for smart service injection guesses</li>\n<li>Auto-configuration allows for smart service kind detection</li>\n<li>Integrations are now able to alter the containers almost effortlessly</li>\n<li>Flow components (explorer, emitter, receivers) and status reporters can make use of dependency injection</li>\n<li>Portal developers are most likely from a Laravel or Symfony background and should be already quite familiar with the logic behind the scenes</li>\n</ul>\n<h2>Documentation</h2>\n<p>When you already had a deeper look into our documentation, you can notice the reduction of boilerplate code in almost every portal developer code sample.\nWe added <a href=\"https://connect.heptacom.de/#/portal-development/015-dependency-injection\">a new chapter</a> to the documentation under portal development containing everything you need to know to use dependency injection with the new service container.\nThis way we also took the chance to provide a <a href=\"https://connect.heptacom.de/#/portal-development/016-default-utilities\">complete list of utility service</a> we provide out of the box.</p>\n",
+            "url": "https://connect.heptacom.de/#/feed/2021-06-21-symfony-dependency-injection",
+            "title": "Symfony dependency injection for portal developers",
+            "summary": "Integrating a well known dependency injection container provides lots of cool features",
+            "date_modified": "2021-06-21T00:00:00.000Z",
+            "author": {
+                "name": "Joshua Behrens"
+            }
+        },
+        {
+            "id": "https://connect.heptacom.de/#/feed/2021-07-12-short-notation",
+            "content_html": "<h2>TL;DR</h2>\n<p>Write less. <br>\nAchieve more in less time. <br>\nLook at your results faster.</p>\n<p>Read more about <a href=\"https://connect.heptacom.de/#/portal-development/017-short-notation-for-flow-components\">short notation for flow components</a>.</p>\n<h2>Preamble</h2>\n<p>No, the <strong>TL;DR</strong> is not a copy mistake from the <a href=\"https://connect.heptacom.de/#/feed/2021-06-21-symfony-dependency-injection\">previous feed entry about dependency injection</a>.\nWe once more achieved to improve the developer experience by adding more tools to reduce your boilerplate code.\nSummarizing our <a href=\"https://connect.heptacom.de/#/adr/2021-06-17-flow-component-short-notation\">ADR</a> you can now stop writing <strong>sections</strong> of code and start to write <strong>lines</strong> of code.\nPreviously you had to write:</p>\n<pre><code class=\"language-php\">&lt;?php\n\ndeclare(strict_types=1);\n\nnamespace FooBar\\Emitter;\n\nuse FooBar\\Packer\\BottlePacker;\nuse FooBar\\Service\\ApiClient;\nuse Heptacom\\HeptaConnect\\Dataset\\Base\\Contract\\DatasetEntityContract;\nuse Heptacom\\HeptaConnect\\Portal\\Base\\Emission\\Contract\\EmitContextInterface;\nuse Heptacom\\HeptaConnect\\Portal\\Base\\Emission\\Contract\\EmitterContract;\n\nclass BottleEmitter extends EmitterContract\n{\n    private ApiClient $client;\n    \n    private BottlePacker $packer;\n    \n    public function __construct(ApiClient $client, BottlePacker $packer)\n    { \n        $this-&gt;client = $client;\n        $this-&gt;packer = $packer;\n    }\n\n    public function run(string $externalId, EmitContextInterface $context) : ?DatasetEntityContract\n    {\n        return $this-&gt;packer-&gt;pack($this-&gt;client-&gt;getBottleData($externalId));\n    }\n}\n</code></pre>\n<p>Sieve out the boilerplate lines and you have:</p>\n<pre><code class=\"language-php\">&lt;?php\n\ndeclare(strict_types=1);\n\nuse FooBar\\Packer\\BottlePacker;\nuse FooBar\\Service\\ApiClient;\nuse Heptacom\\HeptaConnect\\Portal\\Base\\Builder\\FlowComponent;\n\nFlowComponent::emitter(Bottle::class)-&gt;run(\n    fn (ApiClient $client, BottlePacker $packer, string $id) =&gt; $packer-&gt;pack($client-&gt;getBottleData($id))\n);\n</code></pre>\n<p>When this reminds you of Laravel routes and commands, you are right.\nThis is heavily inspired by Laravel's nature of quickly scribbling down some lines to get something big running.\nTo get an overview of the short notation and how to use it visit <a href=\"https://connect.heptacom.de/#/portal-development/017-short-notation-for-flow-components\">the documentation page</a>.</p>\n",
+            "url": "https://connect.heptacom.de/#/feed/2021-07-12-short-notation",
+            "title": "Short notation for flow components",
+            "summary": "Reduce the lines of code for connecting your API to HEPTAconnect",
+            "date_modified": "2021-07-12T00:00:00.000Z",
+            "author": {
+                "name": "Joshua Behrens"
+            }
+        }
+    ]
+}

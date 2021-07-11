@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="639px" preserveAspectRatio="none" style="width:969px;height:639px;" version="1.1" viewBox="0 0 969 639" width="969px" zoomAndPan="magnify"><defs/><g><!--MD5=[cf6bc0e4fe401a9a5aff4c30b2cb2b2c]
+entity BSP--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="223" x="681.5" y="112"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="203" x="691.5" y="134.9951">Bridge-ShopwarePlatform</text><!--MD5=[f2eaa479891a38810f10d4ed600d1a16]
+entity SSD--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="192" x="741" y="304"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="172" x="751" y="326.9951">Storage-ShopwareDal</text><!--MD5=[16fab723be418f7eaf2ea4bd895a8e51]
+entity C--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="58" x="648" y="304"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="38" x="658" y="326.9951">Core</text><!--MD5=[f9ba5bf973e7832d2ce5ed59077b93f7]
+entity DB--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="124" x="383" y="592"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="104" x="393" y="614.9951">Dataset-Base</text><!--MD5=[9588a41f81df83122e454b7a1572a85d]
+entity DE--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="178" x="242" y="304"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="158" x="252" y="326.9951">Dataset-Ecommerce</text><!--MD5=[e9da69f9096b465755ae5bc34a69338b]
+entity DPL--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="217" x="103.5" y="496"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="197" x="113.5" y="518.9951">Dataset-PhysicalLocation</text><!--MD5=[ea87969fc35f1ca5453e0a1ca338bac3]
+entity DP--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="148" x="244" y="400"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="128" x="254" y="422.9951">Dataset-Product</text><!--MD5=[1a416c3156d55d9446032ebbee093b81]
+entity DS--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="132" x="6" y="400"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="112" x="16" y="422.9951">Dataset-Social</text><!--MD5=[e822cafa1e336809f6740c6a8c98cf92]
+entity PB--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="110" x="532" y="496"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="90" x="542" y="518.9951">Portal-Base</text><!--MD5=[2b3a42ba0b113a70d152b73cf5d32097]
+entity PBC--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="200" x="243" y="208"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="180" x="253" y="230.9951">Portal-BusinessCentral</text><!--MD5=[b3ed3813077a51c88679886e83829136]
+entity PSP--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="218" x="478" y="208"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="198" x="488" y="230.9951">Portal-ShopwarePlatform</text><!--MD5=[db5ca709379f12a280ab2b7d6533fd7d]
+entity SB--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="126" x="782" y="400"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="106" x="792" y="422.9951">Storage-Base</text><!--MD5=[e62dc25527827e2fa807f722962a2fb4]
+entity SPBBC--><polygon fill="#007AFF" points="442,16,452,6,732,6,732,42.2969,722,52.2969,442,52.2969,442,16" style="stroke: #3C3C3C; stroke-width: 1.5;"/><line style="stroke: #3C3C3C; stroke-width: 1.5;" x1="722" x2="731" y1="16" y2="7"/><line style="stroke: #3C3C3C; stroke-width: 1.5;" x1="442" x2="722" y1="16" y2="16"/><line style="stroke: #3C3C3C; stroke-width: 1.5;" x1="722" x2="722" y1="16" y2="52.2969"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="250" x="457" y="38.9951">Shopware Plugin BC Integration</text><!--MD5=[6f21361dea3bb3d9968354847fe4c430]
+link BSP to SSD--><path d="M796.98,148.2 C804.07,178.79 819,243.29 828.49,284.26 " fill="none" id="BSP-&gt;SSD" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="835.37,282.92,833.06,303.98,821.73,286.07,835.37,282.92" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[1d3bfd7e31446e94794a1187d983a193]
+link C to SB--><path d="M706.26,339.37 C731.21,353.33 767.58,373.68 796.81,390.04 " fill="none" id="C-&gt;SB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="800.33,383.99,814.37,399.86,793.5,396.2,800.33,383.99" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[c001c3ef6c24fd1ce8030961eb1d4110]
+link C to PB--><path d="M668.85,340.2 C654.2,371.14 623.1,436.79 603.74,477.67 " fill="none" id="C-&gt;PB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="609.95,480.9,595.06,495.98,597.3,474.91,609.95,480.9" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[252be5cba428362d8555cb763104b44a]
+link C to DB--><path d="M681.11,340.05 C689.34,378.7 703.52,474.12 659,532 C627.75,572.62 573.18,591.85 526.97,600.93 " fill="none" id="C-&gt;DB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="528,607.85,507.11,604.33,525.64,594.05,528,607.85" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[9a1b6060a1cb265d2c4177608208a87e]
+link DE to DB--><path d="M355.07,340.08 C372.9,354.09 396.23,375.54 409,400 C437.74,455.04 444.24,528.27 445.32,571.83 " fill="none" id="DE-&gt;DB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="452.33,571.85,445.49,591.91,438.33,571.97,452.33,571.85" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[650e2e50002a328a4f535861a376c976]
+link DPL to DB--><path d="M254.19,532.02 C290.45,546.65 343.19,567.93 384.04,584.41 " fill="none" id="DPL-&gt;DB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="386.8,577.97,402.73,591.95,381.56,590.95,386.8,577.97" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[4a92d8fa351291173d6f0d273b81b623]
+link DP to DB--><path d="M329.49,436.2 C350.46,467.57 395.26,534.59 422.5,575.33 " fill="none" id="DP-&gt;DB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="428.33,571.46,433.62,591.98,416.69,579.24,428.33,571.46" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[b2a9c073d02194269c3386a5ee08852e]
+link DS to DB--><path d="M68.62,436.03 C64.81,460.55 61.97,505.76 86,532 C122.56,571.92 268.63,592.77 362.81,602.27 " fill="none" id="DS-&gt;DB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="363.69,595.33,382.93,604.21,362.35,609.26,363.69,595.33" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[316c629f644afab5480ddc4d6606ec3a]
+link DS to DPL--><path d="M97.35,436.02 C117.45,449.51 145.96,468.66 169.53,484.48 " fill="none" id="DS-&gt;DPL" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="173.66,478.83,186.36,495.79,165.86,490.45,173.66,478.83" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[23e40ab4dc0ad45d347e0edf415b3b2e]
+link DP to DPL--><path d="M298.56,436.24 C283.99,449.16 263.67,467.18 246.39,482.51 " fill="none" id="DP-&gt;DPL" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="250.93,487.84,231.32,495.87,241.64,477.36,250.93,487.84" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[0efcd19f695476697762562db16295c9]
+link DE to DPL--><path d="M294.19,340.13 C270.64,353.12 241.67,373.29 226,400 C212.65,422.75 209.41,452.49 209.37,475.74 " fill="none" id="DE-&gt;DPL" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="216.38,475.74,210.12,495.98,202.39,476.25,216.38,475.74" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[97a8706820d1c7a86d3768d66eec35e6]
+link DE to DP--><path d="M328.62,340.24 C327.08,351.37 325.01,366.28 323.12,380 " fill="none" id="DE-&gt;DP" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="330.04,381.02,320.37,399.87,316.18,379.1,330.04,381.02" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[b830fd844a13e13c66994dafd85c9e16]
+link DE to DS--><path d="M284.1,340.02 C243.24,354.85 183.57,376.51 137.92,393.08 " fill="none" id="DE-&gt;DS" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="140.18,399.7,118.99,399.95,135.4,386.54,140.18,399.7" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[fec5fc7bf060aedac02b8b80a51e7c94]
+link SB to DB--><path d="M836.19,436.1 C822.37,461.14 793.2,507.47 755,532 C686.01,576.3 593.3,595.12 527.29,603.1 " fill="none" id="SB-&gt;DB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="527.93,610.08,507.29,605.29,526.41,596.16,527.93,610.08" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[33d5fb6e37b9c96575a93ca647db8f71]
+link SB to PB--><path d="M798.28,436.02 C757.58,450.85 698.14,472.51 652.66,489.08 " fill="none" id="SB-&gt;PB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="655,495.68,633.81,495.95,650.2,482.52,655,495.68" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[4cfa9f1827bbf7e1259e4f801ac78879]
+link PB to DB--><path d="M561.28,532.02 C540.8,545.58 511.7,564.85 487.73,580.72 " fill="none" id="PB-&gt;DB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="491.54,586.58,471,591.79,483.82,574.91,491.54,586.58" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[7a446722bf7e1538dda033e04e72644f]
+link PBC to PB--><path d="M367.27,244.1 C387.18,258.75 415.49,281.08 437,304 C489.72,360.2 539.51,435.57 566.37,478.75 " fill="none" id="PBC-&gt;PB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="572.39,475.18,576.88,495.89,560.46,482.5,572.39,475.18" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[82dbc23f4ac1866f6121367345dd707e]
+link PBC to DE--><path d="M340.8,244.24 C339.38,255.37 337.47,270.28 335.72,284 " fill="none" id="PBC-&gt;DE" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="342.66,284.92,333.19,303.87,328.78,283.14,342.66,284.92" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[dde5c5b5b4ac14c78e0d812422b6c40c]
+link PSP to PB--><path d="M587,244.03 C587,289.23 587,413.01 587,475.64 " fill="none" id="PSP-&gt;PB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="594,475.69,587,495.69,580,475.69,594,475.69" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[a292ad2b98cae7c241d897e4b720707c]
+link PSP to DE--><path d="M540.64,244.02 C500.35,258.82 441.54,280.41 396.46,296.97 " fill="none" id="PSP-&gt;DE" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="398.63,303.62,377.45,303.95,393.81,290.48,398.63,303.62" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[3cb4dcaa7ff782dbe58f9dd7a7a91450]
+link SSD to SB--><path d="M838.47,340.24 C839.4,351.24 840.65,365.93 841.81,379.51 " fill="none" id="SSD-&gt;SB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="848.82,379.35,843.54,399.87,834.87,380.53,848.82,379.35" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[a43f3c5fb6f989a27eb815b1c6411e7c]
+link BSP to C--><path d="M782.5,148.2 C763.44,179.42 722.8,245.99 697.89,286.78 " fill="none" id="BSP-&gt;C" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="703.79,290.56,687.39,303.98,691.84,283.26,703.79,290.56" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[c4724972b4ba11adc466286957bf362f]
+link BSP to SB--><path d="M817.19,148.06 C854.15,175.79 923.19,234.57 950,304 C955.76,318.93 957.23,325.73 950,340 C939.44,360.84 920.29,377.41 901.21,389.75 " fill="none" id="BSP-&gt;SB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="904.74,395.79,883.95,399.9,897.64,383.73,904.74,395.79" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[3114aff12d3e763bc2afba6138a1f6cd]
+link SPBBC to BSP--><path d="M632.97,52.09 C668.95,69.38 718.48,93.18 752.86,109.71 " fill="none" id="SPBBC-&gt;BSP" style="stroke: #3C3C3C; stroke-width: 2.0;"/><ellipse cx="751.9895" cy="109.2964" fill="#FFFFFF" rx="6" ry="6" style="stroke: #3C3C3C; stroke-width: 1.5;"/><!--MD5=[f3349fb764c63dc635ff6ae037353b68]
+link SPBBC to PSP--><path d="M587,52.37 C587,89.94 587,165.26 587,202.75 " fill="none" id="SPBBC-&gt;PSP" style="stroke: #3C3C3C; stroke-width: 2.0;"/><ellipse cx="587" cy="202" fill="#FFFFFF" rx="6" ry="6" style="stroke: #3C3C3C; stroke-width: 1.5;"/><!--MD5=[51a74a23207ff8ec950f879abe069804]
+link SPBBC to PBC--><path d="M559.01,52.37 C511.14,90.63 414.25,168.06 368.29,204.79 " fill="none" id="SPBBC-&gt;PBC" style="stroke: #3C3C3C; stroke-width: 2.0;"/><ellipse cx="368.9586" cy="204.256" fill="#FFFFFF" rx="6" ry="6" style="stroke: #3C3C3C; stroke-width: 1.5;"/><!--MD5=[fd09fecd3196745ebb50e8b1b70b49b5]
+@startuml ../assets/plantuml/packageStructure/ShopwarePlatformBusinessCentralIntegration
+!include ../../src/skin.puml
+rectangle "Bridge-ShopwarePlatform" as BSP
+rectangle "Storage-ShopwareDal" as SSD
+rectangle "Core" as C
+rectangle "Dataset-Base" as DB
+rectangle "Dataset-Ecommerce" as DE
+rectangle "Dataset-PhysicalLocation" as DPL
+rectangle "Dataset-Product" as DP
+rectangle "Dataset-Social" as DS
+rectangle "Portal-Base" as PB
+rectangle "Portal-BusinessCentral" as PBC
+rectangle "Portal-ShopwarePlatform" as PSP
+rectangle "Storage-Base" as SB
+node "Shopware Plugin BC Integration" as SPBBC #007aff
+BSP - -|> SSD 
+C - -|> SB
+C - -|> PB
+C - -|> DB
+DE - -|> DB
+DPL - -|> DB
+DP - -|> DB
+DS - -|> DB
+DS - -|> DPL
+DP - -|> DPL
+DE - -|> DPL
+DE - -|> DP
+DE - -|> DS
+SB - -|> DB
+SB - -|> PB
+PB - -|> DB
+PBC - -|> PB
+PBC - -|> DE
+PSP - -|> PB
+PSP - -|> DE
+SSD - -|> SB
+BSP - - -|> C
+BSP - - -|> SB
+SPBBC - -0 BSP
+SPBBC - -0 PSP
+SPBBC - -0 PBC
+@enduml
+
+@startuml ../assets/plantuml/packageStructure/ShopwarePlatformBusinessCentralIntegration
+
+skinparam shadowing false
+
+
+skinparam RectangleBackgroundColor #3c3c3c
+skinparam RectangleBorderColor #3c3c3c
+skinparam RectangleFontColor white
+skinparam RectangleFontName Arial
+skinparam RectangleFontStyle bold
+
+skinparam NodeBackgroundColor #5f5e5e
+skinparam NodeBorderColor #3c3c3c
+skinparam NodeFontColor white
+skinparam NodeFontName Arial
+skinparam NodeFontStyle bold
+
+skinparam SequenceLifeLineBorderColor #3c3c3c
+skinparam DatabaseBackgroundColor #5f5e5e
+skinparam DatabaseBorderColor #3c3c3c
+skinparam DatabaseFontColor #3c3c3c
+skinparam DatabaseFontName Arial
+skinparam DatabaseFontStyle bold
+
+skinparam ControlBackgroundColor #5f5e5e
+skinparam ControlBorderColor #3c3c3c
+skinparam ControlFontColor #3c3c3c
+skinparam ControlFontName Arial
+skinparam ControlFontStyle bold
+
+skinparam EntityBackgroundColor #5f5e5e
+skinparam EntityBorderColor #3c3c3c
+skinparam EntityFontColor #3c3c3c
+skinparam EntityFontName Arial
+skinparam EntityFontStyle bold
+
+skinparam FolderBorderColor #3c3c3c
+skinparam FolderFontColor #3c3c3c
+skinparam FolderFontName Arial
+skinparam FolderFontStyle bold
+
+skinparam ArrowColor #3c3c3c
+skinparam ArrowThickness 2
+
+rectangle "Bridge-ShopwarePlatform" as BSP
+rectangle "Storage-ShopwareDal" as SSD
+rectangle "Core" as C
+rectangle "Dataset-Base" as DB
+rectangle "Dataset-Ecommerce" as DE
+rectangle "Dataset-PhysicalLocation" as DPL
+rectangle "Dataset-Product" as DP
+rectangle "Dataset-Social" as DS
+rectangle "Portal-Base" as PB
+rectangle "Portal-BusinessCentral" as PBC
+rectangle "Portal-ShopwarePlatform" as PSP
+rectangle "Storage-Base" as SB
+node "Shopware Plugin BC Integration" as SPBBC #007aff
+BSP - -|> SSD 
+C - -|> SB
+C - -|> PB
+C - -|> DB
+DE - -|> DB
+DPL - -|> DB
+DP - -|> DB
+DS - -|> DB
+DS - -|> DPL
+DP - -|> DPL
+DE - -|> DPL
+DE - -|> DP
+DE - -|> DS
+SB - -|> DB
+SB - -|> PB
+PB - -|> DB
+PBC - -|> PB
+PBC - -|> DE
+PSP - -|> PB
+PSP - -|> DE
+SSD - -|> SB
+BSP - - -|> C
+BSP - - -|> SB
+SPBBC - -0 BSP
+SPBBC - -0 PSP
+SPBBC - -0 PBC
+@enduml
+
+PlantUML version 1.2020.12(Sat Jun 06 10:54:15 GMT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

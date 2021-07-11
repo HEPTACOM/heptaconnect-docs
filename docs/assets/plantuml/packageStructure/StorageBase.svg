@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="245px" preserveAspectRatio="none" style="width:384px;height:245px;" version="1.1" viewBox="0 0 384 245" width="384px" zoomAndPan="magnify"><defs/><g><!--MD5=[cf6bc0e4fe401a9a5aff4c30b2cb2b2c]
+entity BSP--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="223" x="150.5" y="6"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="203" x="160.5" y="28.9951">Bridge-ShopwarePlatform</text><!--MD5=[f2eaa479891a38810f10d4ed600d1a16]
+entity SSD--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="192" x="6" y="102"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="172" x="16" y="124.9951">Storage-ShopwareDal</text><!--MD5=[16fab723be418f7eaf2ea4bd895a8e51]
+entity C--><rect fill="#3C3C3C" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="58" x="233" y="102"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="38" x="243" y="124.9951">Core</text><!--MD5=[db5ca709379f12a280ab2b7d6533fd7d]
+entity SB--><rect fill="#007AFF" height="36.2969" style="stroke: #3C3C3C; stroke-width: 1.5;" width="126" x="199" y="198"/><text fill="#FFFFFF" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="106" x="209" y="220.9951">Storage-Base</text><!--MD5=[6f21361dea3bb3d9968354847fe4c430]
+link BSP to SSD--><path d="M233.03,42.02 C209.43,55.89 175.66,75.73 148.31,91.79 " fill="none" id="BSP-&gt;SSD" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="151.82,97.85,131.03,101.95,144.73,85.78,151.82,97.85" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[1d3bfd7e31446e94794a1187d983a193]
+link C to SB--><path d="M262,138.24 C262,149.24 262,163.93 262,177.51 " fill="none" id="C-&gt;SB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="269,177.87,262,197.87,255,177.87,269,177.87" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[a43f3c5fb6f989a27eb815b1c6411e7c]
+link BSP to C--><path d="M262,42.24 C262,53.24 262,67.93 262,81.51 " fill="none" id="BSP-&gt;C" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="269,81.87,262,101.87,255,81.87,269,81.87" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[c4724972b4ba11adc466286957bf362f]
+link BSP to SB--><path d="M276.23,42.04 C287.6,56.84 302.64,79.38 309,102 C313.33,117.4 313.33,122.6 309,138 C304.68,153.37 296.35,168.71 287.88,181.61 " fill="none" id="BSP-&gt;SB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="293.54,185.73,276.23,197.96,282.13,177.61,293.54,185.73" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[3cb4dcaa7ff782dbe58f9dd7a7a91450]
+link SSD to SB--><path d="M130.97,138.02 C154.57,151.89 188.34,171.73 215.69,187.79 " fill="none" id="SSD-&gt;SB" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="none" points="219.27,181.78,232.97,197.95,212.18,193.85,219.27,181.78" style="stroke: #3C3C3C; stroke-width: 2.0;"/><!--MD5=[a005699d839515e23206f163718d7175]
+@startuml ../assets/plantuml/packageStructure/StorageBase
+!include ../../src/skin.puml
+rectangle "Bridge-ShopwarePlatform" as BSP
+rectangle "Storage-ShopwareDal" as SSD
+rectangle "Core" as C
+rectangle "Storage-Base" as SB #007aff
+BSP - -|> SSD
+C - -|> SB
+BSP - -|> C
+BSP - -|> SB
+SSD - -|> SB
+@enduml
+
+@startuml ../assets/plantuml/packageStructure/StorageBase
+
+skinparam shadowing false
+
+
+skinparam RectangleBackgroundColor #3c3c3c
+skinparam RectangleBorderColor #3c3c3c
+skinparam RectangleFontColor white
+skinparam RectangleFontName Arial
+skinparam RectangleFontStyle bold
+
+skinparam NodeBackgroundColor #5f5e5e
+skinparam NodeBorderColor #3c3c3c
+skinparam NodeFontColor white
+skinparam NodeFontName Arial
+skinparam NodeFontStyle bold
+
+skinparam SequenceLifeLineBorderColor #3c3c3c
+skinparam DatabaseBackgroundColor #5f5e5e
+skinparam DatabaseBorderColor #3c3c3c
+skinparam DatabaseFontColor #3c3c3c
+skinparam DatabaseFontName Arial
+skinparam DatabaseFontStyle bold
+
+skinparam ControlBackgroundColor #5f5e5e
+skinparam ControlBorderColor #3c3c3c
+skinparam ControlFontColor #3c3c3c
+skinparam ControlFontName Arial
+skinparam ControlFontStyle bold
+
+skinparam EntityBackgroundColor #5f5e5e
+skinparam EntityBorderColor #3c3c3c
+skinparam EntityFontColor #3c3c3c
+skinparam EntityFontName Arial
+skinparam EntityFontStyle bold
+
+skinparam FolderBorderColor #3c3c3c
+skinparam FolderFontColor #3c3c3c
+skinparam FolderFontName Arial
+skinparam FolderFontStyle bold
+
+skinparam ArrowColor #3c3c3c
+skinparam ArrowThickness 2
+
+rectangle "Bridge-ShopwarePlatform" as BSP
+rectangle "Storage-ShopwareDal" as SSD
+rectangle "Core" as C
+rectangle "Storage-Base" as SB #007aff
+BSP - -|> SSD
+C - -|> SB
+BSP - -|> C
+BSP - -|> SB
+SSD - -|> SB
+@enduml
+
+PlantUML version 1.2020.12(Sat Jun 06 10:54:15 GMT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

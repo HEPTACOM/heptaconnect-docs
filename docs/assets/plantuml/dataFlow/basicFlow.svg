@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="547px" preserveAspectRatio="none" style="width:543px;height:547px;" version="1.1" viewBox="0 0 543 547" width="543px" zoomAndPan="magnify"><defs/><g><line style="stroke: #3C3C3C; stroke-width: 1.0;" x1="41" x2="41" y1="65.2969" y2="176.6953"/><line style="stroke: #3C3C3C; stroke-width: 1.0; stroke-dasharray: 1.0,4.0;" x1="41" x2="41" y1="176.6953" y2="204.6953"/><line style="stroke: #3C3C3C; stroke-width: 1.0;" x1="41" x2="41" y1="204.6953" y2="335.2266"/><line style="stroke: #3C3C3C; stroke-width: 1.0; stroke-dasharray: 1.0,4.0;" x1="41" x2="41" y1="335.2266" y2="363.2266"/><line style="stroke: #3C3C3C; stroke-width: 1.0;" x1="41" x2="41" y1="363.2266" y2="474.625"/><line style="stroke: #3C3C3C; stroke-width: 1.0;" x1="118" x2="118" y1="65.2969" y2="176.6953"/><line style="stroke: #3C3C3C; stroke-width: 1.0; stroke-dasharray: 1.0,4.0;" x1="118" x2="118" y1="176.6953" y2="204.6953"/><line style="stroke: #3C3C3C; stroke-width: 1.0;" x1="118" x2="118" y1="204.6953" y2="335.2266"/><line style="stroke: #3C3C3C; stroke-width: 1.0; stroke-dasharray: 1.0,4.0;" x1="118" x2="118" y1="335.2266" y2="363.2266"/><line style="stroke: #3C3C3C; stroke-width: 1.0;" x1="118" x2="118" y1="363.2266" y2="474.625"/><line style="stroke: #3C3C3C; stroke-width: 1.0;" x1="278" x2="278" y1="65.2969" y2="176.6953"/><line style="stroke: #3C3C3C; stroke-width: 1.0; stroke-dasharray: 1.0,4.0;" x1="278" x2="278" y1="176.6953" y2="204.6953"/><line style="stroke: #3C3C3C; stroke-width: 1.0;" x1="278" x2="278" y1="204.6953" y2="335.2266"/><line style="stroke: #3C3C3C; stroke-width: 1.0; stroke-dasharray: 1.0,4.0;" x1="278" x2="278" y1="335.2266" y2="363.2266"/><line style="stroke: #3C3C3C; stroke-width: 1.0;" x1="278" x2="278" y1="363.2266" y2="474.625"/><line style="stroke: #3C3C3C; stroke-width: 1.0;" x1="461" x2="461" y1="65.2969" y2="176.6953"/><line style="stroke: #3C3C3C; stroke-width: 1.0; stroke-dasharray: 1.0,4.0;" x1="461" x2="461" y1="176.6953" y2="204.6953"/><line style="stroke: #3C3C3C; stroke-width: 1.0;" x1="461" x2="461" y1="204.6953" y2="335.2266"/><line style="stroke: #3C3C3C; stroke-width: 1.0; stroke-dasharray: 1.0,4.0;" x1="461" x2="461" y1="335.2266" y2="363.2266"/><line style="stroke: #3C3C3C; stroke-width: 1.0;" x1="461" x2="461" y1="363.2266" y2="474.625"/><text fill="#3C3C3C" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="61" x="8" y="61.9951">Portal 1</text><path d="M23.5,13 C23.5,3 41.5,3 41.5,3 C41.5,3 59.5,3 59.5,13 L59.5,39 C59.5,49 41.5,49 41.5,49 C41.5,49 23.5,49 23.5,39 L23.5,13 " fill="#5F5E5E" style="stroke: #3C3C3C; stroke-width: 1.5;"/><path d="M23.5,13 C23.5,23 41.5,23 41.5,23 C41.5,23 59.5,23 59.5,13 " fill="none" style="stroke: #3C3C3C; stroke-width: 1.5;"/><text fill="#3C3C3C" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="61" x="8" y="486.6201">Portal 1</text><path d="M23.5,499.9219 C23.5,489.9219 41.5,489.9219 41.5,489.9219 C41.5,489.9219 59.5,489.9219 59.5,499.9219 L59.5,525.9219 C59.5,535.9219 41.5,535.9219 41.5,535.9219 C41.5,535.9219 23.5,535.9219 23.5,525.9219 L23.5,499.9219 " fill="#5F5E5E" style="stroke: #3C3C3C; stroke-width: 1.5;"/><path d="M23.5,499.9219 C23.5,509.9219 41.5,509.9219 41.5,509.9219 C41.5,509.9219 59.5,509.9219 59.5,499.9219 " fill="none" style="stroke: #3C3C3C; stroke-width: 1.5;"/><text fill="#3C3C3C" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="61" x="85" y="61.9951">Portal 2</text><path d="M100.5,13 C100.5,3 118.5,3 118.5,3 C118.5,3 136.5,3 136.5,13 L136.5,39 C136.5,49 118.5,49 118.5,49 C118.5,49 100.5,49 100.5,39 L100.5,13 " fill="#5F5E5E" style="stroke: #3C3C3C; stroke-width: 1.5;"/><path d="M100.5,13 C100.5,23 118.5,23 118.5,23 C118.5,23 136.5,23 136.5,13 " fill="none" style="stroke: #3C3C3C; stroke-width: 1.5;"/><text fill="#3C3C3C" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="61" x="85" y="486.6201">Portal 2</text><path d="M100.5,499.9219 C100.5,489.9219 118.5,489.9219 118.5,489.9219 C118.5,489.9219 136.5,489.9219 136.5,499.9219 L136.5,525.9219 C136.5,535.9219 118.5,535.9219 118.5,535.9219 C118.5,535.9219 100.5,535.9219 100.5,525.9219 L100.5,499.9219 " fill="#5F5E5E" style="stroke: #3C3C3C; stroke-width: 1.5;"/><path d="M100.5,499.9219 C100.5,509.9219 118.5,509.9219 118.5,509.9219 C118.5,509.9219 136.5,509.9219 136.5,499.9219 " fill="none" style="stroke: #3C3C3C; stroke-width: 1.5;"/><text fill="#3C3C3C" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="115" x="218" y="61.9951">HEPTAconnect</text><ellipse cx="278.5" cy="33" fill="#5F5E5E" rx="12" ry="12" style="stroke: #3C3C3C; stroke-width: 2.0;"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="266.5" x2="290.5" y1="47" y2="47"/><text fill="#3C3C3C" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="115" x="218" y="486.6201">HEPTAconnect</text><ellipse cx="278.5" cy="505.9219" fill="#5F5E5E" rx="12" ry="12" style="stroke: #3C3C3C; stroke-width: 2.0;"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="266.5" x2="290.5" y1="519.9219" y2="519.9219"/><text fill="#3C3C3C" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="123" x="397" y="61.9951">MessageBroker</text><ellipse cx="461.5" cy="33" fill="#5F5E5E" rx="12" ry="12" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="#3C3C3C" points="457.5,21,463.5,16,461.5,21,463.5,26,457.5,21" style="stroke: #3C3C3C; stroke-width: 1.0;"/><text fill="#3C3C3C" font-family="Arial" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="123" x="397" y="486.6201">MessageBroker</text><ellipse cx="461.5" cy="505.9219" fill="#5F5E5E" rx="12" ry="12" style="stroke: #3C3C3C; stroke-width: 2.0;"/><polygon fill="#3C3C3C" points="457.5,493.9219,463.5,488.9219,461.5,493.9219,463.5,498.9219,457.5,493.9219" style="stroke: #3C3C3C; stroke-width: 1.0;"/><rect fill="#EEEEEE" height="3" style="stroke: #EEEEEE; stroke-width: 1.0;" width="528" x="3" y="95.8633"/><line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="531" y1="95.8633" y2="95.8633"/><line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="531" y1="98.8633" y2="98.8633"/><rect fill="#EEEEEE" height="23.1328" style="stroke: #000000; stroke-width: 2.0;" width="102" x="216" y="85.2969"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="83" x="222" y="101.3638">Exploration</text><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="276.5" x2="266.5" y1="139.5625" y2="135.5625"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="276.5" x2="266.5" y1="139.5625" y2="143.5625"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="41.5" x2="277.5" y1="139.5625" y2="139.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="141" x="48.5" y="134.4966">Read ids from portal 1</text><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="459.5" x2="449.5" y1="168.6953" y2="164.6953"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="459.5" x2="449.5" y1="168.6953" y2="172.6953"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="278.5" x2="460.5" y1="168.6953" y2="168.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="159" x="285.5" y="163.6294">Publish explored item ids</text><rect fill="#EEEEEE" height="3" style="stroke: #EEEEEE; stroke-width: 1.0;" width="528" x="3" y="225.2617"/><line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="531" y1="225.2617" y2="225.2617"/><line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="531" y1="228.2617" y2="228.2617"/><rect fill="#EEEEEE" height="23.1328" style="stroke: #000000; stroke-width: 2.0;" width="84" x="225" y="214.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="65" x="231" y="230.7622">Emission</text><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="278.5" x2="288.5" y1="268.9609" y2="264.9609"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="278.5" x2="288.5" y1="268.9609" y2="272.9609"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="278.5" x2="460.5" y1="268.9609" y2="268.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="114" x="295.5" y="263.895">Read for emission</text><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="276.5" x2="266.5" y1="298.0938" y2="294.0938"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="276.5" x2="266.5" y1="298.0938" y2="302.0938"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="41.5" x2="277.5" y1="298.0938" y2="298.0938"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="152" x="48.5" y="293.0278">Read data from portal 1</text><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="459.5" x2="449.5" y1="327.2266" y2="323.2266"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="459.5" x2="449.5" y1="327.2266" y2="331.2266"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="278.5" x2="460.5" y1="327.2266" y2="327.2266"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="137" x="285.5" y="322.1606">Release emitted item</text><rect fill="#EEEEEE" height="3" style="stroke: #EEEEEE; stroke-width: 1.0;" width="528" x="3" y="383.793"/><line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="531" y1="383.793" y2="383.793"/><line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="531" y1="386.793" y2="386.793"/><rect fill="#EEEEEE" height="23.1328" style="stroke: #000000; stroke-width: 2.0;" width="93" x="220.5" y="373.2266"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="74" x="226.5" y="389.2935">Reception</text><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="278.5" x2="288.5" y1="427.4922" y2="423.4922"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="278.5" x2="288.5" y1="427.4922" y2="431.4922"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="278.5" x2="460.5" y1="427.4922" y2="427.4922"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="155" x="295.5" y="422.4263">Route data for reception</text><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="118.5" x2="128.5" y1="456.625" y2="452.625"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="118.5" x2="128.5" y1="456.625" y2="460.625"/><line style="stroke: #3C3C3C; stroke-width: 2.0;" x1="118.5" x2="277.5" y1="456.625" y2="456.625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="136" x="135.5" y="451.5591">Store data in portal 2</text><!--MD5=[738e99cb4edd9284a2094e80082a87fc]
+@startuml ../assets/plantuml/dataFlow/basicFlow
+!include ../../src/skin.puml
+database "Portal 1" as P1
+database "Portal 2" as P2
+entity HEPTAconnect as HC
+control MessageBroker as MB
+
+== Exploration ==
+P1 ->> HC: Read ids from portal 1
+HC ->> MB: Publish explored item ids
+...
+== Emission ==
+HC <<- MB: Read for emission
+P1 ->> HC: Read data from portal 1
+HC ->> MB: Release emitted item
+...
+== Reception ==
+HC <<- MB: Route data for reception
+P2 <<- HC: Store data in portal 2
+@enduml
+
+@startuml ../assets/plantuml/dataFlow/basicFlow
+
+skinparam shadowing false
+
+
+skinparam RectangleBackgroundColor #3c3c3c
+skinparam RectangleBorderColor #3c3c3c
+skinparam RectangleFontColor white
+skinparam RectangleFontName Arial
+skinparam RectangleFontStyle bold
+
+skinparam NodeBackgroundColor #5f5e5e
+skinparam NodeBorderColor #3c3c3c
+skinparam NodeFontColor white
+skinparam NodeFontName Arial
+skinparam NodeFontStyle bold
+
+skinparam SequenceLifeLineBorderColor #3c3c3c
+skinparam DatabaseBackgroundColor #5f5e5e
+skinparam DatabaseBorderColor #3c3c3c
+skinparam DatabaseFontColor #3c3c3c
+skinparam DatabaseFontName Arial
+skinparam DatabaseFontStyle bold
+
+skinparam ControlBackgroundColor #5f5e5e
+skinparam ControlBorderColor #3c3c3c
+skinparam ControlFontColor #3c3c3c
+skinparam ControlFontName Arial
+skinparam ControlFontStyle bold
+
+skinparam EntityBackgroundColor #5f5e5e
+skinparam EntityBorderColor #3c3c3c
+skinparam EntityFontColor #3c3c3c
+skinparam EntityFontName Arial
+skinparam EntityFontStyle bold
+
+skinparam FolderBorderColor #3c3c3c
+skinparam FolderFontColor #3c3c3c
+skinparam FolderFontName Arial
+skinparam FolderFontStyle bold
+
+skinparam ArrowColor #3c3c3c
+skinparam ArrowThickness 2
+
+database "Portal 1" as P1
+database "Portal 2" as P2
+entity HEPTAconnect as HC
+control MessageBroker as MB
+
+== Exploration ==
+P1 ->> HC: Read ids from portal 1
+HC ->> MB: Publish explored item ids
+...
+== Emission ==
+HC <<- MB: Read for emission
+P1 ->> HC: Read data from portal 1
+HC ->> MB: Release emitted item
+...
+== Reception ==
+HC <<- MB: Route data for reception
+P2 <<- HC: Store data in portal 2
+@enduml
+
+PlantUML version 1.2020.12(Sat Jun 06 10:54:15 GMT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
