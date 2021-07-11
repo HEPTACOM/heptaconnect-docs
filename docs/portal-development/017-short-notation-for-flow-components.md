@@ -25,6 +25,8 @@ The following section will show how to use each flow component with a file acces
 
 ## Explorer
 
+Click [here](./002-explorer.md) to see the object-oriented notation.
+
 ```php
 <?php
 
@@ -41,6 +43,8 @@ FlowComponent::explorer(Bottle::class)
 
 
 ## Emitter
+
+Click [here](./003-emitter.md) to see the object-oriented notation.
 
 ```php
 <?php
@@ -65,6 +69,8 @@ FlowComponent::emitter(Bottle::class)
 
 ## Receiver
 
+Click [here](./004-receiver.md) to see the object-oriented notation.
+
 ```php
 <?php
 
@@ -82,6 +88,8 @@ FlowComponent::receiver(Bottle::class)
 
 
 ## Status reporter
+
+Click [here](./009-status-reporting.md) to see the object-oriented notation.
 
 ```php
 <?php
