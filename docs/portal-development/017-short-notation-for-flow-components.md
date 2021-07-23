@@ -63,6 +63,13 @@ FlowComponent::emitter(Bottle::class)->run(
     )
 );
 
+FlowComponent::emitter(Bottle::class)->batch(
+    fn (FilesystemInterface $fs, BottlePacker $packer, iterable $externalIds): iterable => \iterable_map(
+        $externalIds,
+        fn (string $id) => $packer->pack($fs->read($id) ?: null)        
+    ) 
+);
+
 FlowComponent::emitter(Bottle::class)->extend(
     fn (FilesystemInterface $fs, Bottle $bottle): ?Bottle => $bottle->setCapacity(
         (new Volume())
@@ -80,6 +87,7 @@ Click [here](./004-receiver.md) to see the object-oriented notation.
 ```php
 <?php
 
+use Heptacom\HeptaConnect\Dataset\Base\TypedDatasetEntityCollection;
 use FooBar\Unpacker\BottleUnpacker;
 use Heptacom\HeptaConnect\Playground\Dataset\Bottle;
 use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
@@ -89,6 +97,16 @@ FlowComponent::receiver(Bottle::class)->run(
     function (FilesystemInterface $fs, BottleUnpacker $unpacker, Bottle $bottle): void {    
         ['id' => $id, 'payload' => $payload] = $unpacker->unpack($bottle);
         $fs->write($id, $payload);
+    }
+);
+
+FlowComponent::receiver(Bottle::class)->batch(
+    function (FilesystemInterface $fs, BottleUnpacker $unpacker, TypedDatasetEntityCollection $bottles): void {
+        $bottleData = \array_column(\iterable_to_array($bottles->map([$unpacker, 'unpack'])), 'payload', 'id');
+        
+        foreach ($bottleData as $id => $bottle) {
+            $fs->write($id, $bottle);
+        }
     }
 );
 ```
