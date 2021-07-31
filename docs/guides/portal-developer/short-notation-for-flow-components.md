@@ -19,13 +19,13 @@ For this feature a plain php file within the folder `src/Resources/flow-componen
 ```
 
 `foobar.php` will be loaded and uses a newly introduced `FlowComponent` building utility.
-Every callback that is given into that builder can make use of every [dependency injection](./015-dependency-injection.md) feature.
+Every callback that is given into that builder can make use of every [dependency injection](./dependency-injection.md) feature.
 The following section will show how to use each flow component with a file accessing scenario. 
 
 
 ## Explorer
 
-Click [here](./002-explorer.md) to see the object-oriented notation.
+Click [here](./explorer.md) to see the object-oriented notation.
 
 ```php
 <?php
@@ -46,7 +46,7 @@ FlowComponent::explorer(Bottle::class)->isAllowed(
 
 ## Emitter
 
-Click [here](./003-emitter.md) to see the object-oriented notation.
+Click [here](./emitter.md) to see the object-oriented notation.
 
 ```php
 <?php
@@ -82,7 +82,7 @@ FlowComponent::emitter(Bottle::class)->extend(
 
 ## Receiver
 
-Click [here](./004-receiver.md) to see the object-oriented notation.
+Click [here](./receiver.md) to see the object-oriented notation.
 
 ```php
 <?php
@@ -114,7 +114,7 @@ FlowComponent::receiver(Bottle::class)->batch(
 
 ## Status reporter
 
-Click [here](./009-status-reporting.md) to see the object-oriented notation.
+Click [here](./status-reporting.md) to see the object-oriented notation.
 
 ```php
 <?php

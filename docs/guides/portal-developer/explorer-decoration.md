@@ -16,7 +16,7 @@ A decorating explorer can list additional entries and skip unwanted entries.
 
 ## Usage
 
-Decorating explorers must follow the same basics as normal explorers so be sure to read the [explorer explanation](./002-explorer.md) page first.
+Decorating explorers must follow the same basics as normal explorers so be sure to read the [explorer explanation](./explorer.md) page first.
 The main difference is in their registration.
 
 Implementing `run` in an explorer decorator like this will add further elements to the exploration process.

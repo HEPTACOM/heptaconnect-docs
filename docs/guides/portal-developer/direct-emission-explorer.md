@@ -8,13 +8,13 @@
 | Replacement | -     |
 
 A portal connects to a data source for read and write operations.
-To let HEPTAconnect know about objects in the data source, an [explorer](./002-explorer.md) has to publish these objects' primary keys.
+To let HEPTAconnect know about objects in the data source, an [explorer](./explorer.md) has to publish these objects' primary keys.
 This can be an issue when data sources are read-once or difficult to navigate to certain data points so emitters can't act on it properly.
 To solve this we allow explorers to emit as well.
 
 ## Intention
 
-Beside the intentions of a regular [explorer](./002-explorer.md) this can be used for rather static data or difficult/inefficient to access data sources as this is also allowed to do an [emission](../general-resources/004-data-flow.md).
+Beside the intentions of a regular [explorer](./explorer.md) this can be used for rather static data or difficult/inefficient to access data sources as this is also allowed to do an [emission](../general-resources/data-flow.md).
 
 ## Usage
 
@@ -50,4 +50,4 @@ protected function run(ExploreContextInterface $context): iterable
 ```
 
 The explorer will iterate over the result of `$client->getBottles()` and construct a data set entity for every item.
-The primary key is set and the entity is then yielded and passed into an [emission](../general-resources/004-data-flow.md).
+The primary key is set and the entity is then yielded and passed into an [emission](../general-resources/data-flow.md).

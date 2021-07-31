@@ -19,7 +19,7 @@ A decorating receiver can:
 
 ## Usage
 
-Decorating receiver must follow the same basics as normal receivers so be sure to read the [receiver explanation](./004-receiver.md) page first.
+Decorating receiver must follow the same basics as normal receivers so be sure to read the [receiver explanation](./receiver.md) page first.
 
 Implementing `run` in a receiver decorator like a normal receiver will receive first all elements before the decorated receiver.
 

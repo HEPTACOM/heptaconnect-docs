@@ -18,7 +18,7 @@ These features enable dependency injection without any setup steps for the devel
 ## How to get a service?
 
 There are multiple utility services available for every portal node service container.
-Checkout the [next page](./016-default-utilities.md) for a complete overview of all utility services.
+Checkout the [next page](./default-utilities.md) for a complete overview of all utility services.
 The examples in this section work with the [PSR-3](https://www.php-fig.org/psr/psr-3/) `LoggerInterface`.
 
 

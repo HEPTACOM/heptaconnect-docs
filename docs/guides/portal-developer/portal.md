@@ -11,7 +11,7 @@ HEPTAconnect is focused on modularity.
 Different packages can be bundled together to adapt it to your needs.
 That is why a single adapter to an external system is organized in a dedicated package.
 These packages are called portals.
-A portal consists of three main components to comply with the HEPTAconnect ecosystem: [Explorers](./002-explorer.md), [emitters](./003-emitter.md) and [receivers](./004-receiver.md).
+A portal consists of three main components to comply with the HEPTAconnect ecosystem: [Explorers](./explorer.md), [emitters](./emitter.md) and [receivers](./receiver.md).
 
 ## Intention
 

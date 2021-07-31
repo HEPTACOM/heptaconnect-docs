@@ -15,7 +15,7 @@ In these situations a portal may use [Transfer-on-Polling](#) by utilizing cronj
 ## Intention
 
 Cronjobs are designed to enable Transfer-on-Polling for data sources that cannot notify HEPTAconnect of changes on its own.
-A cronjob execution is therefore similar to an [exploration](./002-explorer.md) as their primary purpose is to [issue a publication](#).
+A cronjob execution is therefore similar to an [exploration](./explorer.md) as their primary purpose is to [issue a publication](#TODO fill).
 
 ## Usage
 

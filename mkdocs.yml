@@ -59,7 +59,24 @@ extra:
 # Page tree
 nav:
     - Home: index.md
-    - Portal Developer: guides/portal-developer/index.md
+    - Portal Developer:
+        - Home: guides/portal-developer/index.md
+        - Portal: guides/portal-developer/portal.md
+        - Explorer: guides/portal-developer/explorer.md
+        - Emitter: guides/portal-developer/emitter.md
+        - Receiver: guides/portal-developer/receiver.md
+        - Morphers: guides/portal-developer/morphers.md
+        - Key value storage: guides/portal-developer/key-value-storage.md
+        - Cronjobs: guides/portal-developer/cronjobs.md
+        - Webhooks: guides/portal-developer/webhooks.md
+        - Status reporting: guides/portal-developer/status-reporting.md
+        - Explorer decoration: guides/portal-developer/explorer-decoration.md
+        - Emitter decoration: guides/portal-developer/emitter-decoration.md
+        - Receiver decoration: guides/portal-developer/receiver-decoration.md
+        - Direct emission explorer: guides/portal-developer/direct-emission-explorer.md
+        - Dependency injection: guides/portal-developer/dependency-injection.md
+        - Default utilities: guides/portal-developer/default-utilities.md
+        - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
     - Reference:
         - Overview: reference/index.md
         - License: reference/license.md

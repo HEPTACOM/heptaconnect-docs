@@ -8,7 +8,7 @@ This overview will get you on the right track for the correct section within thi
 
 You are developing a connector that should be plugged into HEPTAconnect?
 Congratulations you are a portal developer.
-Follow our [portal developer guide](./portal-developer/index.md) to get to know the basics as well as the hot details.
+Follow our [portal developer guide](./guides/portal-developer/index.md) to get to know the basics as well as the hot details.
 
 <!-- TODO Add integrator guide -->
 

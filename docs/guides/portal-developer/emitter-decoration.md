@@ -16,7 +16,7 @@ A decorating emitter can change values of existing scalar values and add further
 
 ## Usage
 
-Decorating emitters must follow the same basics as normal emitters so be sure to read the [emitter explanation](./003-emitter.md) page first.
+Decorating emitters must follow the same basics as normal emitters so be sure to read the [emitter explanation](./emitter.md) page first.
 
 Implementing `run` in an emitter decorator like a normal emitter will add further elements to the emission process.
 This is useful when more entities are explored first otherwise we run into confusion for the further processing as for the same primary key there will be two different filled values emitted.
