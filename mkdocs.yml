@@ -1,0 +1,61 @@
+site_name: HEPTAconnect Documentation
+
+repo_url: https://github.com/HEPTACOM/heptaconnect-docs
+repo_name: HEPTAconnect Docs
+
+# Copyright
+copyright: HEPTAconnect - a HEPTACOM solution for medium and large enterprises
+
+markdown_extensions:
+    - admonition
+    - attr_list
+    - footnotes
+    - pymdownx.highlight
+    - pymdownx.snippets:
+          base_path: snippets
+          check_paths: true
+    - pymdownx.superfences
+
+# Plugins
+plugins:
+    - search
+
+# Theme
+theme:
+    name: material
+    custom_dir: overrides
+    features:
+        - navigation.tabs
+    language: en
+    palette:
+        -
+            media: "(prefers-color-scheme: light)"
+            scheme: default
+            toggle:
+                icon: fontawesome/solid/toggle-off
+                name: Switch to dark mode
+        -
+            media: "(prefers-color-scheme: dark)"
+            scheme: slate
+            toggle:
+                icon: fontawesome/solid/toggle-on
+                name: Switch to light mode
+
+    search_index_only: true
+
+extra_css:
+    - stylesheets/extra.css
+
+# Customization
+extra:
+    social:
+        -
+            icon: fontawesome/brands/github
+            link: https://github.com/topics/heptaconnect
+        -
+            icon: fontawesome/brands/twitter
+            link: https://twitter.com/heptacom_gmbh
+
+# Page tree
+nav:
+    - Home: index.md

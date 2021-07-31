@@ -1,6 +1,8 @@
 SHELL := /bin/bash
-ifndef NPM
-	NPM := npm
+
+ifndef MKDOCS
+	# MKDOCS := docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material
+	MKDOCS := mkdocs
 endif
 ifndef PLANTUML
 	PLANTUML := plantuml
@@ -14,12 +16,8 @@ MARKDOWN_FILES := $(shell find docs -name '*.md' -type f)
 all: build
 
 .PHONY: build
-build: node_modules
-	$(NPM) run prod
-	$(NPM) run rss
-
-node_modules:
-	$(NPM) ci
+build:
+	$(MKDOCS) build
 
 .PHONY: uml
 uml: $(MARKDOWN_FILES)

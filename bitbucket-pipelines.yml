@@ -15,9 +15,9 @@ definitions:
                     - PLANTUML="java -Djava.awt.headless=true -jar /tmp/plantuml.jar" make uml
         -   step: &build-docs
                 <<: *default
+                image: squidfunk/mkdocs-material
                 name: Build documentation assets
                 script:
-                    - apk add --no-cache make bash
                     - make build
         -   step: &commit-built-docs
                 <<: *default
