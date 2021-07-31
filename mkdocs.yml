@@ -12,9 +12,11 @@ markdown_extensions:
     - footnotes
     - pymdownx.highlight
     - pymdownx.snippets:
-          base_path: snippets
-          check_paths: true
+        base_path: snippets
+        check_paths: true
     - pymdownx.superfences
+    - pymdownx.highlight:
+        use_pygments: false
 
 # Plugins
 plugins:
@@ -46,6 +48,11 @@ theme:
 
 extra_css:
     - assets/stylesheets/extra.css
+    - assets/stylesheets/vendor/highlight.js/atom-one-dark.min.css
+
+extra_javascript:
+    - assets/javascripts/vendor/highlight.js/highlight.min.js
+    - assets/javascripts/config.js
 
 # Customization
 extra:
