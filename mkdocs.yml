@@ -30,6 +30,8 @@ theme:
         - navigation.tabs
     language: en
     logo: assets/gfx/heptaconnect-icon.svg
+    icon:
+        repo: fontawesome/brands/github
     palette:
         -
             media: "(prefers-color-scheme: light)"
