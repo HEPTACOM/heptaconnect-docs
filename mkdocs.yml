@@ -10,6 +10,7 @@ markdown_extensions:
     - admonition
     - attr_list
     - footnotes
+    - meta
     - pymdownx.highlight
     - pymdownx.snippets:
         base_path: snippets
@@ -23,11 +24,13 @@ plugins:
     - search
     - git-revision-date-localized
     - with-pdf:
-          author: HEPTACOM GmbH
-          cover: true
-          cover_title: HEPTAconnect
-          cover_subtitle: ''
-          render_js: false
+        author: HEPTACOM GmbH
+        cover: true
+        cover_title: HEPTAconnect
+        cover_subtitle: ''
+        render_js: false
+    - meta-descriptions:
+        export_csv: true
 
 # Theme
 theme:

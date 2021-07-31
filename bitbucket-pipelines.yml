@@ -25,6 +25,8 @@ definitions:
         -   step: &commit-built-docs
                 <<: *default
                 name: Commit docs
+                artifacts:
+                    - site/meta-descriptions.csv
                 script:
                     - apk add --no-cache git openssh-client
                     - mv .gh-pages-gitignore .gitignore
