@@ -4,7 +4,7 @@ repo_url: https://github.com/HEPTACOM/heptaconnect-docs
 repo_name: HEPTAconnect Docs
 
 # Copyright
-copyright: HEPTAconnect - a HEPTACOM solution for medium and large enterprises
+copyright: HEPTACOM solution for medium and large enterprises
 
 markdown_extensions:
     - admonition
@@ -22,6 +22,12 @@ markdown_extensions:
 plugins:
     - search
     - git-revision-date-localized
+    - with-pdf:
+          author: HEPTACOM GmbH
+          cover: true
+          cover_title: HEPTAconnect
+          cover_subtitle: ''
+          render_js: false
 
 # Theme
 theme:

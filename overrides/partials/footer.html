@@ -42,12 +42,22 @@
 
     <div class="md-footer-meta md-typeset">
         <div class="md-footer-meta__inner md-grid">
-            <div class="md-footer-copyright">
-                {% if config.copyright %}
-                    <div class="md-footer-copyright__highlight">
-                        {{ config.copyright }}
-                    </div>
-                {% endif %}
+            <a
+                class="heptaconnect-footer-download"
+                href="/pdf/document.pdf"
+                download="HEPTAconnect.pdf"
+            >
+                <span>
+                    Download complete PDF
+                </span>
+
+                {% include ".icons/fontawesome/solid/file-pdf.svg" %}
+            </a>
+
+            <div class="heptaconnect-footer-copyright">
+                <div class="md-footer-copyright__highlight">
+                    Made with ❤️ by <a href="https://www.heptacom.de">HEPTACOM</a>
+                </div>
 
                 {{ extracopyright }}
             </div>

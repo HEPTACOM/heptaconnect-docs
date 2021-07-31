@@ -1,3 +1,61 @@
 .md-grid {
     max-width: 85rem;
 }
+
+.heptaconnect-footer-copyright, /* style clone of md-footer-copyright to disable download link generator */
+.heptaconnect-footer-download {
+    color: var(--md-footer-fg-color--lighter);
+    font-size: .64rem;
+    margin: auto .6rem;
+    padding: .4rem 0;
+    width: 100%;
+}
+
+.heptaconnect-footer-download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heptaconnect-footer-download > span {
+    margin-right: 0.64rem;
+}
+
+.heptaconnect-footer-download > svg {
+    fill: var(--md-footer-fg-color--lighter);
+    height: 0.64rem;
+}
+
+.heptaconnect-footer-copyright,
+.heptaconnect-footer-download,
+.md-footer-social {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.md-footer-social__link {
+    width: 2.1rem;
+    padding-left: .25rem;
+    padding-right: .25rem;
+}
+
+@media screen and (min-width: 45rem) {
+    .heptaconnect-footer-copyright,
+    .heptaconnect-footer-download,
+    .md-footer-social {
+        font-size: .64rem;
+        flex-basis: 30%;
+    }
+
+    .heptaconnect-footer-download {
+        justify-content: flex-start;
+    }
+
+    .heptaconnect-footer-copyright {
+        text-align: center;
+    }
+
+    .md-footer-social {
+        text-align: right;
+    }
+}
