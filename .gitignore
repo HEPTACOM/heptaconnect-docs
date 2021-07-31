@@ -3,3 +3,5 @@
 /docs/assets/stylesheets/vendor/
 /docs/feed/
 /site
+
+/.venv
