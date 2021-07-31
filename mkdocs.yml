@@ -59,8 +59,7 @@ extra:
 # Page tree
 nav:
     - Home: index.md
-    - Guides:
-        - Overview: guides/index.md
+    - Portal Developer: guides/portal-developer/index.md
     - Reference:
         - Overview: reference/index.md
         - License: reference/license.md
