@@ -60,4 +60,7 @@ extra:
 nav:
     - Home: index.md
     - Guides:
-          - Overview: guides/index.md
+        - Overview: guides/index.md
+    - Reference:
+        - Overview: reference/index.md
+        - License: reference/license.md
