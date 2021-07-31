@@ -27,6 +27,7 @@ theme:
     features:
         - navigation.tabs
     language: en
+    logo: assets/gfx/heptaconnect-icon.svg
     palette:
         -
             media: "(prefers-color-scheme: light)"
