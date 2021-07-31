@@ -1,12 +1,5 @@
 # Emitter decoration
 
-|             |       |
-| ----------- | ----- |
-| Introduced  | 1.0.0 |
-| Deprecated  | -     |
-| Removed     | -     |
-| Replacement | -     |
-
 A portal extension allows further customizations in behaviour.
 This includes changing the emission of data on elements.
 

@@ -1,12 +1,5 @@
 # Explorer
 
-|             |       |
-| ----------- | ----- |
-| Introduced  | 1.0.0 |
-| Deprecated  | -     |
-| Removed     | -     |
-| Replacement | -     |
-
 A portal connects to a data source for read and write operations.
 To let HEPTAconnect know about objects in the data source, an explorer has to publish these objects' primary keys.
 Publishing a primary key means to check whether a mapping for it already exists and to create one if it doesn't.

@@ -1,12 +1,5 @@
 # Morpher
 
-|             |       |
-| ----------- | ----- |
-| Introduced  | 1.0.0 |
-| Deprecated  | -     |
-| Removed     | -     |
-| Replacement | -     |
-
 A morpher is basically an implementation of a portal that does not directly interact with an external data source but instead acts as a conversion or aggregation mechanism.
 Its purpose is to receive data from one or multiple portals and emit them in some other form for another portal.
 

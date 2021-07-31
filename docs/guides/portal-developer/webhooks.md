@@ -1,12 +1,5 @@
 # Webhook
 
-|             |       |
-| ----------- | ----- |
-| Introduced  | 1.0.0 |
-| Deprecated  | -     |
-| Removed     | -     |
-| Replacement | -     |
-
 Webhooks can be powerful tools when it comes to enabling real-time data transfers from external data sources.
 They are a common way for various platform providers to notify external systems about a modification of data.
 HEPTAconnect enables portals to use webhooks to react to such notifications.

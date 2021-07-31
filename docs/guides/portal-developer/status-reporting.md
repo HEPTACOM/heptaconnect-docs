@@ -1,12 +1,5 @@
 # Status Reporting
 
-|             |       |
-| ----------- | ----- |
-| Introduced  | 1.0.0 |
-| Deprecated  | -     |
-| Removed     | -     |
-| Replacement | -     |
-
 Status reporting provides JSON serializable data, so it can be processed easily by many services.
 It is divided into multiple topics.
 There are four core topics to define a common set that probably every portal needs:

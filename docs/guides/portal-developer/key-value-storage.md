@@ -1,12 +1,5 @@
 # Key-Value-Storage
 
-|             |       |
-| ----------- | ----- |
-| Introduced  | 1.0.0 |
-| Deprecated  | -     |
-| Removed     | -     |
-| Replacement | -     |
-
 The Key-Value-Storage is a storage component designed for portals to have a simple storage mechanism restricted to a specific portal node.
 The intention is to provide a storage abstraction for [morphers](./morphers.md) to store intermediate object data.
 However, a regular portal may utilize the Key-Value-Storage as well.

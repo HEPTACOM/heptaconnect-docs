@@ -1,12 +1,5 @@
 # Portal
 
-|             |       |
-| ----------- | ----- |
-| Introduced  | 1.0.0 |
-| Deprecated  | -     |
-| Removed     | -     |
-| Replacement | -     |
-
 HEPTAconnect is focused on modularity.
 Different packages can be bundled together to adapt it to your needs.
 That is why a single adapter to an external system is organized in a dedicated package.

@@ -1,12 +1,5 @@
 # Direct Emission Explorer
 
-|             |       |
-| ----------- | ----- |
-| Introduced  | 1.0.0 |
-| Deprecated  | -     |
-| Removed     | -     |
-| Replacement | -     |
-
 A portal connects to a data source for read and write operations.
 To let HEPTAconnect know about objects in the data source, an [explorer](./explorer.md) has to publish these objects' primary keys.
 This can be an issue when data sources are read-once or difficult to navigate to certain data points so emitters can't act on it properly.

@@ -1,12 +1,5 @@
 # Emitter
 
-|             |       |
-| ----------- | ----- |
-| Introduced  | 1.0.0 |
-| Deprecated  | -     |
-| Removed     | -     |
-| Replacement | -     |
-
 An emitter is a flow component that has the job to read data from its portal's data source, convert it into a data set entity and hand that entity over to HEPTAconnect.
 
 ## Intention

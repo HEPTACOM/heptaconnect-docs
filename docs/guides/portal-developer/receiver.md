@@ -1,12 +1,5 @@
 # Receiver
 
-|             |       |
-| ----------- | ----- |
-| Introduced  | 1.0.0 |
-| Deprecated  | -     |
-| Removed     | -     |
-| Replacement | -     |
-
 A receiver is a flow component that has the job to take incoming entities from HEPTAconnect, convert them into API specific structures and write the API payload into its portal's data source.
 
 ## Usage

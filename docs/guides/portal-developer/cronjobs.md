@@ -1,12 +1,5 @@
 # Cronjob
 
-|             |       |
-| ----------- | ----- |
-| Introduced  | 1.0.0 |
-| Deprecated  | -     |
-| Removed     | -     |
-| Replacement | -     |
-
 The preferred way to keep data of different portals synchronized is [Transfer-on-Demand](#) as it provides minimal latency.
 However, this requires external systems to proactively notify HEPTAconnect whenever data is modified.
 This may not always be possible, e.g. when a platform provider does not support webhooks or the data source is a static file on an FTP-Server.
