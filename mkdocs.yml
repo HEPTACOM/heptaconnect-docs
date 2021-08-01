@@ -41,6 +41,7 @@ theme:
         - navigation.tabs
     language: en
     logo: assets/gfx/heptaconnect-icon.svg
+    favicon: assets/favicon/favicon-32x32.png
     icon:
         repo: fontawesome/brands/github
     palette:
