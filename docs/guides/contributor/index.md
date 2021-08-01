@@ -1,11 +1,13 @@
-# How to be a HEPTAconnect developer
+# How to be a HEPTAconnect contributor
 
 This is all about setting up a development environment to work on HEPTAconnect projects.
+
 
 ## Technical requirements
 
 * PHP 7.4 or above
 * Composer 1.8 or above
+
 
 ## Used tools, technologies and techniques
 
@@ -27,3 +29,18 @@ When you use these fallback classes we can support your extension without breaki
 
 Message brokers and asynchronous messaging allows HEPTAconnect to be just a little impact on the performance of the main application that provides the bridge.
 In addition asynchronous messaging allows for a scalable increase of reactivity and flexibility.
+
+
+## Licensing
+
+Thank you for considering contribution!
+Be sure to sign the [CLA](./cla.md) after creating the pull request.
+[![CLA assistant](https://cla-assistant.io/readme/badge/HEPTACOM/heptaconnect-docs)](https://cla-assistant.io/HEPTACOM/heptaconnect-docs)
+
+
+## Steps to contribute
+
+1. Fork the repository
+2. `git clone yourname/heptaconnect-docs`
+3. Make your changes to master branch
+4. Create your Pull-Request
