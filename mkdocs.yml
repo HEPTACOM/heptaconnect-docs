@@ -32,6 +32,7 @@ plugins:
         render_js: false
     - meta-descriptions:
         export_csv: true
+    - section-index
 
 # Theme
 theme:
@@ -80,9 +81,9 @@ extra:
 
 # Page tree
 nav:
-    - Home: index.md
+    - index.md
     - Portal Developer:
-        - Home: guides/portal-developer/index.md
+        - guides/portal-developer/index.md
         - Portal: guides/portal-developer/portal.md
         - Explorer: guides/portal-developer/explorer.md
         - Emitter: guides/portal-developer/emitter.md
