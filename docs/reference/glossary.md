@@ -1,4 +1,6 @@
-# Nomenclature
+# Glossary
+
+<!-- Move parts to class reference  -->
 
 There are several types of classes or entities referenced throughout this documentation.
 To have a uniform understanding of their meanings they are listed here with a short definition and explanation.
