@@ -1,3 +1,7 @@
+---
+template: home.html
+---
+
 # HEPTAconnect
 
 Welcome to the documentation of HEPTAconnect.

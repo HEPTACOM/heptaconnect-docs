@@ -1,0 +1,165 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+    {{ super() }}
+
+    <section class="mdx-container">
+        <div class="md-grid md-grid-dense md-typeset">
+            <div class="mdx-hero">
+                <picture>
+                    {% include "partials/heptaconnect-logo.svg" %}
+                </picture>
+
+                <div class="mdx-hero__content">
+                    <h1>
+                        HEPTAconnect
+                    </h1>
+                    <p>
+                        Your framework to connect.
+                        <br>
+                        Connect to what? <span class="tag-typewriter">Well, ...</span>
+                    </p>
+                    <pre class="highlight"><code class="language-bash">git clone https://github.com/HEPTACOM/heptaconnect-playground.git
+make -d heptaconnect-playground docker</code></pre>
+                    <a
+                        href="{{ 'playground/'|url }}"
+                        title="Getting Started"
+                        class="md-button md-button--primary"
+                    >
+                        Getting Started
+                        {% include ".icons/material/arrow-right.svg" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="md-typeset md-grid-dense heptaconnect-cards">
+        <a href="{{ 'guides/administrator/'|url }}">
+            <picture>
+                {% include ".icons/fontawesome/solid/wrench.svg" %}
+            </picture>
+
+            <div>
+                <div class="heptaconnect-card-title">
+                    Administrator
+                </div>
+
+                Setup, control and monitor HEPTAconnect instances.
+            </div>
+        </a>
+
+        <a href="{{ 'guides/integrator/'|url }}">
+            <picture>
+                {% include ".icons/fontawesome/solid/network-wired.svg" %}
+            </picture>
+
+            <div>
+                <div class="heptaconnect-card-title">
+                    Integrator
+                </div>
+
+                Introduce HEPTAconnect into your project to connect it with the world.
+            </div>
+        </a>
+
+        <a href="{{ 'guides/portal-developer/'|url }}">
+            <picture>
+                {% include ".icons/fontawesome/solid/plug.svg" %}
+            </picture>
+
+            <div>
+                <div class="heptaconnect-card-title">
+                    Portal developer
+                </div>
+
+                Create a HEPTAconnect portal for your API and extend existing portals
+            </div>
+        </a>
+
+        <a href="{{ 'reference/'|url }}">
+            <picture>
+                {% include ".icons/fontawesome/solid/books.svg" %}
+            </picture>
+
+            <div>
+                <div class="heptaconnect-card-title">
+                    References
+                </div>
+
+                Learn more about the internals or lookup technical details.
+            </div>
+        </a>
+    </section>
+
+    <script>
+        /* Safari fix for typing animation */
+        function refreshSafariElement(element) {
+            element.style.display = 'inline-block';
+            element.offsetHeight;
+            element.style.display = 'inline';
+        }
+
+        function typingEffect() {
+            const contactTexts = ([
+                'Shops',
+                'Excel spreadsheets',
+                'REST APIs',
+                'ERPs',
+                'CSV files',
+                'SOAP APIs',
+                'CRM',
+                'Databases',
+                'Humans',
+                'PIM',
+                'Data exports',
+                'IPC APIs',
+            ]);
+            const tagTypewriter = document.querySelector('.tag-typewriter');
+            let removing = true;
+            let idx = contactTexts.length - 1;
+            let char = tagTypewriter.textContent.length;
+
+            setInterval(() => {
+                if (char < contactTexts[idx].length) {
+                    tagTypewriter.innerHTML += contactTexts[idx][char];
+                    refreshSafariElement(tagTypewriter);
+                }
+
+                if (char == contactTexts[idx].length + 30) removing = true;
+
+                if (removing) {
+                    tagTypewriter.innerHTML = tagTypewriter.innerHTML.substring(0, tagTypewriter.innerHTML.length - 1);
+                    refreshSafariElement(tagTypewriter);
+                }
+
+                char++;
+
+                if (tagTypewriter.innerHTML.length === 0) {
+                    if (idx === contactTexts.length - 1) idx = 0
+                    else idx++;
+
+                    char = 0;
+                    removing = false;
+                }
+            }, 90);
+        }
+
+        setTimeout(typingEffect, 4000);
+    </script>
+{% endblock %}
+
+{% block content %}{% endblock %}
+{% block site_nav %}
+    {% if page and page.meta and page.meta.hide %}
+        {% set hidden = "hidden" if "navigation" in page.meta.hide %}
+    {% endif %}
+
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                {% include "partials/nav.html" %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
