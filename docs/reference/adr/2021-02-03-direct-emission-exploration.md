@@ -26,4 +26,4 @@ When they allow retrieving list data similar to single entries that should be pr
 ### Cons
 
 * Portal developers have to decide which of the [data flow models](../general-resources/004-data-flow.md) they want to support
-* Additional complexity in the return type of [explorers](../portal-development/002-explorer.md)' explore method as this can change the data flow to a [direct emission flow](../portal-development/014-direct-emission-explorer.md) 
+* Additional complexity in the return type of [explorers](../../guides/portal-developer/explorer.md)' explore method as this can change the data flow to a [direct emission flow](../../guides/portal-developer/direct-emission-explorer.md) 

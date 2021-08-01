@@ -2,7 +2,7 @@
 
 Flow components that have been described in the previous pages can also be written in a callback registration pattern.
 This is very useful short notation to reduce boilerplate code that is only needed to "wire" the API connecting services to the flow components.
-To learn more about the decisions behind this feature have a look at the related [ADR](../adr/2021-06-17-flow-component-short-notation.md).
+To learn more about the decisions behind this feature have a look at the related [ADR](../reference/adr/2021-06-17-flow-component-short-notation.md).
 
 
 ## How to use
