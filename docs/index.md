@@ -29,6 +29,6 @@ You are looking for the [playground](./playground/index.md) to get an overview a
 
 You are working on a core feature?
 Interested in building a HEPTAconnect runtime for [WordPress](https://wordpress.com/)?
-You are looking to understand what happens behind the curtains and will follow the [contribution guide](./contributor/index.md).
+You are looking to understand what happens behind the curtains and will follow the [contribution guide](./guides/contributor/index.md).
 
 <!-- TODO Improve landing page -->

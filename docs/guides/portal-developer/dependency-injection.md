@@ -4,7 +4,7 @@
 
 As commonly used in the PHP community we provide a dependency injection system that allows easy reuse of utilities and services.
 We decided to use the Symfony dependency injection package.
-Read more in [the ADR section](../reference/adr/2021-04-13-portal-dependency-injection-implementation.md) about our thoughts for our decisions.
+Read more in [the ADR section](../../reference/adr/2021-04-13-portal-dependency-injection-implementation.md) about our thoughts for our decisions.
 The following sections require you to know basic knowledge about the Symfony package which are documented very well [here](https://symfony.com/doc/current/components/dependency_injection.html).
 
 
