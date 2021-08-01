@@ -1,4 +1,5 @@
 site_name: HEPTAconnect
+use_directory_urls: true
 
 repo_url: https://github.com/HEPTACOM/heptaconnect-docs
 repo_name: HEPTAconnect Docs
