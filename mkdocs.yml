@@ -108,6 +108,7 @@ nav:
         - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
     - Playground:
         - guides/playground/index.md
+        - Intro: guides/playground/intro.md
         - First time:
             - guides/playground/first-time.md
             - with Shopware 6: guides/playground/first-time/with-shopware-6.md
