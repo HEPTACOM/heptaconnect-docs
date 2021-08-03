@@ -4,7 +4,7 @@
 
 This is all about the guidelines to structure a portal or portal extensions.
 <!-- TODO split up reference -->
-Be sure to know the general thoughts and requirements to be a [HEPTAconnect developer](../contributor/index.md) and have a basic understanding what a dataset is and what it means to [develop one](./002-dataset-development.md).
+Be sure to know the general thoughts and requirements to be a [HEPTAconnect developer](../contributor/index.md) and have a basic understanding what a dataset is and what it means to [develop one](./dataset.md).
 
 ## Composer
 

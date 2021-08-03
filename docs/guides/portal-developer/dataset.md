@@ -1,7 +1,7 @@
-# How to be a HEPTAconnect dataset developer
+# Datasets
 
 This is all about the guidelines to structure a dataset.
-Be sure to know then general thoughts and requirements to be a [HEPTAconnect developer](./001-core-development.md).
+Be sure to know then general thoughts and requirements to be a [HEPTAconnect developer](../contributor/index.md).
 
 ## Composer
 

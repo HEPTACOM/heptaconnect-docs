@@ -96,6 +96,7 @@ nav:
     - index.md
     - Portal Developer:
         - guides/portal-developer/index.md
+        - Dataset: guides/portal-developer/dataset.md
         - Portal: guides/portal-developer/portal.md
         - Explorer: guides/portal-developer/explorer.md
         - Emitter: guides/portal-developer/emitter.md
