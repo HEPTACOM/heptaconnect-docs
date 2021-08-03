@@ -1,6 +1,100 @@
 :root {
     --md-text-font-family: Helvetica, sans-serif;
     --md-code-font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+
+    --md-hue: 218;
+    --hc-role-portal-developer: #9427b9;
+    --hc-role-integrator: #e7af29;
+    --hc-role-administrator: #db026b;
+    --hc-role-playground: #aa0d16;
+    --hc-role-contributor: #00b6d5;
+}
+
+[data-md-color-scheme="slate"] {
+    --md-hue: 218;
+    --md-primary-fg-color: #0A6EE7;
+    --md-default-bg-color: hsl(var(--md-hue), 38%, 16%);
+    --md-default-bg-color--light: hsl(var(--md-hue), 38%, 24%);
+    --md-default-bg-color--lighter: hsl(var(--md-hue), 38%, 32%);
+    --md-default-bg-color--lightest: hsl(var(--md-hue), 38%, 40%);
+    --md-code-bg-color: hsl(var(--md-hue), 20%, 26%);
+}
+
+body.hc-role-portal-developer {
+    --md-primary-fg-color: var(--hc-role-portal-developer);
+}
+body.hc-role-integrator {
+    --md-primary-fg-color: var(--hc-role-integrator);
+}
+body.hc-role-administrator {
+    --md-primary-fg-color: var(--hc-role-administrator);
+}
+body.hc-role-playground {
+    --md-primary-fg-color: var(--hc-role-playground);
+}
+body.hc-role-contributor {
+    --md-primary-fg-color: var(--hc-role-contributor);
+}
+
+.hc-role-color--portal-developer {
+    color: var(--hc-role-portal-developer) !important;
+}
+.hc-role-color--integrator {
+    color: var(--hc-role-integrator) !important;
+}
+.hc-role-color--administrator {
+    color: var(--hc-role-administrator) !important;
+}
+.hc-role-color--playground {
+    color: var(--hc-role-playground) !important;
+}
+.hc-role-color--contributor {
+    color: var(--hc-role-contributor) !important;
+}
+
+.hc-role-image--portal-developer svg,
+svg.hc-role-image--portal-developer {
+    fill: var(--hc-role-portal-developer) !important;
+}
+
+.hc-role-image--integrator svg,
+svg.hc-role-image--integrator {
+    fill: var(--hc-role-integrator) !important;
+}
+
+.hc-role-image--administrator svg,
+svg.hc-role-image--administrator {
+    fill: var(--hc-role-administrator) !important;
+}
+
+.hc-role-image--playground svg,
+svg.hc-role-image--playground {
+    fill: var(--hc-role-playground) !important;
+}
+
+.hc-role-image--contributor svg,
+svg.hc-role-image--contributor {
+    fill: var(--hc-role-contributor) !important;
+}
+
+.hc-role-border--portal-developer {
+    border-color: var(--hc-role-portal-developer) !important;
+}
+
+.hc-role-border--integrator {
+    border-color: var(--hc-role-integrator) !important;
+}
+
+.hc-role-border--administrator {
+    border-color: var(--hc-role-administrator) !important;
+}
+
+.hc-role-border--playground {
+    border-color: var(--hc-role-playground) !important;
+}
+
+.hc-role-border--contributor {
+    border-color: var(--hc-role-contributor) !important;
 }
 
 .md-grid {
@@ -74,6 +168,14 @@
     padding: 1rem 1rem 0;
 }
 
+a.hc-role-link--portal-developer .heptaconnect-card-content,
+a.hc-role-link--integrator .heptaconnect-card-content,
+a.hc-role-link--administrator .heptaconnect-card-content,
+a.hc-role-link--playground .heptaconnect-card-content,
+a.hc-role-link--contributor .heptaconnect-card-content {
+    color: var(--md-default-fg-color) !important;
+}
+
 @media screen and (min-width: 45rem) {
     .heptaconnect-cards {
         grid-template-rows: repeat(2, 1fr);
@@ -131,7 +233,7 @@
 
 .heptaconnect-cards > * {
     border-radius: 0.1rem;
-    border: var(--md-default-fg-color) .1rem solid;
+    border: var(--md-default-fg-color) .15rem solid;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -154,7 +256,7 @@
 .heptaconnect-cards picture {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: var(--md-default-fg-color) 0.1rem solid;
+    border-bottom: var(--md-default-fg-color) 0.15rem solid;
 }
 
 .heptaconnect-cards .heptaconnect-card-title {

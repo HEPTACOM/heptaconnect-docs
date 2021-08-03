@@ -25,6 +25,9 @@ plugins:
     - search
     - git-revision-date-localized:
         fallback_to_build_date: true
+    - gen-files:
+        scripts:
+            - generators/inject_role_metadata.py
     - with-pdf:
         author: HEPTACOM GmbH
         cover: true

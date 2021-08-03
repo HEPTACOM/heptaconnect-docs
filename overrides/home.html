@@ -35,45 +35,51 @@ make -d heptaconnect-playground docker</code></pre>
     </section>
 
     <section class="md-typeset md-grid-dense heptaconnect-cards">
-        <a href="{{ 'guides/administrator/'|url }}">
-            <picture>
+        <a class="hc-role-border--administrator" href="{{ 'guides/administrator/'|url }}">
+            <picture class="hc-role-border--administrator">
                 {% include ".icons/fontawesome/solid/wrench.svg" %}
             </picture>
 
             <div>
-                <div class="heptaconnect-card-title">
+                <div class="heptaconnect-card-title hc-role-color--administrator">
                     Administrator
                 </div>
 
-                Setup, control and monitor HEPTAconnect instances.
+                <div class="heptaconnect-card-content">
+                    Setup, control and monitor HEPTAconnect instances.
+                </div>
             </div>
         </a>
 
-        <a href="{{ 'guides/integrator/'|url }}">
-            <picture>
+        <a class="hc-role-border--integrator" href="{{ 'guides/integrator/'|url }}">
+            <picture class="hc-role-border--integrator">
                 {% include ".icons/fontawesome/solid/network-wired.svg" %}
             </picture>
 
             <div>
-                <div class="heptaconnect-card-title">
+                <div class="heptaconnect-card-title hc-role-color--integrator">
                     Integrator
                 </div>
 
-                Introduce HEPTAconnect into your project to connect it with the world.
+                <div class="heptaconnect-card-content">
+                    Introduce HEPTAconnect into your project to connect it with the world.
+                </div>
             </div>
         </a>
 
-        <a href="{{ 'guides/portal-developer/'|url }}">
-            <picture>
+        <a class="hc-role-border--portal-developer" href="{{ 'guides/portal-developer/'|url }}">
+            <picture class="hc-role-border--portal-developer">
                 {% include ".icons/fontawesome/solid/plug.svg" %}
             </picture>
 
             <div>
-                <div class="heptaconnect-card-title">
+                <div class="heptaconnect-card-title hc-role-color--portal-developer">
                     Portal developer
                 </div>
 
-                Create a HEPTAconnect portal for your API and extend existing portals
+                <div class="heptaconnect-card-content">
+                    Create a HEPTAconnect portal for your API and extend existing portals
+                </div>
             </div>
         </a>
 
@@ -87,7 +93,9 @@ make -d heptaconnect-playground docker</code></pre>
                     References
                 </div>
 
-                Learn more about the internals or lookup technical details.
+                <div class="heptaconnect-card-content">
+                    Learn more about the internals or lookup technical details.
+                </div>
             </div>
         </a>
     </section>
