@@ -87,7 +87,6 @@ extra:
 
 # Page tree
 nav:
-    - index.md
     - Portal Developer:
         - guides/portal-developer/index.md
         - Dataset: guides/portal-developer/dataset.md
