@@ -104,7 +104,9 @@ nav:
         - Dependency injection: guides/portal-developer/dependency-injection.md
         - Default utilities: guides/portal-developer/default-utilities.md
         - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
-    - Contributor: guides/contributor/index.md
+    - Contributor:
+        - guides/contributor/index.md
+        - Contributor License Agreement: guides/contributor/cla.md
     - Reference:
         - Overview: reference/index.md
         - ADRs:
