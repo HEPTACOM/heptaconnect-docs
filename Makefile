@@ -5,9 +5,6 @@ ifndef MKDOCS
 	# MKDOCS := docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material
 	MKDOCS := mkdocs
 endif
-ifndef PLANTUML
-	PLANTUML := plantuml
-endif
 ifndef CURL
 	CURL := curl
 endif
@@ -17,10 +14,6 @@ endif
 ifndef MKDIR
 	MKDIR := mkdir
 endif
-ifndef PLANTUML_PARAMS
-	PLANTUML_PARAMS := -tsvg
-endif
-MARKDOWN_FILES := $(shell find docs -name '*.md' -type f)
 
 .PHONY: all
 all: build
@@ -35,13 +28,6 @@ clean:
 .PHONY: build
 build: docs/assets/stylesheets/vendor/highlight.js/atom-one-dark.min.css docs/assets/javascripts/vendor/highlight.js/highlight.min.js github_stats
 	$(MKDOCS) build
-
-.PHONY: uml
-uml: $(MARKDOWN_FILES)
-
-.PHONY: $(MARKDOWN_FILES)
-$(MARKDOWN_FILES):
-	$(PLANTUML) $(PLANTUML_PARAMS) "$@" || echo "Markdown $@ has no diagrams"
 
 .PHONY: github_stats
 github_stats: overrides/partials/github.json
