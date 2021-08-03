@@ -19,11 +19,11 @@ When they allow retrieving list data similar to single entries that should be pr
 
 ### Pros
 
-* Portal developers can support multiple [data flows](../general-resources/004-data-flow.md)
+* Portal developers can support multiple [data flows](../general-resources/data-flow.md)
 * Named data source can be processed more efficient
 * Portal developers do not have to cache data structures on exploration anymore for an efficient emission
 
 ### Cons
 
-* Portal developers have to decide which of the [data flow models](../general-resources/004-data-flow.md) they want to support
+* Portal developers have to decide which of the [data flow models](../general-resources/data-flow.md) they want to support
 * Additional complexity in the return type of [explorers](../../guides/portal-developer/explorer.md)' explore method as this can change the data flow to a [direct emission flow](../../guides/portal-developer/direct-emission-explorer.md) 

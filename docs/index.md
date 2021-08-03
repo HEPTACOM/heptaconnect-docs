@@ -22,7 +22,7 @@ Follow our [portal developer guide](./guides/portal-developer/index.md) to get t
 ## Playground
 
 To the previous cases you always had the thought "I am not there yet"?
-You are looking for the [playground](./playground/index.md) to get an overview about the overall project of HEPTAconnect.
+You are looking for the [playground](./guides/playground/index.md) to get an overview about the overall project of HEPTAconnect.
 
 
 ## Contribution

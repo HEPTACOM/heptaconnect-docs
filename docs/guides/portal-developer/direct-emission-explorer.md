@@ -7,7 +7,7 @@ To solve this we allow explorers to emit as well.
 
 ## Intention
 
-Beside the intentions of a regular [explorer](./explorer.md) this can be used for rather static data or difficult/inefficient to access data sources as this is also allowed to do an [emission](../general-resources/data-flow.md).
+Beside the intentions of a regular [explorer](./explorer.md) this can be used for rather static data or difficult/inefficient to access data sources as this is also allowed to do an [emission](../../reference/general-resources/data-flow.md).
 
 ## Usage
 
@@ -43,4 +43,4 @@ protected function run(ExploreContextInterface $context): iterable
 ```
 
 The explorer will iterate over the result of `$client->getBottles()` and construct a data set entity for every item.
-The primary key is set and the entity is then yielded and passed into an [emission](../general-resources/data-flow.md).
+The primary key is set and the entity is then yielded and passed into an [emission](../../reference/general-resources/data-flow.md).

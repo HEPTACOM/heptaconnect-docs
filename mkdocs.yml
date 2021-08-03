@@ -117,6 +117,10 @@ nav:
         - Contributor License Agreement: guides/contributor/cla.md
     - Reference:
         - Overview: reference/index.md
+        - General resources:
+            - Package structure: reference/general-resources/package-structure.md
+            - Data flow: reference/general-resources/data-flow.md
+            - Mapping: reference/general-resources/mapping.md
         - ADRs:
             - Telemetry recording: reference/adr/2020-01-27-telemetry-recording.md
             - Contracts and interfaces: reference/adr/2020-04-30-contracts-and-interfaces.md
