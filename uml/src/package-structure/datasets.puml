@@ -1,0 +1,36 @@
+@startuml
+
+!include ../../include/skin.puml
+
+rectangle "Bridge-ShopwarePlatform" as BSP
+rectangle "Storage-ShopwareDal" as SSD
+rectangle "Core" as C
+rectangle "Dataset-Base" as DB
+rectangle "Dataset-Ecommerce" as DE #007aff
+rectangle "Dataset-PhysicalLocation" as DPL #007aff
+rectangle "Dataset-Product" as DP #007aff
+rectangle "Dataset-Social" as DS #007aff
+rectangle "Portal-Base" as PB
+rectangle "Storage-Base" as SB
+
+BSP --|> SSD
+C --|> SB
+C --|> PB
+C --|> DB
+DE --|> DB
+DPL --|> DB
+DP --|> DB
+DS --|> DB
+DS --|> DPL
+DP --|> DPL
+DE --|> DPL
+DE --|> DP
+DE --|> DS
+SB --|> DB
+SB --|> PB
+PB --|> DB
+SSD --|> SB
+BSP ---|> C
+BSP ---|> SB
+
+@enduml

@@ -1,0 +1,50 @@
+@startuml
+
+skinparam shadowing false
+
+!$fontFamily = "Arial"
+!$fontStyle = "bold"
+!$colorGray = "#3c3c3c"
+!$colorLightGray = "#5f5e5e"
+!$colorLight = "white"
+
+skinparam RectangleBackgroundColor $colorGray
+skinparam RectangleBorderColor $colorGray
+skinparam RectangleFontColor $colorLight
+skinparam RectangleFontName $fontFamily
+skinparam RectangleFontStyle $fontStyle
+
+skinparam NodeBackgroundColor $colorLightGray
+skinparam NodeBorderColor $colorGray
+skinparam NodeFontColor $colorLight
+skinparam NodeFontName $fontFamily
+skinparam NodeFontStyle $fontStyle
+
+skinparam SequenceLifeLineBorderColor $colorGray
+skinparam DatabaseBackgroundColor $colorLightGray
+skinparam DatabaseBorderColor $colorGray
+skinparam DatabaseFontColor $colorGray
+skinparam DatabaseFontName $fontFamily
+skinparam DatabaseFontStyle $fontStyle
+
+skinparam ControlBackgroundColor $colorLightGray
+skinparam ControlBorderColor $colorGray
+skinparam ControlFontColor $colorGray
+skinparam ControlFontName $fontFamily
+skinparam ControlFontStyle $fontStyle
+
+skinparam EntityBackgroundColor $colorLightGray
+skinparam EntityBorderColor $colorGray
+skinparam EntityFontColor $colorGray
+skinparam EntityFontName $fontFamily
+skinparam EntityFontStyle $fontStyle
+
+skinparam FolderBorderColor $colorGray
+skinparam FolderFontColor $colorGray
+skinparam FolderFontName $fontFamily
+skinparam FolderFontStyle $fontStyle
+
+skinparam ArrowColor $colorGray
+skinparam ArrowThickness 2
+
+@enduml

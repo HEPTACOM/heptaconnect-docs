@@ -12,17 +12,7 @@ To make this work, there are bridges to connect the core with a runtime.
 The runtime will then (through the bridge) provide a storage, a messenger and several other components that the core will then make use of.
 Because of this approach, the core is very portable and can run in a number of runtimes (if they can provide all requirements).
 
-<!--
-```plantuml
-@startuml ../assets/plantuml/packageStructure/BridgeShopwarePlatform
-!include ../../src/skin.puml
-rectangle "Bridge-ShopwarePlatform" as BSP #007aff
-rectangle "Storage-ShopwareDal" as SSD #007aff
-BSP --|> SSD 
-@enduml
-```
--->
-![](../assets/plantuml/packageStructure/BridgeShopwarePlatform.svg)
+![](../../assets/uml/package-structure/bridge-shopware-platform.svg)
 
 ### Core
 
@@ -32,19 +22,7 @@ The other side receives these entities and saves them to an other endpoint.
 It is the core's job to coordinate this traffic and keep things organized.
 So the core provides a router, a mapping service, an emit service, a receive service, a webhook service and other tooling.
 
-<!--
-```plantuml
-@startuml ../assets/plantuml/packageStructure/Core
-!include ../../src/skin.puml
-rectangle "Bridge-ShopwarePlatform" as BSP
-rectangle "Storage-ShopwareDal" as SSD
-rectangle "Core" as C #007aff
-BSP --|> SSD 
-BSP --|> C
-@enduml
-```
--->
-![](../assets/plantuml/packageStructure/Core.svg)
+![](../../assets/uml/package-structure/core.svg)
 
 ### Storage-Base
 
@@ -53,23 +31,7 @@ An example is the mapping of entities.
 To remember which records of different portal nodes are actually the same entity, a mapping is created and stored in a storage.
 The storage base will only provide interfaces for the storage, so the core can interact with the storage but does not need to know the actual implementation.
 
-<!--
-```plantuml
-@startuml ../assets/plantuml/packageStructure/StorageBase
-!include ../../src/skin.puml
-rectangle "Bridge-ShopwarePlatform" as BSP
-rectangle "Storage-ShopwareDal" as SSD
-rectangle "Core" as C
-rectangle "Storage-Base" as SB #007aff
-BSP --|> SSD
-C --|> SB
-BSP --|> C
-BSP --|> SB
-SSD --|> SB
-@enduml
-```
--->
-![](../assets/plantuml/packageStructure/StorageBase.svg)
+![](../../assets/uml/package-structure/storage-base.svg)
 
 ### Portal-Base
 
@@ -78,26 +40,7 @@ To connect an external API, you will need to provide a portal for this API.
 A portal has to require the portal base and whatever datasets it may support.
 The portal base comes with structs and interfaces that a portal will need in order to work.
 
-<!--
-```plantuml
-@startuml ../assets/plantuml/packageStructure/PortalBase
-!include ../../src/skin.puml
-rectangle "Bridge-ShopwarePlatform" as BSP
-rectangle "Storage-ShopwareDal" as SSD
-rectangle "Core" as C
-rectangle "Portal-Base" as PB #007aff
-rectangle "Storage-Base" as SB
-BSP --|> SSD 
-C --|> SB
-C --|> PB
-SB --|> PB
-SSD --|> SB
-BSP ---|> C
-BSP ---|> SB
-@enduml
-```
--->
-![](../assets/plantuml/packageStructure/PortalBase.svg)
+![](../../assets/uml/package-structure/portal-base.svg)
 
 ### Dataset-Base
 
@@ -108,30 +51,7 @@ A dataset is a group of class definitions for a type of data.
 Usually these data types are grouped into sets by their topic.
 The dataset base consists of interfaces and helper classes to make up a base for the individual datasets.
 
-<!--
-```plantuml
-@startuml ../assets/plantuml/packageStructure/DatasetBase
-!include ../../src/skin.puml
-rectangle "Bridge-ShopwarePlatform" as BSP
-rectangle "Storage-ShopwareDal" as SSD
-rectangle "Core" as C
-rectangle "Dataset-Base" as DB #007aff
-rectangle "Portal-Base" as PB
-rectangle "Storage-Base" as SB
-BSP --|> SSD 
-C --|> SB
-C --|> PB
-C --|> DB
-SB --|> DB
-SB --|> PB
-PB --|> DB
-SSD --|> SB
-BSP ---|> C
-BSP ---|> SB
-@enduml
-```
--->
-![](../assets/plantuml/packageStructure/DatasetBase.svg)
+![](../../assets/uml/package-structure/dataset-base.svg)
 
 ### Dataset
 
@@ -140,43 +60,7 @@ Datasets can also require other datasets to make up larger sets.
 The dataset for physical locations has no requirements as it is very much limited to its own case that cannot be further broken apart.
 The dataset for ecommerce is rather complex and has requirements for many other datasets to cover parts of its needs.
 
-<!--
-```plantuml
-@startuml ../assets/plantuml/packageStructure/Datasets
-!include ../../src/skin.puml
-rectangle "Bridge-ShopwarePlatform" as BSP
-rectangle "Storage-ShopwareDal" as SSD
-rectangle "Core" as C
-rectangle "Dataset-Base" as DB
-rectangle "Dataset-Ecommerce" as DE #007aff
-rectangle "Dataset-PhysicalLocation" as DPL #007aff
-rectangle "Dataset-Product" as DP #007aff
-rectangle "Dataset-Social" as DS #007aff
-rectangle "Portal-Base" as PB
-rectangle "Storage-Base" as SB
-BSP --|> SSD 
-C --|> SB
-C --|> PB
-C --|> DB
-DE --|> DB
-DPL --|> DB
-DP --|> DB
-DS --|> DB
-DS --|> DPL
-DP --|> DPL
-DE --|> DPL
-DE --|> DP
-DE --|> DS
-SB --|> DB
-SB --|> PB
-PB --|> DB
-SSD --|> SB
-BSP ---|> C
-BSP ---|> SB
-@enduml
-```
--->
-![](../assets/plantuml/packageStructure/Datasets.svg)
+![](../../assets/uml/package-structure/datasets.svg)
 
 ### Portal
 
@@ -189,49 +73,7 @@ The important part is that a portal connects an external system with the HEPTAco
 The portal has to require all its supported datasets.
 Portals with shared supported datasets are natively compatible with each other, as their data can be easily transferred from one portal to the other.
 
-<!--
-```plantuml
-@startuml ../assets/plantuml/packageStructure/Portals
-!include ../../src/skin.puml
-rectangle "Bridge-ShopwarePlatform" as BSP
-rectangle "Storage-ShopwareDal" as SSD
-rectangle "Core" as C
-rectangle "Dataset-Base" as DB
-rectangle "Dataset-Ecommerce" as DE
-rectangle "Dataset-PhysicalLocation" as DPL
-rectangle "Dataset-Product" as DP
-rectangle "Dataset-Social" as DS
-rectangle "Portal-Base" as PB
-rectangle "Portal-BusinessCentral" as PBC #007aff
-rectangle "Portal-ShopwarePlatform" as PSP #007aff
-rectangle "Storage-Base" as SB
-BSP --|> SSD 
-C --|> SB
-C --|> PB
-C --|> DB
-DE --|> DB
-DPL --|> DB
-DP --|> DB
-DS --|> DB
-DS --|> DPL
-DP --|> DPL
-DE --|> DPL
-DE --|> DP
-DE --|> DS
-SB --|> DB
-SB --|> PB
-PB --|> DB
-PBC --|> PB
-PBC --|> DE
-PSP --|> PB
-PSP --|> DE
-SSD --|> SB
-BSP ---|> C
-BSP ---|> SB
-@enduml
-```
--->
-![](../assets/plantuml/packageStructure/Portals.svg)
+![](../../assets/uml/package-structure/portals.svg)
 
 ### Integration
 
@@ -242,50 +84,4 @@ Typically an integration is composed by specifying all portals that should be co
 In this example we choose the Shopware bridge as the runtime and the portals for Shopware and Business Central as our portals.
 Because our runtime is Shopware, the integration has to be a Shopware plugin with the bridge and the portals registered as additional bundles.
 
-<!--
-```plantuml
-@startuml ../assets/plantuml/packageStructure/ShopwarePlatformBusinessCentralIntegration
-!include ../../src/skin.puml
-rectangle "Bridge-ShopwarePlatform" as BSP
-rectangle "Storage-ShopwareDal" as SSD
-rectangle "Core" as C
-rectangle "Dataset-Base" as DB
-rectangle "Dataset-Ecommerce" as DE
-rectangle "Dataset-PhysicalLocation" as DPL
-rectangle "Dataset-Product" as DP
-rectangle "Dataset-Social" as DS
-rectangle "Portal-Base" as PB
-rectangle "Portal-BusinessCentral" as PBC
-rectangle "Portal-ShopwarePlatform" as PSP
-rectangle "Storage-Base" as SB
-node "Shopware Plugin BC Integration" as SPBBC #007aff
-BSP --|> SSD 
-C --|> SB
-C --|> PB
-C --|> DB
-DE --|> DB
-DPL --|> DB
-DP --|> DB
-DS --|> DB
-DS --|> DPL
-DP --|> DPL
-DE --|> DPL
-DE --|> DP
-DE --|> DS
-SB --|> DB
-SB --|> PB
-PB --|> DB
-PBC --|> PB
-PBC --|> DE
-PSP --|> PB
-PSP --|> DE
-SSD --|> SB
-BSP ---|> C
-BSP ---|> SB
-SPBBC --0 BSP
-SPBBC --0 PSP
-SPBBC --0 PBC
-@enduml
-```
--->
-![](../assets/plantuml/packageStructure/ShopwarePlatformBusinessCentralIntegration.svg)
+![](../../assets/uml/package-structure/shopware-platform-business-central-integration.svg)

@@ -1,0 +1,46 @@
+@startuml
+
+!include ../../include/skin.puml
+
+rectangle "Bridge-ShopwarePlatform" as BSP
+rectangle "Storage-ShopwareDal" as SSD
+rectangle "Core" as C
+rectangle "Dataset-Base" as DB
+rectangle "Dataset-Ecommerce" as DE
+rectangle "Dataset-PhysicalLocation" as DPL
+rectangle "Dataset-Product" as DP
+rectangle "Dataset-Social" as DS
+rectangle "Portal-Base" as PB
+rectangle "Portal-BusinessCentral" as PBC
+rectangle "Portal-ShopwarePlatform" as PSP
+rectangle "Storage-Base" as SB
+node "Shopware Plugin BC Integration" as SPBBC #007aff
+
+BSP --|> SSD
+C --|> SB
+C --|> PB
+C --|> DB
+DE --|> DB
+DPL --|> DB
+DP --|> DB
+DS --|> DB
+DS --|> DPL
+DP --|> DPL
+DE --|> DPL
+DE --|> DP
+DE --|> DS
+SB --|> DB
+SB --|> PB
+PB --|> DB
+PBC --|> PB
+PBC --|> DE
+PSP --|> PB
+PSP --|> DE
+SSD --|> SB
+BSP ---|> C
+BSP ---|> SB
+SPBBC --0 BSP
+SPBBC --0 PSP
+SPBBC --0 PBC
+
+@enduml
