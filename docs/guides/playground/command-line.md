@@ -17,4 +17,4 @@ The best commands to discover your HEPTAconnect integrated application are:
 * `heptaconnect:support:alias:list` to see that the portal node names are just aliases to reduce complexity for configuration and usages
 * `heptaconnect:router:list` to see what routes have already been configured
 
-The next step for you should be taking a look at [adding further portals](./004-add-portals.md) to your environment.
+The next step for you should be taking a look at [adding further portals](./add-portals.md) to your environment.

@@ -5,6 +5,7 @@
 The playground is a quick entry for getting your hands onto HEPTAconnect in action.
 
 When you want to …
+
 * use HEPTAconnect for the first time, … 
 * try out a portal you found online, …
 * debug into some default HEPTAconnect flows, …
@@ -20,13 +21,14 @@ While this will probably never be an actual use-case, it makes things very predi
 
 You can find different running project based on skeletons that are populated with some basic configuration.
 Choose your matching environment and try it on your local machine.
-To get started see our [first time with playground](./002-first-time.md) articles.
-When you are already familiar with HEPTAconnect you can use it to [contribute](./005-contribution.md) to the packages.
+To get started see our [first time with playground](./first-time.md) articles.
+When you are already familiar with HEPTAconnect you can use it to [contribute](./contribution.md) to the packages.
 
 
 ## What will I miss?
 
 There are …
+
 * no optimizations for message broker
 * no additional caching techniques
 * no cluster configurations

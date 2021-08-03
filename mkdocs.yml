@@ -104,6 +104,14 @@ nav:
         - Dependency injection: guides/portal-developer/dependency-injection.md
         - Default utilities: guides/portal-developer/default-utilities.md
         - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
+    - Playground:
+        - guides/playground/index.md
+        - First time:
+            - guides/playground/first-time.md
+            - with Shopware 6: guides/playground/first-time/with-shopware-6.md
+        - Commandline: guides/playground/command-line.md
+        - Add portals: guides/playground/add-portals.md
+        - Contribution: guides/playground/contribution.md
     - Contributor:
         - guides/contributor/index.md
         - Contributor License Agreement: guides/contributor/cla.md
