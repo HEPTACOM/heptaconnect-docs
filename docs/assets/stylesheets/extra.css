@@ -29,7 +29,8 @@
 }
 
 @keyframes hc-role-burn--default {
-    0% {
+    0%,
+    100% {
         box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-default);
     }
 
@@ -44,14 +45,11 @@
     75% {
         box-shadow: calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-default);
     }
-
-    100% {
-        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-default);
-    }
 }
 
 @keyframes hc-role-burn--portal-developer {
-    0% {
+    0%,
+    100% {
         box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-portal-developer);
     }
 
@@ -66,14 +64,11 @@
     75% {
         box-shadow: calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-portal-developer);
     }
-
-    100% {
-        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-portal-developer);
-    }
 }
 
 @keyframes hc-role-burn--integrator {
-    0% {
+    0%,
+    100% {
         box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-integrator);
     }
 
@@ -88,14 +83,11 @@
     75% {
         box-shadow: calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-integrator);
     }
-
-    100% {
-        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-integrator);
-    }
 }
 
 @keyframes hc-role-burn--administrator {
-    0% {
+    0%,
+    100% {
         box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-administrator);
     }
 
@@ -110,14 +102,11 @@
     75% {
         box-shadow: calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-administrator);
     }
-
-    100% {
-        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-administrator);
-    }
 }
 
 @keyframes hc-role-burn--playground {
-    0% {
+    0%,
+    100% {
         box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-playground);
     }
 
@@ -132,14 +121,11 @@
     75% {
         box-shadow: calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-playground);
     }
-
-    100% {
-        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-playground);
-    }
 }
 
 @keyframes hc-role-burn--contributor {
-    0% {
+    0%,
+    100% {
         box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-contributor);
     }
 
@@ -153,10 +139,6 @@
 
     75% {
         box-shadow: calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-contributor);
-    }
-
-    100% {
-        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-contributor);
     }
 }
 
@@ -351,23 +333,28 @@ a.hc-role-link--contributor .heptaconnect-card-content {
     color: var(--md-default-fg-color) !important;
 }
 
+.hc-role-burn:hover {
+    animation-duration: 8s;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation-iteration-count: infinite;
+}
 .hc-role-burn--default:hover {
-    animation: hc-role-burn--default 5s infinite;
+    animation-name: hc-role-burn--default;
 }
 .hc-role-burn--portal-developer:hover {
-    animation: hc-role-burn--portal-developer 5s infinite;
+    animation-name: hc-role-burn--portal-developer;
 }
 .hc-role-burn--integrator:hover {
-    animation: hc-role-burn--integrator 5s infinite;
+    animation-name: hc-role-burn--integrator;
 }
 .hc-role-burn--administrator:hover {
-    animation: hc-role-burn--administrator 5s infinite;
+    animation-name: hc-role-burn--administrator;
 }
 .hc-role-burn--playground:hover {
-    animation: hc-role-burn--playground 5s infinite;
+    animation-name: hc-role-burn--playground;
 }
 .hc-role-burn--contributor:hover {
-    animation: hc-role-burn--contributor 5s infinite;
+    animation-name: hc-role-burn--contributor;
 }
 
 @media screen and (min-width: 45rem) {
