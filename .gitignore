@@ -4,6 +4,8 @@
 /docs/feed/
 /site
 
+# Dependencies
+/node_modules
 /.venv
 
 # Generated data

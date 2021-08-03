@@ -1,1 +1,5 @@
 /site/meta-descriptions.csv
+
+# Dependencies
+/node_modules
+/.venv
