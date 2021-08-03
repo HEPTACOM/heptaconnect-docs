@@ -6,6 +6,7 @@ This includes adding further writes when receiving data from elements.
 ## Intention
 
 A decorating receiver can:
+
 * change values of existing scalar values and add further attachments to an entity for further complex data structures to be received by the decorated receiver
 * replace the complete receive process of the decorated receiver
 * use the received and mapped entities of the decorated receiver and do further actions on them
