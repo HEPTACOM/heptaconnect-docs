@@ -62,7 +62,7 @@ fs.mkdirSync('docs/feed', { recursive: true });
 
 for (const post of posts) {
     fs.writeFileSync('docs/' + post.file, '# ' + post.title + '\n\n' + post.markdown.trim());
-    let link = `https://${domain}/#/` + post.file.slice(0, '.md'.length * -1);
+    let link = `https://${domain}/` + post.file.slice(0, '.md'.length * -1) + '/';
 
     rss.addItem({
         title: post.title,
@@ -76,7 +76,7 @@ for (const post of posts) {
 }
 
 const listing = rss.items.map(a => `* [${a.title}](./${a.id.substr(`https://${domain}/#/feed/`.length)}.md)`);
-fs.writeFileSync('docs/feed/README.md', '# HEPTAconnect Feed\n\n' + listing.join('\n') + '\n');
+fs.writeFileSync('docs/feed/index.md', '# HEPTAconnect Feed\n\n' + listing.join('\n') + '\n');
 
 fs.writeFileSync('docs/feed/atom1.xml', rss.atom1());
 fs.writeFileSync('docs/feed/rss2.xml', rss.rss2());

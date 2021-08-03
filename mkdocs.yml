@@ -89,6 +89,9 @@ extra:
         -
             icon: fontawesome/brands/twitter
             link: https://twitter.com/heptacom_gmbh
+        -
+            icon: fontawesome/solid/rss-square
+            link: /feed/
 
 # Page tree
 nav:
@@ -142,3 +145,5 @@ nav:
             - Flow component short notation: reference/adr/2021-06-17-flow-component-short-notation.md
         - Glossary: reference/glossary.md
         - License: reference/license.md
+    - News:
+        - Blog: feed/index.md
