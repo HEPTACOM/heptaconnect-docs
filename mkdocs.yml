@@ -26,12 +26,6 @@ plugins:
     - gen-files:
         scripts:
             - generators/inject_role_metadata.py
-    - with-pdf:
-        author: HEPTACOM GmbH
-        cover: true
-        cover_title: HEPTAconnect
-        cover_subtitle: ''
-        render_js: false
     - meta-descriptions:
         export_csv: true
     - section-index

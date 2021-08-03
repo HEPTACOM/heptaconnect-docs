@@ -14,6 +14,12 @@ endif
 ifndef MKDIR
 	MKDIR := mkdir
 endif
+ifndef MV
+	MV := mv
+endif
+ifndef RM
+	RM := rm
+endif
 ifndef NPM
 	NPM := npm
 endif
@@ -30,8 +36,11 @@ clean:
 
 .PHONY: build
 build: assets/css/vendor/highlight.js/atom-one-dark.min.css docs/assets/javascripts/vendor/highlight.js/highlight.min.js github_stats rss
-	$(NPM) run prod
+	$(NPM) run mkdocs-pdf
+	$(MKDOCS) build -f mkdocs-pdf.yml
+	$(MV) site/pdf/document.pdf document.pdf
 	$(MKDOCS) build
+	$(MV) document.pdf site/HEPTAconnect.pdf
 
 .PHONY: github_stats
 github_stats: overrides/partials/github.json

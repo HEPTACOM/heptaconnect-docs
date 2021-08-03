@@ -13,3 +13,4 @@
 /.data
 /overrides/partials/github.json
 /docs/assets/uml
+/mkdocs-pdf.yml
