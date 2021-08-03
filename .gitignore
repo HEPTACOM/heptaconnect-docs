@@ -1,6 +1,7 @@
 /docs/assets/javascripts/vendor/
 /docs/assets/plantuml/
-/docs/assets/stylesheets/vendor/
+/docs/assets/app.css
+/assets/css/vendor/
 /docs/feed/
 /site
 

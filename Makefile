@@ -14,6 +14,9 @@ endif
 ifndef MKDIR
 	MKDIR := mkdir
 endif
+ifndef NPM
+	NPM := npm
+endif
 
 .PHONY: all
 all: build
@@ -26,11 +29,16 @@ clean:
 	rm -rf docs/assets/javascripts/vendor
 
 .PHONY: build
-build: docs/assets/stylesheets/vendor/highlight.js/atom-one-dark.min.css docs/assets/javascripts/vendor/highlight.js/highlight.min.js github_stats
+build: assets/css/vendor/highlight.js/atom-one-dark.min.css docs/assets/javascripts/vendor/highlight.js/highlight.min.js github_stats rss
+	$(NPM) run prod
 	$(MKDOCS) build
 
 .PHONY: github_stats
 github_stats: overrides/partials/github.json
+
+.PHONY: rss
+rss:
+	$(NPM) run rss
 
 overrides/partials/github.json:
 	mkdir -p ${GENERATED_DATA_DIR}
@@ -41,9 +49,9 @@ overrides/partials/github.json:
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-core.json https://api.github.com/repos/HEPTACOM/heptaconnect-core
 	$(JQ) -s '{ stars: [ .[].stargazers_count ] | add, forks: [ .[].forks ] | add, repositories: . | length }' ${GENERATED_DATA_DIR}/github-*.json > overrides/partials/github.json
 
-docs/assets/stylesheets/vendor/highlight.js/atom-one-dark.min.css:
-	$(MKDIR) -p docs/assets/stylesheets/vendor/highlight.js
-	$(CURL) -o docs/assets/stylesheets/vendor/highlight.js/atom-one-dark.min.css https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/atom-one-dark.min.css
+assets/css/vendor/highlight.js/atom-one-dark.min.css:
+	$(MKDIR) -p assets/css/vendor/highlight.js
+	$(CURL) -o assets/css/vendor/highlight.js/atom-one-dark.min.css https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/atom-one-dark.min.css
 
 docs/assets/javascripts/vendor/highlight.js/highlight.min.js:
 	$(MKDIR) -p docs/assets/javascripts/vendor/highlight.js
