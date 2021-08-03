@@ -3,6 +3,7 @@
     --md-code-font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 
     --md-hue: 218;
+    --hc-role-default: black;
     --hc-role-portal-developer: #9427b9;
     --hc-role-integrator: #e7af29;
     --hc-role-administrator: #db026b;
@@ -12,6 +13,7 @@
 
 [data-md-color-scheme="slate"] {
     --md-hue: 218;
+    --hc-role-default: white;
     --md-primary-fg-color: #0A6EE7;
     --md-default-bg-color: hsl(var(--md-hue), 38%, 16%);
     --md-default-bg-color--light: hsl(var(--md-hue), 38%, 24%);
@@ -20,6 +22,9 @@
     --md-code-bg-color: hsl(var(--md-hue), 20%, 26%);
 }
 
+body.hc-role-default {
+    --md-primary-fg-color: var(--hc-role-default);
+}
 body.hc-role-portal-developer {
     --md-primary-fg-color: var(--hc-role-portal-developer);
 }
@@ -36,6 +41,9 @@ body.hc-role-contributor {
     --md-primary-fg-color: var(--hc-role-contributor);
 }
 
+.hc-role-color--default {
+    color: var(--hc-role-default) !important;
+}
 .hc-role-color--portal-developer {
     color: var(--hc-role-portal-developer) !important;
 }
@@ -50,6 +58,11 @@ body.hc-role-contributor {
 }
 .hc-role-color--contributor {
     color: var(--hc-role-contributor) !important;
+}
+
+.hc-role-image--default svg,
+svg.hc-role-image--default {
+    fill: var(--hc-role-default) !important;
 }
 
 .hc-role-image--portal-developer svg,
@@ -75,6 +88,10 @@ svg.hc-role-image--playground {
 .hc-role-image--contributor svg,
 svg.hc-role-image--contributor {
     fill: var(--hc-role-contributor) !important;
+}
+
+.hc-role-border--default {
+    border-color: var(--hc-role-default) !important;
 }
 
 .hc-role-border--portal-developer {
