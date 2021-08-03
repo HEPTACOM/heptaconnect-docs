@@ -448,18 +448,20 @@ a.hc-role-link--contributor .heptaconnect-card-content {
 
 .tag-typewriter {
     position: relative;
-    padding-right: 5px;
+    padding-right: 1px;
 }
 
 .tag-typewriter::after {
     display: block;
     content: '';
-    width: 3px;
+    width: 2px;
     background-color: var(--md-default-fg-color);
     position: absolute;
     right: 0;
     top: 0;
     bottom: 0;
+    opacity: .92;
+    margin: 1px 0;
     animation: blink-animation 1s steps(3, start) infinite;
     -webkit-animation: blink-animation 1s steps(3, start) infinite;
 }
