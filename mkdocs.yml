@@ -38,13 +38,13 @@ plugins:
         export_csv: true
     - section-index
     - build_plantuml:
-          render: local
-          bin_path: plantuml
-          output_format: svg
-          diagram_root: uml
-          output_folder: ../docs/assets/uml
-          input_folder: src
-          input_extensions: puml
+        render: local
+        bin_path: plantuml
+        output_format: svg
+        diagram_root: uml
+        output_folder: ../docs/assets/uml
+        input_folder: src
+        input_extensions: puml
 
 # Theme
 theme:
