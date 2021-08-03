@@ -12,6 +12,9 @@
     --hc-role-administrator: #db026b;
     --hc-role-playground: #aa0d16;
     --hc-role-contributor: #00b6d5;
+
+    --hc-role-burn--intensity: 30px;
+    --hc-role-burn--variance: 4px;
 }
 
 [data-md-color-scheme="slate"] {
@@ -23,6 +26,138 @@
     --md-default-bg-color--lighter: hsl(var(--md-hue), 38%, 32%);
     --md-default-bg-color--lightest: hsl(var(--md-hue), 38%, 40%);
     --md-code-bg-color: hsl(var(--md-hue), 20%, 26%);
+}
+
+@keyframes hc-role-burn--default {
+    0% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-default);
+    }
+
+    25% {
+        box-shadow: var(--hc-role-burn--variance) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-default);
+    }
+
+    50% {
+        box-shadow: var(--hc-role-burn--variance) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-default);
+    }
+
+    75% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-default);
+    }
+
+    100% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-default);
+    }
+}
+
+@keyframes hc-role-burn--portal-developer {
+    0% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-portal-developer);
+    }
+
+    25% {
+        box-shadow: var(--hc-role-burn--variance) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-portal-developer);
+    }
+
+    50% {
+        box-shadow: var(--hc-role-burn--variance) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-portal-developer);
+    }
+
+    75% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-portal-developer);
+    }
+
+    100% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-portal-developer);
+    }
+}
+
+@keyframes hc-role-burn--integrator {
+    0% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-integrator);
+    }
+
+    25% {
+        box-shadow: var(--hc-role-burn--variance) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-integrator);
+    }
+
+    50% {
+        box-shadow: var(--hc-role-burn--variance) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-integrator);
+    }
+
+    75% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-integrator);
+    }
+
+    100% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-integrator);
+    }
+}
+
+@keyframes hc-role-burn--administrator {
+    0% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-administrator);
+    }
+
+    25% {
+        box-shadow: var(--hc-role-burn--variance) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-administrator);
+    }
+
+    50% {
+        box-shadow: var(--hc-role-burn--variance) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-administrator);
+    }
+
+    75% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-administrator);
+    }
+
+    100% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-administrator);
+    }
+}
+
+@keyframes hc-role-burn--playground {
+    0% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-playground);
+    }
+
+    25% {
+        box-shadow: var(--hc-role-burn--variance) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-playground);
+    }
+
+    50% {
+        box-shadow: var(--hc-role-burn--variance) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-playground);
+    }
+
+    75% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-playground);
+    }
+
+    100% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-playground);
+    }
+}
+
+@keyframes hc-role-burn--contributor {
+    0% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-contributor);
+    }
+
+    25% {
+        box-shadow: var(--hc-role-burn--variance) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-contributor);
+    }
+
+    50% {
+        box-shadow: var(--hc-role-burn--variance) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-contributor);
+    }
+
+    75% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--variance) var(--hc-role-burn--intensity) var(--hc-role-contributor);
+    }
+
+    100% {
+        box-shadow: calc(-1 * var(--hc-role-burn--variance)) calc(-1 * var(--hc-role-burn--variance)) var(--hc-role-burn--intensity) var(--hc-role-contributor);
+    }
 }
 
 .md-tabs,
@@ -214,6 +349,25 @@ a.hc-role-link--administrator .heptaconnect-card-content,
 a.hc-role-link--playground .heptaconnect-card-content,
 a.hc-role-link--contributor .heptaconnect-card-content {
     color: var(--md-default-fg-color) !important;
+}
+
+.hc-role-burn--default:hover {
+    animation: hc-role-burn--default 5s infinite;
+}
+.hc-role-burn--portal-developer:hover {
+    animation: hc-role-burn--portal-developer 5s infinite;
+}
+.hc-role-burn--integrator:hover {
+    animation: hc-role-burn--integrator 5s infinite;
+}
+.hc-role-burn--administrator:hover {
+    animation: hc-role-burn--administrator 5s infinite;
+}
+.hc-role-burn--playground:hover {
+    animation: hc-role-burn--playground 5s infinite;
+}
+.hc-role-burn--contributor:hover {
+    animation: hc-role-burn--contributor 5s infinite;
 }
 
 @media screen and (min-width: 45rem) {
