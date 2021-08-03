@@ -23,7 +23,8 @@ markdown_extensions:
 # Plugins
 plugins:
     - search
-    - git-revision-date-localized
+    - git-revision-date-localized:
+        fallback_to_build_date: true
     - with-pdf:
         author: HEPTACOM GmbH
         cover: true
@@ -58,7 +59,7 @@ theme:
             toggle:
                 icon: fontawesome/solid/toggle-on
                 name: Switch to light mode
-
+    font: false
     search_index_only: true
 
 extra_css:
