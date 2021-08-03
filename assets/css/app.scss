@@ -511,6 +511,24 @@ a.hc-role-link--contributor .heptaconnect-card-content {
     text-align: center;
 }
 
+.heptaconnect-footer-privacy, .heptaconnect-footer-imprint {
+    color: var(--md-footer-fg-color--lighter);
+    font-size: .64rem;
+    text-align: center;
+    flex-basis: calc(50% - 2 * .6rem);
+    margin: auto .6rem;
+    padding: .4rem 0;
+    width: 100%;
+}
+
+.heptaconnect-footer-privacy {
+    text-align: right;
+}
+
+.heptaconnect-footer-imprint {
+    text-align: left;
+}
+
 .md-footer-social__link {
     width: 2.1rem;
     padding-left: .25rem;
@@ -527,13 +545,24 @@ a.hc-role-link--contributor .heptaconnect-card-content {
 
     .heptaconnect-footer-download {
         justify-content: flex-start;
+        order: 1;
     }
 
     .heptaconnect-footer-copyright {
         text-align: center;
+        order: 2;
     }
 
     .md-footer-social {
         text-align: right;
+        order: 3;
+    }
+
+    .heptaconnect-footer-privacy {
+        order: 4;
+    }
+
+    .heptaconnect-footer-imprint {
+        order: 5;
     }
 }
