@@ -39,6 +39,7 @@ build: assets/css/vendor/highlight.js/atom-one-dark.min.css docs/assets/javascri
 	$(NPM) run mkdocs-pdf
 	$(MKDOCS) build -f mkdocs-pdf.yml
 	$(MV) site/pdf/document.pdf document.pdf
+	$(NPM) run prod
 	$(MKDOCS) build
 	$(MV) document.pdf site/HEPTAconnect.pdf
 
