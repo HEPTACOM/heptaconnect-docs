@@ -5,3 +5,7 @@
 /site
 
 /.venv
+
+# Generated data
+/.data
+/overrides/partials/github.json
