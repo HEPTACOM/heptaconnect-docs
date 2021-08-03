@@ -9,6 +9,7 @@
 
 .md-grid-dense {
     max-width: 65rem;
+    line-height: 1.5;
 }
 
 .mdx-hero {
@@ -90,9 +91,9 @@
         width: 10rem;
         padding: 0;
     }
+
     .mdx-hero > picture svg {
         height: auto;
-
     }
 
     .mdx-hero > .mdx-hero__content {
@@ -134,7 +135,7 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     color: var(--md-default-fg-color);
 }
 
@@ -145,7 +146,7 @@
 
 .heptaconnect-cards svg {
     display: block;
-    height: 8rem;
+    height: 5rem;
     margin: 0 auto;
     fill: var(--md-default-fg-color);
 }
@@ -156,9 +157,8 @@
     border-bottom: var(--md-default-fg-color) 0.1rem solid;
 }
 
-.heptaconnect-cards > * .heptaconnect-card-title {
+.heptaconnect-cards .heptaconnect-card-title {
     width: 100%;
-    text-align: center;
     font-weight: bold;
     font-size: 1rem;
 }
@@ -186,6 +186,7 @@
         visibility: hidden;
     }
 }
+
 @-webkit-keyframes blink-animation {
     to {
         visibility: hidden;
