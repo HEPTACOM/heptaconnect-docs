@@ -83,7 +83,7 @@ extra:
             link: https://twitter.com/heptacom_gmbh
         -
             icon: fontawesome/solid/rss-square
-            link: /feed/
+            link: /news/
 
 # Page tree
 nav:
@@ -138,5 +138,5 @@ nav:
         - Glossary: reference/glossary.md
         - License: reference/license.md
     - News:
-        - Blog: feed/index.md
+        - Blog: news/index.md
     - Pricing: https://www.heptacom.de/heptaconnect/
