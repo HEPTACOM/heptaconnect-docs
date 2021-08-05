@@ -1,0 +1,76 @@
+{% extends "main.html" %}
+
+{% block content %}
+    {% if page.edit_url %}
+        <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
+            {% include ".icons/material/pencil.svg" %}
+        </a>
+    {% endif %}
+
+    {% if not "\x3ch1" in page.content %}
+        <h1>{{ page.title | d(config.site_name, true)}}</h1>
+    {% endif %}
+
+    {% set content = page.content %}
+    {% set openCard %}
+        <section class="md-typeset md-grid-dense hc-cards">
+            <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/portal-node/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/project-diagram.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-f5ae91335169404e85f3e121357aade0-->', openCard)|replace('<!--close-f5ae91335169404e85f3e121357aade0-->', closeCard) %}
+
+    {% set openCard %}
+            <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/routing/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/exchange.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-cb1a50171cfe41bea30d1437ab32aa02-->', openCard)|replace('<!--close-cb1a50171cfe41bea30d1437ab32aa02-->', closeCard) %}
+
+    {% set openCard %}
+            <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/status-reporting/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/sensor.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-82cbda7a53ff4843bc69a3cb717ceaee-->', openCard)|replace('<!--close-82cbda7a53ff4843bc69a3cb717ceaee-->', closeCard) %}
+
+    {% set openCard %}
+            <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/logs/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/cabinet-filing.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+        </section>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-123d7ed379034757ac79ac2431b411a9-->', openCard)|replace('<!--close-123d7ed379034757ac79ac2431b411a9-->', closeCard) %}
+
+    {{ content }}
+
+    {% if page and page.meta %}
+        {% if page.meta.git_revision_date_localized or page.meta.revision_date %}
+            {% include "partials/source-file.html" %}
+        {% endif %}
+    {% endif %}
+{% endblock %}
