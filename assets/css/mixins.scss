@@ -1,0 +1,51 @@
+@mixin animation-burn(
+    $name,
+    $color,
+    $variance: var(--hc-role-burn--variance),
+    $intensity: var(--hc-role-burn--intensity)
+) {
+    @keyframes hc-role-burn--#{$name} {
+        0%,
+        100% {
+            box-shadow: calc(-1 * #{$variance}) calc(-1 * #{$variance}) $intensity $color;
+        }
+
+        25% {
+            box-shadow: $variance calc(-1 * #{$variance}) $intensity $color;
+        }
+
+        50% {
+            box-shadow: $variance $variance $intensity $color;
+        }
+
+        75% {
+            box-shadow: calc(-1 * #{$variance}) $variance $intensity $color;
+        }
+    }
+
+    .hc-role-burn--#{$name}:hover {
+        animation-name: hc-role-burn--#{$name};
+    }
+}
+
+@mixin color-basic(
+    $name,
+    $color
+) {
+    body.hc-role-#{$name} {
+        --md-primary-fg-color: #{$color};
+    }
+
+    .hc-role-color--#{$name} {
+        color: $color !important;
+    }
+
+    .hc-role-image--#{$name} svg,
+    svg.hc-role-image--#{$name} {
+        fill: $color !important;
+    }
+
+    .hc-role-border--#{$name} {
+        border-color: $color !important;
+    }
+}
