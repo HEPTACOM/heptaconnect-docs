@@ -106,6 +106,7 @@ nav:
         - Dependency injection: guides/portal-developer/dependency-injection.md
         - Default utilities: guides/portal-developer/default-utilities.md
         - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
+    - Integrator: guides/integrator/index.md
     - Administrator: guides/administrator/index.md
     - Playground:
         - guides/playground/index.md
