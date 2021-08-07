@@ -8,11 +8,11 @@ entity HEPTAconnect as HC
 control MessageBroker as MB
 
 == Direct Emission ==
-P1 ->> HC: Read data from portal 1
-HC ->> MB: Release explored item for emission
+P1 -> HC: Read data from portal 1
+HC -> MB: Release explored item for emission
 ...
 == Reception ==
-HC <<- MB: Route data for reception
-P2 <<- HC: Store data in portal 2
+HC <- MB: Route data for reception
+P2 <- HC: Store data in portal 2
 
 @enduml

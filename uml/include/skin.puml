@@ -1,12 +1,15 @@
 @startuml
 
 skinparam shadowing false
+skinparam style strictuml
 
 !$fontFamily = "Arial"
 !$fontStyle = "bold"
 !$colorGray = "#3c3c3c"
 !$colorLightGray = "#5f5e5e"
 !$colorLight = "white"
+!$colorLightish = "#f5f5f5"
+!$colorAlmostLight = "#eeeeee"
 !$colorHighlight = "#007aff"
 
 skinparam RectangleBackgroundColor $colorGray
@@ -47,5 +50,52 @@ skinparam FolderFontStyle $fontStyle
 
 skinparam ArrowColor $colorGray
 skinparam ArrowThickness 2
+
+skinparam BoxPadding 30
+skinparam ParticipantPadding 10
+
+skinparam BoundaryBorderColor $colorGray
+skinparam BoundaryBackgroundColor $colorLightGray
+skinparam BoundaryFontName $fontFamily
+skinparam BoundaryFontStyle $fontStyle
+skinparam BoundaryFontColor $colorGray
+
+skinparam QueueBorderColor $colorGray
+skinparam QueueBackgroundColor $colorLightGray
+skinparam QueueFontName $fontFamily
+skinparam QueueFontStyle $fontStyle
+skinparam QueueFontColor $colorLight
+
+skinparam sequence {
+    BoxBorderColor $colorAlmostLight
+    BoxBackgroundColor $colorLightish
+
+    ActivityBackgroundColor $colorLightGray
+    ActivityBorderColor $colorGray
+    ActivityFontColor $colorLight
+    ActivityFontName $fontFamily
+    ActivityFontStyle $fontStyle
+
+    ArrowColor $colorGray
+    ArrowFontColor $colorHighlight
+    ArrowBackgroundColor $colorLightGray
+    ArrowThickness 2
+
+    ActorBorderColor $colorGray
+
+    LifeLineBorderColor $colorGray
+    LifeLineBackgroundColor $colorLight
+
+    ParticipantBorderColor $colorGray
+    ParticipantBackgroundColor $colorLightGray
+    ParticipantFontName $fontFamily
+    ParticipantFontStyle $fontStyle
+    ParticipantFontColor $colorLight
+
+    ActorFontName $fontFamily
+    ActorFontStyle $fontStyle
+    ActorBackgroundColor $colorLightGray
+    ActorFontColor $colorGray
+}
 
 @enduml
