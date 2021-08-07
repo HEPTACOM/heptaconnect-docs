@@ -12,7 +12,7 @@ definitions:
                 image: squidfunk/mkdocs-material
                 name: Build documentation assets
                 script:
-                    - apk add --no-cache wget graphviz ttf-dejavu make bash openjdk16
+                    - apk add --update --no-cache wget graphviz ttf-dejavu make bash openjdk8-jre
                     - wget "https://sourceforge.net/projects/plantuml/files/1.2020.12/plantuml.1.2020.12.jar/download" -O /tmp/plantuml
                     - pip install
                     - 'PATH=/tmp:$PATH make build'
@@ -22,7 +22,7 @@ definitions:
                 artifacts:
                     - site/meta-descriptions.csv
                 script:
-                    - apk add --no-cache git openssh-client
+                    - apk add --update --no-cache git openssh-client
                     - mv .gh-pages-gitignore .gitignore
                     - git stash
                     - git checkout -b gh-pages
@@ -34,7 +34,7 @@ definitions:
                 <<: *default
                 name: Publish to github
                 script:
-                    - apk add --no-cache git openssh-client
+                    - apk add --update --no-cache git openssh-client
                     - git remote add github git@github.com:HEPTACOM/heptaconnect-docs.git
                     - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
                     - git remote update
