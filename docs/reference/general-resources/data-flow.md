@@ -12,6 +12,8 @@ For this you need to implement a handler for each step: An [explorer](../../guid
 
 ![](../../assets/uml/data-flow/basic-flow.svg)
 
+[Click here to read](./data-flows/basic-flow.md) more about the details that happen within the basic flow. 
+
 ## Direct emission flow
 
 This is a condensed form of the basic flow as the first two steps are merged into one.

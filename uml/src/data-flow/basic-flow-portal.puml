@@ -1,0 +1,55 @@
+@startuml
+
+!include ../../include/skin.puml
+
+box Portal A
+database API as P1
+participant Packer
+participant Emitter
+participant Explorer
+endbox
+
+control HEPTAconnect $colorLightish
+
+box Portal B
+participant Receiver
+participant Unpacker
+database API as P2
+endbox
+
+== Exploration ==
+
+HEPTAconnect -> Explorer ++ : Start exploration
+activate HEPTAconnect
+Explorer -> P1 ++ : List identities
+P1 -> Explorer -- : Collect identities
+Explorer -> HEPTAconnect -- : Collect identities
+deactivate HEPTAconnect
+
+...
+
+== Emission ==
+
+HEPTAconnect -> Emitter ++ : Start emission
+activate HEPTAconnect
+Emitter -> P1 ++ : Read data by identities
+P1 -> Emitter -- : Collect data by identities
+Emitter -> Packer ++ : Convert data to entities
+Packer -> Emitter -- : Collect entities
+Emitter -> HEPTAconnect -- : Collect entities
+deactivate HEPTAconnect
+
+...
+
+== Reception ==
+
+HEPTAconnect -> Receiver ++ : Start reception
+activate HEPTAconnect
+Receiver -> Unpacker ++ : Convert entities to data
+Unpacker -> Receiver -- : Collect data
+Receiver -> P2 ++ : Write data
+P2 -> Receiver -- : Collect identities for data
+Receiver -> HEPTAconnect -- : Collect written identities
+deactivate HEPTAconnect
+
+@enduml
