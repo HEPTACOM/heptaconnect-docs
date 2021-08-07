@@ -106,8 +106,18 @@ nav:
         - Dependency injection: guides/portal-developer/dependency-injection.md
         - Default utilities: guides/portal-developer/default-utilities.md
         - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
-    - Integrator: guides/integrator/index.md
-    - Administrator: guides/administrator/index.md
+    - Integrator:
+        - guides/integrator/index.md
+        - Portals: guides/integrator/portals.md
+        - Bridges: guides/integrator/bridges.md
+        - Message broking: guides/integrator/message-brokers.md
+        - Data tuning: guides/integrator/data-tuning.md
+    - Administrator:
+        - guides/administrator/index.md
+        - Portal node: guides/administrator/portal-node.md
+        - Route: guides/administrator/routing.md
+        - Status reporting: guides/administrator/status-reporting.md
+        - Logs: guides/administrator/logs.md
     - Playground:
         - guides/playground/index.md
         - Intro: guides/playground/intro.md
