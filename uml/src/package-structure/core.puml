@@ -3,7 +3,7 @@
 
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Storage-ShopwareDal" as SSD
-rectangle "Core" as C #007aff
+rectangle "Core" as C $colorHighlight
 
 BSP --|> SSD
 BSP --|> C

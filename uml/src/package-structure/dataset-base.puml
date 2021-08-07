@@ -5,7 +5,7 @@
 rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Storage-ShopwareDal" as SSD
 rectangle "Core" as C
-rectangle "Dataset-Base" as DB #007aff
+rectangle "Dataset-Base" as DB $colorHighlight
 rectangle "Portal-Base" as PB
 rectangle "Storage-Base" as SB
 

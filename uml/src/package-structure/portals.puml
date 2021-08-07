@@ -11,8 +11,8 @@ rectangle "Dataset-PhysicalLocation" as DPL
 rectangle "Dataset-Product" as DP
 rectangle "Dataset-Social" as DS
 rectangle "Portal-Base" as PB
-rectangle "Portal-BusinessCentral" as PBC #007aff
-rectangle "Portal-ShopwarePlatform" as PSP #007aff
+rectangle "Portal-BusinessCentral" as PBC $colorHighlight
+rectangle "Portal-ShopwarePlatform" as PSP $colorHighlight
 rectangle "Storage-Base" as SB
 
 BSP --|> SSD

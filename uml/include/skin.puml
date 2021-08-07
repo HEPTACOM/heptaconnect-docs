@@ -7,6 +7,7 @@ skinparam shadowing false
 !$colorGray = "#3c3c3c"
 !$colorLightGray = "#5f5e5e"
 !$colorLight = "white"
+!$colorHighlight = "#007aff"
 
 skinparam RectangleBackgroundColor $colorGray
 skinparam RectangleBorderColor $colorGray

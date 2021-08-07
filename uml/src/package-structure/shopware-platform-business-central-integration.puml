@@ -14,7 +14,7 @@ rectangle "Portal-Base" as PB
 rectangle "Portal-BusinessCentral" as PBC
 rectangle "Portal-ShopwarePlatform" as PSP
 rectangle "Storage-Base" as SB
-node "Shopware Plugin BC Integration" as SPBBC #007aff
+node "Shopware Plugin BC Integration" as SPBBC $colorHighlight
 
 BSP --|> SSD
 C --|> SB

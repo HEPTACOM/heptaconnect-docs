@@ -6,10 +6,10 @@ rectangle "Bridge-ShopwarePlatform" as BSP
 rectangle "Storage-ShopwareDal" as SSD
 rectangle "Core" as C
 rectangle "Dataset-Base" as DB
-rectangle "Dataset-Ecommerce" as DE #007aff
-rectangle "Dataset-PhysicalLocation" as DPL #007aff
-rectangle "Dataset-Product" as DP #007aff
-rectangle "Dataset-Social" as DS #007aff
+rectangle "Dataset-Ecommerce" as DE $colorHighlight
+rectangle "Dataset-PhysicalLocation" as DPL $colorHighlight
+rectangle "Dataset-Product" as DP $colorHighlight
+rectangle "Dataset-Social" as DS $colorHighlight
 rectangle "Portal-Base" as PB
 rectangle "Storage-Base" as SB
 

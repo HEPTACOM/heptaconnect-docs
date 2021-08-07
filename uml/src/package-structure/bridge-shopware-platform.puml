@@ -1,8 +1,8 @@
 @startuml
 
 !include ../../include/skin.puml
-rectangle "Bridge-ShopwarePlatform" as BSP #007aff
-rectangle "Storage-ShopwareDal" as SSD #007aff
+rectangle "Bridge-ShopwarePlatform" as BSP $colorHighlight
+rectangle "Storage-ShopwareDal" as SSD $colorHighlight
 BSP --|> SSD
 
 @enduml
