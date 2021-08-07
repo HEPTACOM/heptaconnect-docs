@@ -5,6 +5,7 @@ definitions:
         -   step: &default
                 artifacts:
                     - 'docs/**'
+                    - 'site/**'
         -   step: &build-docs
                 <<: *default
                 clone:
