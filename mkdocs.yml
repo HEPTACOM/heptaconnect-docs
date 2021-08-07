@@ -26,6 +26,10 @@ plugins:
     - gen-files:
         scripts:
             - generators/inject_role_metadata.py
+    - htmlproofer:
+         raise_error_excludes:
+             404:
+                 - 'https://github.com/HEPTACOM/heptaconnect-docs/edit/'
     - meta-descriptions:
         export_csv: true
     - section-index
