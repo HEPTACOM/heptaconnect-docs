@@ -1,12 +1,7 @@
-/docs/assets/javascripts/vendor/
-/docs/assets/plantuml/
-/docs/assets/app.css
-/docs/news/
-
-/site/meta-descriptions.csv
-/site/assets/images/favicon.png
-/site/assets/javascripts/*.js.map
-/site/partials
+/docs/meta-descriptions.csv
+/docs/assets/images/favicon.png
+/docs/assets/javascripts/*.js.map
+/docs/partials
 
 # Dependencies
 /node_modules

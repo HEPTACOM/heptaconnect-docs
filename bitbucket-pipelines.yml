@@ -4,7 +4,7 @@ definitions:
     steps:
         -   step: &default
                 artifacts:
-                    - 'site/**'
+                    - 'docs/**'
         -   step: &build-docs
                 <<: *default
                 caches:
@@ -21,6 +21,8 @@ definitions:
                     - npm ci --include=dev
                     - pip install -r requirements.txt
                     - 'PLANTUML="java -Djava.awt.headless=true -jar /tmp/plantuml.jar" PATH=.bin:$PATH make build'
+                    - rm -rf docs/
+                    - mv site/ docs/
         -   step: &commit-built-docs
                 <<: *default
                 name: Commit docs
