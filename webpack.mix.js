@@ -18,7 +18,10 @@ mix
         extend: {
             content: [path.join(__dirname, 'site/**/*.html')],
             variables: true,
-            safelist: [/^hc-role-/]
+            safelist: [
+                /^hc-role-/,
+                /^hljs/
+            ]
         },
     })
 ;
