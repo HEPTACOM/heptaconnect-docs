@@ -12,14 +12,14 @@ Write less. \
 Achieve more in less time. \
 Look at your results faster.
 
-Read more about [short notation for flow components](https://connect.heptacom.de/#/portal-development/017-short-notation-for-flow-components).
+Read more about [short notation for flow components](https://heptaconnect.io/guides/portal-developer/short-notation-for-flow-components/).
 
 
 ## Preamble
 
-No, the **TL;DR** is not a copy mistake from the [previous feed entry about dependency injection](https://connect.heptacom.de/#/feed/2021-06-21-symfony-dependency-injection).
+No, the **TL;DR** is not a copy mistake from the [previous feed entry about dependency injection](https://heptaconnect.io/news/2021-06-21-symfony-dependency-injection/).
 We once more achieved to improve the developer experience by adding more tools to reduce your boilerplate code.
-Summarizing our [ADR](https://connect.heptacom.de/#/adr/2021-06-17-flow-component-short-notation) you can now stop writing **sections** of code and start to write **lines** of code.
+Summarizing our [ADR](https://heptaconnect.io/reference/adr/2021-06-17-flow-component-short-notation/) you can now stop writing **sections** of code and start to write **lines** of code.
 Previously you had to write:
 
 ```php
@@ -72,4 +72,4 @@ FlowComponent::emitter(Bottle::class)->run(
 
 When this reminds you of Laravel routes and commands, you are right.
 This is heavily inspired by Laravel's nature of quickly scribbling down some lines to get something big running.
-To get an overview of the short notation and how to use it visit [the documentation page](https://connect.heptacom.de/#/portal-development/017-short-notation-for-flow-components).
+To get an overview of the short notation and how to use it visit [the documentation page](https://heptaconnect.io/guides/portal-developer/short-notation-for-flow-components/).

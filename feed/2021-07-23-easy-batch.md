@@ -11,7 +11,7 @@
 Train in step-by-step. \
 Run in batches.
 
-Read more about the way how to batch in [short notation for flow components](https://connect.heptacom.de/#/portal-development/017-short-notation-for-flow-components) and flow components like [emitter](https://connect.heptacom.de/#/portal-development/003-emitter) and [receiver](https://connect.heptacom.de/#/portal-development/004-receiver).
+Read more about the way how to batch in [short notation for flow components](https://heptaconnect.io/guides/portal-developer/short-notation-for-flow-components/) and flow components like [emitter](https://heptaconnect.io/guides/portal-developer/emitter/) and [receiver](https://heptaconnect.io/guides/portal-developer/receiver/).
 
 
 ## Batches and step by step runs

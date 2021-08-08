@@ -12,7 +12,7 @@ Write less. \
 Achieve more in less time. \
 Look at your results faster.
 
-Read more about [Dependency injection](https://connect.heptacom.de/#/portal-development/015-dependency-injection) and the new [default utilities](https://connect.heptacom.de/#/portal-development/016-default-utilities).
+Read more about [Dependency injection](https://heptaconnect.io/guides/portal-developer/dependency-injection/) and the new [default utilities](https://heptaconnect.io/guides/portal-developer/default-utilities/).
 
 
 ## Preamble
@@ -72,5 +72,5 @@ Enabling all the nice things and sprinkling some more educated guesses into the 
 ## Documentation
 
 When you already had a deeper look into our documentation, you can notice the reduction of boilerplate code in almost every portal developer code sample.
-We added [a new chapter](https://connect.heptacom.de/#/portal-development/015-dependency-injection) to the documentation under portal development containing everything you need to know to use dependency injection with the new service container.
-This way we also took the chance to provide a [complete list of utility service](https://connect.heptacom.de/#/portal-development/016-default-utilities) we provide out of the box.
+We added [a new chapter](https://heptaconnect.io/guides/portal-developer/dependency-injection/) to the documentation under portal development containing everything you need to know to use dependency injection with the new service container.
+This way we also took the chance to provide a [complete list of utility service](https://heptaconnect.io/guides/portal-developer/default-utilities/) we provide out of the box.

@@ -6,11 +6,11 @@
 }
 ---
 
-This week we completed our [ADR about jobs](https://connect.heptacom.de/#/adr/2020-10-30-job-messages-and-payload.md).
+This week we completed our [ADR about jobs](https://heptaconnect.io/reference/adr/2020-10-30-job-messages-and-payload/).
 Working on that issue really created lots of space for further tasks in the architecture of HEPTAconnect as well as on the storage layer used for the message broker. 
 
 In detail, we've been using the message broker to completely keep the data in question for each transfer.
-Read our [ADR about jobs and their payloads](https://connect.heptacom.de/#/adr/2020-10-30-job-messages-and-payload.md) to follow our thoughts but here are the basic pros:
+Read our [ADR about jobs and their payloads](https://heptaconnect.io/reference/adr/2020-10-30-job-messages-and-payload/) to follow our thoughts but here are the basic pros:
 
 * When emptying a message queue, the messages can be reconstructed
 * The message provider has fewer data to store
