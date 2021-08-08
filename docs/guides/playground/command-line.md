@@ -1,7 +1,5 @@
 # Commandline
 
-## Environments
-
 Your commandline entrypoint depends on the environment you chose before.
 See below the executables to try out:
 

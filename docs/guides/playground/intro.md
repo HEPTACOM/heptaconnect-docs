@@ -1,7 +1,5 @@
 # Playground
 
-## What is that?
-
 The playground is a quick entry for getting your hands onto HEPTAconnect in action.
 
 When you want to …

@@ -25,4 +25,8 @@
     <link rel="alternate" type="application/atom+xml" title="HEPTAconnect - Atom Feed" href="/news/atom1.xml"/>
     <link rel="alternate" type="application/json" title="HEPTAconnect - JSON Feed" href="/news/json1.json"/>
     <link rel="alternate" type="application/rss+xml" title="HEPTAconnect - RSS2 Feed" href="/news/rss2.xml"/>
+
+    {% if page and page.meta and page.meta.noindex %}
+        <meta name="robots" content="noindex">
+    {% endif %}
 {% endblock %}

@@ -4,8 +4,7 @@ template: home.html
 
 # HEPTAconnect
 
-Welcome to the documentation of HEPTAconnect.
-This overview will get you on the right track for the correct section within this documentation.
+Your framework to connect. Modular ✓ Scalable ✓ Open Source ✓
 
 
 ## Portal Development

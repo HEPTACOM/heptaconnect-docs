@@ -4,7 +4,7 @@ template: page/administrator/index.html
 
 # Administer HEPTAconnect
 
-This is the place to learn about commands and analytical methods to work with an HEPTAconnect instance.
+This is the place to learn about commands and analytical methods to work with a HEPTAconnect instance.
 
 
 <!--open-f5ae91335169404e85f3e121357aade0-->

@@ -1,7 +1,5 @@
 # Add more portals
 
-## What is out there?
-
 To discover what other portals you can try out you can query different package and code distributing platforms for the tag `heptaconnect-portal`.
 
 
