@@ -21,6 +21,7 @@ definitions:
                     - echo "#!/bin/sh\njava -Djava.awt.headless=true -jar /tmp/plantuml.jar" > /tmp/plantuml
                     - chmod +x /tmp/plantuml
                     - npm install --global cross-env
+                    - npm ci --include=dev
                     - pip install -r requirements.txt
                     - 'PATH=/tmp:$PATH make build'
         -   step: &commit-built-docs
