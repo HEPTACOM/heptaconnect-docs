@@ -18,6 +18,7 @@ idna==3.2
 importlib-metadata==4.6.3
 Jinja2==3.0.1
 joblib==1.0.1
+libsass==0.21.0
 livereload==2.6.3
 lunr==0.5.6
 Markdown==3.3.4
