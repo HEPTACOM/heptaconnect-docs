@@ -78,4 +78,4 @@ docs/assets/javascripts/vendor/highlight.js/highlight.min.js:
 	$(CURL) -o docs/assets/javascripts/vendor/highlight.js/highlight.min.js https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
 
 node_modules:
-	$(NPM) ci
+	$(NPM) ci --include=dev
