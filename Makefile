@@ -42,6 +42,7 @@ build: assets/css/vendor/highlight.js/atom-one-dark.min.css docs/assets/javascri
 	$(NPM) run prod
 	$(MKDOCS) build
 	$(NPM) run html-minify
+	LANG=C LC_CTYPE=C find site -type f -name '*.html' -exec sed -I '' 's/replace-this-with-now/$(shell date +%s)/g' {} \;
 	$(MV) document.pdf site/HEPTAconnect.pdf
 
 .PHONY: github_stats
