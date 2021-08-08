@@ -1,7 +1,6 @@
 {
     "name": "heptaconnect-docs",
-    "version": "1.0.0",
-    "main": "index.js",
+    "version": "2.0.0",
     "scripts": {
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -17,11 +16,6 @@
     "license": "MIT",
     "devDependencies": {
         "cross-env": "^7.0.2",
-        "docsify": "^4.11.6",
-        "docsify-copy-code": "^2.1.0",
-        "docsify-edit-on-github": "^1.0.3",
-        "docsify-page-toc": "^1.0.4",
-        "docsify-pagination": "^2.6.0",
         "feed": "^4.2.2",
         "html-minifier": "^4.0.0",
         "js-yaml": "^4.1.0",

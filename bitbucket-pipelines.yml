@@ -18,8 +18,10 @@ definitions:
                 script:
                     - apk add --update --no-cache wget graphviz ttf-dejavu make bash openjdk8-jre gcc g++ libffi-dev libc-dev python3-dev jpeg-dev zlib-dev curl jq nodejs nodejs-npm
                     - wget "https://sourceforge.net/projects/plantuml/files/1.2020.12/plantuml.1.2020.12.jar/download" -O /tmp/plantuml.jar
-                    - echo "#!/bin/sh\njava -Djava.awt.headless=true -jar /tmp/plantuml.jar" > /tmp/plantuml
+                    - echo "#!/bin/sh\njava -Djava.awt.headless=true -jar /tmp/plantuml.jar \"$@\"" > /tmp/plantuml
                     - chmod +x /tmp/plantuml
+                    - cat /tmp/plantuml
+                    - plantuml -V
                     - npm install --global cross-env
                     - npm ci --include=dev
                     - pip install -r requirements.txt
