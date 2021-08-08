@@ -12,6 +12,8 @@ skinparam style strictuml
 !$colorAlmostLight = "#eeeeee"
 !$colorHighlight = "#007aff"
 
+skinparam backgroundColor transparent
+
 skinparam RectangleBackgroundColor $colorGray
 skinparam RectangleBorderColor $colorGray
 skinparam RectangleFontColor $colorLight

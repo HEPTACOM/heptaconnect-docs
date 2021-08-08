@@ -30,6 +30,11 @@
     --md-default-bg-color--lighter: hsl(var(--md-hue), 38%, 32%);
     --md-default-bg-color--lightest: hsl(var(--md-hue), 38%, 40%);
     --md-code-bg-color: hsl(var(--md-hue), 20%, 26%);
+
+    /* uml dark-mode */
+    img[src*="uml"] {
+        filter: invert(1.0) hue-rotate(180deg);
+    }
 }
 
 .md-tabs,
