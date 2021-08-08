@@ -1,5 +1,8 @@
 # List of default utility services
 
+You can use [dependency injection](./dependency-injection.md) to get access to various services.
+This is a list with brief descriptions for every default service available in the container.
+
 ## PSR
 
 ### ClientInterface

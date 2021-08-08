@@ -1,7 +1,5 @@
 # Dependency injection
 
-## Preamble
-
 As commonly used in the PHP community we provide a dependency injection system that allows easy reuse of utilities and services.
 We decided to use the Symfony dependency injection package.
 Read more in [the ADR section](../../reference/adr/2021-04-13-portal-dependency-injection-implementation.md) about our thoughts for our decisions.

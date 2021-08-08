@@ -1,3 +1,7 @@
+---
+noindex: true
+---
+
 # License
 
 Dual licensed under the [GNU Affero General Public License v3.0](./LICENSE.md) (the "License") and proprietary license; you may not use this project except in compliance with the License.
