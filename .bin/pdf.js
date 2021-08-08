@@ -1,6 +1,8 @@
 const yaml = require('js-yaml');
 const fs = require('fs');
 
+console.log('Generate alternative mkdocs specification for PDF generation');
+
 const mkdocs = yaml.load(fs.readFileSync('mkdocs.yml', 'utf8'));
 
 mkdocs.plugins = mkdocs.plugins.filter(i => !(typeof i === 'string' && i === 'section-index'));

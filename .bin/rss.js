@@ -23,6 +23,8 @@ const list_files = function(dirPath, result = undefined) {
     return result;
 }
 
+console.log('Generate RSS Feed');
+
 const domain = fs.readFileSync('docs/CNAME', { encoding: 'utf8', flag: 'r' }).trim();
 const rss = new Feed({
     title: 'HEPTAconnect feed',
@@ -61,6 +63,8 @@ posts.sort((a, b) => a.date.localeCompare(b.date))
 fs.mkdirSync('docs/news', { recursive: true });
 
 for (const post of posts) {
+    console.log(post.file);
+
     fs.writeFileSync('docs/news/' + post.file.substr(5), '# ' + post.title + '\n\n' + post.markdown.trim());
     let link = `https://${domain}/news/` + post.file.substr(5).slice(0, '.md'.length * -1) + '/';
 

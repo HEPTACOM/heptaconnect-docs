@@ -22,7 +22,11 @@ const list_files = function(dirPath, result = undefined) {
     return result;
 }
 
+console.log('Optimize SVG files');
+
 for (const file of list_files('site/assets/uml').filter(a => a.endsWith('.svg'))) {
+    console.log(file);
+
     const content = fs.readFileSync(file, { encoding: 'utf8', flag: 'r' });
     const optimized = optimize(content, {
         path: file

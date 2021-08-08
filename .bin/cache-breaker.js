@@ -23,7 +23,11 @@ const list_files = function(dirPath, result = undefined) {
 
 const now = Number(new Date()).toString();
 
+console.log('Replace cache-break in HTML');
+
 for (const file of list_files('site').filter(a => a.endsWith('.html'))) {
+    console.log(file);
+
     const content = fs.readFileSync(file, { encoding: 'utf8', flag: 'r' });
     fs.writeFileSync(file, content.replace(/replace-this-with-now/g, now));
 }
