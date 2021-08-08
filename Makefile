@@ -41,6 +41,7 @@ build: assets/css/vendor/highlight.js/atom-one-dark.min.css docs/assets/javascri
 	$(MV) site/pdf/document.pdf document.pdf
 	$(NPM) run prod
 	$(MKDOCS) build
+	$(NPM) run html-minify
 	$(MV) document.pdf site/HEPTAconnect.pdf
 
 .PHONY: github_stats
