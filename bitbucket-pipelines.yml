@@ -8,6 +8,9 @@ definitions:
                     - 'site/**'
         -   step: &build-docs
                 <<: *default
+                caches:
+                    - pip
+                    - node
                 clone:
                     depth: full
                 image: squidfunk/mkdocs-material
