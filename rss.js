@@ -30,8 +30,8 @@ const rss = new Feed({
     id: `https://${domain}/`,
     link: `https://${domain}/`,
     language: 'en',
-    image: `https://${domain}/assets/logo.png`,
-    favicon: `https://${domain}/assets/img/favicon/favicon-32x32.png`,
+    image: `https://${domain}/assets/favicon/android-chrome-512x512.png`,
+    favicon: `https://${domain}/assets/favicon/favicon-32x32.png`,
     copyright: 'HEPTACOM GmbH',
     author: {
         name: 'HEPTACOM GmbH',
@@ -41,7 +41,7 @@ const rss = new Feed({
 
 let posts = [];
 
-for (const file of list_files('feed').filter(a => a.endsWith('.md')).sort((a, b) => a.localeCompare(b))) {
+for (const file of list_files('feed').filter(a => a.endsWith('.md') && !a.endsWith('index.md')).sort((a, b) => a.localeCompare(b))) {
     const content = fs.readFileSync(file, { encoding: 'utf8', flag: 'r' });
     const [ md, metadata ] = content.split('---', 2).reverse();
     const parsedMd = new MarkdownIt().render(md);
@@ -58,11 +58,11 @@ for (const file of list_files('feed').filter(a => a.endsWith('.md')).sort((a, b)
 posts = posts.filter(a => a.date);
 posts.sort((a, b) => a.date.localeCompare(b.date))
 
-fs.mkdirSync('docs/feed', { recursive: true });
+fs.mkdirSync('docs/news', { recursive: true });
 
 for (const post of posts) {
-    fs.writeFileSync('docs/' + post.file, '# ' + post.title + '\n\n' + post.markdown.trim());
-    let link = `https://${domain}/#/` + post.file.slice(0, '.md'.length * -1);
+    fs.writeFileSync('docs/news/' + post.file.substr(5), '# ' + post.title + '\n\n' + post.markdown.trim());
+    let link = `https://${domain}/news/` + post.file.substr(5).slice(0, '.md'.length * -1) + '/';
 
     rss.addItem({
         title: post.title,
@@ -75,9 +75,9 @@ for (const post of posts) {
     });
 }
 
-const listing = rss.items.map(a => `* [${a.title}](./${a.id.substr(`https://${domain}/#/feed/`.length)}.md)`);
-fs.writeFileSync('docs/feed/README.md', '# HEPTAconnect Feed\n\n' + listing.join('\n') + '\n');
+const listing = rss.items.map(a => `* [${a.title}](./${a.id.substr(`https://${domain}/news/`.length)})`);
+fs.writeFileSync('docs/news/index.md', fs.readFileSync('feed/index.md', { encoding: 'utf8', flag: 'r' }) + '\n' + listing.join('\n') + '\n');
 
-fs.writeFileSync('docs/feed/atom1.xml', rss.atom1());
-fs.writeFileSync('docs/feed/rss2.xml', rss.rss2());
-fs.writeFileSync('docs/feed/json1.json', rss.json1());
+fs.writeFileSync('docs/news/atom1.xml', rss.atom1());
+fs.writeFileSync('docs/news/rss2.xml', rss.rss2());
+fs.writeFileSync('docs/news/json1.json', rss.json1());

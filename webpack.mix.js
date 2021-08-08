@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
+require('laravel-mix-purgecss');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,9 +13,14 @@ let mix = require('laravel-mix');
  */
 
 mix
-    .js('src/app.js', 'docs/assets/')
-    .js('src/extra.js', 'docs/assets/')
-    .sass('src/app.scss', 'docs/assets/')
+    .sass('assets/css/app.scss', 'docs/assets')
+    .purgeCss({
+        extend: {
+            content: [path.join(__dirname, 'site/**/*.html')],
+            variables: true,
+            safelist: [/^hc-role-/]
+        },
+    })
 ;
 
 // Full API

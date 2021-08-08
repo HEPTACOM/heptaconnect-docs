@@ -1,0 +1,23 @@
+@startuml
+
+!include ../../include/skin.puml
+
+database "Portal 1" as P1
+database "Portal 2" as P2
+entity HEPTAconnect as HC
+control MessageBroker as MB
+
+== Reverse Publication ==
+P2 -> HC: Request publication for portal 2
+HC -> MB: Request emission from portal 1
+...
+== Emission ==
+HC <- MB: Read for emission
+P1 -> HC: Read data from portal 1
+HC -> MB: Release emitted item
+...
+== Reception ==
+HC <- MB: Route data for reception
+P2 <- HC: Store data in portal 2
+
+@enduml

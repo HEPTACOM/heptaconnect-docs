@@ -1,2 +1,8 @@
-/node_modules/
-/docs/assets/app.js.LICENSE.txt
+/site/meta-descriptions.csv
+/site/assets/images/favicon.png
+/site/assets/javascripts/*.js.map
+/site/partials
+
+# Dependencies
+/node_modules
+/.venv

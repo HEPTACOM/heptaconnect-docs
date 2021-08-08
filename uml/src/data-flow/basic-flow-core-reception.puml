@@ -1,0 +1,44 @@
+@startuml
+
+!include ../../include/skin.puml
+
+box Bridge
+    actor MessengerConsumeMessagesCommand
+endbox
+
+box Core
+    participant JobHandler
+    participant ReceptionActor
+    participant MappingService
+endbox
+
+box Storage
+    database JobStorage
+    database MappingStorage
+endbox
+
+box Queue
+    queue ReceptionJob
+endbox
+
+box Portal
+    boundary ReceiverContract
+endbox
+
+MessengerConsumeMessagesCommand -> ReceptionJob : Request queued jobs
+ReceptionJob -> MessengerConsumeMessagesCommand : Collect reception jobs
+MessengerConsumeMessagesCommand -> JobHandler ++ : Execute reception jobs
+JobHandler -> JobStorage ++ : Read reception job information and payload
+JobStorage -> JobHandler -- : Return reception job information and payload
+JobHandler -> ReceptionActor ++ : Execute reception
+ReceptionActor -> MappingService ++ : Reflect entity identities
+MappingService -> MappingStorage ++ : Read mapping information
+MappingStorage -> MappingService -- : Collect mapping information
+MappingService ->  ReceptionActor -- : Collect reflected entity identities
+ReceptionActor -> ReceiverContract ++ : Run portal receivers
+ReceiverContract -> ReceptionActor -- : Collect received entity identities
+ReceptionActor -> MappingService ++ : Store new / updated entity identities
+MappingService -> MappingStorage -- : Store new / updated entity identities
+JobHandler -> MessengerConsumeMessagesCommand -- : Finish message handler
+
+@enduml

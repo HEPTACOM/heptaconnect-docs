@@ -1,7 +1,16 @@
-/node_modules/
-/docs/assets/app.js.LICENSE.txt
-/docs/assets/app.js
-/docs/assets/extra.js
-/docs/assets/app.css
+/docs/assets/javascripts/vendor/
 /docs/assets/plantuml/
-/docs/feed/
+/docs/assets/app.css
+/assets/css/vendor/
+/docs/news/
+/site
+
+# Dependencies
+/node_modules
+/.venv
+
+# Generated data
+/.data
+/overrides/partials/github.json
+/docs/assets/uml
+/mkdocs-pdf.yml
