@@ -4,7 +4,7 @@ const fs = require('fs');
 const mkdocs = yaml.load(fs.readFileSync('mkdocs.yml', 'utf8'));
 
 mkdocs.plugins = mkdocs.plugins.filter(i => !(typeof i === 'string' && i === 'section-index'));
-mkdocs.plugins = mkdocs.plugins.filter(i => !(typeof i === 'string' && i === 'htmlproofer'));
+mkdocs.plugins = mkdocs.plugins.filter(i => !(typeof i === 'object' && 'htmlproofer' in i));
 mkdocs.plugins.push({
     'with-pdf': {
         author: 'HEPTACOM GmbH',
