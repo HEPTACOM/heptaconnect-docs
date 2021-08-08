@@ -16,7 +16,9 @@ mix
     .sass('assets/css/app.scss', 'docs/assets')
     .purgeCss({
         extend: {
-            content: [path.join(__dirname, 'site/**/*.html')]
+            content: [path.join(__dirname, 'site/**/*.html')],
+            variables: true,
+            safelist: [/^hc-role-/]
         },
     })
 ;

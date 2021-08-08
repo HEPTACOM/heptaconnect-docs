@@ -35,19 +35,21 @@ clean:
 	rm -rf docs/assets/javascripts/vendor
 
 .PHONY: build
-build: assets/css/vendor/highlight.js/atom-one-dark.min.css docs/assets/javascripts/vendor/highlight.js/highlight.min.js github_stats rss
+build: assets/css/vendor/highlight.js/atom-one-dark.min.css docs/assets/javascripts/vendor/highlight.js/highlight.min.js github_stats rss node_modules
 	$(NPM) run mkdocs-pdf
 	$(MKDOCS) build -f mkdocs-pdf.yml
 	$(MV) site/pdf/document.pdf document.pdf
 	$(NPM) run prod
 	$(MKDOCS) build
+	$(NPM) run html-minify
+	LANG=C LC_CTYPE=C find site -type f -name '*.html' -exec sed -I '' 's/replace-this-with-now/$(shell date +%s)/g' {} \;
 	$(MV) document.pdf site/HEPTAconnect.pdf
 
 .PHONY: github_stats
 github_stats: overrides/partials/github.json
 
 .PHONY: rss
-rss:
+rss: node_modules
 	$(NPM) run rss
 
 overrides/partials/github.json:
@@ -74,3 +76,6 @@ assets/css/vendor/highlight.js/atom-one-dark.min.css:
 docs/assets/javascripts/vendor/highlight.js/highlight.min.js:
 	$(MKDIR) -p docs/assets/javascripts/vendor/highlight.js
 	$(CURL) -o docs/assets/javascripts/vendor/highlight.js/highlight.min.js https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+
+node_modules:
+	$(NPM) ci --include=dev
