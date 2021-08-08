@@ -56,5 +56,3 @@ Take a look on the left side of the footer.
 
 Last but not least, the switch from docsify to MkDocs means that our documentation is finally visible for Google and other search engines.
 So hopefully you can soon find your answers even faster from your favourite search engine.
-
-
