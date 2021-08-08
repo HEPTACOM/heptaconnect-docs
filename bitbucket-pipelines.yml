@@ -18,7 +18,7 @@ definitions:
                 script:
                     - apk add --update --no-cache wget graphviz ttf-droid ttf-droid-nonlatin ttf-dejavu make bash openjdk8-jre gcc g++ libffi-dev libc-dev python3-dev jpeg-dev zlib-dev curl jq nodejs nodejs-npm
                     - wget "https://sourceforge.net/projects/plantuml/files/1.2020.12/plantuml.1.2020.12.jar/download" -O /tmp/plantuml.jar
-                    - alias plantuml=java -Djava.awt.headless=true -jar /tmp/plantuml.jar
+                    - alias 'plantuml=java -Djava.awt.headless=true -jar /tmp/plantuml.jar'
                     - plantuml -V
                     - npm install --global cross-env
                     - npm ci --include=dev
