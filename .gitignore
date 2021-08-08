@@ -1,8 +1,9 @@
 /docs/assets/javascripts/vendor/
 /docs/assets/plantuml/
 /docs/assets/app.css
-/assets/css/vendor/
 /docs/news/
+/document.pdf
+/assets/css/vendor/
 /site
 
 # Dependencies
