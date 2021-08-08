@@ -1,4 +1,7 @@
 /site/meta-descriptions.csv
+/site/assets/images/favicon.png
+/site/assets/javascripts/*.js.map
+/site/partials
 
 # Dependencies
 /node_modules
