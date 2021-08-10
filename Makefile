@@ -8,6 +8,12 @@ endif
 ifndef CURL
 	CURL := curl
 endif
+ifndef PHP
+	PHP := $(shell which php) $(PHP_EXTRA_ARGS)
+endif
+ifndef COMPOSER
+	COMPOSER := $(PHP) $(shell which composer)
+endif
 ifndef JQ
 	JQ := jq
 endif
@@ -22,6 +28,9 @@ ifndef RM
 endif
 ifndef NPM
 	NPM := npm
+endif
+ifndef GIT
+	GIT := git
 endif
 
 .PHONY: all
@@ -76,6 +85,10 @@ assets/css/vendor/highlight.js/atom-one-dark.min.css:
 docs/assets/javascripts/vendor/highlight.js/highlight.min.js:
 	$(MKDIR) -p docs/assets/javascripts/vendor/highlight.js
 	$(CURL) -o docs/assets/javascripts/vendor/highlight.js/highlight.min.js https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+
+.bin/PhpDependencyAnalysis:
+	$(GIT) clone https://github.com/HEPTACOM/PhpDependencyAnalysis.git .bin/PhpDependencyAnalysis
+	$(COMPOSER) install -d .bin/PhpDependencyAnalysis
 
 node_modules:
 	$(NPM) ci --include=dev
