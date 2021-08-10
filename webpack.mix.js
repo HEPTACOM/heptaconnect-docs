@@ -12,19 +12,7 @@ require('laravel-mix-purgecss');
  |
  */
 
-mix
-    .sass('assets/css/app.scss', 'docs/assets')
-    .purgeCss({
-        extend: {
-            content: [path.join(__dirname, 'site/**/*.html')],
-            variables: true,
-            safelist: [
-                /^hc-role-/,
-                /^hljs/
-            ]
-        },
-    })
-;
+mix.sass('assets/css/app.scss', 'docs/assets');
 
 // Full API
 // mix.js(src, output);
