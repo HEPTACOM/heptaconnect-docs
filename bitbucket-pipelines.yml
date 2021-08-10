@@ -5,13 +5,15 @@ definitions:
         -   step: &default
                 artifacts:
                     - 'docs/**'
+                clone:
+                    depth: full
         -   step: &build-docs
                 <<: *default
                 caches:
                     - pip
                     - node
-                clone:
-                    depth: full
+                artifacts:
+                    - 'site/**'
                 image: squidfunk/mkdocs-material
                 name: Build documentation assets
                 script:
@@ -21,16 +23,17 @@ definitions:
                     - npm ci --include=dev
                     - pip install -r requirements.txt
                     - 'PLANTUML="java -Djava.awt.headless=true -jar /tmp/plantuml.jar" PATH=.bin:$PATH make build'
-                    - rm -rf docs/
-                    - mv site/ docs/
         -   step: &commit-built-docs
                 <<: *default
                 name: Commit docs
                 artifacts:
-                    - site/meta-descriptions.csv
+                    - docs/meta-descriptions.csv
                 script:
                     - apk add --update --no-cache git openssh-client
                     - mv .gh-pages-gitignore .gitignore
+                    - git rm -r docs/
+                    - rm -rf docs/
+                    - mv site/ docs/
                     - git stash
                     - git checkout -b gh-pages
                     - git stash apply
