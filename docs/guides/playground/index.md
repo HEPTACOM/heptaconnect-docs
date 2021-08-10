@@ -8,7 +8,7 @@ If you want to develop your own packages for HEPTAconnect, you should install th
 
 The playground provides environments (e.g. Shopware 6) for you to try out and fiddle with HEPTAconnect for different occasions.
 It is the easiest way to get your hands on a simple environment and test some portals you found online.
-Read more in the [playground articles](./index.md).
+Read more in the [playground articles](./intro.md).
 
 
 ## SDK
