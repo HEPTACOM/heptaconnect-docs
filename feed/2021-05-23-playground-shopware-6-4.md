@@ -9,7 +9,7 @@
 A wave of huge changes hit the playground and ironed some kinks.
 
 **The major update at Shopware from 6.3 to 6.4 has been rolled out onto the HEPTAconnect packages.**
-To experience Shopware 6.4 with HEPTAconnect you can now easily grab yourself a fresh copy of the [playground](https://heptaconnect.io/guides/playground/introduction/) and dive in. 
+To experience Shopware 6.4 with HEPTAconnect you can now easily grab yourself a fresh copy of the [playground](https://heptaconnect.io/guides/playground/intro/) and dive in. 
 To allow the playground be used with your [familiar ecommerce framework](https://heptaconnect.io/guides/playground/first-time/with-shopware-6/) in a more complete manner you will now find an integrated `shopware/administration`.
 This way you can use the playground to fiddle with HEPTAconnect within Shopware and in addition also with Shopware itself after importing your favorite data.
 
@@ -27,7 +27,7 @@ Having the different packages on this directory level makes it much easier to di
 As they are clones from GitHub it also allows a direct way to share your work on HEPTAconnect in a bleeding edge manner.
 
 **How can you know all of this?** The documentation got a truck load of new content about:
-* [the playground](https://heptaconnect.io/guides/playground/introduction/)
+* [the playground](https://heptaconnect.io/guides/playground/intro/)
 * [commands](https://heptaconnect.io/guides/playground/command-line/)
 
 Some of these new pages are also linked within this article so have a look around.
