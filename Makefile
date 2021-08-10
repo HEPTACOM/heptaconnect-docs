@@ -47,6 +47,7 @@ all: build
 
 .PHONY: clean
 clean:
+	rm -rf .data/
 	rm -rf site/
 	rm -rf overrides/partials/github.json
 	rm -rf docs/assets/stylesheets/vendor
