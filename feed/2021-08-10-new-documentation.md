@@ -1,5 +1,5 @@
 {
-    "date": "2021-08-09",
+    "date": "2021-08-10",
     "title": "New Documentation",
     "summary": "Big changes to the docs! New domain, new search, new diagrams! Read everything you need to know here.",
     "author": "Julian Krzefski"
