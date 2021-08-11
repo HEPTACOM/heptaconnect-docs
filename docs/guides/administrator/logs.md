@@ -1,10 +1,51 @@
 # Logs
 
-Visit this page at a later point in time to read the intended content.
-Subscribe to changes in this documentation.
+Log messages are the most detailed way to get into the actions that happen in the HEPTAconnect instance at close to real time.
+Only debugging into it gives you more details.
+Watch the following sources for changes and get informed about the most detail info you can get.
 
-Follow us on [Twitter](https://twitter.com/heptacom_gmbh) or subscribe to the RSS feeds:
 
-* [RSS](../../news/rss2.xml)
-* [Atom](../../news/atom1.xml)
-* [JSON](../../news/json1.json)
+## Locations
+
+### Files
+
+File logs contain the most different message types and should be the first choice of investigation.
+The log file locations may vary as they depend on the integration your instance uses.
+Common locations to check:
+
+```
+<system-root>
+├── <instance-dir>
+│   ├── var
+│   │   └── log
+│   │       └── heptacom_heptaconnect_*.log
+│   └── storage
+│       └── logs
+│           └── heptacom_heptaconnect_*.log
+└── var
+    └── log
+        └── application
+            └── heptacom_heptaconnect_*.log
+```
+
+
+### Database
+
+HEPTAconnect provides an entity-centered database table to store entity related exceptions.
+You can find it in your instance database by the name `heptaconnect_mapping_error_message`.
+It is used to store error messages that can be connected to certain items.
+
+
+## Contents
+
+### Files
+
+Log files contain timestamps, log level, component names (e.g. EmitterStackBuilder, ExplorationActor), messages.
+Depending on the message you have additional context like primary keys.
+When a log message is issued from a portal the message is prefix with the portal node key (aliases are supported).
+
+
+### Database
+
+The database table contains timestamps, portal node keys, mapping node keys, message, exception type, exception stacktrace for a complete exception stack.
+As the database table only contains exceptions there is no need of a log level.
