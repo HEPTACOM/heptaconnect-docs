@@ -9,7 +9,7 @@ They are most likely installed via composer or as a plugin in your integration (
 There are multiple sources for portals.
 Some of them are available as open source on [GitHub](https://github.com/topics/heptaconnect-portal) and [packagist](https://packagist.org/?tags=heptaconnect%20portal) like our [Shopware 6 portal](https://github.com/HEPTACOM/heptaconnect-portal-local-shopware-platform).
 There are many client specific implementations for known and custom APIs we (HEPTACOM GmbH) and our HEPTAconnect partners developed in the past.
-To get information on our previous work and our solutions for your connector project [contact us](https://www.heptacom.de/kontakt/) by emailing us to [info@heptacom.de](mailto:info@heptacom.de?subject=HEPTAconnect%20portal) with the subject "HEPTAconnect portal".
+To get information on our previous work and our solutions for your connector project [contact us](https://www.heptacom.de/kontakt/) by emailing us to [info@heptacom.de](mailto:info@heptacom.de?subject=HEPTAconnect%20portal).
 
 
 ## Usage
