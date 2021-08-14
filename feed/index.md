@@ -1,5 +1,12 @@
 # HEPTAconnect News
 
+## Release changelogs
+
+See our releases on our [changelog overview](../releases/index.md).
+
+
+## Get changes right into your notification feed
+
 Subscribe to the RSS feeds:
 
 * [RSS](./rss2.xml)
