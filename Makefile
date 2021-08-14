@@ -1,5 +1,14 @@
 SHELL := /bin/bash
 GENERATED_DATA_DIR := .data
+REPOS = heptaconnect-bridge-shopware-platform \
+		heptaconnect-core \
+		heptaconnect-dataset-base \
+		heptaconnect-dataset-ecommerce \
+		heptaconnect-portal-base \
+		heptaconnect-portal-local-shopware-platform \
+		heptaconnect-storage-base \
+		heptaconnect-storage-native \
+		heptaconnect-storage-shopware-dal
 
 ifndef MKDOCS
 	# MKDOCS := docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material
@@ -7,6 +16,12 @@ ifndef MKDOCS
 endif
 ifndef CURL
 	CURL := curl
+endif
+ifndef PHP
+	PHP := $(shell which php) $(PHP_EXTRA_ARGS)
+endif
+ifndef COMPOSER
+	COMPOSER := $(PHP) $(shell which composer)
 endif
 ifndef JQ
 	JQ := jq
@@ -23,12 +38,16 @@ endif
 ifndef NPM
 	NPM := npm
 endif
+ifndef GIT
+	GIT := git
+endif
 
 .PHONY: all
 all: build
 
 .PHONY: clean
 clean:
+	rm -rf .data/
 	rm -rf site/
 	rm -rf overrides/partials/github.json
 	rm -rf docs/assets/stylesheets/vendor
@@ -76,6 +95,19 @@ assets/css/vendor/highlight.js/atom-one-dark.min.css:
 docs/assets/javascripts/vendor/highlight.js/highlight.min.js:
 	$(MKDIR) -p docs/assets/javascripts/vendor/highlight.js
 	$(CURL) -o docs/assets/javascripts/vendor/highlight.js/highlight.min.js https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+
+.PHONY: git-code-dependencies
+git-code-dependencies: $(REPOS)
+
+.PHONY: $(REPOS)
+$(REPOS):
+	$(GIT) -C ".data/git-$@" pull --ff-only || git clone "https://github.com/HEPTACOM/$@.git" ".data/git-$@"
+	stat .data/git-heptaconnect-src || mkdir .data/git-heptaconnect-src
+	cp -a ".data/git-$@/src" ".data/git-heptaconnect-src/$@"
+
+.bin/PhpDependencyAnalysis:
+	$(GIT) clone https://github.com/HEPTACOM/PhpDependencyAnalysis.git .bin/PhpDependencyAnalysis
+	$(COMPOSER) install -d .bin/PhpDependencyAnalysis
 
 node_modules:
 	$(NPM) ci --include=dev

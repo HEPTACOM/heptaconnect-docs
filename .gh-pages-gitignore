@@ -4,5 +4,6 @@
 /docs/partials
 
 # Dependencies
+/.bin/PhpDependencyAnalysis
 /node_modules
 /.venv
