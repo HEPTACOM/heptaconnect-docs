@@ -61,10 +61,23 @@
 
     {% set closeCard %}
             </a>
-        </section>
     {% endset %}
 
     {% set content = content|replace('<!--open-87ab23c4b4be4676adb26e06e2264c08-->', openCard)|replace('<!--close-87ab23c4b4be4676adb26e06e2264c08-->', closeCard) %}
+
+    {% set openCard %}
+            <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/upgrade/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/arrow-alt-to-top.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+        </section>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-de16093434df4aafb5ca15fdb81fca24-->', openCard)|replace('<!--close-de16093434df4aafb5ca15fdb81fca24-->', closeCard) %}
 
     {{ content }}
 

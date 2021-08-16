@@ -43,3 +43,12 @@ Learn to create high-performance message broker scenarios.
 Use your knowledge about the integration and use it to get the most of your data.
 
 <!--close-87ab23c4b4be4676adb26e06e2264c08-->
+
+
+<!--open-de16093434df4aafb5ca15fdb81fca24-->
+
+## Upgrade
+
+Master the changelogs with our tools to upgrade your integration to the next version.
+
+<!--close-de16093434df4aafb5ca15fdb81fca24-->
