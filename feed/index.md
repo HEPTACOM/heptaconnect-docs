@@ -1,5 +1,9 @@
 # HEPTAconnect News
 
+Our latest news articles.
+
+--8<-- "overrides/partials/generated/latest-news.html"
+
 ## Release changelogs
 
 See our releases on our [changelog overview](../releases/index.md).

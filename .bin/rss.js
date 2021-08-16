@@ -82,6 +82,15 @@ for (const post of posts) {
 const listing = rss.items.map(a => `* [${a.title}](./${a.id.substr(`https://${domain}/news/`.length)})`);
 fs.writeFileSync('docs/news/index.md', fs.readFileSync('feed/index.md', { encoding: 'utf8', flag: 'r' }) + '\n' + listing.join('\n') + '\n');
 
+const latest = posts.slice(-4).reverse().map(p => `<a class="hc-card" href="https://${domain}/news/${p.file.substr(5).slice(0, '.md'.length * -1)}">
+    <h2>${p.title}</h2>
+    <p>${p.summary}</p>
+    <span>${p.author} on ${p.date}</span>
+</a>`).join('');
+fs.writeFileSync('overrides/partials/generated/latest-news.html', `<section class="md-typeset md-grid-dense hc-cards">
+${latest}
+</section>`);
+
 fs.writeFileSync('docs/news/atom1.xml', rss.atom1());
 fs.writeFileSync('docs/news/rss2.xml', rss.rss2());
 fs.writeFileSync('docs/news/json1.json', rss.json1());

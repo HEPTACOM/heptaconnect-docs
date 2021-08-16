@@ -13,6 +13,7 @@
 
 # Generated data
 /.data
+/overrides/partials/generated/latest-news.html
 /overrides/partials/github.json
 /docs/assets/uml
 /mkdocs-pdf.yml
