@@ -138,6 +138,10 @@ body.hc-role-contributor .md-header {
     animation-iteration-count: infinite;
 }
 
+.home-claim .first-line {
+    font-weight: bold;
+}
+
 .home-instructions .hljs {
     white-space: pre-line;
 }
@@ -165,6 +169,10 @@ body.hc-role-contributor .md-header {
 
     .mdx-hero > .mdx-hero__content .home-claim {
         font-size: 2rem;
+
+        .sub-line {
+            font-size: 1.6rem;
+        }
     }
 
     .mdx-hero > .mdx-hero__content .home-instructions {
