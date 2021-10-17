@@ -138,6 +138,10 @@ body.hc-role-contributor .md-header {
     animation-iteration-count: infinite;
 }
 
+.home-instructions .hljs {
+    white-space: pre-line;
+}
+
 @media screen and (min-width: 45rem) {
     .mdx-hero {
         padding: 3rem;
