@@ -46,7 +46,7 @@ An output of the command can look like this:
 
 With all the information above we can create routes that can resemble a scenario like the following:
 * Send products, cms media, customers and orders from the old shop to the new shop 
-* Send generated documents from the shop to the DMS system
+* Send generated documents from the shop to the DMS
 * Send customers and their orders to the help desk
 
 To setup the described scenario we create routes with the command `heptaconnect:router:add-route`.
