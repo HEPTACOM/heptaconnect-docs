@@ -1,0 +1,23 @@
+@startuml
+
+!include ../../include/skin.puml
+
+rectangle mayan
+rectangle morph
+rectangle filter
+rectangle sw5
+rectangle sw6
+rectangle zammad
+
+sw5 --> sw6 : Product
+sw5 --> sw6 : Media
+sw5 --> sw6 : Customer
+sw5 --> sw6 : Order
+sw6 --> filter : Media
+filter --> mayan : Media
+sw6 --> morph : Customer
+sw6 --> morph : Order
+morph --> zammad : Customer
+morph --> zammad : Order
+
+@enduml
