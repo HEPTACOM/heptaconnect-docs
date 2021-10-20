@@ -18,16 +18,16 @@ To get insights into the available portal nodes there is the command `heptaconne
 The output can look similar to this:
 
 ```markdown
- ----------------- -------------------------------------------------------------------------
+ ————————————————— —————————————————————————————————————————————————————————————————————————
   portal-node-key   portal-class
- ----------------- -------------------------------------------------------------------------
+ ————————————————— —————————————————————————————————————————————————————————————————————————
   filter            Heptacom\HeptaConnect\Integration\Filter\Portal
   mayan             Heptacom\HeptaConnect\Portal\MayanEdms\Portal
   morph             Heptacom\HeptaConnect\Integration\Morph\Portal
   sw5               Heptacom\HeptaConnect\Portal\Shopware5\Portal
   sw6               Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Portal
   zammad            Heptacom\HeptaConnect\Portal\Zammad\Portal
- ----------------- -------------------------------------------------------------------------
+ ————————————————— —————————————————————————————————————————————————————————————————————————
 ```
 
 There is a similar command for the available data types.
@@ -35,13 +35,13 @@ There is the command `heptaconnect:data-type:list` that lists all data types tha
 An output of the command can look like this:
 
 ```markdown
- -------------------------------------------------------------------------
+ —————————————————————————————————————————————————————————————————————————
   Heptacom\HeptaConnect\Dataset\Ecommerce\Product\Product
   Heptacom\HeptaConnect\Dataset\Ecommerce\Media\Media
   Heptacom\HeptaConnect\Dataset\Ecommerce\Product\Category
   Heptacom\HeptaConnect\Dataset\Ecommerce\Customer\Customer
   Heptacom\HeptaConnect\Dataset\Ecommerce\Order\Order
- -------------------------------------------------------------------------
+ —————————————————————————————————————————————————————————————————————————
 ```
 
 With all the information above we can create routes that can resemble a scenario like the following:

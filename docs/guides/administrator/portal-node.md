@@ -14,18 +14,18 @@ At first the list of portals should be queried using the `heptaconnect:portal:li
 The output can look like this:
 ```markdown
 Portals
--------
+———————
 
- ------------------------------------------------------------------------- 
+ ————————————————————————————————————————————————————————————————————————— 
   class                                                                    
- ------------------------------------------------------------------------- 
+ ————————————————————————————————————————————————————————————————————————— 
   Heptacom\HeptaConnect\Integration\Filter\Portal
   Heptacom\HeptaConnect\Integration\Morph\Portal
   Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Portal
   Heptacom\HeptaConnect\Portal\MayanEdms\Portal
   Heptacom\HeptaConnect\Portal\Shopware5\Portal
   Heptacom\HeptaConnect\Portal\Zammad\Portal
--------------------------------------------------------------------------
+ —————————————————————————————————————————————————————————————————————————
 ```
 
 The command `heptaconnect:portal-node:add` is used to instantiate a node of a specific portal.
