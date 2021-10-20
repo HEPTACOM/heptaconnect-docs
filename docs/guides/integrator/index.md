@@ -36,15 +36,6 @@ Learn to create high-performance message broker scenarios.
 <!--close-ecc555b594ad495dbea9516de4f2dd5a-->
 
 
-<!--open-87ab23c4b4be4676adb26e06e2264c08-->
-
-## Data tuning
-
-Use your knowledge about the integration and use it to get the most of your data.
-
-<!--close-87ab23c4b4be4676adb26e06e2264c08-->
-
-
 <!--open-de16093434df4aafb5ca15fdb81fca24-->
 
 ## Upgrade

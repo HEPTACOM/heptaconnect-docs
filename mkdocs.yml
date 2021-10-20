@@ -116,7 +116,7 @@ nav:
         - Portals: guides/integrator/portals.md
         - Bridges: guides/integrator/bridges.md
         - Message broking: guides/integrator/message-brokers.md
-        - Data tuning: guides/integrator/data-tuning.md
+#        - Data tuning: guides/integrator/data-tuning.md
         - Upgrade: guides/integrator/upgrade.md
     - Administrator:
         - guides/administrator/index.md
