@@ -164,6 +164,7 @@ nav:
             - Bridge Shopware Platform: releases/changelog-bridge-shopware-platform.md
             - Core: releases/changelog-core.md
             - Dataset base: releases/changelog-dataset-base.md
+            - Portal base: releases/changelog-portal-base.md
             - Storage base: releases/changelog-storage-base.md
             - Storage Shopware DAL: releases/changelog-storage-shopware-dal.md
     - Pricing: https://www.heptacom.de/heptaconnect/
