@@ -45,6 +45,7 @@ definitions:
                 name: Publish to github
                 script:
                     - apk add --update --no-cache git openssh-client rsync
+                    - rsync -avz --delete -e ssh ./docs/ "${RSYNC_TARGET}"
                     - git remote add github git@github.com:HEPTACOM/heptaconnect-docs.git
                     - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
                     - git remote update
@@ -52,7 +53,6 @@ definitions:
                     - git push --force github gh-pages
                     - git checkout --track origin/master
                     - git push --force github master
-                    - rsync -avz --delete -e ssh ./docs/ "${RSYNC_TARGET}"
 
 pipelines:
     branches:
