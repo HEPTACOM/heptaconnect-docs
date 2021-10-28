@@ -36,6 +36,16 @@ Learn to create high-performance message broker scenarios.
 <!--close-ecc555b594ad495dbea9516de4f2dd5a-->
 
 
+<!--open-743edf56b0e34ad6b473821ae255cda9-->
+
+## Logging
+
+Logging is key for understanding applications.
+Get enabled to prepare logged data in scaled scenarios to take action when your application most needs it.
+
+<!--close-743edf56b0e34ad6b473821ae255cda9-->
+
+
 <!--open-de16093434df4aafb5ca15fdb81fca24-->
 
 ## Upgrade

@@ -1,11 +1,15 @@
 # Logs
 
 Log messages are the most detailed way to get into the actions that happen in the HEPTAconnect instance at close to real time.
-Only debugging into it gives you more details.
+Only debugging into it provides more details.
 Watch the following sources for changes and get informed about the most detail info you can get.
 
 
 ## Locations
+
+When the development team [integrated a non-standard logging facility](../integrator/logging.md) there are probably setup notes about it.
+Otherwise, the [bridge](../integrator/bridges.md) logging fallback takes action, logs into files and the following paragraphs apply.
+
 
 ### Files
 
