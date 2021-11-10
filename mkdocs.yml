@@ -156,6 +156,8 @@ nav:
             - Direct emission exploration: reference/adr/2021-02-03-direct-emission-exploration.md
             - Portal dependency injection implementation: reference/adr/2021-04-13-portal-dependency-injection-implementation.md
             - Flow component short notation: reference/adr/2021-06-17-flow-component-short-notation.md
+            - Optimized storage actions: reference/adr/2021-09-25-optimized-storage-actions.md
+            - Route capabilities: reference/adr/2021-10-30-route-capabilities.md
         - Glossary: reference/glossary.md
         - License: reference/license.md
     - News:
