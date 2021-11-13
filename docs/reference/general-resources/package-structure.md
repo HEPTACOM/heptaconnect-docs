@@ -20,7 +20,7 @@ At its core HEPTAconnect manages data streams between different endpoints via as
 One side goes through its entities for a dataset and emits whatever it can find.
 The other side receives these entities and saves them to an other endpoint.
 It is the core's job to coordinate this traffic and keep things organized.
-So the core provides a router, a mapping service, an emit service, a receive service, a webhook service and other tooling.
+So the core provides a router, a mapping service, an emit service, a receive service and other tooling.
 
 ![](../../assets/uml/package-structure/core.svg)
 
