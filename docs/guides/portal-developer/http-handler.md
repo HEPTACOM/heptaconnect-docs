@@ -1,7 +1,8 @@
 # HTTP Handler
 
-A portal can respond to HTTP request using HTTP handlers.
-This can be useful for implementing webhooks or web browser interaction (like for an OAuth 2.0 setup).
+A portal can respond to an HTTP request using HTTP handlers.
+This can be useful for implementing webhooks or web browser interaction (e.g. interactive OAuth 2.0 setup).
+
 
 ## Intention
 
@@ -13,7 +14,8 @@ The HTTP message objects implement `\Psr\Http\Message\ServerRequestInterface` an
 
 It is recommended to keep the operations in HTTP handlers as lightweight as possible, because these components will run in a web context where arbitrary memory limits and time limits can apply.
 For webhook notifications containing only identities, the handler should use the [`\Heptacom\HeptaConnect\Portal\Base\Publication\Contract\PublisherInterface`](./default-utilities.md#publisherinterface) to offload further I/O into an emitter.
-Webhooks that receive entire entity payloads can a packer and dispatch entities immediately to the [`\Heptacom\HeptaConnect\Portal\Base\Flow\DirectEmission\DirectEmissionFlowContract`](./default-utilities.md#directemissionflowcontract)
+Webhooks that receive entire entity payloads can use a packer and dispatch entities immediately to the [`\Heptacom\HeptaConnect\Portal\Base\Flow\DirectEmission\DirectEmissionFlowContract`](./default-utilities.md#directemissionflowcontract).
+
 
 ## Usage
 
@@ -92,3 +94,11 @@ Webhooks that receive entire entity payloads can a packer and dispatch entities 
         return $response->withStatus(201);
     });
     ```
+
+
+## Sharing URLs
+
+There are several ways how to access the HTTP handlers endpoint.
+One set of tools are available on the commandline and are explained in the [administrator section for HTTP APIs](../administrator/http-apis.md). 
+Within the [utility services](./default-utilities.md#httphandlerurlproviderinterface) there is `\Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerUrlProviderInterface` that can resolve an HTTP handler name into an absolute URL.
+There is also an [HTTP client](./default-utilities.md#clientinterface) that implements `\Psr\Http\Client\ClientInterface` defined in [`PSR-18`](https://www.php-fig.org/psr/psr-18/) which can be used to post the resolved URL to an external API to register the HTTP handler e.g. as webhook for events.
