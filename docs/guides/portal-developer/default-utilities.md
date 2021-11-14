@@ -133,6 +133,20 @@ The complete list of explorers that are active within this portal node.
 The complete list of explorer decorators that are active within this portal node.
 
 
+### HttpHandlerCollection
+
+> Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerCollection
+
+The complete list of HTTP handlers that are active within this portal node.
+
+
+### HttpHandlerCollection.decorator
+
+> Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerCollection.decorator
+
+The complete list of HTTP handler decorators that are active within this portal node.
+
+
 ### ReceiverCollection
 
 > Heptacom\HeptaConnect\Portal\Base\Reception\ReceiverCollection
@@ -168,3 +182,10 @@ Supports time-to-live attributes on entries to allow caching functionality.
 > Heptacom\HeptaConnect\Portal\Base\Parallelization\Support\ResourceLockFacade 
 
 A service that allows resource locking functionality to better interrupt between parallel steps.
+
+
+### HttpHandlerUrlProviderInterface
+
+> Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerUrlProviderInterface
+
+A service that resolves HTTP handler path names into an absolute URLs.
