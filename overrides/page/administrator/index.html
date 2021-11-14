@@ -53,6 +53,19 @@
     {% set content = content|replace('<!--open-82cbda7a53ff4843bc69a3cb717ceaee-->', openCard)|replace('<!--close-82cbda7a53ff4843bc69a3cb717ceaee-->', closeCard) %}
 
     {% set openCard %}
+            <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/http-apis/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/globe-europe.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-5a19b7d8a81d427ab43b2685c6b4e8c3-->', openCard)|replace('<!--close-5a19b7d8a81d427ab43b2685c6b4e8c3-->', closeCard) %}
+
+    {% set openCard %}
             <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/logs/'|url }}">
                 <picture>
                     {% include ".icons/fontawesome/solid/cabinet-filing.svg" %}

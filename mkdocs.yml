@@ -122,6 +122,7 @@ nav:
         - Portal node: guides/administrator/portal-node.md
         - Route: guides/administrator/routing.md
         - Status reporting: guides/administrator/status-reporting.md
+        - HTTP APIs: guides/administrator/http-apis.md
         - Logs: guides/administrator/logs.md
     - Playground:
         - guides/playground/index.md
