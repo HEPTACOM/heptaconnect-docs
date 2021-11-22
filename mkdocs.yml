@@ -98,11 +98,10 @@ nav:
         - Explorer: guides/portal-developer/explorer.md
         - Emitter: guides/portal-developer/emitter.md
         - Receiver: guides/portal-developer/receiver.md
+        - HTTP Handler: guides/portal-developer/http-handler.md
+        - Status reporting: guides/portal-developer/status-reporting.md
         - Morphers: guides/portal-developer/morphers.md
         - Key value storage: guides/portal-developer/key-value-storage.md
-        - Cronjobs: guides/portal-developer/cronjobs.md
-        - Webhooks: guides/portal-developer/webhooks.md
-        - Status reporting: guides/portal-developer/status-reporting.md
         - Explorer decoration: guides/portal-developer/explorer-decoration.md
         - Emitter decoration: guides/portal-developer/emitter-decoration.md
         - Receiver decoration: guides/portal-developer/receiver-decoration.md
@@ -124,6 +123,7 @@ nav:
         - Portal node: guides/administrator/portal-node.md
         - Route: guides/administrator/routing.md
         - Status reporting: guides/administrator/status-reporting.md
+        - HTTP APIs: guides/administrator/http-apis.md
         - Logs: guides/administrator/logs.md
     - Playground:
         - guides/playground/index.md
