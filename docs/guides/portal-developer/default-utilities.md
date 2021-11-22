@@ -188,4 +188,4 @@ A service that allows resource locking functionality to better interrupt between
 
 > Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerUrlProviderInterface
 
-A service that resolves HTTP handler path names into an absolute URLs.
+A service that resolves HTTP handler path names into absolute URLs.
