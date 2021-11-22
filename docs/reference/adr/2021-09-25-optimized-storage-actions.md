@@ -17,6 +17,7 @@ With their transactional behaviour their return value can safely be a fixed coll
 Other operations that run indefinitely long as they look for and load data should return an iterable of a single entry.
 As every operation will have its own class and the intention is not to add future methods into the services, we will use [interfaces](./2020-04-30-contracts-and-interfaces.md).
 Names of the operations are not prescribed and should represent the expected business logic.
+Ingoing payload- and criteria- as well as returned result objects should have verbose property names to prevent ambiguity errors in the future. 
 With this in mind we found these naming patterns to be useful:
 
 * list - is a non-human-used listing of a search based upon a criteria
