@@ -14,7 +14,7 @@ When it does not match the expectations you can use the command `heptaconnect:co
 ## Endpoint listing
 
 Portals can resolve the absolute URLs for their registered endpoints.
-As administrator, it is also there is the command `heptaconnect:http-handler:list` to display the registered endpoints.
+As administrator, it is also there is the command `heptaconnect:http-handler:list-handlers` to display the registered endpoints.
 The output looks like this:
 
 ```markdown
