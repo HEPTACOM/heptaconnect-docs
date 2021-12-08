@@ -21,7 +21,7 @@ skinparam RectangleFontName $fontFamily
 skinparam RectangleFontStyle $fontStyle
 
 skinparam PackageBorderColor $colorGray
-skinparam PackageFontColor $colorLight
+skinparam PackageFontColor $colorGray
 skinparam PackageFontName $fontFamily
 skinparam PackageFontStyle $fontStyle
 
