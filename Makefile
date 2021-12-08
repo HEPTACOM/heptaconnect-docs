@@ -104,7 +104,7 @@ git-code-dependencies: $(REPOS)
 $(REPOS): $(GENERATED_DATA_DIR)
 	$(GIT) -C "${GENERATED_DATA_DIR}/git-$@" pull --ff-only || git clone "https://github.com/HEPTACOM/$@.git" "${GENERATED_DATA_DIR}/git-$@"
 	stat ${GENERATED_DATA_DIR}/git-heptaconnect-src || mkdir ${GENERATED_DATA_DIR}/git-heptaconnect-src
-	cp -a "${GENERATED_DATA_DIR}/git-$@/src" "${GENERATED_DATA_DIR}/git-heptaconnect-src/$@"
+	test -d "${GENERATED_DATA_DIR}/git-$@/src" && cp -a "${GENERATED_DATA_DIR}/git-$@/src" "${GENERATED_DATA_DIR}/git-heptaconnect-src/$@" || cp -a "${GENERATED_DATA_DIR}/git-$@" "${GENERATED_DATA_DIR}/git-heptaconnect-src/$@"
 
 .bin/PhpDependencyAnalysis:
 	$(GIT) clone https://github.com/HEPTACOM/PhpDependencyAnalysis.git .bin/PhpDependencyAnalysis
