@@ -47,7 +47,7 @@ all: build
 
 .PHONY: clean
 clean:
-	rm -rf .data/
+	rm -rf ${GENERATED_DATA_DIR}/
 	rm -rf site/
 	rm -rf overrides/partials/github.json
 	rm -rf docs/assets/stylesheets/vendor
@@ -100,10 +100,10 @@ docs/assets/javascripts/vendor/highlight.js/highlight.min.js:
 git-code-dependencies: $(REPOS)
 
 .PHONY: $(REPOS)
-$(REPOS):
-	$(GIT) -C ".data/git-$@" pull --ff-only || git clone "https://github.com/HEPTACOM/$@.git" ".data/git-$@"
-	stat .data/git-heptaconnect-src || mkdir .data/git-heptaconnect-src
-	cp -a ".data/git-$@/src" ".data/git-heptaconnect-src/$@"
+$(REPOS): $(GENERATED_DATA_DIR)
+	$(GIT) -C "${GENERATED_DATA_DIR}/git-$@" pull --ff-only || git clone "https://github.com/HEPTACOM/$@.git" "${GENERATED_DATA_DIR}/git-$@"
+	stat ${GENERATED_DATA_DIR}/git-heptaconnect-src || mkdir ${GENERATED_DATA_DIR}/git-heptaconnect-src
+	cp -a "${GENERATED_DATA_DIR}/git-$@/src" "${GENERATED_DATA_DIR}/git-heptaconnect-src/$@"
 
 .bin/PhpDependencyAnalysis:
 	$(GIT) clone https://github.com/HEPTACOM/PhpDependencyAnalysis.git .bin/PhpDependencyAnalysis
@@ -111,3 +111,6 @@ $(REPOS):
 
 node_modules:
 	$(NPM) ci --include=dev
+
+$(GENERATED_DATA_DIR):
+	mkdir -p ${GENERATED_DATA_DIR}
