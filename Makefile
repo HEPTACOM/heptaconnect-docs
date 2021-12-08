@@ -4,6 +4,7 @@ REPOS = heptaconnect-bridge-shopware-platform \
 		heptaconnect-core \
 		heptaconnect-dataset-base \
 		heptaconnect-dataset-ecommerce \
+		heptaconnect-framework \
 		heptaconnect-portal-base \
 		heptaconnect-portal-local-shopware-platform \
 		heptaconnect-storage-base \
@@ -71,8 +72,8 @@ github_stats: overrides/partials/github.json
 rss: node_modules
 	$(NPM) run rss
 
-overrides/partials/github.json:
-	mkdir -p ${GENERATED_DATA_DIR}
+overrides/partials/github.json: $(GENERATED_DATA_DIR)
+	$(CURL) -o ${GENERATED_DATA_DIR}/github-framework.json https://api.github.com/repos/HEPTACOM/heptaconnect-framework
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-bridge-shopware-platform.json https://api.github.com/repos/HEPTACOM/heptaconnect-bridge-shopware-platform
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-core.json https://api.github.com/repos/HEPTACOM/heptaconnect-core
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-dataset-base.json https://api.github.com/repos/HEPTACOM/heptaconnect-dataset-base
