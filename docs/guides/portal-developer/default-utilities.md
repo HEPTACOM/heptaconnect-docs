@@ -98,69 +98,6 @@ It is also aliased with the real class so it works with auto-wiring.
 The list of active portal extensions within this container.
 
 
-### StatusReporterCollection
-
-> Heptacom\HeptaConnect\Portal\Base\StatusReporting\StatusReporterCollection
-
-The complete list of status reporters that are active within this portal node.
-
-
-### EmitterCollection
-
-> Heptacom\HeptaConnect\Portal\Base\Emission\EmitterCollection
-
-The complete list of emitters that are active within this portal node.
-
-
-### EmitterCollection.decorator
-
-> Heptacom\HeptaConnect\Portal\Base\Emission\EmitterCollection.decorator
-
-The complete list of emitter decorators that are active within this portal node.
-
-
-### ExplorerCollection
-
-> Heptacom\HeptaConnect\Portal\Base\Exploration\ExplorerCollection
-
-The complete list of explorers that are active within this portal node.
-
-
-### ExplorerCollection.decorator
-
-> Heptacom\HeptaConnect\Portal\Base\Exploration\ExplorerCollection.decorator
-
-The complete list of explorer decorators that are active within this portal node.
-
-
-### HttpHandlerCollection
-
-> Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerCollection
-
-The complete list of HTTP handlers that are active within this portal node.
-
-
-### HttpHandlerCollection.decorator
-
-> Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerCollection.decorator
-
-The complete list of HTTP handler decorators that are active within this portal node.
-
-
-### ReceiverCollection
-
-> Heptacom\HeptaConnect\Portal\Base\Reception\ReceiverCollection
-
-The complete list of receivers that are active within this portal node.
-
-
-### ReceiverCollection.decorator
-
-> Heptacom\HeptaConnect\Portal\Base\Reception\ReceiverCollection.decorator
-
-The complete list of receiver decorators that are active within this portal node.
-
-
 ### PortalNodeKeyInterface
 
 > Heptacom\HeptaConnect\Portal\Base\StorageKey\Contract\PortalNodeKeyInterface
