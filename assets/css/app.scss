@@ -138,6 +138,14 @@ body.hc-role-contributor .md-header {
     animation-iteration-count: infinite;
 }
 
+.home-claim .first-line {
+    font-weight: bold;
+}
+
+.home-instructions .hljs {
+    white-space: pre-line;
+}
+
 @media screen and (min-width: 45rem) {
     .mdx-hero {
         padding: 3rem;
@@ -157,6 +165,18 @@ body.hc-role-contributor .md-header {
     .mdx-hero > .mdx-hero__content {
         float: left;
         margin-left: 1rem;
+    }
+
+    .mdx-hero > .mdx-hero__content .home-claim {
+        font-size: 2rem;
+
+        .sub-line {
+            font-size: 1.6rem;
+        }
+    }
+
+    .mdx-hero > .mdx-hero__content .home-instructions {
+        display: inline-block;
     }
 
     .mdx-hero > .mdx-hero__content .md-button {

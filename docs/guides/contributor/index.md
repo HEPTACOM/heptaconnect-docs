@@ -41,6 +41,7 @@ Be sure to sign the [CLA](./cla.md) after creating the pull request.
 ## Steps to contribute
 
 1. Fork the repository
-2. `git clone yourname/heptaconnect-docs`
-3. Make your changes to master branch
-4. Create your Pull-Request
+2. `git clone yourname/heptaconnect-framework`
+3. Make your changes to a branch
+4. `make coverage`
+5. Create your Pull-Request

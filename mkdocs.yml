@@ -98,11 +98,10 @@ nav:
         - Explorer: guides/portal-developer/explorer.md
         - Emitter: guides/portal-developer/emitter.md
         - Receiver: guides/portal-developer/receiver.md
+        - HTTP Handler: guides/portal-developer/http-handler.md
+        - Status reporting: guides/portal-developer/status-reporting.md
         - Morphers: guides/portal-developer/morphers.md
         - Key value storage: guides/portal-developer/key-value-storage.md
-        - Cronjobs: guides/portal-developer/cronjobs.md
-        - Webhooks: guides/portal-developer/webhooks.md
-        - Status reporting: guides/portal-developer/status-reporting.md
         - Explorer decoration: guides/portal-developer/explorer-decoration.md
         - Emitter decoration: guides/portal-developer/emitter-decoration.md
         - Receiver decoration: guides/portal-developer/receiver-decoration.md
@@ -116,13 +115,15 @@ nav:
         - Portals: guides/integrator/portals.md
         - Bridges: guides/integrator/bridges.md
         - Message broking: guides/integrator/message-brokers.md
-        - Data tuning: guides/integrator/data-tuning.md
+        - Logging: guides/integrator/logging.md
+#        - Data tuning: guides/integrator/data-tuning.md
         - Upgrade: guides/integrator/upgrade.md
     - Administrator:
         - guides/administrator/index.md
         - Portal node: guides/administrator/portal-node.md
         - Route: guides/administrator/routing.md
         - Status reporting: guides/administrator/status-reporting.md
+        - HTTP APIs: guides/administrator/http-apis.md
         - Logs: guides/administrator/logs.md
     - Playground:
         - guides/playground/index.md
@@ -156,6 +157,8 @@ nav:
             - Direct emission exploration: reference/adr/2021-02-03-direct-emission-exploration.md
             - Portal dependency injection implementation: reference/adr/2021-04-13-portal-dependency-injection-implementation.md
             - Flow component short notation: reference/adr/2021-06-17-flow-component-short-notation.md
+            - Optimized storage actions: reference/adr/2021-09-25-optimized-storage-actions.md
+            - Route capabilities: reference/adr/2021-10-30-route-capabilities.md
         - Glossary: reference/glossary.md
         - License: reference/license.md
     - News:

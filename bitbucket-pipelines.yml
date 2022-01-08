@@ -44,7 +44,8 @@ definitions:
                 <<: *default
                 name: Publish to github
                 script:
-                    - apk add --update --no-cache git openssh-client
+                    - apk add --update --no-cache git openssh-client rsync
+                    - rsync -avz --delete -e ssh ./docs/ "${RSYNC_TARGET}"
                     - git remote add github git@github.com:HEPTACOM/heptaconnect-docs.git
                     - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
                     - git remote update

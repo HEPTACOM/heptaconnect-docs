@@ -34,6 +34,15 @@ Understand how well your HEPTAconnect instance performs and detect issues.
 <!--close-82cbda7a53ff4843bc69a3cb717ceaee-->
 
 
+<!--open-5a19b7d8a81d427ab43b2685c6b4e8c3-->
+
+## HTTP APIs
+
+Manage and investigate into hosted HTTP endpoints by portals.
+
+<!--close-5a19b7d8a81d427ab43b2685c6b4e8c3-->
+
+
 <!--open-123d7ed379034757ac79ac2431b411a9-->
 
 ## Logs

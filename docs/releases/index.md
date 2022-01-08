@@ -30,6 +30,7 @@ Any other dataset library has to use the classes to work with HEPTAconnect utili
 ## Portal Base
 
 This is a HEPTAconnect package that provides base structures for portals.
+Any other portal library has to use the classes to work with HEPTAconnect utilities.
 
 [Read the Portal Base changelog](./changelog-portal-base.md)
 

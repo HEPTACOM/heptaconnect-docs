@@ -20,6 +20,11 @@ skinparam RectangleFontColor $colorLight
 skinparam RectangleFontName $fontFamily
 skinparam RectangleFontStyle $fontStyle
 
+skinparam PackageBorderColor $colorGray
+skinparam PackageFontColor $colorGray
+skinparam PackageFontName $fontFamily
+skinparam PackageFontStyle $fontStyle
+
 skinparam NodeBackgroundColor $colorLightGray
 skinparam NodeBorderColor $colorGray
 skinparam NodeFontColor $colorLight
