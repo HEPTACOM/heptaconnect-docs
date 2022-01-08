@@ -13,6 +13,7 @@
 
 # Generated data
 /.data
+/overrides/partials/generated/adr-complete-list.html
 /overrides/partials/generated/latest-news.html
 /overrides/partials/github.json
 /docs/assets/uml
