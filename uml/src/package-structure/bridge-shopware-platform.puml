@@ -1,8 +1,33 @@
 @startuml
 
 !include ../../include/skin.puml
+
+package Framework {
+    rectangle "Core" as C
+    rectangle "Dataset-Base" as DB
+    rectangle "Portal-Base" as PB
+    rectangle "Storage-Base" as SB
+}
+
+rectangle "Dataset-Ecommerce" as DE
+rectangle "Portal-BusinessCentral" as PBC
+rectangle "Portal-ShopwarePlatform" as PSP
 rectangle "Bridge-ShopwarePlatform" as BSP $colorHighlight
 rectangle "Storage-ShopwareDal" as SSD $colorHighlight
-BSP --|> SSD
+
+BSP -left-|> C
+BSP --|> SB
+BSP -down-|> SSD
+SSD -left-|> SB
+C -down-|> SB
+C --|> PB
+C -left-|> DB
+SB -left-|> PB
+DE -left-|> DB
+PB -up-|> DB
+PBC -right-|> PB
+PBC -up-|> DE
+PSP -up-|> PB
+PSP -up-|> DE
 
 @enduml

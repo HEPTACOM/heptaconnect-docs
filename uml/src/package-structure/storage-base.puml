@@ -2,15 +2,27 @@
 
 !include ../../include/skin.puml
 
-rectangle "Bridge-ShopwarePlatform" as BSP
-rectangle "Storage-ShopwareDal" as SSD
-rectangle "Core" as C
-rectangle "Storage-Base" as SB $colorHighlight
+package Framework {
+    rectangle "Core" as C
+    rectangle "Dataset-Base" as DB
+    rectangle "Portal-Base" as PB
+    rectangle "Storage-Base" as SB $colorHighlight
+}
 
-BSP --|> SSD
-C --|> SB
-BSP --|> C
-BSP --|> SB
-SSD --|> SB
+rectangle "Dataset-Ecommerce" as DE
+rectangle "Portal-BusinessCentral" as PBC
+rectangle "Portal-ShopwarePlatform" as PSP
+
+C -left-|> SB
+C --|> PB
+C --|> DB
+SB --|> PB
+SB --|> DB
+DE --|> DB
+PB -right-|> DB
+PBC -up-|> PB
+PBC --|> DE
+PSP -up-|> PB
+PSP --|> DE
 
 @enduml

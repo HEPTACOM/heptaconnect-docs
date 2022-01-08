@@ -4,6 +4,7 @@ REPOS = heptaconnect-bridge-shopware-platform \
 		heptaconnect-core \
 		heptaconnect-dataset-base \
 		heptaconnect-dataset-ecommerce \
+		heptaconnect-framework \
 		heptaconnect-portal-base \
 		heptaconnect-portal-local-shopware-platform \
 		heptaconnect-storage-base \
@@ -47,7 +48,7 @@ all: build
 
 .PHONY: clean
 clean:
-	rm -rf .data/
+	rm -rf ${GENERATED_DATA_DIR}/
 	rm -rf site/
 	rm -rf overrides/partials/github.json
 	rm -rf docs/assets/stylesheets/vendor
@@ -71,8 +72,8 @@ github_stats: overrides/partials/github.json
 rss: node_modules
 	$(NPM) run rss
 
-overrides/partials/github.json:
-	mkdir -p ${GENERATED_DATA_DIR}
+overrides/partials/github.json: $(GENERATED_DATA_DIR)
+	$(CURL) -o ${GENERATED_DATA_DIR}/github-framework.json https://api.github.com/repos/HEPTACOM/heptaconnect-framework
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-bridge-shopware-platform.json https://api.github.com/repos/HEPTACOM/heptaconnect-bridge-shopware-platform
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-core.json https://api.github.com/repos/HEPTACOM/heptaconnect-core
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-dataset-base.json https://api.github.com/repos/HEPTACOM/heptaconnect-dataset-base
@@ -100,10 +101,10 @@ docs/assets/javascripts/vendor/highlight.js/highlight.min.js:
 git-code-dependencies: $(REPOS)
 
 .PHONY: $(REPOS)
-$(REPOS):
-	$(GIT) -C ".data/git-$@" pull --ff-only || git clone "https://github.com/HEPTACOM/$@.git" ".data/git-$@"
-	stat .data/git-heptaconnect-src || mkdir .data/git-heptaconnect-src
-	cp -a ".data/git-$@/src" ".data/git-heptaconnect-src/$@"
+$(REPOS): $(GENERATED_DATA_DIR)
+	$(GIT) -C "${GENERATED_DATA_DIR}/git-$@" pull --ff-only || git clone "https://github.com/HEPTACOM/$@.git" "${GENERATED_DATA_DIR}/git-$@"
+	stat ${GENERATED_DATA_DIR}/git-heptaconnect-src || mkdir ${GENERATED_DATA_DIR}/git-heptaconnect-src
+	test -d "${GENERATED_DATA_DIR}/git-$@/src" && cp -a "${GENERATED_DATA_DIR}/git-$@/src" "${GENERATED_DATA_DIR}/git-heptaconnect-src/$@" || cp -a "${GENERATED_DATA_DIR}/git-$@" "${GENERATED_DATA_DIR}/git-heptaconnect-src/$@"
 
 .bin/PhpDependencyAnalysis:
 	$(GIT) clone https://github.com/HEPTACOM/PhpDependencyAnalysis.git .bin/PhpDependencyAnalysis
@@ -111,3 +112,6 @@ $(REPOS):
 
 node_modules:
 	$(NPM) ci --include=dev
+
+$(GENERATED_DATA_DIR):
+	mkdir -p ${GENERATED_DATA_DIR}
