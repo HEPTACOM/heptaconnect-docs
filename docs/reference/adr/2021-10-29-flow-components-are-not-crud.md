@@ -2,17 +2,17 @@
 
 ## Context
 
-At the ADRs date we have explorers, emitters and receivers as three main flow components.
+At the time of writing we have explorers, emitters and receivers as three main flow components.
 They resemble CR and U from the well-known [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete).
 Most APIs are CRUD or [BREAD](http://paul-m-jones.com/post/2008/08/20/bread-not-crud/) based and therefore match the three named flow components. 
 For now, emitting and receiving entities can be also used differently as this "just" sends data from one portal node and is received by another portal node.
 Emitters and receivers could send commands instead of entities.
 As previously mentioned we do not have a deletion flow component.
-A receiver could receive an entity with a deletion command with any version of HEPTAconnect prior to a custom deletion flow. 
+A receiver could receive an entity with a custom deletion command with any previous version of HEPTAconnect. 
 This is discouraged but possible.
 We have already seen implementations, that receive data but don't write anything to the API the portal resembles.
 This is a misuse that is similar to described scenario above.
-Looking at the other existing flow components we also have webhooks and cronjobs.
+Looking at the other existing flow components we also have webhooks and status reporters.
 These are not related to CRUD at all, so we are not limited to CRUD.
 
 
@@ -20,7 +20,7 @@ These are not related to CRUD at all, so we are not limited to CRUD.
 
 Receivers are not meant to do everything, when it is about receiving a command.
 Receivers are meant to be used for entities only.
-Grouping explorers, emitters, receivers and "deletors" into a single CRUD flow component enforces structures that probably don't benefit APIs, that do not fall into this pattern.
+Grouping explorers, emitters, receivers and "deleters" into a single CRUD flow component enforces structures that probably don't benefit APIs, that do not fall into this pattern.
 Grouping flow components is not helpful when we do not know the possible groups in beforehand and therefore can't be done right.
 Every other transfer needs a new flow component.
 As routes connect emitters and receivers they need to learn how to decide which flow components to use on a route.
@@ -31,7 +31,7 @@ This is described in a [different ADR](./2021-10-30-route-capabilities.md).
 
 ### Pros
 
-* New data flows can be implemented by custom integrations without misusing existing components, which could lead to expected behaviour for these existing behaviour
+* New data flows can be implemented by custom integrations without misusing existing components, which could lead to unexpected behaviour
 * Separating different flows into unique components allows for clear code structures
 
 
