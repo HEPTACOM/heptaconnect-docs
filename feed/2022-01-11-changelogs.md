@@ -1,5 +1,5 @@
 {
-    "date": "2021-09-27",
+    "date": "2022-01-11",
     "title": "Changelogs for safer and understandable updating",
     "summary": "Updating your project would be a mess without proper changelogs",
     "author": "Joshua Behrens"
@@ -13,10 +13,11 @@
 - Machine-readable
 - Guides for [portal developer](https://heptaconnect.io/guides/portal-developer/upgrade/) and [integrator](https://heptaconnect.io/guides/integrator/upgrade/).
 
-With the new version release of 0.7 we start to add changelogs.
+With the release of version 0.7 we started to add changelogs.
 These are important news and therefore reside in our [news section](https://heptaconnect.io/releases/).
 There you can find a human-readable and easy to browse version of the changelogs.
 So with each upcoming release of HEPTAconnect you should check out the documentation about the new changes and get excited.
+
 
 ## Why is that important to me?
 
@@ -27,6 +28,7 @@ Updating to the most recent version of HEPTAconnect is always a combination of:
 - Oh, something broke, and I should check my tuned application as well
 
 So you can check your version of HEPTAconnect using `$ composer show heptacom/heptaconnect-\*`, understand the news and compare.
+
 
 ## How do I understand?
 
@@ -42,6 +44,7 @@ It makes it easy to research for unique code components and understand why they 
 When we do package internal changes you won't see them as they probably won't bother you.
 Don't worry though, when we change e.g. database interactions this is often considered an internal change but still resides under the changes classification for e.g. resources usage reasons.
 
+
 ## How do I compare?
 
 You have to take every log and look up whether it affects your code changes as every log should contain enough technical reference.
@@ -49,6 +52,7 @@ When you have a match you can understand the connected feature and apply the kno
 
 The process sounds correct but tedious, right?
 We thought so as well, so we decided to snoop around one step ahead again and had a look on how to automate this, so we all have less to do again.
+
 
 ## How do I upgrade my code?
 

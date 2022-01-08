@@ -10,7 +10,7 @@ In our fast-paced world of changes we need to also look out for these qualities.
 
 ## Structure
 
-The changelog file in the root of the package has a preface or the rules inside the changelog file.
+The changelog file in the root of the package has a preface for the rules inside the changelog file.
 We follow the format of the [keep a changelog project](https://keepachangelog.com/en/1.0.0/) with [semantic versioning](https://semver.org/spec/v2.0.0.html) which formats the file in a standardized layout.
 
 For every version we will have changes listed.
