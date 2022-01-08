@@ -35,19 +35,31 @@ This introduces a feature, so we should write something like:
 ```markdown
 ### Added
 
-- Extract fiddling of stuff into new class `\Heptacom\HeptaConnect\StuffFiddler`
+- Introduce fiddling of stuff into new class `\Heptacom\HeptaConnect\StuffFiddler`
 ```
 
+As seen in version 0.8.0 of heptaconnect-core:
 
-### Add optional parameter to method of public API
+> **Added**
+>
+> - Extract path building from `\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamNormalizer` and `\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamDenormalizer` into new service `\Heptacom\HeptaConnect\Core\Storage\Contract\StreamPathContract`
+
+
+### Add parameter to method of public API
 
 This introduces new behaviours, so we also add a new feature:
 
 ```markdown
 ### Added
 
-- Add optional parameter foobar in `\Heptacom\HeptaConnect\StuffFiddler::fiddle`
+- Add optional parameter `$foobar` in `\Heptacom\HeptaConnect\StuffFiddler::fiddle`
 ```
+
+As seen in version 0.7.0 of heptaconnect-core:
+
+> **Added**
+>
+> - Add parameter for `\Psr\Log\LoggerInterface` dependency in `\Heptacom\HeptaConnect\Core\Portal\PortalStorage::__construct` and `\Heptacom\HeptaConnect\Core\Portal\PortalStorageFactory::__construct`
 
 
 ### Specialize component
@@ -57,8 +69,22 @@ When you have a generic component, that is not well optimized for certain cases,
 ```markdown
 ### Added
 
-- Add class that can fiddle better with stuff of gizmos. Most usages of `\Heptacom\HeptaConnect\StuffFiddler::fiddle` can be replaced with `\Heptacom\HeptaConnect\GizmoStuffFiddler::fiddleGizmos` for better memory usage
+- Add class `\Heptacom\HeptaConnect\GizmoStuffFiddler` that can fiddle better with stuff of gizmos in terms of memory handling
+
+### Removed
+
+- Remove `\Heptacom\HeptaConnect\StuffFiddler::fiddle`. Use `\Heptacom\HeptaConnect\GizmoStuffFiddler::fiddleGizmos` instead
 ```
+
+As seen in version 0.8.0 of heptaconnect-storage-base:
+
+> **Added**
+>
+> - With storage restructure explained in [this ADR](https://heptaconnect.io/reference/adr/2021-09-25-optimized-storage-actions/) we add `\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Get\RouteGetActionInterface` for reading metadata of routes by the given `\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Get\RouteGetCriteria` to return a `\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Get\RouteGetResult`
+>
+> **Removed**
+>
+> - With storage restructure explained in [this ADR](https://heptaconnect.io/reference/adr/2021-09-25-optimized-storage-actions/) we remove implementation `\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\RouteRepositoryContract::read` in favour of `\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Get\RouteGetActionInterface::get` that allows for optimizations in the storage implementation
 
 
 ### Upgrade composer dependency
@@ -81,3 +107,46 @@ The difficult part here is the differentiation between a security bugfix and an 
 
 - When passing foobaz into `\Heptacom\HeptaConnect\StuffFiddler::fiddle` did not pay respect to a GizmoStuff situation
 ```
+
+As seen in version 0.7.0 of heptaconnect-portal-base:
+
+> **Fixed**
+>
+> - `\Heptacom\HeptaConnect\Portal\Base\Support\Contract\DeepObjectIteratorContract::iterate` drops usage of `\spl_object_hash` to not break on garbage collection
+
+
+### Add unique log code for lookups
+
+When anything is logged or an exception is thrown a package-unique code should be generated.
+Using a UNIX timestamp is handy as it is an integer and plays nicely with `\Throwable::getCode`.
+These have to be documented in the changelogs as well to raise awareness and be the first contact point for persons in need of an explanation.
+
+```markdown
+### Added
+
+- Add log exception code `123456789` to `\Heptacom\HeptaConnect\StuffFiddler::fiddle` when fiddling with stuff that is not allowed to access gizmos
+```
+
+As seen in version 0.8.0 of heptaconnect-core:
+
+> **Added**
+>
+> - Add log exception code `1636503503` to `\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler::triggerReception` when job has no related route
+
+
+### Rename classes or move classes between namespaces
+
+When a code refactoring needs moving a class a plain `rename` or `move` hint should to be added to the changelog.
+Additional explanation is optional but suggested as most refactoring have a good reasoning regarding functionality.
+
+```markdown
+### Changed
+
+- Rename `\Heptacom\HeptaConnect\StuffFiddler` to `\Heptacom\HeptaConnect\StuffFiddlerHandler`
+```
+
+As seen in version 0.5.0 of heptaconnect-dataset-base:
+
+> **Changed**
+>
+> - Rename `\Heptacom\HeptaConnect\Dataset\Base\Translatable\GenericTranslatable` to `\Heptacom\HeptaConnect\Dataset\Base\Translatable\AbstractTranslatable`
