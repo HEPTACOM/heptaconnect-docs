@@ -14,7 +14,7 @@
     {% set content = page.content %}
     {% set openCard %}
         <section class="md-typeset md-grid-dense hc-cards">
-            <a class="hc-card" href="{{ 'reference/license/'|url }}">
+            <a class="hc-card" href="{{ 'reference/glossary/'|url }}">
     {% endset %}
 
     {% set closeCard %}
@@ -24,7 +24,7 @@
     {% set content = content|replace('<!--open-3cde75359e8649b68c633a444b74ebbf-->', openCard)|replace('<!--close-3cde75359e8649b68c633a444b74ebbf-->', closeCard) %}
 
     {% set openCard %}
-            <a class="hc-card" href="{{ 'reference/glossary/'|url }}">
+            <a class="hc-card" href="{{ 'reference/license/'|url }}">
     {% endset %}
 
     {% set closeCard %}
