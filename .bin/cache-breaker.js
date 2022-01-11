@@ -12,7 +12,9 @@ const list_files = function(dirPath, result = undefined) {
         const realpath = path.join(dirPath, path.sep, file);
 
         if (fs.statSync(realpath).isDirectory() && !file.startsWith('.')) {
-            result.push(...list_files(realpath, result));
+            for (const file of list_files(realpath, result).filter(r => result.indexOf(r) === -1)) {
+                result.push(file);
+            }
         } else {
             result.push(realpath);
         }
