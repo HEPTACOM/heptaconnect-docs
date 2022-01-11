@@ -136,6 +136,7 @@ nav:
         - Contribution: guides/playground/contribution.md
     - Contributor:
         - guides/contributor/index.md
+        - Writing changelogs: guides/contributor/changelog.md
         - Contributor License Agreement: guides/contributor/cla.md
     - Reference:
         - Overview: reference/index.md
@@ -169,6 +170,7 @@ nav:
             - Core: releases/changelog-core.md
             - Dataset base: releases/changelog-dataset-base.md
             - Portal base: releases/changelog-portal-base.md
+            - Portal Local Shopware Platform: releases/changelog-portal-local-shopware-platform.md
             - Storage base: releases/changelog-storage-base.md
             - Storage Shopware DAL: releases/changelog-storage-shopware-dal.md
     - Pricing: https://www.heptacom.de/heptaconnect/

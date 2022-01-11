@@ -21,5 +21,5 @@ We can help you to upgrade on multiple ways:
 * Each entry in the change contains a technical information like a class name and a reason for the change.
   This way you can relate the technical information to your code and think about the change reason and apply it to your code.
 * The technical information as previously mentioned is also written to be understood by a machine.
-  You can save a lot of time using the `check:upgrade` command in the HEPTAconnect SDK.
+  You can save a lot of time using the `check:upgrade` command in the upcoming HEPTAconnect SDK.
   It will skim through your code and our changelogs to supply hints to you about the upcoming upgrade. 

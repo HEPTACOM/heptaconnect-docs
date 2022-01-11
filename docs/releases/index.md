@@ -35,6 +35,13 @@ Any other portal library has to use the classes to work with HEPTAconnect utilit
 [Read the Portal Base changelog](./changelog-portal-base.md)
 
 
+## Portal Local Shopware Platform
+
+This is a HEPTAconnect package that allows to communicate multiple entity types with a Shopware 6 instance that also integrates HEPTAconnect.
+
+[Read the Portal Local Shopware Platform changelog](./changelog-portal-local-shopware-platform.md)
+
+
 ## Storage Base
 
 This is a HEPTAconnect package that provides base structures for storage providers.
