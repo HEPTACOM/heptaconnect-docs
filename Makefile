@@ -8,7 +8,6 @@ REPOS = heptaconnect-bridge-shopware-platform \
 		heptaconnect-portal-base \
 		heptaconnect-portal-local-shopware-platform \
 		heptaconnect-storage-base \
-		heptaconnect-storage-native \
 		heptaconnect-storage-shopware-dal
 
 ifndef MKDOCS
@@ -89,7 +88,6 @@ overrides/partials/github.json: $(GENERATED_DATA_DIR)
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-portal-local-shopware-platform.json https://api.github.com/repos/HEPTACOM/heptaconnect-portal-local-shopware-platform
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-sdk.json https://api.github.com/repos/HEPTACOM/heptaconnect-sdk
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-storage-base.json https://api.github.com/repos/HEPTACOM/heptaconnect-storage-base
-	$(CURL) -o ${GENERATED_DATA_DIR}/github-storage-native.json https://api.github.com/repos/HEPTACOM/heptaconnect-storage-native
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-storage-shopware-dal.json https://api.github.com/repos/HEPTACOM/heptaconnect-storage-shopware-dal
 	$(JQ) -s '{ stars: [ .[].stargazers_count ] | add, forks: [ .[].forks ] | add, repositories: . | length }' ${GENERATED_DATA_DIR}/github-*.json > overrides/partials/github.json
 
