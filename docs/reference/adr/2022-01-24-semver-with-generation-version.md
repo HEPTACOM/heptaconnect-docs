@@ -3,7 +3,7 @@
 ## Context
 
 We follow [semantic versioning](https://semver.org/) to label our releases with expectations for its users, when upgrading.
-At point of writing updating to a new major version includes upgrade options, that a portals are likely to still work without any changes and storage implementations can continue working on previous storage structures.
+At point of writing updating to a new major version includes upgrade options, that portals are likely to still work without any changes and storage implementations can continue working on previous storage structures.
 There can be a time in the future, where these upgrading options are not applicable anymore or at a certain complexity level, that is above the current upgrade expectations.
 Can we put this expectation in semver?
 
