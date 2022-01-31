@@ -28,5 +28,5 @@ It also has the same developer experience across PHP versions.
 
 ### Cons
 
-* Users from HEPTAconnect packages can make use of this feature, but they should implement a test that targets this feature to ensure functionality using HEPTAconnect defined private API.
+* Users of HEPTAconnect packages can make use of this feature, but they should implement a test that targets this feature to ensure functionality using HEPTAconnect defined private API.
 * HEPTAconnect can be evaluated as non-fully PHP 8 compatible
