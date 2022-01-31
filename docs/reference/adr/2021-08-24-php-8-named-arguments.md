@@ -11,7 +11,7 @@ When using PHP >=8.0 function arguments are not just positional but also associa
 
 We do not support this feature and claim the argument names as private API.
 This includes to wrap calls for `func_get_arguments` in an `array_values` or similar approaches to remove names from parameters.
-Using structures with getters and setters, that combine multiple parameters into a single one, has a similar effect for this feature.
+This feature can be replicated to a certain degree with parameter classes the only contain the data for a method call in a single object, and therefore is not a language feature we depend on.
 We already use this occasionally with a trend towards this.
 This allows setting parameters by name via using their respective setter.
 It also has the same developer experience across PHP versions.
@@ -22,11 +22,11 @@ It also has the same developer experience across PHP versions.
 ### Pros
 
 * Contributors to HEPTAconnect packages have one breaking change complexity layer less to work on
-* Contributors to HEPTAconnect packages can apply the same breaking change promises across all supported PHP versions (which includes versions before this feature)
+* Contributors to HEPTAconnect packages can apply the same backward compatibility promises across all supported PHP versions (which includes versions prior to this feature)
 * Contributors to HEPTAconnect packages are allowed to rename parameters
 
 
 ### Cons
 
-* Users from HEPTAconnect packages can make use of this feature, but are should implement test target this feature to ensure functionality using private API
+* Users from HEPTAconnect packages can make use of this feature, but they should implement a test that targets this feature to ensure functionality using HEPTAconnect defined private API.
 * HEPTAconnect can be evaluated as non-fully PHP 8 compatible
