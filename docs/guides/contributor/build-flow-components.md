@@ -58,7 +58,7 @@ Their code origin influences their order in the stack.
 The order can be used to build an ordered stack out of it.
 This stack is used to pass a certain payload into it, pass through every layer in their respective order and allow each layer to modify a possible result that is returned at the end of the stack iteration.
 In the case of an [emitter](../portal-developer/emitter.md) stack the payload is a set of identities and its return value are resolved entities.
-The flow components in a stack can halt stack iteration to allow full influence of behaviour.
+The flow components in a stack can intercept stack iteration to allow full influence of behaviour.
 The `next` method of the stack is the first entrypoint of a stack to start the layer iteration.
 
 ![](../../assets/uml/flow-component/finder-stack-call.svg)
@@ -76,7 +76,7 @@ Every other instance on the stack is called a decorator and provided by portal e
 
 When the `next` method on the stack is called it has to call the `find` method of the first instance on the stack.
 The `find` method of the finder instance itself gets the current stack as argument and can now take over the control of the following `$stack->next()` call.
-This way a flow component can change the ingoing payload, the outgoing result and break the execution.
+This way a flow component can change the inbound payload, the result and break the execution.
 
 
 ### Context
@@ -93,7 +93,7 @@ The `FindContext` could probably get information whether it is preceding a recep
 A contract class for a flow component always has at least three methods:
 
 * supports
-* next
+* find
 * run
 
 The `supports` method represents every getter method that returns data to group a flow component instance by.
@@ -101,6 +101,7 @@ It is neither aware of the context nor the stack as it will be used to prepare b
 Every implementation of a flow component needs to provide the information about its supported topic or dataset entity.
 
 The `find` method has already been introduced in the [stack explanation](#stack).
+It is named to the verb of the component and therefore varies between the different flow components.
 It needs to be pre-implemented to chain as described so a portal developer does not need to implement it.
 The portal developer still needs to be able to override its implementation as this method is controlling the processing flow through the stack.
 
@@ -127,7 +128,7 @@ To execute the closures in the token we need a generic implementation of the con
 It will take the token in the constructor and execute each callback in the respective duplicated methods.
 At this place you have to analyze the parameters of the token's closure and lookup any services from the service container.
 This also allows custom rules to take effect.
-For example, when you forward the `run` method to the closure you can also resolve a string parameter called `externalId` to be the previous parameter `$externalId` from the `run` method.
+As an example we can look into the `EmitterContract`: when you forward the `run` method to the closure you can also resolve a string parameter called `externalId` to be the previous parameter `$externalId` from the `run` method.
 
 To access the new builder component the `\Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent` facade needs to provide a factory method named like the new flow component, so it can be used in short notation files.
 It will also need to factorize the flow components.
@@ -138,7 +139,7 @@ It will also need to factorize the flow components.
 Reasonable log messages are crucial.
 Therefore, whenever HEPTAconnect is aware of a flow component being part of the log message's context, the file the flow component is written in is logged as well.
 This feature is not possible without a `FinderCodeOriginFinder`.
-It can differentiate between a token based implementation of the `FinderContract` and a classical implementation.
+It can differentiate between a token based implementation of the `FinderContract` and an object-oriented implementation.
 The token based implementation needs to evaluate the source of the closures in the token instead of the class implementations' source file.
 The new code origin finder class can now be used along with the others in the `\Heptacom\HeptaConnect\Core\Component\Logger\FlowComponentCodeOriginFinderLogger` to improve log messages.
 
@@ -153,8 +154,8 @@ This has to be implemented by scanning all implementations and pass the service 
 ### Flow component registry
 
 The flow component registry is the central place of a portal node container to supply all flow components for a portal node.
-With the new parameter in the constructor and the newly found services in the portal node container, only a getter for the instances is missing.
-
+Therefore, a getter method for instances of the new flow component must be added to the registry.
+This new getter will rely on the new parameter in the constructor and the newly found services in the portal node container.
 
 ### Factory
 
@@ -172,7 +173,7 @@ The next big step is to teach the core package what to do with the new flow comp
 The service that will actually work with the new flow components is an actor, the `FindActor`.
 Its implementation precisely knows how to process a stack properly.
 The `performFind` method of this service looks similar to a contract class `find` as it does not create the stack and context it will work with later.
-An actor often validates incoming data (e.g. does not forward to the stack at all when empty), triggers different actions like follow-up flows and checks for race-conditions.
+An actor often validates incoming data (e.g. does not forward to the stack at all when empty), triggers different actions like follow-up flows.
 
 
 ### Service
@@ -197,8 +198,9 @@ Its implementation ensures forwarding the job and its payload to be used in othe
 ### Job handling
 
 The job has been dispatched to be handled separately from the current PHP process.
-When the job is ready to execute it needs to be handled again.
+When the job is ready to execute, it needs to be handled.
 The `FindJobHandler` will track the job processing state, read the jobs' payload and pass the job payload to the `FindService`.
+On finishing the `Find` job, a follow-up `Reception` job should be generated, when the route capability allows it.  
 
 
 ### Route capability usage
@@ -206,7 +208,8 @@ The `FindJobHandler` will track the job processing state, read the jobs' payload
 Now we are about to finish the initial task.
 The storages need to know about the new route capability.
 We designed it to be optional and name it `find`.
-Right before reception jobs will be dispatched we decide to ask the storage for the route capability and dispatch a `Finder` job instead.
+Right before `Reception` jobs will be dispatched, we decide to ask the storage for the route capability and dispatch a `Find` job instead.
+There is no functionality lost as the `Find` job will be able to generate a follow-up `Reception` job.
 
 
 ### Admin UI
@@ -242,19 +245,6 @@ You are most likely having a file structure of new files like this:
     └── FinderStack.php
 ```
 
-so könnte es sein
-
-```
-<portal-base-source>
-└── Find
-    ├── Contract
-    │   ├── FindContextInterface.php
-    │   ├── FinderBuilderInterface.php
-    │   ├── FinderCodeOriginFinderInterface.php
-    │   ├── FinderContract.php
-    │   └── FinderStackInterface.php
-    └── FinderCollection.php
-```
 
 ### Core
 
@@ -284,31 +274,4 @@ You are most likely having a file structure of new files like this:
     │   └── FindHandler.php
     └── Type
         └── Find.php    
-```
-
-so könnte es sein
-
-```
-<core-source>
-└── FlowComponent
-    └── Find
-        ├── Contract
-        │   ├── FindActorInterface.php
-        │   ├── FindContextFactoryInterface.php
-        │   ├── FindJobHandlerInterface.php
-        │   ├── FindServiceInterface.php
-        │   ├── FinderStackBuilderFactoryInterface.php
-        │   └── FinderStackBuilderInterface.php
-        ├── FindActor.php
-        ├── FindContext.php
-        ├── FindContextFactory.php
-        ├── FindJob.php
-        ├── FindJobHandler.php
-        ├── FinderToken.php
-        ├── FinderBuilder.php
-        ├── FindService.php
-        ├── FinderCodeOriginFinder.php
-        ├── FinderStackBuilder.php
-        ├── FinderStackBuilderFactory.php
-        └── TokenFinder.php
 ```

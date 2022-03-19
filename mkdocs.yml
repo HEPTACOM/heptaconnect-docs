@@ -137,7 +137,7 @@ nav:
     - Contributor:
         - guides/contributor/index.md
         - Writing changelogs: guides/contributor/changelog.md
-        - Build flow components: guides/contributor/build-flow-components.md.md
+        - Build flow components: guides/contributor/build-flow-components.md
         - Contributor License Agreement: guides/contributor/cla.md
     - Reference:
         - Overview: reference/index.md
