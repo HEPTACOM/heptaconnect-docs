@@ -65,17 +65,17 @@ The following example shows what you need to add portal node configuration by a 
     </container>
     ```
 
-=== "config/portal-node-config.php"
+###### config/portal-node-config.php
 
-    ```php
-    <?php
+```php
+<?php
 
-    declare(strict_types=1);
-    
-    use Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\Config;
-    
-    // TODO enter your Config:: instructions
-    ```
+declare(strict_types=1);
+
+use Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\Config;
+
+// TODO enter your Config:: instructions
+```
 
 
 ## Portal node query
@@ -118,7 +118,7 @@ declare(strict_types=1);
 use Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\Config;
 use Heptacom\HeptaConnect\Playground\PortalExtension\BottleContent;
 
-Config::replace(BottlePortal::class, [
+Config::replace(BottleContent::class, [
     'contentFactor' => 1.0,
 ]);
 ```
@@ -343,7 +343,7 @@ Config::set('bottle', static fn (Closure $next) => [
 ]);
 ```
 
-This means that you can prevent loading from the storage layer at all.
+This means that you can prevent loading from the storage layer entirely.
 
 
 ### Merge configurations
