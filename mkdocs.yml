@@ -115,6 +115,7 @@ nav:
         - Portals: guides/integrator/portals.md
         - Bridges: guides/integrator/bridges.md
         - Message broking: guides/integrator/message-brokers.md
+        - Portal node configuration: guides/integrator/portal-node-configuration.md
         - Logging: guides/integrator/logging.md
 #        - Data tuning: guides/integrator/data-tuning.md
         - Upgrade: guides/integrator/upgrade.md
