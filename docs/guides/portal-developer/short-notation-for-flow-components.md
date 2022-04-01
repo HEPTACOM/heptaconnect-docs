@@ -20,6 +20,8 @@ For this feature a plain php file within the folder `src/Resources/flow-componen
 
 `foobar.php` will be loaded and uses a newly introduced `FlowComponent` building utility.
 Every callback that is given into that builder can make use of every [dependency injection](./dependency-injection.md) feature.
+As the callbacks are executed by a wrapper based on the object-oriented notation, there is `$this` available pointing to the wrapping flow component instance.
+With this at hand, you can call other methods like `supports` or `run` from within a callback.
 The following section will show how to use each flow component with a file accessing scenario. 
 
 
