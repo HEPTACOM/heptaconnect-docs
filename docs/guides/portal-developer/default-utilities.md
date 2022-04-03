@@ -189,3 +189,19 @@ A service that allows resource locking functionality to better interrupt between
 > Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerUrlProviderInterface
 
 A service that resolves HTTP handler path names into absolute URLs.
+
+
+### FileReferenceFactoryContract
+
+> Heptacom\HeptaConnect\Portal\Base\File\FileReferenceFactoryContract
+
+A service that resolves HTTP requests to get files, raw content of a file and public URLs to files into a file reference to process for a receiving portal.
+See usage [here](../../how-to/portal-developer/file-reference-public-url.md).
+
+
+### FileReferenceResolverContract
+
+> Heptacom\HeptaConnect\Portal\Base\File\FileReferenceResolverContract
+
+A service that resolves a file reference created by [`Heptacom\HeptaConnect\Portal\Base\File\FileReferenceFactoryContract`](#filereferencefactorycontract) into an accessor to the underlying referenced file content or a public URL to access this file content.
+See usage [here](../../how-to/portal-developer/file-reference-public-url.md).
