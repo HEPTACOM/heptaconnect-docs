@@ -208,7 +208,7 @@ On finishing the `Find` job, a follow-up `Reception` job should be generated, wh
 Now we are about to finish the initial task.
 The storages need to know about the new route capability.
 We designed it to be optional and name it `find`.
-Right before `Reception` jobs will be dispatched, we decide to ask the storage for the route capability and dispatch a `Find` job instead.
+Right before `Reception` jobs will be dispatched, we decide to [ask the storage for the route capability](./build-storage-actions.md) and dispatch a `Find` job instead.
 There is no functionality lost as the `Find` job will be able to generate a follow-up `Reception` job.
 
 
