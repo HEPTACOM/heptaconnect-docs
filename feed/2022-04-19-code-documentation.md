@@ -24,4 +24,4 @@ This kept the developer in the IDE without losing their focus.
 We see the possibility that these comments may go out of date.
 To prevent this from happening too often, we decided to only write expected usage and possible implementation hints.
 With this rule of thumb we are not fixed to a certain implementation that may change over time.
-Instead, we use the intended use case as comment when the component was introduced so every shares the same expectation.
+Instead, we use the intended use case as comment when the component was introduced so everyone shares the same expectation.
