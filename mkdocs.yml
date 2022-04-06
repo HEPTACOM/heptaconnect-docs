@@ -110,6 +110,8 @@ nav:
         - Default utilities: guides/portal-developer/default-utilities.md
         - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
         - Upgrade: guides/portal-developer/upgrade.md
+        - Services:
+            - HttpClientContract: reference/portal-developer/service/http-client-contract.md
     - Integrator:
         - guides/integrator/index.md
         - Portals: guides/integrator/portals.md

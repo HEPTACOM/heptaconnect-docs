@@ -121,6 +121,15 @@ Supports time-to-live attributes on entries to allow caching functionality.
 A service that allows resource locking functionality to better interrupt between parallel steps.
 
 
+### HttpClientContract
+
+> Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpClientContract
+
+A [PSR-18](https://www.php-fig.org/psr/psr-18/) based HTTP client with configuration around the original [PSR-18 HTTP client](#clientinterface).
+It supports following redirects, header modifications, status code based exceptions, retries on errors and response information.
+See reference [here](../../reference/portal-developer/service/http-client-contract.md).
+
+
 ### HttpHandlerUrlProviderInterface
 
 > Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerUrlProviderInterface
