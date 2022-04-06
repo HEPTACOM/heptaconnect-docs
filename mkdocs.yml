@@ -111,8 +111,6 @@ nav:
         - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
         - Upgrade: guides/portal-developer/upgrade.md
         - File references: guides/portal-developer/file-reference.md
-        - Patterns:
-            - File reference for public URLs: how-to/portal-developer/file-reference-public-url.md
     - Integrator:
         - guides/integrator/index.md
         - Portals: guides/integrator/portals.md

@@ -38,4 +38,4 @@ To create a file reference by content, the method has to be used: `\Heptacom\Hep
 
 ## Patterns
 
-- [File reference with public URLs](../../how-to/portal-developer/file-reference-public-url.md)
+- [Transfer file reference by public URLs](patterns/transfer-file-reference-by-public-url.md)
