@@ -66,6 +66,19 @@
     {% set content = content|replace('<!--open-87ab23c4b4be4676adb26e06e2264c08-->', openCard)|replace('<!--close-87ab23c4b4be4676adb26e06e2264c08-->', closeCard) %}
 
     {% set openCard %}
+            <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/portal-node-configuration/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/wrench.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-101f47c2b1ad4966b4a5c52e0683e4b8-->', openCard)|replace('<!--close-101f47c2b1ad4966b4a5c52e0683e4b8-->', closeCard) %}
+
+    {% set openCard %}
             <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/logging/'|url }}">
                 <picture>
                     {% include ".icons/fontawesome/solid/cabinet-filing.svg" %}

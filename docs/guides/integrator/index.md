@@ -36,6 +36,15 @@ Learn to create high-performance message broker scenarios.
 <!--close-ecc555b594ad495dbea9516de4f2dd5a-->
 
 
+<!--open-101f47c2b1ad4966b4a5c52e0683e4b8-->
+
+## Portal node configuration
+
+Learn to use environment variables and other sources for portal node configurations.
+
+<!--close-101f47c2b1ad4966b4a5c52e0683e4b8-->
+
+
 <!--open-743edf56b0e34ad6b473821ae255cda9-->
 
 ## Logging

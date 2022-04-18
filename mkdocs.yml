@@ -111,11 +111,14 @@ nav:
         - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
         - Upgrade: guides/portal-developer/upgrade.md
         - File references: guides/portal-developer/file-reference.md
+        - Services:
+            - HttpClientContract: reference/portal-developer/service/http-client-contract.md
     - Integrator:
         - guides/integrator/index.md
         - Portals: guides/integrator/portals.md
         - Bridges: guides/integrator/bridges.md
         - Message broking: guides/integrator/message-brokers.md
+        - Portal node configuration: guides/integrator/portal-node-configuration.md
         - Logging: guides/integrator/logging.md
 #        - Data tuning: guides/integrator/data-tuning.md
         - Upgrade: guides/integrator/upgrade.md
@@ -138,6 +141,7 @@ nav:
     - Contributor:
         - guides/contributor/index.md
         - Writing changelogs: guides/contributor/changelog.md
+        - Build flow components: guides/contributor/build-flow-components.md
         - Contributor License Agreement: guides/contributor/cla.md
     - Reference:
         - Overview: reference/index.md
