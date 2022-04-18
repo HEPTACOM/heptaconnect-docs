@@ -110,6 +110,8 @@ nav:
         - Default utilities: guides/portal-developer/default-utilities.md
         - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
         - Upgrade: guides/portal-developer/upgrade.md
+        - Services:
+            - HttpClientContract: reference/portal-developer/service/http-client-contract.md
     - Integrator:
         - guides/integrator/index.md
         - Portals: guides/integrator/portals.md
@@ -139,6 +141,7 @@ nav:
         - guides/contributor/index.md
         - Writing changelogs: guides/contributor/changelog.md
         - Build flow components: guides/contributor/build-flow-components.md
+        - Build storage actions: guides/contributor/build-storage-actions.md
         - Contributor License Agreement: guides/contributor/cla.md
     - Reference:
         - Overview: reference/index.md
@@ -163,6 +166,7 @@ nav:
             - Optimized storage actions: reference/adr/2021-09-25-optimized-storage-actions.md
             - Flow components are not CRUD: reference/adr/2021-10-29-flow-components-are-not-crud.md
             - Route capabilities: reference/adr/2021-10-30-route-capabilities.md
+            - Code documentation: reference/adr/2022-01-05-code-documentation.md
             - SemVer with generation version: reference/adr/2022-01-24-semver-with-generation-version.md
         - Glossary: reference/glossary.md
         - License: reference/license.md
