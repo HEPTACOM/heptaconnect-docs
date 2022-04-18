@@ -22,7 +22,7 @@ There you can find an extensive explanation of all the tools at hand that you ne
 
 When you got access to your portal of choice you can now use composer to install it in your integration.
 To check whether it got recognized correctly you can check `heptaconnect:portal:list` to list all your installed portals.
-Following by that you can create portal nodes from this portal with the command `heptaconnect:portal-node:add $FQCN`.
+Following by that you can create portal nodes from this portal and assign a rememberable name with the command `heptaconnect:portal-node:add $FQCN nice_alias`.
 Learn more about [administering portal nodes in the administrator section](../administrator/portal-node.md).
 
 There are good reasons to alter the behaviour of an existing portal.

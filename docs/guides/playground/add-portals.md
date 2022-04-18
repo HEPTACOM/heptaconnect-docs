@@ -18,6 +18,5 @@ composer require -d ./shopware-platform/ example/repo
 The best commands to discover the changes within your HEPTAconnect integrated application are:
 
 * `heptaconnect:portal:list` to see your new portal
-* `heptaconnect:portal-node:add 'Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Portal'` to create a new portal node
-* `heptaconnect:support:alias:set $THE_NEW_PORTAL_NODE new_alias` to set a human-readable name to the new portal node
-* `heptaconnect:portal-node:config:set new_alias api_key` to set a portal node configuration e.g. `api_key`
+* `heptaconnect:portal-node:add 'Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Portal' nice_portal` to create a new portal node with the alias `nice_portal`
+* `heptaconnect:portal-node:config:set nice_portal api_key` to set a portal node configuration e.g. `api_key`
