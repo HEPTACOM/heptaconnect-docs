@@ -36,21 +36,19 @@ A portal can ship multiple explorers that will each publish every entity of a ce
 While this process could in theory be done manually, it is recommended to create classes implementing the ExplorerContract.
 The benefit is a better integration into automated processes of HEPTAconnect, so your exploration process can be triggered by the system rather than relying on a manual trigger.
 
-### MappingService
+### Identities
 
-To perform operations on mappings, the MappingService should be used.
-This service can save mappings to the storage and find a counterpart of a mapping for another PortalNode.
+To perform operations on mappings, various storage actions can be used depending on the exact use case:
 
-When a mapping is saved, it is written to the storage.
-If the specified MappingNode does not exist in the storage yet, it is also written to the storage.
-This is done after a mapping has been given to a receiver.
-The receiver should have given the mapping an external identifier and the MappingService then saves it to the storage.
+* `\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityMapActionInterface` used to create missing mappings for entities
+* `\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityPersistActionInterface` used to update mappings on existing mapping nodes
+
+These service can save mappings to the storage and find a counterpart of a mapping for another PortalNode.
+This is done after an identifier has been set on an entity by a receiver.
 
 The process of finding a counterpart of a mapping for another PortalNode is called reflecting.
-The MappingService will check, if the provided mapping is already persisted in the storage and if not, it will do so.
-Afterwards the service checks, if a reference mapping for the requested PortalNode already exists and if not, it will create one.
-The mapping for that PortalNode is then returned.
-It holds the external identifier of the entity inside the requested PortalNode or `null` if the mapping did not yet exist.
+The `\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityReflectActionInterface` will check, if the provided entities have known mappings in the management storage.
+Afterwards the service checks, if a reference mapping for the requested PortalNode already exists and assigns it.
 
 ### Error handling
 
