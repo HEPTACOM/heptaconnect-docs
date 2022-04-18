@@ -14,7 +14,7 @@ Any documentation can easily be forgotten to be updated.
 
 In our ticket refinement process we state right away which parts of the online documentation are likely to be affected and need to be checked.
 We add documentation at source code level.
-We add expectations to interfaces and contracts to reach API implementers and API users.
+We add expectations to interfaces and contracts to reach API providers and API consumers.
 
 
 ## Consequences

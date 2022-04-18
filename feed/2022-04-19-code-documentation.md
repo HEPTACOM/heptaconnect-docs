@@ -12,7 +12,7 @@
 - Documentation on interfaces and contracts
 
 With the release of 0.9 we started to document every interface and contract.
-This way we ensure clear communication how to use the interface as an API user and as an API implementer.
+This way we ensure clear communication how to use the interface as an API consumer and as an API provider.
 
 Adding documentation on source code is a delicate discussion topic in most developer conversations.
 We evaluated our experience with other documentations and were (and still are) really happy with the approach of the PSR composer packages.
