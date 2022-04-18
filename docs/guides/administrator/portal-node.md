@@ -34,11 +34,21 @@ The command `heptaconnect:portal-node:add` is used to instantiate a node of a sp
 bin/console heptaconnect:portal-node:add `Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Portal`
 ```
 
+It also allows to create a portal node with a rememberable alias as well:
+
+```shell
+bin/console heptaconnect:portal-node:add `Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Portal` shopware_local
+```
+
 As output of the command you will receive the created primary key of the portal node which often looks like this `PortalNode:01234567890abcdef01234567890abcd`.
-This can be used later on in other calls when you [create data routes](./routing.md) or inform yourself about [the status of a portal node](./status-reporting.md).
+The portal node key and an assigned alias can be used later on in other calls when you [create data routes](./routing.md) or inform yourself about [the status of a portal node](./status-reporting.md).
 
 
 ## How to configure portal nodes
+
+When the development team [integrated additional configuration sources](../integrator/portal-node-configuration.md) there are probably setup notes about it.
+This might invalidate some of the following samples.
+
 
 Portal nodes often need API credentials or filenames to operate.
 To read the initial configuration the command `heptaconnect:portal-node:config:get` is used.
@@ -46,6 +56,7 @@ Its output is json and can either be a single value or the complete configuratio
 
 ```shell
 bin/console heptaconnect:portal-node:config:get PortalNode:01234567890abcdef01234567890abcd --pretty`
+bin/console heptaconnect:portal-node:config:get shopware_local --pretty`
 ```
 
 ```json
@@ -58,6 +69,7 @@ or
 
 ```shell
 bin/console heptaconnect:portal-node:config:get PortalNode:01234567890abcdef01234567890abcd dal_indexing_mode`
+bin/console heptaconnect:portal-node:config:get shopware_local dal_indexing_mode`
 ```
 
 ```text
@@ -69,9 +81,10 @@ A similar command can be used to change this configuration `heptaconnect:portal-
 
 ```shell
 bin/console heptaconnect:portal-node:config:set PortalNode:01234567890abcdef01234567890abcd dal_indexing_mode queue`
+bin/console heptaconnect:portal-node:config:set shopware_local dal_indexing_mode queue`
 ```
 
-As we are using json as serialization it is convenient for automated setups.
+As we are using JSON as serialization it is convenient for automated setups.
 
 
 ### Further reading

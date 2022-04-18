@@ -4,7 +4,7 @@
 
 In case of a structural change in a dataset you might need to migrate serialized data in a way to make in work with the latest code.
 The data that is affected of the structural change can still be within a message queue provider and is often out of access until message handling.
-You could unintentionally send duplicated messages to drain performance and increase IO operations overall.
+You could unintentionally send duplicated messages to drain performance and increase I/O operations overall.
 
 
 ## Decision
@@ -17,12 +17,12 @@ You could unintentionally send duplicated messages to drain performance and incr
 
 ## Consequences
 
-This change adds a little overhead on the message dispatching but adds multiple benefits regarding upcoming structure changes and future IO operations that can be prevented.
+This change adds a little overhead on the message dispatching but adds multiple benefits regarding upcoming structure changes and future I/O operations that can be prevented.
 
 
 ### Pros
 
-* Prevention of duplicate messages reduces handler calls and follow-up IO operations.
+* Prevention of duplicate messages reduces handler calls and follow-up I/O operations.
 * Message payloads can be accessed without knowledge about the used message provider.
 * When emptying a message queue the messages can be reconstructed in a plausible order.
 * The message provider has less data to store than before.
@@ -31,7 +31,7 @@ This change adds a little overhead on the message dispatching but adds multiple 
 
 ### Cons
 
-* More IO operations have to be done when the message handlers have to hydrate the message with the payload storage before processing can be continued.
+* More I/O operations have to be done when the message handlers have to hydrate the message with the payload storage before processing can be continued.
 * It is difficult to add new job types that are not similar to the existing jobs when there is a structural mismatch.
 
 

@@ -2,7 +2,7 @@
 
 ## Context
 
-API web requests, file system access, database requests, message queue dispatches, IO interrupts, interprocess communication and similar interactions are part of any portal.
+API web requests, file system access, database requests, message queue dispatches, I/O interrupts, interprocess communication and similar interactions are part of any portal.
 The usage of these resources should be known to a certain degree for monitoring of usage compared against a usage limitation, order of calls across portal nodes and their time of action.
 
 
