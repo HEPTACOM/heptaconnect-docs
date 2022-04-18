@@ -212,7 +212,7 @@ With a modified interface, every implementation and related test needs to be adj
 Tests for the storage are defined in the `heptacom/heptaconnect-test-suite-storage` of the framework.
 This set of tests can be used by all storage implementations to test against.
 A test in the test suite is an abstract class that expects to be run by phpunit.
-To provide the implementation to test, an abstract method to provide a `\Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface` 
+To provide the implementation to test, an abstract method needs to provide an instance of `\Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface`.
 In general, you will find a lifecycle test in these tests.
 A lifecycle test is like an e2e (end to end) test, but for data.
 So we create data, query data, modify data, query data, delete data and query data again.
@@ -244,12 +244,14 @@ use Heptacom\HeptaConnect\TestSuite\Storage\Fixture\Portal\PortalB\PortalB;
 use Heptacom\HeptaConnect\TestSuite\Storage\TestCase;
 
 /**
- * Test pre-implementation to test find route related storage actions. Some other storage actions e.g. PortalNodeCreate are needed to set up test scenarios.
+ * Test pre-implementation to test find route related storage actions. Some other storage actions e.g. PortalNodeCreate
+ * are needed to set up test scenarios.
  */
 abstract class FindRouteTestContract extends TestCase
 {
     /**
-     * Validates a complete find route "lifecycle" can be managed with the storage. It covers creation, usage, configuration and deletion of routes.
+     * Validates a complete find route "lifecycle" can be managed with the storage. It covers creation, usage,
+     * configuration and deletion of routes.
      */
     public function testLifecycle(): void
     {
