@@ -27,10 +27,11 @@ FlowComponent::explorer(Media::class)
     ]);
 
 FlowComponent::emitter(Media::class)
-    ->run(static function (string $externalId, FileReferenceFactoryContract $file): Media {
+    ->run(static function (string $externalId, FileReferenceFactoryContract $fileReferenceFactory): Media {
         $result = new Media();
         $result->setPrimaryKey($externalId);
-        $result->attach($file->fromPublicUrl($externalId));
+        // externalId is a URL as used in the explorer a few lines above
+        $result->attach($fileReferenceFactory->fromPublicUrl($externalId));
         return $result;
     });
 ```
@@ -52,8 +53,8 @@ use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
 use Heptacom\HeptaConnect\Portal\Base\File\FileReferenceResolverContract;
 
 FlowComponent::receiver(Media::class)
-    ->run(static function (Media $entity, FileReferenceResolverContract $file, Client $client, bool $configUpload): void {
-        $resolvedFile = $file->resolve($entity->getAttachment(FileReferenceContract::class));
+    ->run(static function (Media $entity, FileReferenceResolverContract $fileReferenceResolver, Client $client, bool $configUpload): void {
+        $resolvedFile = $fileReferenceResolver->resolve($entity->getAttachment(FileReferenceContract::class));
         
         if ($configUpload) {
             $mediaLocation = $client->uploadBlob($resolvedFile);
@@ -130,7 +131,7 @@ class Client
         $request = $request->withHeader('Content-Type', 'application/octet-stream');
         $request = $request->withBody($this->streamFactory->createStream(
             $file->getContents()
-        ))
+        ));
         $response = $this->client->sendRequest($request);
         
         return $response->getHeaderLine('Location');
@@ -142,7 +143,7 @@ class Client
         $request = $request->withHeader('Content-Type', 'application/json');
         $request = $request->withBody($this->streamFactory->createStream(\json_encode([
             'url' => $file->getPublicUrl(),
-        ])))
+        ])));
         $response = $this->client->sendRequest($request);
         
         return $response->getHeaderLine('Location');
