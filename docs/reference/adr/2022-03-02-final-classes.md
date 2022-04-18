@@ -2,7 +2,7 @@
 
 ## Context
 
-During development, we noticed that autocompletion suggested to extend from implementations that where not meant to be extended and result in confusion for API beginners.
+During development, we noticed that autocompletion suggested to extend from implementations that were not meant to be extended and result in confusion for API beginners.
 This is a signal for bad developer experience.
 In discussions with Macro "Ocramius", who is a well known defensive programmer, we took advise from him [to use `final`](https://ocramius.github.io/extremely-defensive-php/#/90). 
 With that you will notice the `final` keyword more often, when e.g. using PSR-7 implementation from Tobias Nyholm `nyholm/psr7`, final has been recently [shifted to a PHP doc comment](https://github.com/Nyholm/psr7/blob/1.5.0/doc/final.md).  
@@ -18,13 +18,13 @@ DTOs may also be final when they implement the `Heptacom\HeptaConnect\Dataset\Ba
 
 ## Consequences
 
-We need to add evaluate every class to be final.
+We need to evaluate every class to be final.
 To support this we provide an internal phpstan test case and pay attention to its hints.
 
 
 ### Pros
 
-* We can be sure our implementations are not reused, when we don't expect
+* We can be sure our implementations are not reused, when we don't expect it
 * We have more contracts and interfaces to keep flexibility and extensibility
 
 
