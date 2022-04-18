@@ -102,7 +102,8 @@ It has an external identifier that points to the foreign entity, a `PortalNode` 
 A mapping can also exist without an external identifier when the goal is to describe the connection between a `DatasetEntity` and a `PortalNode` before the foreign entity exists in the `PortalNode`.
 In practise this is used with `Receivers` when the foreign entity is yet to be created.
 HEPTAconnect will prepare a `Mapping` with the `PortalNode` identifier and a `MappingNode` but it will leave the external identifier empty.
-After the `Receiver` finished its reception, any stored identifier as external identifier to an entity e.g. after storing it in the connecting API, the management storage will store these external identifiers as mapping.
+During a reception taking place in a `Receiver` the entities receive primary keys after they've been sent to the portal's  API.
+After the `Receiver` finished its reception, any assigned primary key is passed to the management storage, which will store these external identifiers as mapping.
 
 ### MappingNode
 
