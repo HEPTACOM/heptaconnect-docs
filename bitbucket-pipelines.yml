@@ -51,6 +51,12 @@ definitions:
                     - git push --force github gh-pages
                     - git checkout --track origin/master
                     - git push --force github master
+        -   step: &clear-cache
+                <<: *default
+                name: Clear hosting cache
+                script:
+                    - |
+                        curl -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H "Content-Type: application/json" --data '{"purge_everything":true}'
 
 pipelines:
     branches:
@@ -66,6 +72,7 @@ pipelines:
                     <<: *publish-docs
                     deployment: production
                     trigger: manual
+            -   step: *clear-cache
     pull-requests:
         '**':
             -   step: *build-docs
