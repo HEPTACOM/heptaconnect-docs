@@ -111,6 +111,8 @@ nav:
         - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
         - Upgrade: guides/portal-developer/upgrade.md
         - File references: guides/portal-developer/file-reference.md
+        - Patterns: # TODO soon to be moved into patterns listing
+            - Transfer file reference by public URL: guides/portal-developer/patterns/transfer-file-reference-by-public-url.md
         - Services:
             - HttpClientContract: reference/portal-developer/service/http-client-contract.md
     - Integrator:
@@ -169,6 +171,7 @@ nav:
             - Route capabilities: reference/adr/2021-10-30-route-capabilities.md
             - Code documentation: reference/adr/2022-01-05-code-documentation.md
             - SemVer with generation version: reference/adr/2022-01-24-semver-with-generation-version.md
+            - Final classes: reference/adr/2022-03-02-final-classes.md
         - Glossary: reference/glossary.md
         - License: reference/license.md
     - News:
