@@ -54,11 +54,33 @@ definitions:
         -   step: &clear-cache
                 clone:
                     enabled: false
-                image: curlimages/curl:7.82.0
+                image: curlimages/curl:latest
                 name: Clear hosting cache
                 script:
                     - |
                         curl -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H "Content-Type: application/json" --data '{"purge_everything":true}'
+        -   step: &validate-feed
+                clone:
+                    enabled: false
+                image: curlimages/curl:latest
+                name: Validate RSS2 Feed
+                artifacts:
+                    - 'feed-test/**'
+                script:
+                    - apk add --update --no-cache grep wc
+                    - 'test -d feed-test || mkdir feed-test'
+                    - |
+                        curl -X POST https://validator.w3.org/feed/check.cgi -H 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'manual=0' --data-urlencode "rawdata=$(cat ./site/news/rss2.xml)" --output feed-test/rss2.html
+                        curl -X POST https://validator.w3.org/feed/check.cgi -H 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'manual=0' --data-urlencode "rawdata=$(cat ./site/news/atom1.xml)" --output feed-test/atom1.html
+                    - test $(grep 'feed-test/rss2.html' -e 'This is a valid RSS feed' | wc -l) -eq 0 || exit 1
+                    - test $(grep 'feed-test/rss2.html' -e 'Recommendations' | wc -l) -eq 0 || exit 2
+                    - test $(grep 'feed-test/atom1.html' -e 'This is a valid Atom 1.0 feed' | wc -l) -eq 0 || exit 3
+                    - test $(grep 'feed-test/atom1.html' -e 'Recommendations' | wc -l) -eq 0 || exit 4
+                after-script:
+                    - test ${BITBUCKET_EXIT_CODE} -eq 1 && echo 'The RSS2 feed is not valid. Inspect the attached feed-test/rss2.html test result'
+                    - test ${BITBUCKET_EXIT_CODE} -eq 2 && echo 'The RSS2 feed is valid but has recommendations. Inspect the attached feed-test/rss2.html test result'
+                    - test ${BITBUCKET_EXIT_CODE} -eq 3 && echo 'The Atom1 feed is not valid. Inspect the attached feed-test/atom1.html test result'
+                    - test ${BITBUCKET_EXIT_CODE} -eq 4 && echo 'The Atom1 feed is valid but has recommendations. Inspect the attached feed-test/atom1.html test result'
 
 pipelines:
     branches:
@@ -78,3 +100,4 @@ pipelines:
     pull-requests:
         '**':
             -   step: *build-docs
+            -   step: *validate-feed
