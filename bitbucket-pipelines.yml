@@ -71,8 +71,8 @@ definitions:
                     - |
                         curl -X POST https://validator.w3.org/feed/check.cgi -H 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'manual=0' --data-urlencode "rawdata=$(cat ./site/news/rss2.xml)" --output feed-test/rss2-pre.html
                         curl -X POST https://validator.w3.org/feed/check.cgi -H 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'manual=0' --data-urlencode "rawdata=$(cat ./site/news/atom1.xml)" --output feed-test/atom1-pre.html
-                    - cat feed-test/rss2-pre.html | sed 's#<head>#<head><base href=\\"https://validator.w3.org/feed/\\">#' > feed-test/rss2.html
-                    - cat feed-test/atom1-pre.html | sed 's#<head>#<head><base href=\\"https://validator.w3.org/feed/\\">#' > feed-test/atom1.html
+                    - cat feed-test/rss2-pre.html | sed 's#<head>#<head><base href="https://validator.w3.org/feed/">#' > feed-test/rss2.html
+                    - cat feed-test/atom1-pre.html | sed 's#<head>#<head><base href="https://validator.w3.org/feed/">#' > feed-test/atom1.html
                     - rm feed-test/rss2-pre.html
                     - rm feed-test/atom1-pre.html
                     - |
