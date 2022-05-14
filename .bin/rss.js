@@ -40,6 +40,10 @@ const rss = new Feed({
     author: {
         name: 'HEPTACOM GmbH',
         link: 'https://www.heptacom.de'
+    },
+    feedLinks: {
+        atom: `https://${domain}/news/atom1.xml`,
+        rss: `https://${domain}/news/rss2.xml`
     }
 });
 
