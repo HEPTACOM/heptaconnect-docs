@@ -31,7 +31,7 @@ Portals
 The command `heptaconnect:portal-node:add` is used to instantiate a node of a specific portal.
 
 ```shell
-bin/console heptaconnect:portal-node:add `Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Portal`
+bin/console heptaconnect:portal-node:add 'Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Portal'
 ```
 
 It also allows to create a portal node with a rememberable alias as well:
