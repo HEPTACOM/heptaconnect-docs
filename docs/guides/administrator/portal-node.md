@@ -55,8 +55,8 @@ To read the initial configuration the command `heptaconnect:portal-node:config:g
 Its output is json and can either be a single value or the complete configuration set:
 
 ```shell
-bin/console heptaconnect:portal-node:config:get PortalNode:01234567890abcdef01234567890abcd --pretty`
-bin/console heptaconnect:portal-node:config:get shopware_local --pretty`
+bin/console heptaconnect:portal-node:config:get PortalNode:01234567890abcdef01234567890abcd --pretty
+bin/console heptaconnect:portal-node:config:get shopware_local --pretty
 ```
 
 ```json
