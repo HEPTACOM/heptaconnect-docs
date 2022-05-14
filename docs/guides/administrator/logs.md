@@ -48,7 +48,7 @@ Log files contain timestamps, log level, component names (e.g. EmitterStackBuild
 Depending on the message you have additional context like primary keys.
 When a log message is issued from a portal the message is prefix with the portal node key (aliases are supported).
 Unique log message are part of the error origin finding process.
-You can read more in a [news entry](https://heptaconnect.io/news/2022-05-17-exception-and-log-message-codes/) and [this ADR](../../reference/adr/2021-09-06-exception-and-log-message-codes.md) about it.
+You can read more in a [news entry](/news/2022-05-17-exception-and-log-message-codes/) and [this ADR](../../reference/adr/2021-09-06-exception-and-log-message-codes.md) about it.
 
 
 ### Database

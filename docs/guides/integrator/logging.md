@@ -13,7 +13,7 @@ Integrations should specify a hosting-optimized logging facility that e.g. are s
 All our currently available [bridges](./bridges.md) ship with the [monolog library](https://seldaek.github.io/monolog/) which allows for a quick setup for alternative logging providers.
 When changing the logging facility you should document it properly so the administrator of your project can set up accordingly with the related [administration guide](../administrator/logs.md).
 Log messages frequently contain unique codes that point to the origin of a message or an exception.
-You can read more about them in a [news entry](https://heptaconnect.io/news/2022-05-17-exception-and-log-message-codes/) and [this ADR](../../reference/adr/2021-09-06-exception-and-log-message-codes.md).
+You can read more about them in a [news entry](/news/2022-05-17-exception-and-log-message-codes/) and [this ADR](../../reference/adr/2021-09-06-exception-and-log-message-codes.md).
 
 
 ## Sample configurations
