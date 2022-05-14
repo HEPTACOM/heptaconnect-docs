@@ -2,11 +2,11 @@
 
 ## Context
 
-Making log message that help is difficult for various reason.
-You can not be sure which role persona will read them (either administrator, integrator or portal developer).
+Making log messages that are helpful is difficult for various reason.
+You can not be sure which persona will read them (either administrator, integrator or portal developer).
 Therefore, phrasing a good message takes additional thoughts.
 Log messages in general just have a single line of text and some human-readable metadata that are crammed into the same line of text.
-This little space sometimes let out some data that are crucial to find the reason of an error log message.
+Sometimes crucial data is left out of a log message.
 Most log messages are written when an exception is caught.
 Exceptions can have integer codes assigned.
 Exception codes are set on construction, which is in almost all cases the moment they are thrown.
@@ -14,12 +14,11 @@ Exception codes are set on construction, which is in almost all cases the moment
 
 ## Decision
 
-Exception stack traces are too big for log messages.
-So we need to refer to them in a different way.
-When we pass a unique code to the exception constructor, we can identify the source code that triggers the exception very easy.
+Exception stack traces are too big for log messages, so we need to refer to them in a different way.
+When we pass a unique code to the exception constructor, we can identify the source code that triggers the exception immediately.
 This makes exception codes a good alternative to stack traces.
-Every log message, that is not related to catching an exception, has no code from an exception.
-These message can benefit from a code that is structured the same to identify their origin.
+There are also log message written without the situation to log an exception.
+These message have no code from an exception but can benefit from a code to identify their origin as well.
 Exception codes and log message codes need documentation with a class reference and a reason for occurrence to supply information for an administrator and a developer.
 
 
@@ -34,5 +33,5 @@ Exception codes and log message codes need documentation with a class reference 
 
 ### Cons
 
-* Codes are public API
+* A small changes like adding a log message is handled with additional complexity in a release
 * More documentation needs to be written
