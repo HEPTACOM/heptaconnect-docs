@@ -76,29 +76,34 @@ definitions:
                     - rm feed-test/rss2-pre.html
                     - rm feed-test/atom1-pre.html
                     - |
-                        if [[ $(grep 'feed-test/rss2.html' -e 'This is a valid RSS feed' | wc -l) -eq 1 ]]; then
+                        if ! grep 'feed-test/rss2.html' -e 'This is a valid RSS feed'; then
                             echo 'The RSS2 feed is not valid. Inspect the attached feed-test/rss2.html test result'
                             exit 1
                         fi
                     - |
-                        if [[ $(grep 'feed-test/rss2.html' -e 'Recommendations' | wc -l) -eq 0 ]]; then
+                        if grep 'feed-test/rss2.html' -e 'Recommendations'; then
                             echo 'The RSS2 feed is valid but has recommendations. Inspect the attached feed-test/rss2.html test result'
 
-                            if [[ $(grep 'feed-test/rss2.html' -e 'href="docs/' | grep -v 'docs/warning/SelfDoesntMatchLocation.html' | wc -l) -eq 0 ]]; then
-                                echo 'Only self link recommendation has been found. We are cool with this.'
-                            else
+                            if grep 'feed-test/rss2.html' -e 'href="docs/' | grep -v 'docs/warning/SelfDoesntMatchLocation.html' | grep -v 'href="docs/"'; then
                                 exit 2
+                            else
+                                echo 'Only self link recommendation has been found. We are cool with this.'
                             fi
                         fi
                     - |
-                        if [[ $(grep 'feed-test/atom1.html' -e 'This is a valid Atom 1.0 feed' | wc -l) -eq 1 ]]; then
+                        if ! grep 'feed-test/atom1.html' -e 'This is a valid Atom 1.0 feed'; then
                             echo 'The Atom1 feed is not valid. Inspect the attached feed-test/atom1.html test result'
                             exit 3
                         fi
                     - |
-                        if [[ $(grep 'feed-test/atom1.html' -e 'Recommendations' | wc -l) -eq 0 ]]; then
+                        if grep 'feed-test/atom1.html' -e 'Recommendations'; then
                             echo 'The Atom1 feed is valid but has recommendations. Inspect the attached feed-test/atom1.html test result'
-                            exit 4
+
+                            if grep 'feed-test/atom1.html' -e 'href="docs/' | grep -v 'docs/warning/SelfDoesntMatchLocation.html' | grep -v 'href="docs/"'; then
+                                exit 4
+                            else
+                                echo 'Only self link recommendation has been found. We are cool with this.'
+                            fi
                         fi
 
 pipelines:
