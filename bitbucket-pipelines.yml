@@ -84,10 +84,10 @@ definitions:
                         if grep 'feed-test/rss2.html' -e 'Recommendations'; then
                             echo 'The RSS2 feed is valid but has recommendations. Inspect the attached feed-test/rss2.html test result'
 
-                            if grep 'feed-test/rss2.html' -e 'href="docs/' | grep -v 'docs/warning/SelfDoesntMatchLocation.html' | grep -v 'href="docs/"'; then
+                            if grep 'feed-test/rss2.html' -e 'href="docs/' | grep -v 'docs/warning/SelfDoesntMatchLocation.html' | grep -v 'docs/warning/ImplausibleDate.html' | grep -v 'href="docs/"'; then
                                 exit 2
                             else
-                                echo 'Only self link recommendation has been found. We are cool with this.'
+                                echo 'Only "self link" or "date in future" recommendation has been found. We are cool with this.'
                             fi
                         fi
                     - |
@@ -99,10 +99,10 @@ definitions:
                         if grep 'feed-test/atom1.html' -e 'Recommendations'; then
                             echo 'The Atom1 feed is valid but has recommendations. Inspect the attached feed-test/atom1.html test result'
 
-                            if grep 'feed-test/atom1.html' -e 'href="docs/' | grep -v 'docs/warning/SelfDoesntMatchLocation.html' | grep -v 'href="docs/"'; then
+                            if grep 'feed-test/atom1.html' -e 'href="docs/' | grep -v 'docs/warning/SelfDoesntMatchLocation.html' | grep -v 'docs/warning/ImplausibleDate.html' | grep -v 'href="docs/"'; then
                                 exit 4
                             else
-                                echo 'Only self link recommendation has been found. We are cool with this.'
+                                echo 'Only "self link" or "date in future" recommendation has been found. We are cool with this.'
                             fi
                         fi
 
