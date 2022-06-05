@@ -91,6 +91,6 @@ FlowComponent::explorer(Media::class, function (
 
 We recommend to avoid using the source type "File contents", because it leads to I/O operations and preventing those will greatly improve performance.
 In an effort to prevent usages of "File contents" and therefore improve performance, you can utilize **HTTP handlers** to tunnel file downloads through HEPTAconnect.
-The idea is to generate a URL with a secret token to be used as "Public URL" file source.
+The idea is to generate a URL to be used as "Public URL" file source.
 This URL points to an HTTP handler that will perform the file download and return its contents as its response body.
-Take a look at the new article [Send files from an FTP server without any intermediate storage](https://heptaconnect.io/guides/portal-developer/patterns/transfer-files-from-ftp-server/) to learn more about this topic and see our example code.
+Take a look at the new article [Send files from an FTP server](https://heptaconnect.io/guides/portal-developer/patterns/transfer-files-from-ftp-server/) to learn more about this topic and see our example code.

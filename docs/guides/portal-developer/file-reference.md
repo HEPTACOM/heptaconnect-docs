@@ -38,4 +38,4 @@ To create a file reference by content, this method has to be used: `\Heptacom\He
 ## Patterns
 
 - [Transfer file reference by public URLs](patterns/transfer-file-reference-by-public-url.md)
-- [Send files from an FTP server without any intermediate storage](patterns/transfer-files-from-ftp-server.md)
+- [Send files from an FTP server](patterns/transfer-files-from-ftp-server.md)

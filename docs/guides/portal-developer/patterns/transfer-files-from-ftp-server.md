@@ -1,32 +1,12 @@
-# Send files from an FTP server without any intermediate storage
+# Send files from an FTP server
 
-With the release of **version 0.9** we introduced a new feature for portals to efficiently transfer files from various sources.
-Prior to this version a file-transfer typically required to store files in an intermediate storage.
-Consequently, a file-transfer always required I/O operations and caused a gradually growing storage size.
-With **FileReferences** it is now possible to send files from three different sources and I/O operations are only performed if there is no way around it.
-The available source types are:
-
-1. Public URL
-    - An HTTP request with the GET method will be responded with the file contents.
-      No authentication will be performed.
-2. HTTP Request
-    - This HTTP request will be responded with the file contents.
-      Every aspect of the request can be customized.
-3. File contents
-    - The raw file contents are provided directly.
-      This is the only source that leads to I/O operations in the intermediate storage.
-
-Our goal with these available source types is to minimize I/O operations and thus improve performance of file-transfers.
-You should only use "File contents" if there is no other option for your case.
-
-While this design is very versatile, it falls short in support of some common file sources.
-This article will focus on files from an FTP server, but your file source can really be anything.
+This pattern will focus on files from an FTP server, but your file source can really be anything.
 Let's assume the following problem:
 
 > A PIM system acts as your data source for products and this PIM also holds product images.
 > These product images are stored on an FTP server and the PIM only provides you with their file paths on this FTP server.
 
-Files on an FTP server are not accessable via HTTP, so we cannot use the source types "Public URL" or "HTTP request".
+Files on an FTP server are not accessible via HTTP, so we cannot use the source types "Public URL" or "HTTP request".
 So it seems, this leaves us with "File contents" as our last resort.
 But this would mean that files are downloaded from the FTP server to an intermediate storage and are later loaded from this intermediate storage to be sent to some destination.
 
