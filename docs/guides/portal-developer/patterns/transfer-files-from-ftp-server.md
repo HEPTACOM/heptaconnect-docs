@@ -2,7 +2,7 @@
 
 With the release of **version 0.9** we introduced a new feature for portals to efficiently transfer files from various sources.
 Prior to this version a file-transfer typically required to store files in an intermediate storage.
-Consequently a file-transfer always required I/O operations and caused a gradually growing storage size.
+Consequently, a file-transfer always required I/O operations and caused a gradually growing storage size.
 With **FileReferences** it is now possible to send files from three different sources and I/O operations are only performed if there is no way around it.
 The available source types are:
 
