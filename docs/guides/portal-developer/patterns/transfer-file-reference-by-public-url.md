@@ -31,7 +31,7 @@ FlowComponent::emitter(Media::class)
         $result = new Media();
         $result->setPrimaryKey($externalId);
         // externalId is a URL as used in the explorer a few lines above
-        $result->attach($fileReferenceFactory->fromPublicUrl($externalId));
+        $result->setFile($fileReferenceFactory->fromPublicUrl($externalId));
         return $result;
     });
 ```
@@ -54,7 +54,7 @@ use Heptacom\HeptaConnect\Portal\Base\File\FileReferenceResolverContract;
 
 FlowComponent::receiver(Media::class)
     ->run(static function (Media $entity, FileReferenceResolverContract $fileReferenceResolver, Client $client, bool $configUpload): void {
-        $resolvedFile = $fileReferenceResolver->resolve($entity->getAttachment(FileReferenceContract::class));
+        $resolvedFile = $fileReferenceResolver->resolve($entity->getFile());
         
         if ($configUpload) {
             $mediaLocation = $client->uploadBlob($resolvedFile);
