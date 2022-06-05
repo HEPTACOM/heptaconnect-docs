@@ -110,10 +110,11 @@ nav:
         - Default utilities: guides/portal-developer/default-utilities.md
         - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
         - Upgrade: guides/portal-developer/upgrade.md
+        - File references: guides/portal-developer/file-reference.md
+        - Patterns: # TODO soon to be moved into patterns listing
+            - Transfer file reference by public URL: guides/portal-developer/patterns/transfer-file-reference-by-public-url.md
         - Services:
             - HttpClientContract: reference/portal-developer/service/http-client-contract.md
-        - Patterns:
-            - File reference for public URLs: how-to/portal-developer/file-reference-public-url.md
     - Integrator:
         - guides/integrator/index.md
         - Portals: guides/integrator/portals.md
@@ -165,11 +166,13 @@ nav:
             - Portal dependency injection implementation: reference/adr/2021-04-13-portal-dependency-injection-implementation.md
             - Flow component short notation: reference/adr/2021-06-17-flow-component-short-notation.md
             - PHP 8.0 named arguments: reference/adr/2021-08-24-php-8-named-arguments.md
+            - Exception and log message codes: reference/adr/2021-09-06-exception-and-log-message-codes.md
             - Optimized storage actions: reference/adr/2021-09-25-optimized-storage-actions.md
             - Flow components are not CRUD: reference/adr/2021-10-29-flow-components-are-not-crud.md
             - Route capabilities: reference/adr/2021-10-30-route-capabilities.md
             - Code documentation: reference/adr/2022-01-05-code-documentation.md
             - SemVer with generation version: reference/adr/2022-01-24-semver-with-generation-version.md
+            - Final classes: reference/adr/2022-03-02-final-classes.md
         - Glossary: reference/glossary.md
         - License: reference/license.md
     - News:

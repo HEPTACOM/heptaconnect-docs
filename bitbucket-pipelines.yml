@@ -51,6 +51,60 @@ definitions:
                     - git push --force github gh-pages
                     - git checkout --track origin/master
                     - git push --force github master
+        -   step: &clear-cache
+                clone:
+                    enabled: false
+                image: curlimages/curl:latest
+                name: Clear hosting cache
+                script:
+                    - |
+                        curl -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H "Content-Type: application/json" --data '{"purge_everything":true}'
+        -   step: &validate-feed
+                clone:
+                    enabled: false
+                image: curlimages/curl:latest
+                name: Validate RSS2 and Atom1 Feed
+                artifacts:
+                    - 'feed-test/**'
+                script:
+                    - test -d feed-test || mkdir feed-test
+                    - |
+                        curl -X POST https://validator.w3.org/feed/check.cgi -H 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'manual=0' --data-urlencode "rawdata=$(cat ./site/news/rss2.xml)" --output feed-test/rss2-pre.html
+                        curl -X POST https://validator.w3.org/feed/check.cgi -H 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'manual=0' --data-urlencode "rawdata=$(cat ./site/news/atom1.xml)" --output feed-test/atom1-pre.html
+                    - cat feed-test/rss2-pre.html | sed 's#<head>#<head><base href="https://validator.w3.org/feed/">#' > feed-test/rss2.html
+                    - cat feed-test/atom1-pre.html | sed 's#<head>#<head><base href="https://validator.w3.org/feed/">#' > feed-test/atom1.html
+                    - rm feed-test/rss2-pre.html
+                    - rm feed-test/atom1-pre.html
+                    - |
+                        if ! grep 'feed-test/rss2.html' -e 'This is a valid RSS feed'; then
+                            echo 'The RSS2 feed is not valid. Inspect the attached feed-test/rss2.html test result'
+                            exit 1
+                        fi
+                    - |
+                        if grep 'feed-test/rss2.html' -e 'Recommendations'; then
+                            echo 'The RSS2 feed is valid but has recommendations. Inspect the attached feed-test/rss2.html test result'
+
+                            if grep 'feed-test/rss2.html' -e 'href="docs/' | grep -v 'docs/warning/SelfDoesntMatchLocation.html' | grep -v 'docs/warning/ImplausibleDate.html' | grep -v 'href="docs/"'; then
+                                exit 2
+                            else
+                                echo 'Only "self link" or "date in future" recommendation has been found. We are cool with this.'
+                            fi
+                        fi
+                    - |
+                        if ! grep 'feed-test/atom1.html' -e 'This is a valid Atom 1.0 feed'; then
+                            echo 'The Atom1 feed is not valid. Inspect the attached feed-test/atom1.html test result'
+                            exit 3
+                        fi
+                    - |
+                        if grep 'feed-test/atom1.html' -e 'Recommendations'; then
+                            echo 'The Atom1 feed is valid but has recommendations. Inspect the attached feed-test/atom1.html test result'
+
+                            if grep 'feed-test/atom1.html' -e 'href="docs/' | grep -v 'docs/warning/SelfDoesntMatchLocation.html' | grep -v 'docs/warning/ImplausibleDate.html' | grep -v 'href="docs/"'; then
+                                exit 4
+                            else
+                                echo 'Only "self link" or "date in future" recommendation has been found. We are cool with this.'
+                            fi
+                        fi
 
 pipelines:
     branches:
@@ -66,6 +120,8 @@ pipelines:
                     <<: *publish-docs
                     deployment: production
                     trigger: manual
+            -   step: *clear-cache
     pull-requests:
         '**':
             -   step: *build-docs
+            -   step: *validate-feed

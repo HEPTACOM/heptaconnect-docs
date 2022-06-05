@@ -141,8 +141,8 @@ A service that resolves HTTP handler path names into absolute URLs.
 
 > Heptacom\HeptaConnect\Portal\Base\File\FileReferenceFactoryContract
 
-A service that resolves HTTP requests to get files, raw content of a file and public URLs to files into a file reference to process for a receiving portal.
-See usage [here](../../how-to/portal-developer/file-reference-public-url.md).
+A service that stores HTTP requests to get files, raw content of a file and public URLs to files into a file reference to process for a receiving portal.
+See usage [here](patterns/transfer-file-reference-by-public-url.md).
 
 
 ### FileReferenceResolverContract
@@ -150,4 +150,4 @@ See usage [here](../../how-to/portal-developer/file-reference-public-url.md).
 > Heptacom\HeptaConnect\Portal\Base\File\FileReferenceResolverContract
 
 A service that resolves a file reference created by [`Heptacom\HeptaConnect\Portal\Base\File\FileReferenceFactoryContract`](#filereferencefactorycontract) into an accessor to the underlying referenced file content or a public URL to access this file content.
-See usage [here](../../how-to/portal-developer/file-reference-public-url.md).
+See usage [here](patterns/transfer-file-reference-by-public-url.md).

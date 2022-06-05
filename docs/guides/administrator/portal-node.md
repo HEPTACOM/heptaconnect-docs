@@ -31,7 +31,7 @@ Portals
 The command `heptaconnect:portal-node:add` is used to instantiate a node of a specific portal.
 
 ```shell
-bin/console heptaconnect:portal-node:add `Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Portal`
+bin/console heptaconnect:portal-node:add 'Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Portal'
 ```
 
 It also allows to create a portal node with a rememberable alias as well:
@@ -55,8 +55,8 @@ To read the initial configuration the command `heptaconnect:portal-node:config:g
 Its output is json and can either be a single value or the complete configuration set:
 
 ```shell
-bin/console heptaconnect:portal-node:config:get PortalNode:01234567890abcdef01234567890abcd --pretty`
-bin/console heptaconnect:portal-node:config:get shopware_local --pretty`
+bin/console heptaconnect:portal-node:config:get PortalNode:01234567890abcdef01234567890abcd --pretty
+bin/console heptaconnect:portal-node:config:get shopware_local --pretty
 ```
 
 ```json

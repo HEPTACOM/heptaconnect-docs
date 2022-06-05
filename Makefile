@@ -8,7 +8,8 @@ REPOS = heptaconnect-bridge-shopware-platform \
 		heptaconnect-portal-base \
 		heptaconnect-portal-local-shopware-platform \
 		heptaconnect-storage-base \
-		heptaconnect-storage-shopware-dal
+		heptaconnect-storage-shopware-dal \
+		heptaconnect-test-suite-storage
 
 ifndef MKDOCS
 	# MKDOCS := docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material
@@ -82,13 +83,12 @@ overrides/partials/github.json: $(GENERATED_DATA_DIR)
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-dataset-base.json https://api.github.com/repos/HEPTACOM/heptaconnect-dataset-base
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-dataset-ecommerce.json https://api.github.com/repos/HEPTACOM/heptaconnect-dataset-ecommerce
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-docs.json https://api.github.com/repos/HEPTACOM/heptaconnect-docs
-	$(CURL) -o ${GENERATED_DATA_DIR}/github-lib-sdk.json https://api.github.com/repos/HEPTACOM/heptaconnect-lib-sdk
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-playground.json https://api.github.com/repos/HEPTACOM/heptaconnect-playground
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-portal-base.json https://api.github.com/repos/HEPTACOM/heptaconnect-portal-base
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-portal-local-shopware-platform.json https://api.github.com/repos/HEPTACOM/heptaconnect-portal-local-shopware-platform
-	$(CURL) -o ${GENERATED_DATA_DIR}/github-sdk.json https://api.github.com/repos/HEPTACOM/heptaconnect-sdk
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-storage-base.json https://api.github.com/repos/HEPTACOM/heptaconnect-storage-base
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-storage-shopware-dal.json https://api.github.com/repos/HEPTACOM/heptaconnect-storage-shopware-dal
+	$(CURL) -o ${GENERATED_DATA_DIR}/github-test-suite-storage.json https://api.github.com/repos/HEPTACOM/heptaconnect-test-suite-storage
 	$(JQ) -s '{ stars: [ .[].stargazers_count ] | add, forks: [ .[].forks ] | add, repositories: . | length }' ${GENERATED_DATA_DIR}/github-*.json > overrides/partials/github.json
 
 assets/css/vendor/highlight.js/atom-one-dark.min.css:
