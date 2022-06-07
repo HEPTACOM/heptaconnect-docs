@@ -113,6 +113,7 @@ nav:
         - File references: guides/portal-developer/file-reference.md
         - Patterns: # TODO soon to be moved into patterns listing
             - Transfer file reference by public URL: guides/portal-developer/patterns/transfer-file-reference-by-public-url.md
+            - Send files from an FTP server: guides/portal-developer/patterns/transfer-files-from-ftp-server.md
         - Services:
             - HttpClientContract: reference/portal-developer/service/http-client-contract.md
     - Integrator:
