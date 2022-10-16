@@ -8,20 +8,20 @@ To provide features like this for multiple HTTP requests, you can use these midd
 
 ## Intention
 
-With more and more different API calls an HTTP Client is used to do certain tasks, shared code will occur.
-Authenticated session handling is a common case, that can be solved by wrapping each request sending, to initialize a session by authentication and recover sessions on expiration.
-Here are coming the HTTP Client Middlewares into play.
+Shared code will occur with more and more different API calls an HTTP Client is used for.
+Authenticated session handling is a common case, that can be solved by wrapping each sending of a request and ensure to use an authenticated session identifier.
+This is where the HTTP Client Middlewares come into play.
 
-Intercepting outgoing HTTP requests is already simplified, when using the shipped [HTTP Client](../../reference/portal-developer/service/http-client-contract.md), or defining a decorator for the [`PSR-18`](https://www.php-fig.org/psr/psr-18/).
+Intercepting outbound HTTP requests is already simplified, when using the shipped [HTTP Client](../../reference/portal-developer/service/http-client-contract.md), or defining a decorator for the [`PSR-18`](https://www.php-fig.org/psr/psr-18/) HTTP Client.
 With this HTTP Client Middleware it is simpler to build decorations around the HTTP Client as only a single file is needed with less potential to do it wrong.
-The underlying interface is similar to the [`PSR-15`](https://www.php-fig.org/psr/psr-15/) middleware interface but for outgoing HTTP requests.
+The underlying interface is similar to the [`PSR-15`](https://www.php-fig.org/psr/psr-15/) middleware interface but for outbound HTTP requests.
 
 
 ## Usage
 
 Services of type `\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpClientMiddlewareInterface` will automatically get the service tag `heptaconnect.http.client.middleware`.
 All services with the tag `heptaconnect.http.client.middleware` will be executed for each request, that is sent by the `Psr\Http\Client\ClientInterface` service.
-By adding a file to your code like the following will be sufficient to add a "portal node"-wide place to add reoccurring tasks for your HTTP clients like e.g. profiling:
+Adding a single file to your code will be sufficient for reoccurring tasks of your HTTP client like the following example for profiling:
 
 
 ```php
@@ -31,7 +31,7 @@ use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-final class OutboundHttpProfilerMiddleware implements HttpClientMiddlewareInterface
+final class ProfilerMiddleware implements HttpClientMiddlewareInterface
 {
     private ProfilerContract $profiler;
 

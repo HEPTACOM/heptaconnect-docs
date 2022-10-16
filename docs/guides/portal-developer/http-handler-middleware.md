@@ -3,7 +3,7 @@
 > Since heptacom/heptaconnect-portal-base: 0.9.2
 
 A portal can respond to an HTTP request using [HTTP Handlers](./http-handler.md).
-To provide features for multiple HTTP handler, you can use these middlewares.
+To provide features for multiple HTTP handlers, you can use these middlewares.
 
 
 ## Intention
@@ -17,7 +17,7 @@ With HTTP middlewares known from [`PSR-15`](https://www.php-fig.org/psr/psr-15/)
 
 Services of type `\Psr\Http\Server\MiddlewareInterface` will automatically get the service tag `heptaconnect.http.handler.middleware`.
 All services with the tag `heptaconnect.http.handler.middleware` will be executed before an [HTTP Handler](./http-handler.md) will receive the request.
-By adding a file to your code like the following will be sufficient to add a "portal node"-wide place to add reoccurring tasks for your HTTP handlers like e.g. profiling:
+Adding a single file to your code will be sufficient for reoccurring tasks of your HTTP handlers like the following example for profiling:
 
 
 ```php
@@ -30,14 +30,21 @@ use Psr\Http\Server\RequestHandlerInterface;
 final class ProfilerMiddleware implements MiddlewareInterface
 {
     private ProfilerContract $profiler;
+    
+    private bool $profilingEnabled;
 
-    public function __construct(ProfilerContract $profiler)
+    public function __construct(ProfilerContract $profiler, bool $configProfilingEnabled)
     {
         $this->profiler = $profiler;
+        $this->profilingEnabled = $configProfilingEnabled;
     }
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
+        if (!$this->profilingEnabled) {
+            return $handler->handle($request);
+        }
+    
         $this->profiler->start(\sprintf('http handler %s %s', $request->getMethod(), $request->getUri()));
 
         try {
