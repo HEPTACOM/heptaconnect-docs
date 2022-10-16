@@ -102,3 +102,9 @@ There are several ways how to access the HTTP handlers endpoint.
 One set of tools are available on the commandline and are explained in the [administrator section for HTTP APIs](../administrator/http-apis.md). 
 Within the [utility services](./default-utilities.md#httphandlerurlproviderinterface) there is `\Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerUrlProviderInterface` that can resolve an HTTP handler name into an absolute URL.
 There is also an [HTTP client](./default-utilities.md#clientinterface) that implements `\Psr\Http\Client\ClientInterface` defined in [`PSR-18`](https://www.php-fig.org/psr/psr-18/) which can be used to post the resolved URL to an external API to register the HTTP handler e.g. as webhook for events.
+
+
+## Sharing code between handlers
+
+With more and more implementations of HTTP handlers, shared code will occur.
+To use same code for multiple HTTP handlers you can use [HTTP Handler Middlewares](./http-handler-middleware.md). 
