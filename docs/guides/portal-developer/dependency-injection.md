@@ -96,7 +96,7 @@ Eventually it is a similar way to the constructor as the logger is set right aft
 ### Auto-binding
 
 The following is an example about accessing files.
-For this scenario an instance of `\League\Flysystem\FilesystemInterface` is needed to access the files of the portal node and a configuration entry for the filename to be read from.
+For this scenario an instance of `\Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface` is needed to access the files of the portal node and a configuration entry for the filename to be read from.
 
 At first the portal definition states the `filename` as configuration:
 
@@ -122,23 +122,20 @@ The next snippet shows a service that will act as a centralized component to acc
 ```php
 namespace FooBar\Service;
 
-use League\Flysystem\FilesystemInterface;
+use Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface;
 
 class File
 {
-    private FilesystemInterface $filesystem;
-    
-    private string $configFilename;
+    private string $filename;
     
     public function __construct(FilesystemInterface $filesystem, string $configFilename)
     {
-        $this->filesystem = $filesystem;
-        $this->configFilename = $configFilename;
+        $this->filename = $filesystem->toStoragePath($configFilename);
     }
     
     public function readAll(): array
     {
-        return (array) \json_decode($this->filesystem->read($this->configFilename) ?: '[]');
+        return (array) json_decode(file_get_contents($this->filename)) ?: '[]');
     }
 }
 ```
@@ -167,11 +164,7 @@ class HealthStatusReporter extends StatusReporterContract
 
     protected function run(StatusReportingContextInterface $context): array
     {
-        if ($context->getContainer()->has(LoggerInterface::class)) {        
-            $logger = $context->getContainer()->get(LoggerInterface::class);
-
-            $logger->warning('The status reporter has been called.');    
-        }
+        $context->getLogger()->warning('The status reporter has been called.');    
 
         return [$this->supportsTopic() => true];
     }
