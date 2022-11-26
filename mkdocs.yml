@@ -120,6 +120,7 @@ nav:
             - List files from filesystem: guides/portal-developer/patterns/list-files-from-filesystem.md
             - Serve a file from filesystem using HTTP handler: guides/portal-developer/patterns/serve-file-from-filesystem-using-http-handler.md
         - Services:
+            - FilesystemInterface: reference/portal-developer/service/filesystem-interface.md
             - HttpClientContract: reference/portal-developer/service/http-client-contract.md
     - Integrator:
         - guides/integrator/index.md

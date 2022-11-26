@@ -8,10 +8,9 @@ Each portal node has a designated location and here is how to access it.
 
 Reading and writing files can be a task for a portal.
 The storage is not only used by portal developers but the files need also be movable for better administration in different server infrastructures.
-
 To allow [integrators](../integrator/filesystem.md) and [administrators](../administrator/filesystem.md) to safely manage the files, there has to be a way to configure the storage and keep ease of use when accessing files. 
 There are different reasons for this directory to be movable e.g. when using a network storage across multiple HEPTAconnect app servers, so we can't just provide access to directory on disk.
-To accomplish this portals have the `\Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface` service.
+To accomplish this portals have the [`\Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface`](../../reference/portal-developer/service/filesystem-interface.md) service.
 Read more in [the ADR](../../reference/adr/2022-10-06-filesystem-stream-wrapper.md) about the concept.
 
 
@@ -25,7 +24,7 @@ copy('https://getcomposer.org/installer', 'composer-setup.php');
 ```
 
 This is using a stream wrapper registered on `https` to read remote files.
-To get your portal node specific protocol we provide `\Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface` as a service with two methods to convert between paths and PHP compatible URIs.
+To get your portal node specific protocol we provide [`\Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface`](../../reference/portal-developer/service/filesystem-interface.md) as a service with two methods to convert between paths and PHP compatible URIs.
 
 
 ## Location
