@@ -53,6 +53,19 @@
     {% set content = content|replace('<!--open-ecc555b594ad495dbea9516de4f2dd5a-->', openCard)|replace('<!--close-ecc555b594ad495dbea9516de4f2dd5a-->', closeCard) %}
 
     {% set openCard %}
+            <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/filesystem/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/folder-tree.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-ae3649461943410bb2bbd332809a24fc-->', openCard)|replace('<!--close-ae3649461943410bb2bbd332809a24fc-->', closeCard) %}
+
+    {% set openCard %}
             <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/data-tuning/'|url }}">
                 <picture>
                     {% include ".icons/fontawesome/solid/network-wired.svg" %}

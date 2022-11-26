@@ -108,3 +108,8 @@ There is also an [HTTP client](./default-utilities.md#clientinterface) that impl
 
 With more and more implementations of HTTP handlers, shared code will occur.
 To use same code for multiple HTTP handlers you can use [HTTP Handler Middlewares](./http-handler-middleware.md). 
+
+
+## Patterns
+
+- [Serve a file from filesystem using HTTP handler](patterns/serve-file-from-filesystem-using-http-handler.md)
