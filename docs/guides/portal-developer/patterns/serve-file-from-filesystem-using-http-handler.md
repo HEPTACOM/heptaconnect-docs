@@ -27,7 +27,7 @@ FlowComponent::httpHandler('logo.png')
     ): ResponseInterface {
         $path = $fs->toStoragePath('logo.png');
         
-        if (is_file($path)) {
+        if (!is_file($path)) {
             return $response->withStatus(404);
         }
         

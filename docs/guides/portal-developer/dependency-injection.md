@@ -135,7 +135,7 @@ class File
     
     public function readAll(): array
     {
-        return (array) json_decode(file_get_contents($this->filename)) ?: '[]');
+        return (array) json_decode(file_get_contents($this->filename) ?: '[]');
     }
 }
 ```
