@@ -177,6 +177,7 @@ nav:
             - SemVer with generation version: reference/adr/2022-01-24-semver-with-generation-version.md
             - Final classes: reference/adr/2022-03-02-final-classes.md
             - Type safe class strings: reference/adr/2022-06-12-type-safe-class-strings.md
+            - Filesystem abstraction with stream wrapper: reference/adr/2022-10-06-filesystem-stream-wrapper.md
         - Glossary: reference/glossary.md
         - License: reference/license.md
     - News:
