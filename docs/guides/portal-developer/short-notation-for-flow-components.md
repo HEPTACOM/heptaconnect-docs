@@ -34,14 +34,14 @@ Click [here](./explorer.md) to see the object-oriented notation.
 
 use Heptacom\HeptaConnect\Playground\Dataset\Bottle;
 use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
-use League\Flysystem\FilesystemInterface;
+use Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface;
 
 FlowComponent::explorer(Bottle::class)->run(
-    fn (FilesystemInterface $fs): iterable => array_column($fs->listContents(), 'path')
+    fn (FilesystemInterface $fs): iterable => scandir($fs->toStoragePath('/'))
 );
 
 FlowComponent::explorer(Bottle::class)->isAllowed(
-    fn (FilesystemInterface $fs, string $id): bool => $fs->getSize($id) > 0
+    fn (FilesystemInterface $fs, string $id): bool => filesize($id) > 0
 );
 ```
 
@@ -57,25 +57,25 @@ use FooBar\Packer\BottlePacker;
 use Heptacom\HeptaConnect\Playground\Dataset\Bottle;
 use Heptacom\HeptaConnect\Playground\Dataset\Volume;
 use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
-use League\Flysystem\FilesystemInterface;
+use Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface;
 
 FlowComponent::emitter(Bottle::class)->run(
     fn (FilesystemInterface $fs, BottlePacker $packer, string $id): ?Bottle => $packer->pack(
-        $fs->read($id) ?: null
+        file_get_contents($fs->toStoragePath($id)) ?: null
     )
 );
 
 FlowComponent::emitter(Bottle::class)->batch(
     fn (FilesystemInterface $fs, BottlePacker $packer, iterable $externalIds): iterable => \iterable_map(
         $externalIds,
-        fn (string $id) => $packer->pack($fs->read($id) ?: null)        
+        fn (string $id) => $packer->pack(file_get_contents($fs->toStoragePath($id)) ?: null)        
     ) 
 );
 
 FlowComponent::emitter(Bottle::class)->extend(
     fn (FilesystemInterface $fs, Bottle $bottle): ?Bottle => $bottle->setCapacity(
         (new Volume())
-            ->setAmount($fs->getSize($bottle->getPrimaryKey()))
+            ->setAmount(filesize($fs->toStoragePath($bottle->getPrimaryKey())))
             ->setUnit('byte')
     )
 );
@@ -93,21 +93,21 @@ use Heptacom\HeptaConnect\Dataset\Base\TypedDatasetEntityCollection;
 use FooBar\Unpacker\BottleUnpacker;
 use Heptacom\HeptaConnect\Playground\Dataset\Bottle;
 use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
-use League\Flysystem\FilesystemInterface;
+use Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface;
 
 FlowComponent::receiver(Bottle::class)->run(
     function (FilesystemInterface $fs, BottleUnpacker $unpacker, Bottle $bottle): void {    
         ['id' => $id, 'payload' => $payload] = $unpacker->unpack($bottle);
-        $fs->write($id, $payload);
+        file_put_contents($fs->toStoragePath($id), $payload);
     }
 );
 
 FlowComponent::receiver(Bottle::class)->batch(
     function (FilesystemInterface $fs, BottleUnpacker $unpacker, TypedDatasetEntityCollection $bottles): void {
-        $bottleData = \array_column(\iterable_to_array($bottles->map([$unpacker, 'unpack'])), 'payload', 'id');
+        $bottleData = array_column(iterable_to_array($bottles->map([$unpacker, 'unpack'])), 'payload', 'id');
         
         foreach ($bottleData as $id => $bottle) {
-            $fs->write($id, $bottle);
+            file_put_contents($fs->toStoragePath($id), $bottle);
         }
     }
 );
@@ -122,15 +122,15 @@ Click [here](./status-reporting.md) to see the object-oriented notation.
 <?php
 
 use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
-use League\Flysystem\FilesystemInterface;
+use Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface;
 
 FlowComponent::statusReporter('health')->run(
-    fn (FilesystemInterface $fs): bool => !empty($fs->listContents())
+    fn (FilesystemInterface $fs): bool => scandir($fs->toStoragePath('/')) !== false
 );
 
 FlowComponent::statusReporter('info')->run(
     fn (FilesystemInterface $fs): array => [
-        'count' => count($fs->listContents()),
+        'count' => count(scandir($fs->toStoragePath('/'))),
     ]
 );
 ```

@@ -151,3 +151,12 @@ See usage [here](patterns/transfer-file-reference-by-public-url.md).
 
 A service that resolves a file reference created by [`Heptacom\HeptaConnect\Portal\Base\File\FileReferenceFactoryContract`](#filereferencefactorycontract) into an accessor to the underlying referenced file content or a public URL to access this file content.
 See usage [here](patterns/transfer-file-reference-by-public-url.md).
+
+
+### FilesystemInterface
+
+> Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface
+
+A service, that provides methods to convert paths and URIs into each other.
+The URIs point to the provided portal node file system and **MUST** be used to access the file system, when these files are considered transaction data.
+See reference [here](../../reference/portal-developer/service/filesystem-interface.md).

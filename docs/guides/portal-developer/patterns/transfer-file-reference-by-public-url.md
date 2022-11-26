@@ -2,7 +2,7 @@
 
 This pattern shows how to:
 
-- Let two portals transfer a file via [file references](../../guides/portal-developer/file-reference.md)
+- Let two portals transfer a file via [file references](../file-reference.md)
 - Add configuration to a portal to toggle behaviour
 - Separate API usage from entity processing
 

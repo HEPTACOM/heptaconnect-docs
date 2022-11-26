@@ -43,6 +43,16 @@ Manage and investigate into hosted HTTP endpoints by portals.
 <!--close-5a19b7d8a81d427ab43b2685c6b4e8c3-->
 
 
+<!--open-4027d68e85cb49c886bb36db119507e1-->
+
+## Filesystem
+
+Portals can store files on disk.
+Learn how to integrate network storages.
+
+<!--close-4027d68e85cb49c886bb36db119507e1-->
+
+
 <!--open-123d7ed379034757ac79ac2431b411a9-->
 
 ## Logs

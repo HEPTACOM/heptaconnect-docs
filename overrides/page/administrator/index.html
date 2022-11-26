@@ -66,6 +66,19 @@
     {% set content = content|replace('<!--open-5a19b7d8a81d427ab43b2685c6b4e8c3-->', openCard)|replace('<!--close-5a19b7d8a81d427ab43b2685c6b4e8c3-->', closeCard) %}
 
     {% set openCard %}
+            <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/filesystem/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/folder-tree.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-4027d68e85cb49c886bb36db119507e1-->', openCard)|replace('<!--close-4027d68e85cb49c886bb36db119507e1-->', closeCard) %}
+
+    {% set openCard %}
             <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/logs/'|url }}">
                 <picture>
                     {% include ".icons/fontawesome/solid/cabinet-filing.svg" %}

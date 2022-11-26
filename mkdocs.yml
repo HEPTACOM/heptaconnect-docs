@@ -113,26 +113,34 @@ nav:
         - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
         - Upgrade: guides/portal-developer/upgrade.md
         - File references: guides/portal-developer/file-reference.md
+        - Filesystem: guides/portal-developer/filesystem.md
         - Patterns: # TODO soon to be moved into patterns listing
             - Transfer file reference by public URL: guides/portal-developer/patterns/transfer-file-reference-by-public-url.md
             - Send files from an FTP server: guides/portal-developer/patterns/transfer-files-from-ftp-server.md
+            - List files from filesystem: guides/portal-developer/patterns/list-files-from-filesystem.md
+            - Serve a file from filesystem using HTTP handler: guides/portal-developer/patterns/serve-file-from-filesystem-using-http-handler.md
         - Services:
+            - FilesystemInterface: reference/portal-developer/service/filesystem-interface.md
             - HttpClientContract: reference/portal-developer/service/http-client-contract.md
     - Integrator:
         - guides/integrator/index.md
         - Portals: guides/integrator/portals.md
         - Bridges: guides/integrator/bridges.md
         - Message broking: guides/integrator/message-brokers.md
+        - Filesystem: guides/integrator/filesystem.md
         - Portal node configuration: guides/integrator/portal-node-configuration.md
         - Logging: guides/integrator/logging.md
 #        - Data tuning: guides/integrator/data-tuning.md
         - Upgrade: guides/integrator/upgrade.md
+        - Patterns: # TODO soon to be moved into patterns listing
+            - Change the filesystem for a specific portal node: guides/integrator/patterns/filesystem-change-for-specific-portal-node.md
     - Administrator:
         - guides/administrator/index.md
         - Portal node: guides/administrator/portal-node.md
         - Route: guides/administrator/routing.md
         - Status reporting: guides/administrator/status-reporting.md
         - HTTP APIs: guides/administrator/http-apis.md
+        - Filesystem: guides/administrator/filesystem.md
         - Logs: guides/administrator/logs.md
     - Playground:
         - guides/playground/index.md
@@ -177,6 +185,7 @@ nav:
             - SemVer with generation version: reference/adr/2022-01-24-semver-with-generation-version.md
             - Final classes: reference/adr/2022-03-02-final-classes.md
             - Type safe class strings: reference/adr/2022-06-12-type-safe-class-strings.md
+            - Filesystem abstraction with stream wrapper: reference/adr/2022-10-06-filesystem-stream-wrapper.md
         - Glossary: reference/glossary.md
         - License: reference/license.md
     - News:

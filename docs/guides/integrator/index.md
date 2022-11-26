@@ -36,6 +36,16 @@ Learn to create high-performance message broker scenarios.
 <!--close-ecc555b594ad495dbea9516de4f2dd5a-->
 
 
+<!--open-ae3649461943410bb2bbd332809a24fc-->
+
+## Filesystem
+
+Portals can store files on disk.
+Learn how to integrate network storages.
+
+<!--close-ae3649461943410bb2bbd332809a24fc-->
+
+
 <!--open-101f47c2b1ad4966b4a5c52e0683e4b8-->
 
 ## Portal node configuration
