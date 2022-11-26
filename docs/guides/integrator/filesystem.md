@@ -24,13 +24,14 @@ In general the files are placed in `<instance-dir>/files/plugins/heptaconnect_br
 
 ```
 <system-root>
-└── <instance-dir>
-    └── files
-        └── plugins
-            └── heptaconnect_bridge_shopware_platform
-                ├── <portal-node-1>
-                ├── <portal-node-2>
-                └── <portal-node-3>
+└── …
+    └── <instance-dir>
+        └── files
+            └── plugins
+                └── heptaconnect_bridge_shopware_platform
+                    ├── <portal-node-1>
+                    ├── <portal-node-2>
+                    └── <portal-node-3>
 ```
 
 We suggest to control the storage location by following the [hosting guide from Shopware](https://developer.shopware.com/docs/guides/hosting/infrastructure/filesystem) on the shared filesystem.

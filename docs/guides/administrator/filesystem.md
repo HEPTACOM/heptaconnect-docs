@@ -19,16 +19,17 @@ The Shopware 6 bridge places files in `<instance-dir>/files/plugins/heptaconnect
 
 ```
 <system-root>
-└── <instance-dir>
-    └── files
-        └── plugins
-            └── heptaconnect_bridge_shopware_platform
-                ├── <portal-node-1>
-                ├── <portal-node-2>
-                └── <portal-node-3>
+└── …
+    └── <instance-dir>
+        └── files
+            └── plugins
+                └── heptaconnect_bridge_shopware_platform
+                    ├── <portal-node-1>
+                    ├── <portal-node-2>
+                    └── <portal-node-3>
 ```
 
 If no changes are done in the integration, you can still move the data outside of this directory.
 You can replace a directory with a symbolic link to a directory, that suits better for storage of transaction data.
 When used with Docker, the directory `<instance-dir>/files/plugins/heptaconnect_bridge_shopware_platform/` is best a [Docker volume](https://docs.docker.com/storage/volumes/).
-When a network storage shall be used, operating system tools like [FUSE](https://www.kernel.org/doc/html/latest/filesystems/fuse.html) can be used to mount e.g. FTP storages using [curlftpfs](https://curlftpfs.sourceforge.net/).  
+When a network storage shall be used, operating system tools like [FUSE](https://www.kernel.org/doc/html/latest/filesystems/fuse.html) can be used to mount network storages like FTP and SMB.  
