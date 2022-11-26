@@ -88,8 +88,8 @@ class PortalNodeFilesystemStorageFactory extends FilesystemFactory
             id="Heptacom\HeptaConnect\Production\Core\PortalNodeFilesystemStorageFactory"
             parent="Heptacom\HeptaConnect\Core\Storage\Filesystem\FilesystemFactory"
         >
-            <argument index="2" type="service" id="Heptacom\HeptaConnect\Production\Core\PortalNodeFilesystemStorageFactory.inner"/>
-            <argument index="3" type="string">%env(string:PORTAL_NODE_A_FTP_DSN)%</argument>
+            <argument type="service" id="Heptacom\HeptaConnect\Production\Core\PortalNodeFilesystemStorageFactory.inner"/>
+            <argument type="string">%env(string:PORTAL_NODE_A_FTP_DSN)%</argument>
         </service>
     </services>
 </container>
