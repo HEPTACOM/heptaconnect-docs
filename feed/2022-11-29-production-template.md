@@ -1,5 +1,5 @@
 {
-    "date": "2022-06-20",
+    "date": "2022-11-29",
     "title": "New repository: HEPTAconnect production template",
     "summary": "Kickstart your new HEPTAconnect integration projects",
     "author": "Julian Krzefski"
