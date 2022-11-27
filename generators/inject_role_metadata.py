@@ -24,7 +24,13 @@ for root, _, files in walk(docPath):
             else:
                 newContentParts = ['','', newContentParts[0]]
 
-            preface['role'] = fullPath.split('/')[1 if fullPath.startswith('guides/') else 0]
+            if fullPath.startswith('guides/'):
+                preface['role'] = fullPath.split('/')[1]
+            elif fullPath.startswith('reference/'):
+                preface['role'] = fullPath.split('/')[1]
+            else:
+                preface['role'] = fullPath.split('/')[0]
+
             newContentParts[1] = yaml.dump(preface)
 
             with mkdocs_gen_files.open(fullPath, "w") as alteredFile:

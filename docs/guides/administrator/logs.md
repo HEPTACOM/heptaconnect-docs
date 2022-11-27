@@ -19,13 +19,14 @@ Common locations to check:
 
 ```
 <system-root>
-├── <instance-dir>
-│   ├── var
-│   │   └── log
-│   │       └── heptacom_heptaconnect_*.log
-│   └── storage
-│       └── logs
-│           └── heptacom_heptaconnect_*.log
+├── …
+│   └── <instance-dir>
+│       ├── var
+│       │   └── log
+│       │       └── heptacom_heptaconnect_*.log
+│       └── storage
+│           └── logs
+│               └── heptacom_heptaconnect_*.log
 └── var
     └── log
         └── application
