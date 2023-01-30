@@ -36,6 +36,17 @@ Learn to create high-performance message broker scenarios.
 <!--close-ecc555b594ad495dbea9516de4f2dd5a-->
 
 
+<!--open-9b2a9648ef914aa8a2923118a9e4e494-->
+
+## HTTP Handlers
+
+Exposed HTTP endpoints from portals can be debugged.
+Also in production environments.
+Learn how to trace and replay requests.
+
+<!--close-9b2a9648ef914aa8a2923118a9e4e494-->
+
+
 <!--open-ae3649461943410bb2bbd332809a24fc-->
 
 ## Filesystem
