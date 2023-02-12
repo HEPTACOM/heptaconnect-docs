@@ -1,5 +1,5 @@
 {
-    "date": "2023-02-XX",
+    "date": "2023-02-14",
     "title": "HTTP middlewares for clients and servers",
     "summary": "Interception points for HTTP requests and responses in every direction",
     "author": "Joshua Behrens"
@@ -14,10 +14,12 @@
 
 ## HTTP handlers
 
-With HTTP handlers we already solved different challenges in the past.
-We built visual setup wizards, which are able to handle OAuth2 authorization flows.
-We built development tools, which we reuse in our own projects.
-We react to webhooks and we build a lot of other stuff.
+With HTTP handlers we already solved different challenges in the past:
+
+* We built visual setup wizards, which are able to handle OAuth2 authorization flows.
+* We built development tools, which we reuse in our own projects.
+* We react to webhooks and we build a lot of other stuff.
+
 So many use cases, where we could use an abstraction layer to share common code efficiently. 
 Good news: [`PSR-15`](https://www.php-fig.org/psr/psr-15/) solves this problem conceptually.
 
