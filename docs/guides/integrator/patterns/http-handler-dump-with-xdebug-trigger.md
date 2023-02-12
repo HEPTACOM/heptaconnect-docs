@@ -2,13 +2,13 @@
 
 This pattern shows how to:
 
-- Decorate the HttpHandleServiceInterface to conditionally set the dump request attribute
+- Replace the ServerRequestDumpCheckerInterface service to conditionally trigger dumps of HTTP requests
 - Identify whether Xdebug is used for debugging to set the dump request attribute accordingly
 
 
 ## Integration
 
-###### src/Core/XdebugDumpTriggeringHttpHandleService.php
+###### src/Core/XdebugWebHttpDumpChecker.php
 
 ```php
 <?php
@@ -17,27 +17,15 @@ declare(strict_types=1);
 
 namespace Heptacom\HeptaConnect\Production\Core;
 
-use Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandleServiceInterface;
-use Heptacom\HeptaConnect\Portal\Base\StorageKey\Contract\PortalNodeKeyInterface;
-use Psr\Http\Message\ResponseInterface;
+use Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestDumpCheckerInterface
+use Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerStackIdentifier;
 use Psr\Http\Message\ServerRequestInterface;
 
-final class XdebugDumpTriggeringHttpHandleService implements HttpHandleServiceInterface
+final class XdebugWebHttpDumpChecker implements ServerRequestDumpCheckerInterface
 {
-    private HttpHandleServiceInterface $decorated;
-
-    public function __construct(HttpHandleServiceInterface $decorated)
+    public function shallDump(HttpHandlerStackIdentifier $httpHandler, ServerRequestInterface $request): bool
     {
-        $this->decorated = $decorated;
-    }
-
-    public function handle(ServerRequestInterface $request, PortalNodeKeyInterface $portalNodeKey): ResponseInterface
-    {
-        if ($this->isXdebugEnabled()) {
-            $request = $request->withAttribute(HttpHandleServiceInterface::REQUEST_ATTRIBUTE_DUMPS_EXPECTED, true);
-        }
-
-        return $this->decorated->handle($request, $portalNodeKey);
+        return $this->isXdebugEnabled();
     }
 
     private function isXdebugEnabled(): bool
@@ -71,14 +59,9 @@ final class XdebugDumpTriggeringHttpHandleService implements HttpHandleServiceIn
     >
         <services>
             <service
-                id="Heptacom\HeptaConnect\Production\Core\XdebugDumpTriggeringHttpHandleService"
-                decorates="Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandleServiceInterface"
-            >
-                <argument
-                    id="Heptacom\HeptaConnect\Production\Core\XdebugDumpTriggeringHttpHandleService.inner"
-                    type="service"
-                />
-            </service>
+                id="Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestDumpCheckerInterface"
+                class="Heptacom\HeptaConnect\Production\Core\XdebugWebHttpDumpChecker"
+            />
         </services>
     </container>
     ```
@@ -86,8 +69,6 @@ final class XdebugDumpTriggeringHttpHandleService implements HttpHandleServiceIn
 === "config/services.yaml"
 
     ```yaml
-    Heptacom\HeptaConnect\Production\Core\XdebugDumpTriggeringHttpHandleService:
-        decorates: Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandleServiceInterface
-        arguments:
-            - '@Heptacom\HeptaConnect\Production\Core\XdebugDumpTriggeringHttpHandleService.inner'
+    Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestDumpCheckerInterface:
+        class: Heptacom\HeptaConnect\Production\Core\XdebugWebHttpDumpChecker
     ```
