@@ -2,7 +2,7 @@
 
 This pattern shows how to:
 
-- Replace the ServerRequestDumpCheckerInterface service to conditionally trigger dumps of HTTP requests
+- Replace the ServerRequestCycleDumpCheckerInterface service to conditionally trigger dumps of HTTP requests
 - Identify whether Xdebug is used for debugging to set the dump request attribute accordingly
 
 
@@ -17,13 +17,13 @@ declare(strict_types=1);
 
 namespace Heptacom\HeptaConnect\Production\Core;
 
-use Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestDumpCheckerInterface
+use Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumpCheckerInterface
 use Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerStackIdentifier;
-use Psr\Http\Message\ServerRequestInterface;
+use Heptacom\HeptaConnect\Portal\Base\Web\Http\ServerRequestCycle;
 
-final class XdebugWebHttpDumpChecker implements ServerRequestDumpCheckerInterface
+final class XdebugWebHttpDumpChecker implements ServerRequestCycleDumpCheckerInterface
 {
-    public function shallDump(HttpHandlerStackIdentifier $httpHandler, ServerRequestInterface $request): bool
+    public function shallDump(HttpHandlerStackIdentifier $httpHandler, ServerRequestCycle $requestCycle): bool
     {
         return $this->isXdebugEnabled();
     }
@@ -59,7 +59,7 @@ final class XdebugWebHttpDumpChecker implements ServerRequestDumpCheckerInterfac
     >
         <services>
             <service
-                id="Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestDumpCheckerInterface"
+                id="Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumpCheckerInterface"
                 class="Heptacom\HeptaConnect\Production\Core\XdebugWebHttpDumpChecker"
             />
         </services>
@@ -69,6 +69,6 @@ final class XdebugWebHttpDumpChecker implements ServerRequestDumpCheckerInterfac
 === "config/services.yaml"
 
     ```yaml
-    Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestDumpCheckerInterface:
+    Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumpCheckerInterface:
         class: Heptacom\HeptaConnect\Production\Core\XdebugWebHttpDumpChecker
     ```

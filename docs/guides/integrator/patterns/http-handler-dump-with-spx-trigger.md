@@ -2,7 +2,7 @@
 
 This pattern shows how to:
 
-- Replace the ServerRequestDumpCheckerInterface service to conditionally trigger dumps of HTTP requests
+- Replace the ServerRequestCycleDumpCheckerInterface service to conditionally trigger dumps of HTTP requests
 - Identify whether SPX is used for tracing to set the dump request attribute accordingly
 
 
@@ -17,11 +17,11 @@ declare(strict_types=1);
 
 namespace Heptacom\HeptaConnect\Production\Core;
 
-use Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestDumpCheckerInterface
+use Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumpCheckerInterface
 use Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerStackIdentifier;
-use Psr\Http\Message\ServerRequestInterface;
+use Heptacom\HeptaConnect\Portal\Base\Web\Http\ServerRequestCycle;
 
-final class SpxWebHttpDumpChecker implements ServerRequestDumpCheckerInterface
+final class SpxWebHttpDumpChecker implements ServerRequestCycleDumpCheckerInterface
 {
     private bool $spxEnabled;
 
@@ -33,7 +33,7 @@ final class SpxWebHttpDumpChecker implements ServerRequestDumpCheckerInterface
         $this->spxAutoStart = $spxAutoStart;
     }
 
-    public function shallDump(HttpHandlerStackIdentifier $httpHandler, ServerRequestInterface $request): bool
+    public function shallDump(HttpHandlerStackIdentifier $httpHandler, ServerRequestCycle $requestCycle): bool
     {
         return $this->isSpxActive();
     }
@@ -63,7 +63,7 @@ final class SpxWebHttpDumpChecker implements ServerRequestDumpCheckerInterface
     >
         <services>
             <service
-                id="Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestDumpCheckerInterface"
+                id="Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumpCheckerInterface"
                 class="Heptacom\HeptaConnect\Production\Core\SpxWebHttpDumpChecker"
             >
                 <argument>%env(bool:SPX_ENABLED)%</argument>
@@ -76,7 +76,7 @@ final class SpxWebHttpDumpChecker implements ServerRequestDumpCheckerInterface
 === "config/services.yaml"
 
     ```yaml
-    Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestDumpCheckerInterface:
+    Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumpCheckerInterface:
         class: Heptacom\HeptaConnect\Production\Core\SpxWebHttpDumpChecker
         arguments:
             - '%env(bool:SPX_ENABLED)%'
