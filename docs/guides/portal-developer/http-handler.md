@@ -113,7 +113,7 @@ To use same code for multiple HTTP handlers you can use [HTTP Handler Middleware
 ## Dump requests and responses
 
 The bridges trigger dumping requests and responses and provide a storage for the dumps.
-See the [administrator section on HTTP API debugging](../administrator/http-apis.md#debugging) how to use, that to debug the HTTP traffic.
+See the [administrator section on HTTP API debugging](../administrator/http-apis.md#debugging) how to use that to debug the HTTP traffic.
 
 
 ## Patterns
