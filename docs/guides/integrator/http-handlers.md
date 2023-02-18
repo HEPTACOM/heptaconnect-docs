@@ -41,3 +41,5 @@ The dumped request can be passed into the standard input using shell pipes:
 If you want to introduce a new trigger to dump HTTP messages, you can decorate the `\Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandleServiceInterface` service.
 Combining triggers of other development tools like [SPX](https://github.com/NoiseByNorthwest/php-spx) or [Xdebug](https://xdebug.org/) is a helpful approach.
 Read about the integration of [SPX here](./patterns/http-handler-dump-with-spx-trigger.md) and about the integration of [Xdebug here](./patterns/http-handler-dump-with-xdebug-trigger.md).
+Adjusting the trigger to your needs is a good way to reduce the amount of dumped messages.
+So we also [provide an example](./patterns/http-handler-dump-only-on-errors.md) to show how to dump HTTP messages only on errors.
