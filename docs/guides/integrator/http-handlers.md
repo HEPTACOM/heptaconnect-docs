@@ -21,7 +21,7 @@ The dumped request can be passed into the standard input using shell pipes:
 
 === "netcat"
 
-    ```xml
+    ```bash
     cat dump.http | nc localhost 8000
     ```
 

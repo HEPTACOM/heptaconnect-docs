@@ -2,7 +2,7 @@
 
 This pattern shows how to:
 
-- Replace the ServerRequestCycleDumpCheckerInterface service to conditionally trigger dumps of HTTP requests
+- Replace the `ServerRequestCycleDumpCheckerInterface` service to conditionally trigger dumps of HTTP requests
 - Identify whether Xdebug is used for debugging to set the dump request attribute accordingly
 
 

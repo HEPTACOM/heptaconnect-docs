@@ -2,7 +2,7 @@
 
 This pattern shows how to:
 
-- Replace the ServerRequestCycleDumpCheckerInterface service to conditionally trigger dumps of HTTP requests
+- Replace the `ServerRequestCycleDumpCheckerInterface` service to conditionally trigger dumps of HTTP requests
 - Identify whether SPX is used for tracing to set the dump request attribute accordingly
 
 
