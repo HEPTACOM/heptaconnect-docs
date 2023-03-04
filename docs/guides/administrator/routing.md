@@ -11,6 +11,14 @@ A route is the combination of a starting portal node, a targeted portal node and
 This is already an indicator that a data route is uni-directional.
 
 
+## Mapping setup
+
+Some data needs to be mapped between two portal nodes but will not be automatically created by routed transit data.
+This can be due to reasons like a missing implementation as transit data or merging multiple mappings into a single mapping.
+Common entities affected by this are salutations, countries, currencies, payment methods and shipping methods.
+To administer manual mappings use the commands `heptaconnect:identity-redirect:add` and `heptaconnect:identity-redirect:list`.
+
+
 ## How to use
 
 To create a route we want to know what data types we can connect between which portal nodes.
@@ -18,16 +26,16 @@ To get insights into the available portal nodes there is the command `heptaconne
 The output can look similar to this:
 
 ```markdown
- ————————————————— —————————————————————————————————————————————————————————————————————————
+ ————————————————— ———————————————————————————————————————————————————————————
   portal-node-key   portal-class
- ————————————————— —————————————————————————————————————————————————————————————————————————
+ ————————————————— ———————————————————————————————————————————————————————————
   filter            Heptacom\HeptaConnect\Integration\Filter\Portal
   mayan             Heptacom\HeptaConnect\Portal\MayanEdms\Portal
   morph             Heptacom\HeptaConnect\Integration\Morph\Portal
   sw5               Heptacom\HeptaConnect\Portal\Shopware5\Portal
   sw6               Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Portal
   zammad            Heptacom\HeptaConnect\Portal\Zammad\Portal
- ————————————————— —————————————————————————————————————————————————————————————————————————
+ ————————————————— ———————————————————————————————————————————————————————————
 ```
 
 There is a similar command for the available data types.
@@ -35,13 +43,14 @@ There is the command `heptaconnect:data-type:list` that lists all data types tha
 An output of the command can look like this:
 
 ```markdown
- —————————————————————————————————————————————————————————————————————————
+ ———————————————————————————————————————————————————————————
   Heptacom\HeptaConnect\Dataset\Ecommerce\Product\Product
   Heptacom\HeptaConnect\Dataset\Ecommerce\Media\Media
   Heptacom\HeptaConnect\Dataset\Ecommerce\Product\Category
   Heptacom\HeptaConnect\Dataset\Ecommerce\Customer\Customer
   Heptacom\HeptaConnect\Dataset\Ecommerce\Order\Order
- —————————————————————————————————————————————————————————————————————————
+  Heptacom\HeptaConnect\Dataset\Ecommerce\Currency\Currency
+ ———————————————————————————————————————————————————————————
 ```
 
 With all the information above we can create routes that can resemble a scenario like the following:
@@ -69,6 +78,9 @@ bin/console heptaconnect:router:add-route sw6 morph 'Heptacom\HeptaConnect\Datas
 bin/console heptaconnect:router:add-route sw6 morph 'Heptacom\HeptaConnect\Dataset\Ecommerce\Order\Order'
 bin/console heptaconnect:router:add-route morph zammad 'Heptacom\HeptaConnect\Dataset\Ecommerce\Customer\Customer'
 bin/console heptaconnect:router:add-route morph zammad 'Heptacom\HeptaConnect\Dataset\Ecommerce\Order\Order'
+
+# Map EUR in SW5 to EUR in SW6
+bin/console heptaconnect:identity-redirect:add 'Heptacom\HeptaConnect\Dataset\Ecommerce\Currency\Currency' sw5 1 sw6 b7d2554b0ce847cd82f3ac9bd1c0dfca 
 ```
 
 The routes after this will look like this.
