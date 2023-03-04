@@ -89,7 +89,7 @@ Aliased as
 
 > Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageFormatterContract
 
-A service to format an PSR-7 HTTP message into a file format, that is similar to HTTP raw communication.
+A service to format a PSR-7 HTTP message into a file format, that is similar to HTTP raw communication.
 It can be used to replay recorded requests using `nc` (netcat), `telnet` and with IDEs by Microsoft and JetBrains.
 See its usage in [this pattern](./patterns/http-client-middleware-dumping-on-bad-request.md).
 
@@ -98,7 +98,7 @@ See its usage in [this pattern](./patterns/http-client-middleware-dumping-on-bad
 
 > Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageCurlShellFormatterContract
 
-A service to format an PSR-7 HTTP message into a shell script, that executes `curl` to send the request.
+A service to format a PSR-7 HTTP message into a shell script, that executes `curl` to send the request.
 It can be used to replay recorded requests by executing the script.
 
 
