@@ -33,7 +33,7 @@ The dumped request can be passed into the standard input using shell pipes:
 
 === "IDEs"
 
-    The HTTP request dump can be opened and replayed in IDEs from IntelliJ like WebStorm and PHPStorm and Microsoft Visual Studio.
+    The HTTP request dump can be opened and replayed in IDEs from JetBrains like WebStorm and PHPStorm and Microsoft Visual Studio.
 
 
 ### Trigger dumps
