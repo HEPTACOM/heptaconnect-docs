@@ -119,6 +119,7 @@ nav:
             - Send files from an FTP server: guides/portal-developer/patterns/transfer-files-from-ftp-server.md
             - List files from filesystem: guides/portal-developer/patterns/list-files-from-filesystem.md
             - Serve a file from filesystem using HTTP handler: guides/portal-developer/patterns/serve-file-from-filesystem-using-http-handler.md
+            - Client Middleware dumping bad request HTTP messages: guides/portal-developer/patterns/http-client-middleware-dumping-on-bad-request.md
         - Services:
             - FilesystemInterface: reference/portal-developer/service/filesystem-interface.md
             - HttpClientContract: reference/portal-developer/service/http-client-contract.md
@@ -128,12 +129,16 @@ nav:
         - Bridges: guides/integrator/bridges.md
         - Message broking: guides/integrator/message-brokers.md
         - Filesystem: guides/integrator/filesystem.md
+        - HTTP Handlers: guides/integrator/http-handlers.md
         - Portal node configuration: guides/integrator/portal-node-configuration.md
         - Logging: guides/integrator/logging.md
 #        - Data tuning: guides/integrator/data-tuning.md
         - Upgrade: guides/integrator/upgrade.md
         - Patterns: # TODO soon to be moved into patterns listing
             - Change the filesystem for a specific portal node: guides/integrator/patterns/filesystem-change-for-specific-portal-node.md
+            - Change dump format for HTTP handler to cURL shell: guides/integrator/patterns/http-handler-dump-format-to-curl-shell-scripts.md
+            - Use SPX as trigger for HTTP handler dumps: guides/integrator/patterns/http-handler-dump-with-spx-trigger.md
+            - Use Xdebug as trigger for HTTP handler dumps: guides/integrator/patterns/http-handler-dump-with-xdebug-trigger.md
     - Administrator:
         - guides/administrator/index.md
         - Portal node: guides/administrator/portal-node.md

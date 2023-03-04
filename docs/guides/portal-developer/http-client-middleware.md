@@ -21,7 +21,8 @@ The underlying interface is similar to the [`PSR-15`](https://www.php-fig.org/ps
 
 Services of type `\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpClientMiddlewareInterface` will automatically get the service tag `heptaconnect.http.client.middleware`.
 All services with the tag `heptaconnect.http.client.middleware` will be executed for each request, that is sent by the `Psr\Http\Client\ClientInterface` service.
-Adding a single file to your code will be sufficient for reoccurring tasks of your HTTP client like the following example for profiling:
+Adding a single file to your code will be sufficient for reoccurring tasks of your HTTP client.
+See [this pattern for dumping message](./patterns/http-client-middleware-dumping-on-bad-request.md) or like the following example for profiling:
 
 
 ```php

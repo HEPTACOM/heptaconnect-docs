@@ -110,6 +110,12 @@ With more and more implementations of HTTP handlers, shared code will occur.
 To use same code for multiple HTTP handlers you can use [HTTP Handler Middlewares](./http-handler-middleware.md). 
 
 
+## Dump requests and responses
+
+The bridges trigger dumping requests and responses and provide a storage for the dumps.
+See the [administrator section on HTTP API debugging](../administrator/http-apis.md#debugging) how to use that to debug the HTTP traffic.
+
+
 ## Patterns
 
 - [Serve a file from filesystem using HTTP handler](patterns/serve-file-from-filesystem-using-http-handler.md)
