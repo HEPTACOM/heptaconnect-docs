@@ -14,27 +14,36 @@ This attribute is already set by features provided by [bridges e.g. using a samp
 
 The dumped HTTP messages are formatted using the `Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageFormatterContract` service.
 You can override this service definition to change the formatting of the dumped messages.
-Without any changes the dumped messages are in a raw HTTP format, so it could be used together with `nc` (netcat) or `telnet` to replay the requests.
+Without any changes the dumped messages are in a raw HTTP format, so it could be used together with `nc` (netcat), `openssl` or `telnet` to replay the requests.
 As the named tools do just TCP and do not fully perform HTTP, beware that you have to provide the TCP connection information like host and port yourself. 
 If you want to replay messages with `curl` you can use the `Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageCurlShellFormatterContract` service instead.
 Read [here about recording](./patterns/http-handler-dump-format-to-curl-shell-scripts.md).
 The dumped request can be passed into the standard input using shell pipes:
 
+
+=== "IDEs"
+
+    The HTTP request dump can be opened and replayed in IDEs from JetBrains like WebStorm and PHPStorm and Microsoft Visual Studio (17.5+ required).
+
 === "netcat"
 
     ```bash
-    cat dump.http | nc localhost 8000
+    cat dump.http | netcat localhost 80 # Linux
+    cat dump.http | nc localhost 80 # macOS
+    cat dump.http | netcat --ssl localhost 443 # Linux to an HTTPS secured server
+    ```
+
+=== "openssl"
+
+    ```bash
+    cat dump.http | openssl s_client -connect localhost:443
     ```
 
 === "telnet"
 
     ```bash
-    cat dump.http | telnet localhost 8000
+    telnet localhost 80 # paste file content
     ```
-
-=== "IDEs"
-
-    The HTTP request dump can be opened and replayed in IDEs from JetBrains like WebStorm and PHPStorm and Microsoft Visual Studio.
 
 
 ### Trigger dumps
