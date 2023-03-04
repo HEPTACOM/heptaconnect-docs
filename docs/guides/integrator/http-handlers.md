@@ -15,6 +15,7 @@ This attribute is already set by features provided by [bridges e.g. using a samp
 The dumped HTTP messages are formatted using the `Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageFormatterContract` service.
 You can override this service definition to change the formatting of the dumped messages.
 Without any changes the dumped messages are in a raw HTTP format, so it could be used together with `nc` (netcat) or `telnet` to replay the requests.
+As the named tools do just TCP and do not fully perform HTTP, beware that you have to provide the TCP connection information like host and port yourself. 
 If you want to replay messages with `curl` you can use the `Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageCurlShellFormatterContract` service instead.
 Read [here about recording](./patterns/http-handler-dump-format-to-curl-shell-scripts.md).
 The dumped request can be passed into the standard input using shell pipes:
