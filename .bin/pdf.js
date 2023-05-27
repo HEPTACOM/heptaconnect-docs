@@ -39,6 +39,20 @@ function generateNavigation(nav, parentTitle) {
     return result;
 }
 
+function removeNoPdfContent(nav) {
+    let newsIndex = nav.findIndex((menu) => Object.keys(menu).indexOf('News') !== -1);
+    let news = nav[newsIndex].News;
+    let release = news[news.findIndex((menu) => Object.keys(menu).indexOf('Release') !== -1)].Release;
+    nav.push({
+        Release: release,
+    });
+    nav = nav.filter((menu) => Object.keys(menu).indexOf('News') === -1);
+    nav = nav.filter((menu) => Object.keys(menu).indexOf('Pricing') === -1);
+
+    return nav;
+}
+
 mkdocs.nav = generateNavigation(mkdocs.nav, 'HEPTAconnect');
+mkdocs.nav = removeNoPdfContent(mkdocs.nav);
 
 fs.writeFileSync('mkdocs-pdf.yml', yaml.dump(mkdocs), 'utf8');
