@@ -97,8 +97,8 @@
             </p>
         </a>
     </section>
-    <section class="md-typeset md-grid-dense" style="margin: 5rem auto 0">
-        <h1>
+    <section class="md-typeset md-grid-dense" style="margin: 3rem auto 0">
+        <h1 style="text-align: center">
             Why HEPTAconnect?
         </h1>
         <div>
@@ -171,7 +171,7 @@
             </dl>
         </div>
     </section>
-    <section class="md-typeset md-grid-dense" style="margin: 5rem auto 0">
+    <section class="md-typeset md-grid-dense" style="margin: 3rem auto 0">
         <h1>
             Latest news
         </h1>
@@ -238,11 +238,16 @@
     </script>
 
     <style>
+        dl.why-heptaconnect-dl {
+            padding: 0 20px;
+        }
+
         @media screen and (min-width: 65rem) {
             dl.why-heptaconnect-dl {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-gap: 0 50px;
+                padding: 0;
             }
 
             dl.why-heptaconnect-dl dt:nth-of-type(n+1):not(:nth-of-type(n+4)) {
