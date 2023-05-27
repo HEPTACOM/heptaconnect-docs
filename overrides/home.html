@@ -97,7 +97,80 @@
             </p>
         </a>
     </section>
-
+    <section class="md-typeset md-grid-dense" style="margin: 5rem auto 0">
+        <h1>
+            Why HEPTAconnect?
+        </h1>
+        <div>
+            <dl class="why-heptaconnect-dl">
+                <dt>
+                    Documentation for various personas
+                </dt>
+                <dd>
+                    HEPTAconnect packages are developed, deployed, updated, configured and monitored.
+                    These tasks are shared across different personas reading the documentation to ensure the expected scope matches the reader.
+                </dd>
+                <dt>
+                    Open Source your project
+                </dt>
+                <dd>
+                    The code for every package can be either accessed publicly or with vendor licensing.
+                    Work with vendor project support HEPTAhelp or code on your own.
+                    HEPTACOM GmbH will enable you to work on your own project.
+                </dd>
+                <dt>
+                    Host wherever PHP runs
+                </dt>
+                <dd>
+                    Do not be vendor-locked to a specific hosting environment.
+                    Meet your data protection policies and have own DMZ or take a cloud infrastructure provider of your choice.
+                </dd>
+                <dt>
+                    Update with your other applications
+                </dt>
+                <dd>
+                    Plan your own maintenance times to match your business actions.
+                    No unexpected releases as you have full control of your own project.
+                </dd>
+                <dt>
+                    Adapt to your business changes
+                </dt>
+                <dd>
+                    Add new APIs when new services needs to be introduced or cut off old ones.
+                    No need to adapt multiple one-trick-data-transfers to work together.
+                </dd>
+                <dt>
+                    Test-drive
+                </dt>
+                <dd>
+                    Use code versioning to plan data flows and test them in copies of your infrastructure to ensure your project quality.
+                </dd>
+                <dt>
+                    Limitless framework
+                </dt>
+                <dd>
+                    Implement your workflows in your data transfer instead of adapting your workflows to the data transfer software.
+                    Connect your data regardless of its structure and availability.
+                    Event based triggers, importing files, time based triggers, differential checks, custom checks between APIs.
+                </dd>
+                <dt>
+                    Prioritize high-load scenarios
+                </dt>
+                <dd>
+                    Expecting high-load events? Decide which data takes the road and which runs on the speedway.
+                    This ensure, that time-relevant data is on time.
+                </dd>
+                <dt>
+                    Use existing monitoring and backups infrastructure
+                </dt>
+                <dd>
+                    Place your HEPTAconnect storage anywhere and use your existing backup storage.
+                    Make use of health monitoring and integrate your logging services without having to learn new software.
+                    Receive emails on any event you need to know about.
+                </dd>
+            </dl>
+        </div>
+    </section>
     <section class="md-typeset md-grid-dense" style="margin: 5rem auto 0">
         <h1>
             Latest news
@@ -163,6 +236,56 @@
 
         setTimeout(typingEffect, 4000);
     </script>
+
+    <style>
+        @media screen and (min-width: 65rem) {
+            dl.why-heptaconnect-dl {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 0 50px;
+            }
+
+            dl.why-heptaconnect-dl dt:nth-of-type(n+1):not(:nth-of-type(n+4)) {
+                grid-row-start: 1;
+            }
+            dl.why-heptaconnect-dl dt:nth-of-type(n+4):not(:nth-of-type(n+7)) {
+                grid-row-start: 3;
+            }
+            dl.why-heptaconnect-dl dt:nth-of-type(n+7) {
+                grid-row-start: 5;
+            }
+
+            dl.why-heptaconnect-dl dd:nth-of-type(n+1):not(:nth-of-type(n+4)) {
+                grid-row-start: 2;
+            }
+            dl.why-heptaconnect-dl dd:nth-of-type(n+4):not(:nth-of-type(n+7)) {
+                grid-row-start: 4;
+            }
+            dl.why-heptaconnect-dl dd:nth-of-type(n+7) {
+                grid-row-start: 6;
+            }
+
+            dl.why-heptaconnect-dl dt:nth-last-of-type(3n-3),
+            dl.why-heptaconnect-dl dd:nth-last-of-type(3n-3) {
+                grid-column-start: 1;
+            }
+            dl.why-heptaconnect-dl dt:nth-last-of-type(3n-2),
+            dl.why-heptaconnect-dl dd:nth-last-of-type(3n-2) {
+                grid-column-start: 2;
+            }
+            dl.why-heptaconnect-dl dt:nth-last-of-type(3n-1),
+            dl.why-heptaconnect-dl dd:nth-last-of-type(3n-1) {
+                grid-column-start: 3;
+            }
+        }
+
+        dl.why-heptaconnect-dl dt {
+            font-weight: bold;
+        }
+        dl.why-heptaconnect-dl dd {
+            margin-left: 20px !important;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}{% endblock %}
