@@ -48,6 +48,8 @@ theme:
     custom_dir: overrides
     features:
         - navigation.tabs
+        - search.suggest
+        - search.highlight
     language: en
     logo: assets/gfx/heptaconnect-icon.svg
     favicon: assets/favicon/favicon-32x32.png
