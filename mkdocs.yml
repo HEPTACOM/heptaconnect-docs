@@ -204,6 +204,7 @@ nav:
             - Dataset base: releases/changelog-dataset-base.md
             - Portal base: releases/changelog-portal-base.md
             - Portal Local Shopware Platform: releases/changelog-portal-local-shopware-platform.md
+            - Package Shopware 6: releases/changelog-package-shopware-6.md
             - Storage base: releases/changelog-storage-base.md
             - Storage Shopware DAL: releases/changelog-storage-shopware-dal.md
     - Pricing: https://www.heptacom.de/heptaconnect/

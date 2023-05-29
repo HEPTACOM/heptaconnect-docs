@@ -7,6 +7,7 @@ REPOS = heptaconnect-bridge-shopware-platform \
 		heptaconnect-framework \
 		heptaconnect-portal-base \
 		heptaconnect-portal-local-shopware-platform \
+		heptaconnect-package-shopware-6 \
 		heptaconnect-storage-base \
 		heptaconnect-storage-shopware-dal \
 		heptaconnect-test-suite-storage
@@ -86,6 +87,7 @@ overrides/partials/github.json: $(GENERATED_DATA_DIR)
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-playground.json https://api.github.com/repos/HEPTACOM/heptaconnect-playground
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-portal-base.json https://api.github.com/repos/HEPTACOM/heptaconnect-portal-base
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-portal-local-shopware-platform.json https://api.github.com/repos/HEPTACOM/heptaconnect-portal-local-shopware-platform
+	$(CURL) -o ${GENERATED_DATA_DIR}/github-package-shopware-6.json https://api.github.com/repos/HEPTACOM/heptaconnect-package-shopware-6
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-storage-base.json https://api.github.com/repos/HEPTACOM/heptaconnect-storage-base
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-storage-shopware-dal.json https://api.github.com/repos/HEPTACOM/heptaconnect-storage-shopware-dal
 	$(CURL) -o ${GENERATED_DATA_DIR}/github-test-suite-storage.json https://api.github.com/repos/HEPTACOM/heptaconnect-test-suite-storage

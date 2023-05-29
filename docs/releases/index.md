@@ -42,6 +42,13 @@ This is a HEPTAconnect package that allows to communicate multiple entity types 
 [Read the Portal Local Shopware Platform changelog](./changelog-portal-local-shopware-platform.md)
 
 
+## Package Shopware 6
+
+This is a HEPTAconnect package all about communicating to Shopware 6 APIs. You can use it in combination with the Shopware 6 Portal.
+
+[Read the Package Shopware 6 changelog](./changelog-package-shopware-6.md)
+
+
 ## Storage Base
 
 This is a HEPTAconnect package that provides base structures for storage providers.
