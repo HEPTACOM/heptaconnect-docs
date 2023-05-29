@@ -17,8 +17,10 @@
 /overrides/partials/generated/latest-news.html
 /overrides/partials/generated/releases-major-latest-bridge-shopware-platform.html
 /overrides/partials/generated/releases-major-latest-core.html
+/overrides/partials/generated/releases-major-latest-framework.html
 /overrides/partials/generated/releases-major-latest-dataset-base.html
 /overrides/partials/generated/releases-major-latest-dataset-ecommerce.html
+/overrides/partials/generated/releases-major-latest-package-shopware-6.html
 /overrides/partials/generated/releases-major-latest-portal-base.html
 /overrides/partials/generated/releases-major-latest-portal-local-shopware-platform.html
 /overrides/partials/generated/releases-major-latest-storage-base.html
@@ -28,6 +30,8 @@
 /overrides/partials/generated/releases-major-previously-core.html
 /overrides/partials/generated/releases-major-previously-dataset-base.html
 /overrides/partials/generated/releases-major-previously-dataset-ecommerce.html
+/overrides/partials/generated/releases-major-previously-framework.html
+/overrides/partials/generated/releases-major-previously-package-shopware-6.html
 /overrides/partials/generated/releases-major-previously-portal-base.html
 /overrides/partials/generated/releases-major-previously-portal-local-shopware-platform.html
 /overrides/partials/generated/releases-major-previously-storage-base.html
@@ -37,8 +41,10 @@
 /overrides/partials/generated/releases-upcoming-core.html
 /overrides/partials/generated/releases-upcoming-dataset-base.html
 /overrides/partials/generated/releases-upcoming-dataset-ecommerce.html
+/overrides/partials/generated/releases-upcoming-framework.html
 /overrides/partials/generated/releases-upcoming-package-shopware-6.html
 /overrides/partials/generated/releases-upcoming-portal-base.html
+/overrides/partials/generated/releases-upcoming-portal-local-shopware-platform.html
 /overrides/partials/generated/releases-upcoming-storage-base.html
 /overrides/partials/generated/releases-upcoming-storage-shopware-dal.html
 /overrides/partials/generated/releases-upcoming-test-suite-storage.html

@@ -180,6 +180,9 @@ const previouslyReleasedPackageReleases = releasedPackageReleases
 for (const release of upcoming) {
     fs.writeFileSync(`overrides/partials/generated/releases-upcoming-${release.package}.html`, release.html);
 }
+for (const release of changelogFiles.filter(({ file }) => !upcoming.some(packageRelease => packageRelease.file === file))) {
+    fs.writeFileSync(`overrides/partials/generated/releases-upcoming-${release.package}.html`, '');
+}
 
 for (const packageRelease of latestMajor) {
     fs.writeFileSync(
@@ -187,10 +190,16 @@ for (const packageRelease of latestMajor) {
         packageRelease.releases.map(({ releaseDate, name, html }) => `<h2>[${name}] - ${releaseDate}</h2>${html}`).join(''),
     );
 }
+for (const release of changelogFiles.filter(({ file }) => !latestMajor.some(packageRelease => packageRelease.file === file))) {
+    fs.writeFileSync(`overrides/partials/generated/releases-major-latest-${release.package}.html`, '');
+}
 
 for (const packageRelease of previouslyReleasedPackageReleases) {
     fs.writeFileSync(
         `overrides/partials/generated/releases-major-previously-${packageRelease.package}.html`,
         packageRelease.releases.map(({ releaseDate, name, html }) => `<h2>[${name}] - ${releaseDate}</h2>${html}`).join(''),
     );
+}
+for (const release of changelogFiles.filter(({ file }) => !previouslyReleasedPackageReleases.some(packageRelease => packageRelease.file === file))) {
+    fs.writeFileSync(`overrides/partials/generated/releases-major-previously-${release.package}.html`, '');
 }
