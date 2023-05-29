@@ -87,6 +87,52 @@ const packageReleases = changelogFiles.map((changelogFile) => {
         releases,
     };
 });
+const cleanedPackageReleases = packageReleases.map((release) => {
+    const { releases } = release;
+
+    return {
+        ...release,
+        releases: releases.map((release) => {
+            const { name, tokens } = release;
+            let headlineIndex = tokens.findIndex((token) => token.type === 'heading_open' && token.tag === 'h3' && token.markup === '###');
+            const emptyHeadlines = [];
+
+            while (true) {
+                const nextHeadlineIndex = tokens.findIndex((token, index) => index > headlineIndex && token.type === 'heading_open' && token.tag === 'h3' && token.markup === '###');
+
+                if (nextHeadlineIndex === -1) {
+                    if ((headlineIndex + 3) === tokens.length) {
+                        emptyHeadlines.push({
+                            from: headlineIndex,
+                            to: headlineIndex + 3,
+                        });
+                    }
+
+                    break;
+                }
+
+                if ((nextHeadlineIndex - headlineIndex) === 3) {
+                    emptyHeadlines.push({
+                        from: headlineIndex,
+                        to: nextHeadlineIndex,
+                    });
+                }
+
+                headlineIndex = nextHeadlineIndex;
+            }
+
+            for (const emptyHeadline of emptyHeadlines.reverse()) {
+                tokens.splice(emptyHeadline.from, emptyHeadline.to - emptyHeadline.from);
+            }
+
+            return {
+                ...release,
+                name,
+                tokens,
+            };
+        }).filter(({ tokens }) => tokens.length > 0),
+    }
+}).filter(({ releases }) => releases.length > 0);
 const upcoming = packageReleases
     .map((packageRelease) => ({
         ...packageRelease,
@@ -99,7 +145,52 @@ const upcoming = packageReleases
         releases: packageRelease.releases[0],
         html: renderTokens(packageRelease.releases[0].tokens),
     }));
+const releasedPackageReleases = cleanedPackageReleases
+    .map((packageRelease) => ({
+        ...packageRelease,
+        releases: packageRelease.releases.filter(({ major }) => major !== null),
+    }))
+    .filter(({ releases }) => releases.length > 0)
+    .filter(({ releases }) => releases[0].tokens.length > 0)
+    .map((packageRelease) => ({
+        ...packageRelease,
+        major: packageRelease.releases[0].major,
+    }));
+const latestMajor = releasedPackageReleases
+    .map((packageRelease) => ({
+        ...packageRelease,
+        releases: packageRelease.releases
+            .filter(({ major }) => major === packageRelease.major)
+            .map((release) => ({
+                ...release,
+                html: renderTokens(release.tokens),
+            })),
+    }));
+const previouslyReleasedPackageReleases = releasedPackageReleases
+    .map((packageRelease) => ({
+        ...packageRelease,
+        releases: packageRelease.releases
+            .filter(({ major }) => major !== packageRelease.major && packageRelease.major !== null)
+            .map((release) => ({
+                ...release,
+                html: renderTokens(release.tokens),
+            })),
+    }));
 
 for (const release of upcoming) {
     fs.writeFileSync(`overrides/partials/generated/releases-upcoming-${release.package}.html`, release.html);
+}
+
+for (const packageRelease of latestMajor) {
+    fs.writeFileSync(
+        `overrides/partials/generated/releases-major-latest-${packageRelease.package}.html`,
+        packageRelease.releases.map(({ releaseDate, name, html }) => `<h2>[${name}] - ${releaseDate}</h2>${html}`).join(''),
+    );
+}
+
+for (const packageRelease of previouslyReleasedPackageReleases) {
+    fs.writeFileSync(
+        `overrides/partials/generated/releases-major-previously-${packageRelease.package}.html`,
+        packageRelease.releases.map(({ releaseDate, name, html }) => `<h2>[${name}] - ${releaseDate}</h2>${html}`).join(''),
+    );
 }
