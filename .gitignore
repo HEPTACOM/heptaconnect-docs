@@ -15,6 +15,15 @@
 /.data
 /overrides/partials/generated/adr-complete-list.html
 /overrides/partials/generated/latest-news.html
+/overrides/partials/generated/releases-upcoming-bridge-shopware-platform.html
+/overrides/partials/generated/releases-upcoming-core.html
+/overrides/partials/generated/releases-upcoming-dataset-base.html
+/overrides/partials/generated/releases-upcoming-dataset-ecommerce.html
+/overrides/partials/generated/releases-upcoming-package-shopware-6.html
+/overrides/partials/generated/releases-upcoming-portal-base.html
+/overrides/partials/generated/releases-upcoming-storage-base.html
+/overrides/partials/generated/releases-upcoming-storage-shopware-dal.html
+/overrides/partials/generated/releases-upcoming-test-suite-storage.html
 /overrides/partials/github.json
 /docs/assets/uml
 /mkdocs-pdf.yml

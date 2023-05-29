@@ -199,6 +199,7 @@ nav:
         - Blog: news/index.md
         - Release:
             - releases/index.md
+            - Upcoming: releases/upcoming.md
             - Bridge Shopware Platform: releases/changelog-bridge-shopware-platform.md
             - Core: releases/changelog-core.md
             - Dataset base: releases/changelog-dataset-base.md

@@ -57,6 +57,7 @@ clean:
 
 .PHONY: build
 build: assets/css/vendor/highlight.js/atom-one-dark.min.css docs/assets/javascripts/vendor/highlight.js/highlight.min.js github_stats rss adr node_modules git-code-dependencies
+	$(NPM) run simplify-recent-releases
 	$(NPM) run mkdocs-pdf
 	$(MKDOCS) build -f mkdocs-pdf.yml
 	$(MV) site/pdf/document.pdf document.pdf

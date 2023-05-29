@@ -3,6 +3,7 @@
 Here is an overview of all public changelogs we supply.
 They contain helpful hints for upgrading your code.
 When you want to upgrade your code have a look at the [integrator upgrade guide](../guides/integrator/upgrade.md).
+For everything, that will be coming in the future, you can see on the "live roadmap" for the [upcoming features](./upcoming.md).
 
 
 ## Bridge Shopware Platform
