@@ -27,7 +27,7 @@ const listChangelogs = function() {
 function renderTokens(tokens) {
     let html = markdownIt.renderer.render(tokens);
     html = html.replace(/<code>(\\?Heptacom\\HeptaConnect\\)/g, '<code><span class="code-vendor-hc">$1</span>');
-    html = html.replace(/<code>([a-z-]+\/[a-z-]+):/g, '<code><a href="https://packagist.org/packages/$1" target="_blank" title="Open $1 on Packagist.org">$1</a>:');
+    html = html.replace(/<code>([a-z0-9-]+\/[a-z0-9-]+):/g, '<code><a href="https://packagist.org/packages/$1" target="_blank" title="Open $1 on Packagist.org">$1</a>:');
     html = html.replace(/([^>])(PSR-\d+)/g, (_, sep, psr) => `${sep}<a href="https://www.php-fig.org/psr/${psr.toLowerCase()}/" target="_blank" title="Open ${psr} on php-fig.org">${psr}</a>`);
 
     return html;
