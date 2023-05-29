@@ -43,6 +43,8 @@ function removeNoPdfContent(nav) {
     let newsIndex = nav.findIndex((menu) => Object.keys(menu).indexOf('News') !== -1);
     let news = nav[newsIndex].News;
     let release = news[news.findIndex((menu) => Object.keys(menu).indexOf('Release') !== -1)].Release;
+    release = release.filter((menu) => Object.keys(menu).indexOf('Upcoming') === -1);
+
     nav.push({
         Release: release,
     });

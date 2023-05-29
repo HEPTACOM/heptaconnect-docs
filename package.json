@@ -10,6 +10,7 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "rss": "cross-env NODE_ENV=production node .bin/rss.js",
         "adr": "cross-env NODE_ENV=production node .bin/adr.js",
+        "simplify-recent-releases": "cross-env NODE_ENV=production node .bin/simplify-recent-releases.js",
         "mkdocs-pdf": "cross-env NODE_ENV=production node .bin/pdf.js",
         "html-minify": "cross-env NODE_ENV=production node node_modules/.bin/html-minifier --remove-tag-whitespace --collapse-whitespace --preserve-line-breaks --file-ext html --input-dir site --output-dir site",
         "svgo": "cross-env NODE_ENV=production node .bin/svgo.js",
