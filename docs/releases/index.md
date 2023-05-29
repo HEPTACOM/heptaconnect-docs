@@ -27,6 +27,14 @@ Any other dataset library has to use the classes to work with HEPTAconnect utili
 [Read the Dataset Base changelog](./changelog-dataset-base.md)
 
 
+## Dataset Ecommerce
+
+This is the ecommerce dataset.
+It provides all common entities for the transfer of data between different ecommerce portals.
+
+[Read the Dataset Ecommerce changelog](./changelog-dataset-ecommerce.md)
+
+
 ## Portal Base
 
 This is a HEPTAconnect package that provides base structures for portals.

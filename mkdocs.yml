@@ -202,6 +202,7 @@ nav:
             - Bridge Shopware Platform: releases/changelog-bridge-shopware-platform.md
             - Core: releases/changelog-core.md
             - Dataset base: releases/changelog-dataset-base.md
+            - Dataset ecommerce: releases/changelog-dataset-ecommerce.md
             - Portal base: releases/changelog-portal-base.md
             - Portal Local Shopware Platform: releases/changelog-portal-local-shopware-platform.md
             - Package Shopware 6: releases/changelog-package-shopware-6.md
