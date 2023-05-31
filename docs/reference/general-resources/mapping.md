@@ -21,6 +21,11 @@ Upon creation the ecommerce system responds with an identifier for the newly cre
 HEPTAconnect will now save a new mapping for the product in the ecommerce system with the same MappingNode.
 So there are now two mappings for the same product in two different PortalNodes that share a MappingNode.
 
+In some situations mappings are not attached to a mapping node but instead preconfigured using an identity redirect.
+This is useful when multiple mappings in one portal node are represented as a single mapping in a different portal node.
+As this scenario is not supported by the singularity approach of a mapping node, redirects are applied separately and manually created.
+PortalNodes cannot influence redirects as they are cross portal nodes by design.
+
 ### Publisher
 
 To make HEPTAconnect aware of an entity inside a PortalNode, that entity has to be published.
@@ -42,12 +47,13 @@ To perform operations on mappings, various storage actions can be used depending
 
 * `\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityMapActionInterface` used to create missing mappings for entities
 * `\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityPersistActionInterface` used to update mappings on existing mapping nodes
+* `\Heptacom\HeptaConnect\Storage\Base\Contract\Action\IdentityRedirect\IdentityRedirectCreateActionInterface` used to create identity redirects to connect multiple mappings on one portal node to a single mapping on a different portal node
 
 These service can save mappings to the storage and find a counterpart of a mapping for another PortalNode.
 This is done after an identifier has been set on an entity by a receiver.
 
 The process of finding a counterpart of a mapping for another PortalNode is called reflecting.
-The `\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityReflectActionInterface` will check, if the provided entities have known mappings in the management storage.
+The `\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityReflectActionInterface` will check, if the provided entities have known mappings or identity redirects in the management storage.
 Afterwards the service checks, if a reference mapping for the requested PortalNode already exists and assigns it.
 
 ### Error handling

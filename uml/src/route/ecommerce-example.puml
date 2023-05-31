@@ -19,5 +19,6 @@ sw6 --> morph : Customer
 sw6 --> morph : Order
 morph --> zammad : Customer
 morph --> zammad : Order
+sw5 .. sw6 : Currency
 
 @enduml

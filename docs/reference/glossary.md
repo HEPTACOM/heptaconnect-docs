@@ -111,6 +111,11 @@ A `MappingNode` is used to associate various `Mappings` for different `PortalNod
 While one `Mapping` only points to a single foreign entity in a `PortalNode`, this is not enough to connect entities of different `PortalNodes` with each other.
 Every `Mapping` must have exactly one `MappingNode`, while one `MappingNode` can have multiple `Mappings`.
 
+## Identity Redirect
+
+An identity redirect has two mapping representations where one mapping points to another mapping with the aspect, that these mappings do not have to exist in the storage.
+It is used to bypass the singularity aspect of a mapping node and allows to connect multiple mappings on one portal node to a single mapping on a different portal node.
+
 ## Router
 
 The `Router` is a central point in the data flow between different `PortalNodes`.
