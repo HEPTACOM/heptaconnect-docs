@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  packages = [
+    pkgs.python311Packages.weasyprint
+  ];
+
   # Javascript for pre- and postcompilation steps
   languages.javascript.enable = true;
   languages.javascript.package = pkgs.nodejs-18_x;
