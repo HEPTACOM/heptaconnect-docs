@@ -1,0 +1,39 @@
+@startuml
+
+!include ../../include/skin.puml
+
+box Bridge
+    actor ExploreCommand
+endbox
+
+box Core
+    participant ExplorationActor
+    participant MappingService
+    participant JobDispatcher
+endbox
+
+box Storage
+    database MappingStorage
+    database JobStorage
+endbox
+
+box Queue
+    queue EmissionJob
+endbox
+
+box Portal
+    boundary ExplorerContract
+endbox
+
+activate ExploreCommand
+ExploreCommand -> ExplorationActor ++ : Execute exploration by user input
+ExplorationActor -> ExplorerContract ++ : Run portal explorer
+ExplorerContract -> ExplorationActor -- : Collect entity identities
+ExplorationActor -> MappingService ++ : Register existence
+MappingService -> MappingStorage -- : Store mapping and mapping nodes
+ExplorationActor -> JobDispatcher ++ : Queue emissions for collected entity identities
+JobDispatcher -> JobStorage ++ : Store job information
+JobStorage -> JobDispatcher -- : Collect job identities
+JobDispatcher -> EmissionJob -- : Queue emission job execution
+
+@enduml

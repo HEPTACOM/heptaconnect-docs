@@ -1,0 +1,141 @@
+{% extends "main.html" %}
+
+{% block content %}
+    {% if page.edit_url %}
+        <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
+            {% include ".icons/material/pencil.svg" %}
+        </a>
+    {% endif %}
+
+    {% if not "\x3ch1" in page.content %}
+        <h1>{{ page.title | d(config.site_name, true)}}</h1>
+    {% endif %}
+
+    {% set content = page.content %}
+    {% set openCard %}
+        <section class="md-typeset md-grid-dense hc-cards">
+            <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/portals/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/project-diagram.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-c698b41020f74679a3e523e252260459-->', openCard)|replace('<!--close-c698b41020f74679a3e523e252260459-->', closeCard) %}
+
+    {% set openCard %}
+            <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/bridges/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/container-storage.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-ea9ab037bfc14ae9ac627c4d5fe09f6b-->', openCard)|replace('<!--close-ea9ab037bfc14ae9ac627c4d5fe09f6b-->', closeCard) %}
+
+    {% set openCard %}
+            <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/message-brokers/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/mail-bulk.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-ecc555b594ad495dbea9516de4f2dd5a-->', openCard)|replace('<!--close-ecc555b594ad495dbea9516de4f2dd5a-->', closeCard) %}
+
+    {% set openCard %}
+            <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/http-handlers/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/globe-europe.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-9b2a9648ef914aa8a2923118a9e4e494-->', openCard)|replace('<!--close-9b2a9648ef914aa8a2923118a9e4e494-->', closeCard) %}
+
+    {% set openCard %}
+            <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/filesystem/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/folder-tree.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-ae3649461943410bb2bbd332809a24fc-->', openCard)|replace('<!--close-ae3649461943410bb2bbd332809a24fc-->', closeCard) %}
+
+    {% set openCard %}
+            <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/data-tuning/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/network-wired.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-87ab23c4b4be4676adb26e06e2264c08-->', openCard)|replace('<!--close-87ab23c4b4be4676adb26e06e2264c08-->', closeCard) %}
+
+    {% set openCard %}
+            <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/portal-node-configuration/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/wrench.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-101f47c2b1ad4966b4a5c52e0683e4b8-->', openCard)|replace('<!--close-101f47c2b1ad4966b4a5c52e0683e4b8-->', closeCard) %}
+
+    {% set openCard %}
+            <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/logging/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/cabinet-filing.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-743edf56b0e34ad6b473821ae255cda9-->', openCard)|replace('<!--close-743edf56b0e34ad6b473821ae255cda9-->', closeCard) %}
+
+    {% set openCard %}
+            <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/upgrade/'|url }}">
+                <picture>
+                    {% include ".icons/fontawesome/solid/arrow-alt-to-top.svg" %}
+                </picture>
+    {% endset %}
+
+    {% set closeCard %}
+            </a>
+        </section>
+    {% endset %}
+
+    {% set content = content|replace('<!--open-de16093434df4aafb5ca15fdb81fca24-->', openCard)|replace('<!--close-de16093434df4aafb5ca15fdb81fca24-->', closeCard) %}
+
+    {{ content }}
+
+    {% if page and page.meta %}
+        {% if page.meta.git_revision_date_localized or page.meta.revision_date %}
+            {% include "partials/source-file.html" %}
+        {% endif %}
+    {% endif %}
+{% endblock %}

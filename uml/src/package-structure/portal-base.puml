@@ -1,0 +1,15 @@
+@startuml
+
+!include ../../include/skin.puml
+
+package Framework {
+    rectangle "Dataset-Base" as DB
+    rectangle "Portal-Base" as PB $colorHighlight
+}
+
+rectangle "Dataset-Ecommerce" as DE
+
+DE -up-|> DB
+PB -right-|> DB
+
+@enduml

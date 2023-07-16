@@ -1,0 +1,9 @@
+/docs/meta-descriptions.csv
+/docs/assets/images/favicon.png
+/docs/assets/javascripts/*.js.map
+/docs/partials
+
+# Dependencies
+/.bin/PhpDependencyAnalysis
+/node_modules
+/.venv

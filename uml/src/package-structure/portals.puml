@@ -1,0 +1,21 @@
+@startuml
+
+!include ../../include/skin.puml
+
+package Framework {
+    rectangle "Dataset-Base" as DB
+    rectangle "Portal-Base" as PB
+}
+
+rectangle "Dataset-Ecommerce" as DE
+rectangle "Portal-BusinessCentral" as PBC $colorHighlight
+rectangle "Portal-ShopwarePlatform" as PSP $colorHighlight
+
+DE --|> DB
+PB -right-|> DB
+PBC -up-|> PB
+PBC --|> DE
+PSP -up-|> PB
+PSP --|> DE
+
+@enduml

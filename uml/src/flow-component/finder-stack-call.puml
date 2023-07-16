@@ -1,0 +1,23 @@
+@startuml
+
+!include ../../include/skin.puml
+
+participant Stack as S1
+participant "Finder 1" as F1
+participant Stack as S2
+participant "Finder 2" as F2
+participant Stack as S3
+
+S1 --> F1 ++ : find
+F1 --> S2 ++ : next
+S2 --> F2 ++ : find
+F2 --> S3 ++ : next
+
+S3 --> S3 : return value as stack is empty
+
+F2 <-- S3 --
+S2 <-- F2 --
+F1 <-- S2 --
+S1 <-- F1 --
+
+@enduml

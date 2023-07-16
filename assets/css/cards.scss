@@ -1,0 +1,105 @@
+@mixin card(
+    $name,
+    $color
+) {
+    .hc-card--#{$name} {
+        @extend .hc-role-border--#{$name};
+        @extend .hc-role-burn--#{$name};
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            @extend .hc-role-color--#{$name};
+        }
+
+        picture {
+            border-bottom-color: $color;
+        }
+    }
+}
+
+.hc-cards {
+    display: grid;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0 auto;
+    padding: 1rem 1rem 0;
+
+    .hc-card {
+        @extend .hc-role-burn;
+
+        border-radius: 0.1rem;
+        border-width: .15rem;
+        border-style: solid;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            width: 100%;
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        svg {
+            display: block;
+            height: 5rem;
+            margin: 0 auto;
+            fill: var(--md-typeset-color);
+        }
+
+        picture {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom-width: .15rem;
+            border-bottom-style: solid;
+        }
+
+        p {
+            color: var(--md-typeset-color);
+            margin: 0;
+        }
+    }
+
+    @include card(default, var(--hc-role-default));
+    @include card(portal-developer, var(--hc-role-portal-developer));
+    @include card(integrator, var(--hc-role-integrator));
+    @include card(administrator, var(--hc-role-administrator));
+    @include card(playground, var(--hc-role-playground));
+    @include card(contributor, var(--hc-role-contributor));
+}
+
+@media screen and (min-width: 45rem) {
+    .hc-cards {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem 1rem 0;
+    }
+}
+
+@media screen and (min-width: 55rem) {
+    .md-content {
+        .hc-cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media screen and (min-width: 65rem) {
+    .hc-cards,
+    .md-content .hc-cards {
+        padding: 0;
+
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

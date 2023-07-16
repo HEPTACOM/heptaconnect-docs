@@ -1,0 +1,212 @@
+site_name: HEPTAconnect
+use_directory_urls: true
+
+repo_url: https://github.com/HEPTACOM/heptaconnect-docs
+repo_name: HEPTAconnect Docs
+
+# Copyright
+copyright: HEPTACOM solution for medium and large enterprises
+
+markdown_extensions:
+    - admonition
+    - attr_list
+    - footnotes
+    - meta
+    - pymdownx.highlight
+    - pymdownx.snippets:
+        check_paths: true
+    - pymdownx.superfences
+    - pymdownx.highlight:
+        use_pygments: false
+    - pymdownx.tabbed
+
+# Plugins
+plugins:
+    - search
+    - gen-files:
+        scripts:
+            - generators/inject_role_metadata.py
+    - htmlproofer:
+         raise_error_excludes:
+             404:
+                 - 'https://github.com/HEPTACOM/heptaconnect-docs/edit/'
+    - meta-descriptions:
+        export_csv: true
+    - section-index
+    - build_plantuml:
+        render: local
+        bin_path: plantuml
+        output_format: svg
+        diagram_root: uml
+        output_folder: ../docs/assets/uml
+        input_folder: src
+        input_extensions: puml
+
+# Theme
+theme:
+    name: material
+    custom_dir: overrides
+    features:
+        - navigation.tabs
+        - search.suggest
+        - search.highlight
+    language: en
+    logo: assets/gfx/heptaconnect-icon.svg
+    favicon: assets/favicon/favicon-32x32.png
+    icon:
+        repo: fontawesome/brands/github
+    palette:
+        -
+            media: "(prefers-color-scheme: light)"
+            scheme: default
+            toggle:
+                icon: fontawesome/solid/toggle-off
+                name: Switch to dark mode
+        -
+            media: "(prefers-color-scheme: dark)"
+            scheme: slate
+            toggle:
+                icon: fontawesome/solid/toggle-on
+                name: Switch to light mode
+    font: false
+    search_index_only: true
+
+extra_css:
+    - assets/app.css
+
+extra_javascript:
+    - assets/javascripts/vendor/highlight.js/highlight.min.js
+    - assets/javascripts/config.js
+
+# Customization
+extra:
+    social:
+        -
+            icon: fontawesome/brands/github
+            link: https://github.com/topics/heptaconnect
+        -
+            icon: fontawesome/brands/twitter
+            link: https://twitter.com/heptacom_gmbh
+        -
+            icon: fontawesome/solid/rss-square
+            link: /news/
+
+# Page tree
+nav:
+    - Portal Developer:
+        - guides/portal-developer/index.md
+        - Dataset: guides/portal-developer/dataset.md
+        - Portal: guides/portal-developer/portal.md
+        - Explorer: guides/portal-developer/explorer.md
+        - Emitter: guides/portal-developer/emitter.md
+        - Receiver: guides/portal-developer/receiver.md
+        - HTTP Client Middleware: guides/portal-developer/http-client-middleware.md
+        - HTTP Handler: guides/portal-developer/http-handler.md
+        - HTTP Handler Middleware: guides/portal-developer/http-handler-middleware.md
+        - Status reporting: guides/portal-developer/status-reporting.md
+        - Morphers: guides/portal-developer/morphers.md
+        - Key value storage: guides/portal-developer/key-value-storage.md
+        - Explorer decoration: guides/portal-developer/explorer-decoration.md
+        - Emitter decoration: guides/portal-developer/emitter-decoration.md
+        - Receiver decoration: guides/portal-developer/receiver-decoration.md
+        - Direct emission explorer: guides/portal-developer/direct-emission-explorer.md
+        - Dependency injection: guides/portal-developer/dependency-injection.md
+        - Default utilities: guides/portal-developer/default-utilities.md
+        - Short notation for flow components: guides/portal-developer/short-notation-for-flow-components.md
+        - Upgrade: guides/portal-developer/upgrade.md
+        - File references: guides/portal-developer/file-reference.md
+        - Filesystem: guides/portal-developer/filesystem.md
+        - Patterns: # TODO soon to be moved into patterns listing
+            - Transfer file reference by public URL: guides/portal-developer/patterns/transfer-file-reference-by-public-url.md
+            - Send files from an FTP server: guides/portal-developer/patterns/transfer-files-from-ftp-server.md
+            - List files from filesystem: guides/portal-developer/patterns/list-files-from-filesystem.md
+            - Serve a file from filesystem using HTTP handler: guides/portal-developer/patterns/serve-file-from-filesystem-using-http-handler.md
+            - Client Middleware dumping bad request HTTP messages: guides/portal-developer/patterns/http-client-middleware-dumping-on-bad-request.md
+        - Services:
+            - FilesystemInterface: reference/portal-developer/service/filesystem-interface.md
+            - HttpClientContract: reference/portal-developer/service/http-client-contract.md
+    - Integrator:
+        - guides/integrator/index.md
+        - Portals: guides/integrator/portals.md
+        - Bridges: guides/integrator/bridges.md
+        - Message broking: guides/integrator/message-brokers.md
+        - Filesystem: guides/integrator/filesystem.md
+        - HTTP Handlers: guides/integrator/http-handlers.md
+        - Portal node configuration: guides/integrator/portal-node-configuration.md
+        - Logging: guides/integrator/logging.md
+#        - Data tuning: guides/integrator/data-tuning.md
+        - Upgrade: guides/integrator/upgrade.md
+        - Patterns: # TODO soon to be moved into patterns listing
+            - Change the filesystem for a specific portal node: guides/integrator/patterns/filesystem-change-for-specific-portal-node.md
+            - Change dump format for HTTP handler to cURL shell: guides/integrator/patterns/http-handler-dump-format-to-curl-shell-scripts.md
+            - Use SPX as trigger for HTTP handler dumps: guides/integrator/patterns/http-handler-dump-with-spx-trigger.md
+            - Use Xdebug as trigger for HTTP handler dumps: guides/integrator/patterns/http-handler-dump-with-xdebug-trigger.md
+    - Administrator:
+        - guides/administrator/index.md
+        - Portal node: guides/administrator/portal-node.md
+        - Route: guides/administrator/routing.md
+        - Status reporting: guides/administrator/status-reporting.md
+        - HTTP APIs: guides/administrator/http-apis.md
+        - Filesystem: guides/administrator/filesystem.md
+        - Logs: guides/administrator/logs.md
+    - Playground:
+        - guides/playground/index.md
+        - Intro: guides/playground/intro.md
+        - First time:
+            - guides/playground/first-time.md
+            - with Shopware 6: guides/playground/first-time/with-shopware-6.md
+        - Commandline: guides/playground/command-line.md
+        - Add portals: guides/playground/add-portals.md
+        - Contribution: guides/playground/contribution.md
+    - Contributor:
+        - guides/contributor/index.md
+        - Writing changelogs: guides/contributor/changelog.md
+        - Build flow components: guides/contributor/build-flow-components.md
+        - Build storage actions: guides/contributor/build-storage-actions.md
+        - Contributor License Agreement: guides/contributor/cla.md
+    - Reference:
+        - Overview: reference/index.md
+        - General resources:
+            - Package structure: reference/general-resources/package-structure.md
+            - Data flow:
+                - reference/general-resources/data-flow.md
+                - Basic flow: reference/general-resources/data-flows/basic-flow.md
+            - Mapping: reference/general-resources/mapping.md
+        - ADRs:
+            - Telemetry recording: reference/adr/2020-01-27-telemetry-recording.md
+            - Contracts and interfaces: reference/adr/2020-04-30-contracts-and-interfaces.md
+            - Architecture decision records: reference/adr/2020-08-10-architecture-decision-records.md
+            - Parallelization locks: reference/adr/2020-08-28-parallelization-locks.md
+            - Portal status reporters: reference/adr/2020-10-15-portal-status-reporters.md
+            - Job messages and payload: reference/adr/2020-10-30-job-messages-and-payload.md
+            - Portal service container: reference/adr/2020-12-10-portal-service-container.md
+            - Direct emission exploration: reference/adr/2021-02-03-direct-emission-exploration.md
+            - Portal dependency injection implementation: reference/adr/2021-04-13-portal-dependency-injection-implementation.md
+            - Flow component short notation: reference/adr/2021-06-17-flow-component-short-notation.md
+            - PHP 8.0 named arguments: reference/adr/2021-08-24-php-8-named-arguments.md
+            - Exception and log message codes: reference/adr/2021-09-06-exception-and-log-message-codes.md
+            - Optimized storage actions: reference/adr/2021-09-25-optimized-storage-actions.md
+            - Flow components are not CRUD: reference/adr/2021-10-29-flow-components-are-not-crud.md
+            - Route capabilities: reference/adr/2021-10-30-route-capabilities.md
+            - Code documentation: reference/adr/2022-01-05-code-documentation.md
+            - SemVer with generation version: reference/adr/2022-01-24-semver-with-generation-version.md
+            - Final classes: reference/adr/2022-03-02-final-classes.md
+            - Type safe class strings: reference/adr/2022-06-12-type-safe-class-strings.md
+            - Filesystem abstraction with stream wrapper: reference/adr/2022-10-06-filesystem-stream-wrapper.md
+        - Glossary: reference/glossary.md
+        - License: reference/license.md
+    - News:
+        - Blog: news/index.md
+        - Release:
+            - releases/index.md
+            - Upcoming: releases/upcoming.md
+            - Bridge Shopware Platform: releases/changelog-bridge-shopware-platform.md
+            - Core: releases/changelog-core.md
+            - Dataset base: releases/changelog-dataset-base.md
+            - Dataset ecommerce: releases/changelog-dataset-ecommerce.md
+            - Portal base: releases/changelog-portal-base.md
+            - Portal Local Shopware Platform: releases/changelog-portal-local-shopware-platform.md
+            - Package Shopware 6: releases/changelog-package-shopware-6.md
+            - Storage base: releases/changelog-storage-base.md
+            - Storage Shopware DAL: releases/changelog-storage-shopware-dal.md
+    - Pricing: https://www.heptacom.de/heptaconnect/

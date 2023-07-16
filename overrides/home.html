@@ -1,0 +1,309 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+    {{ super() }}
+
+    <section class="mdx-container">
+        <div class="md-grid md-grid-dense md-typeset">
+            <div class="mdx-hero">
+                <picture>
+                    {% include "partials/heptaconnect-logo.svg" %}
+                </picture>
+
+                <div class="mdx-hero__content">
+                    <p class="home-claim">
+                        <span class="first-line">
+                            Your framework to connect.
+                        </span>
+
+                        <br>
+
+                        <span class="sub-line">
+                            Connect to what? <span class="tag-typewriter">Well, ...</span>
+                        </span>
+                    </p>
+
+                    <div class="home-instructions">
+                        <pre class="highlight"><code class="language-bash">git clone https://github.com/HEPTACOM/heptaconnect-playground.git
+    make -C heptaconnect-playground</code></pre>
+                        <a
+                            href="{{ '/guides/playground/'|url }}"
+                            title="Getting Started"
+                            class="md-button md-button--primary"
+                        >
+                            Getting Started
+                            {% include ".icons/material/arrow-right.svg" %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="md-typeset md-grid-dense hc-cards">
+        <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/'|url }}">
+            <picture>
+                {% include ".icons/fontawesome/solid/wrench.svg" %}
+            </picture>
+
+            <h2>
+                Administrator
+            </h2>
+
+            <p>
+                Setup, control and monitor HEPTAconnect instances.
+            </p>
+        </a>
+
+        <a class="hc-card hc-card--integrator" href="{{ 'guides/integrator/'|url }}">
+            <picture>
+                {% include ".icons/fontawesome/solid/network-wired.svg" %}
+            </picture>
+
+            <h2>
+                Integrator
+            </h2>
+
+            <p>
+                Introduce HEPTAconnect into your project to connect it with the world.
+            </p>
+        </a>
+
+        <a class="hc-card hc-card--portal-developer" href="{{ 'guides/portal-developer/'|url }}">
+            <picture>
+                {% include ".icons/fontawesome/solid/plug.svg" %}
+            </picture>
+
+            <h2>
+                Portal developer
+            </h2>
+
+            <p>
+                Create a HEPTAconnect portal for your API and extend existing portals
+            </p>
+        </a>
+
+        <a class="hc-card hc-card--default" href="{{ 'reference/'|url }}">
+            <picture>
+                {% include ".icons/fontawesome/solid/books.svg" %}
+            </picture>
+
+            <h2>
+                References
+            </h2>
+
+            <p>
+                Learn more about the internals or lookup technical details.
+            </p>
+        </a>
+    </section>
+    <section class="md-typeset md-grid-dense" style="margin: 3rem auto 0">
+        <h1 style="text-align: center">
+            Why HEPTAconnect?
+        </h1>
+        <div>
+            <dl class="why-heptaconnect-dl">
+                <dt>
+                    Documentation Tailored for Various Personas
+                </dt>
+                <dd>
+                    HEPTAconnect packages are developed, deployed, updated, configured, and monitored by different personas.
+                    The documentation is divided into sections, ensuring that it aligns with the reader's specific role and expectations.
+                </dd>
+                <dt>
+                    Open-Source Your Project
+                </dt>
+                <dd>
+                    The code for each package can be accessed either publicly or through vendor licensing.
+                    Collaborate with the vendor via "HEPTAhelp" or develop your code independently.
+                    HEPTACOM GmbH is committed to empowering you in managing your own projects.
+                </dd>
+                <dt>
+                    Host Anywhere PHP is Supported
+                </dt>
+                <dd>
+                    Avoid being locked into a specific hosting environment.
+                    Comply with your data protection policies, operate within your own DMZ, or choose a cloud infrastructure provider that suits your needs.
+                </dd>
+                <dt>
+                    Synchronize Update Schedules with Your Other Applications
+                </dt>
+                <dd>
+                    Schedule your maintenance times to coincide with your business operations, thereby minimizing disruptions.
+                    Enjoy full control over your project with no unexpected releases.
+                </dd>
+                <dt>
+                    Adapt to Your Business Evolution
+                </dt>
+                <dd>
+                    Introduce new APIs as services evolve, or phase out obsolete ones.
+                    Eliminate the need to adjust multiple single-purpose data transfers to function in harmony.
+                </dd>
+                <dt>
+                    Test-Drive
+                </dt>
+                <dd>
+                    Utilize code versioning to design data flows and test them on replicas of your infrastructure, ensuring the quality of your project.
+                </dd>
+                <dt>
+                    A Framework Without Limits
+                </dt>
+                <dd>
+                    Embed your workflows into your data transfer process instead of adjusting your workflows to suit the data transfer software.
+                    Seamlessly connect your data regardless of its structure and availability.
+                    Benefit from event-based triggers, file imports, time-based triggers, differential checks, and custom checks between APIs.
+                </dd>
+                <dt>
+                    Prioritize High-Load Scenarios
+                </dt>
+                <dd>
+                    Anticipating high-load events? Decide which data takes the side road and which speeds along the highway.
+                    This strategy ensures that time-sensitive data arrives promptly.
+                </dd>
+                <dt>
+                    Leverage Existing Monitoring and Backup Infrastructure
+                </dt>
+                <dd>
+                    Place your HEPTAconnect storage anywhere and take advantage of your existing backup storage.
+                    Make use of health monitoring and integrate your logging services without the need to learn new software.
+                    Receive notifications about any significant event.
+                </dd>
+            </dl>
+        </div>
+    </section>
+    <section class="md-typeset md-grid-dense" style="margin: 3rem auto 0">
+        <h1>
+            Latest news
+        </h1>
+    </section>
+
+    {% include "partials/generated/latest-news.html" %}
+
+    <script>
+        /* Safari fix for typing animation */
+        function refreshSafariElement(element) {
+            element.style.display = 'inline-block';
+            element.offsetHeight;
+            element.style.display = 'inline';
+        }
+
+        function typingEffect() {
+            const contactTexts = ([
+                'Shops',
+                'Excel spreadsheets',
+                'REST APIs',
+                'ERPs',
+                'CSV files',
+                'SOAP APIs',
+                'CRM',
+                'E-mail inbox',
+                'Databases',
+                'Humans',
+                'PIM',
+                'Data exports',
+                'IPC APIs',
+                'File shares',
+            ]);
+            const tagTypewriter = document.querySelector('.tag-typewriter');
+            let removing = true;
+            let idx = contactTexts.length - 1;
+            let char = tagTypewriter.textContent.length;
+
+            setInterval(() => {
+                if (char < contactTexts[idx].length) {
+                    tagTypewriter.innerHTML += contactTexts[idx][char];
+                    refreshSafariElement(tagTypewriter);
+                }
+
+                if (char == contactTexts[idx].length + 30) removing = true;
+
+                if (removing) {
+                    tagTypewriter.innerHTML = tagTypewriter.innerHTML.substring(0, tagTypewriter.innerHTML.length - 1);
+                    refreshSafariElement(tagTypewriter);
+                }
+
+                char++;
+
+                if (tagTypewriter.innerHTML.length === 0) {
+                    if (idx === contactTexts.length - 1) idx = 0
+                    else idx++;
+
+                    char = 0;
+                    removing = false;
+                }
+            }, 90);
+        }
+
+        setTimeout(typingEffect, 4000);
+    </script>
+
+    <style>
+        dl.why-heptaconnect-dl {
+            padding: 0 20px;
+        }
+
+        @media screen and (min-width: 65rem) {
+            dl.why-heptaconnect-dl {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 0 50px;
+                padding: 0;
+            }
+
+            dl.why-heptaconnect-dl dt:nth-of-type(n+1):not(:nth-of-type(n+4)) {
+                grid-row-start: 1;
+            }
+            dl.why-heptaconnect-dl dt:nth-of-type(n+4):not(:nth-of-type(n+7)) {
+                grid-row-start: 3;
+            }
+            dl.why-heptaconnect-dl dt:nth-of-type(n+7) {
+                grid-row-start: 5;
+            }
+
+            dl.why-heptaconnect-dl dd:nth-of-type(n+1):not(:nth-of-type(n+4)) {
+                grid-row-start: 2;
+            }
+            dl.why-heptaconnect-dl dd:nth-of-type(n+4):not(:nth-of-type(n+7)) {
+                grid-row-start: 4;
+            }
+            dl.why-heptaconnect-dl dd:nth-of-type(n+7) {
+                grid-row-start: 6;
+            }
+
+            dl.why-heptaconnect-dl dt:nth-last-of-type(3n-3),
+            dl.why-heptaconnect-dl dd:nth-last-of-type(3n-3) {
+                grid-column-start: 1;
+            }
+            dl.why-heptaconnect-dl dt:nth-last-of-type(3n-2),
+            dl.why-heptaconnect-dl dd:nth-last-of-type(3n-2) {
+                grid-column-start: 2;
+            }
+            dl.why-heptaconnect-dl dt:nth-last-of-type(3n-1),
+            dl.why-heptaconnect-dl dd:nth-last-of-type(3n-1) {
+                grid-column-start: 3;
+            }
+        }
+
+        dl.why-heptaconnect-dl dt {
+            font-weight: bold;
+        }
+        dl.why-heptaconnect-dl dd {
+            margin-left: 20px !important;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}{% endblock %}
+{% block site_nav %}
+    {% if page and page.meta and page.meta.hide %}
+        {% set hidden = "hidden" if "navigation" in page.meta.hide %}
+    {% endif %}
+
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                {% include "partials/nav.html" %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
