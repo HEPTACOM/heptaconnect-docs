@@ -211,6 +211,7 @@ nav:
             - Dataset ecommerce: releases/changelog-dataset-ecommerce.md
             - Portal base: releases/changelog-portal-base.md
             - Portal Local Shopware Platform: releases/changelog-portal-local-shopware-platform.md
+            - Package HTTP: releases/changelog-package-http.md
             - Package Shopware 6: releases/changelog-package-shopware-6.md
             - Storage base: releases/changelog-storage-base.md
             - Storage Shopware DAL: releases/changelog-storage-shopware-dal.md

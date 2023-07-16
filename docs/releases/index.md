@@ -51,6 +51,13 @@ This is a HEPTAconnect package that allows to communicate multiple entity types 
 [Read the Portal Local Shopware Platform changelog](./changelog-portal-local-shopware-platform.md)
 
 
+## Package HTTP
+
+This is a HEPTAconnect package to support flow components working with HTTP clients or act as HTTP server.
+
+[Read the Package HTTP changelog](./changelog-package-http.md)
+
+
 ## Package Shopware 6
 
 This is a HEPTAconnect package all about communicating to Shopware 6 APIs. You can use it in combination with the Shopware 6 Portal.

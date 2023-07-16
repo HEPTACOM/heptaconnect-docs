@@ -7,6 +7,7 @@ REPOS = heptaconnect-bridge-shopware-platform \
 		heptaconnect-framework \
 		heptaconnect-portal-base \
 		heptaconnect-portal-local-shopware-platform \
+		heptaconnect-package-http \
 		heptaconnect-package-shopware-6 \
 		heptaconnect-storage-base \
 		heptaconnect-storage-shopware-dal \
