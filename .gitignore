@@ -22,6 +22,7 @@
 /overrides/partials/generated/releases-major-latest-dataset-ecommerce.html
 /overrides/partials/generated/releases-major-latest-package-http.html
 /overrides/partials/generated/releases-major-latest-package-shopware-6.html
+/overrides/partials/generated/releases-major-latest-package-web-frontend.html
 /overrides/partials/generated/releases-major-latest-portal-base.html
 /overrides/partials/generated/releases-major-latest-portal-local-shopware-platform.html
 /overrides/partials/generated/releases-major-latest-storage-base.html
@@ -34,6 +35,7 @@
 /overrides/partials/generated/releases-major-previously-framework.html
 /overrides/partials/generated/releases-major-previously-package-http.html
 /overrides/partials/generated/releases-major-previously-package-shopware-6.html
+/overrides/partials/generated/releases-major-previously-package-web-frontend.html
 /overrides/partials/generated/releases-major-previously-portal-base.html
 /overrides/partials/generated/releases-major-previously-portal-local-shopware-platform.html
 /overrides/partials/generated/releases-major-previously-storage-base.html
@@ -46,6 +48,7 @@
 /overrides/partials/generated/releases-upcoming-framework.html
 /overrides/partials/generated/releases-upcoming-package-http.html
 /overrides/partials/generated/releases-upcoming-package-shopware-6.html
+/overrides/partials/generated/releases-upcoming-package-web-frontend.html
 /overrides/partials/generated/releases-upcoming-portal-base.html
 /overrides/partials/generated/releases-upcoming-portal-local-shopware-platform.html
 /overrides/partials/generated/releases-upcoming-storage-base.html

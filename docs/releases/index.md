@@ -58,6 +58,13 @@ This is a HEPTAconnect package to support flow components working with HTTP clie
 [Read the Package HTTP changelog](./changelog-package-http.md)
 
 
+## Package Web Frontend
+
+This is a HEPTAconnect package to build web frontends for portals and integrations.
+
+[Read the Package Web Frontend changelog](./changelog-package-web-frontend.md)
+
+
 ## Package Shopware 6
 
 This is a HEPTAconnect package all about communicating to Shopware 6 APIs. You can use it in combination with the Shopware 6 Portal.
