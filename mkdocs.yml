@@ -23,7 +23,8 @@ markdown_extensions:
 
 # Plugins
 plugins:
-    - search
+    - search:
+        separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
     - gen-files:
         scripts:
             - generators/inject_role_metadata.py
@@ -49,8 +50,10 @@ theme:
     custom_dir: overrides
     features:
         - navigation.tabs
+        - navigation.footer
         - search.suggest
         - search.highlight
+        - content.code.copy
     language: en
     logo: assets/gfx/heptaconnect-icon.svg
     favicon: assets/favicon/favicon-32x32.png
