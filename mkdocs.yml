@@ -92,7 +92,7 @@ extra:
             icon: fontawesome/brands/twitter
             link: https://twitter.com/heptacom_gmbh
         -
-            icon: fontawesome/solid/rss-square
+            icon: fontawesome/solid/square-rss
             link: /news/
 
 # Page tree
