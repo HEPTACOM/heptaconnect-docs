@@ -18,7 +18,8 @@ markdown_extensions:
     - pymdownx.superfences
     - pymdownx.highlight:
         use_pygments: false
-    - pymdownx.tabbed
+    - pymdownx.tabbed:
+        alternate_style: true
 
 # Plugins
 plugins:

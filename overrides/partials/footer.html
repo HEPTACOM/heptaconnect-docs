@@ -54,13 +54,7 @@
                 {% include ".icons/fontawesome/solid/file-pdf.svg" %}
             </a>
 
-            <div class="heptaconnect-footer-copyright">
-                <div class="md-footer-copyright__highlight">
-                    Made with <span style="color: #fff"> ❤️ </span>&nbsp;by <a href="https://www.heptacom.de">HEPTACOM</a>
-                </div>
-
-                {{ extracopyright }}
-            </div>
+            {% include "partials/copyright.html" %}
 
             <div class="heptaconnect-footer-privacy">
                 <a href="https://www.heptacom.de/datenschutz/">Privacy</a>
@@ -70,7 +64,9 @@
                 <a href="https://www.heptacom.de/impressum/">Imprint</a>
             </div>
 
-            {% include "partials/social.html" %}
+            {% if config.extra.social %}
+                {% include "partials/social.html" %}
+            {% endif %}
         </div>
     </div>
 </footer>
