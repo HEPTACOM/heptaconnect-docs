@@ -25,13 +25,23 @@ const listChangelogs = function() {
 }
 
 function renderTokens(tokens) {
-    let html = markdownIt.renderer.render(tokens);
-    html = html.replace(/<code>(\\?Heptacom\\HeptaConnect\\)/g, '<code><span class="code-vendor-hc">$1</span>');
-    html = html.replace(/<code>([a-z0-9-]+\/[a-z0-9-]+):/g, '<code><a href="https://packagist.org/packages/$1" target="_blank" title="Open $1 on Packagist.org">$1</a>:');
-    html = html.replace(/<code>ext-([^:<]+)(:[^:<]+)?<\/code>/g, '<code><a href="https://www.php.net/manual/en/book.$1.php" target="_blank" title="Open $1 on php.net">ext-$1</a>$2</code>');
-    html = html.replace(/([^>])(PSR-\d+)/g, (_, sep, psr) => `${sep}<a href="https://www.php-fig.org/psr/${psr.toLowerCase()}/" target="_blank" title="Open ${psr} on php-fig.org">${psr}</a>`);
+    const markdownedTokens = tokens.map((token) => {
+        switch (token.type) {
+            case 'bullet_list_open': return '';
+            case 'bullet_list_close': return "\n";
+            case 'list_item_open': return token.markup;
+            case 'list_item_close': return "\n";
+            case 'inline': return ' ' + token.content;
+            case 'heading_open': return token.markup;
+            case 'heading_close': return "\n\n";
+            case 'paragraph_open': return '';
+            case 'paragraph_close': return '';
+            default:
+                break;
+        }
+    });
 
-    return html;
+    return markdownedTokens.join('');
 }
 
 console.log('Simplify recent releases');
@@ -144,7 +154,7 @@ const upcoming = packageReleases
     .map((packageRelease) => ({
         ...packageRelease,
         releases: packageRelease.releases[0],
-        html: renderTokens(packageRelease.releases[0].tokens),
+        md: renderTokens(packageRelease.releases[0].tokens),
     }));
 const releasedPackageReleases = cleanedPackageReleases
     .map((packageRelease) => ({
@@ -164,7 +174,7 @@ const latestMajor = releasedPackageReleases
             .filter(({ major }) => major === packageRelease.major)
             .map((release) => ({
                 ...release,
-                html: renderTokens(release.tokens),
+                md: renderTokens(release.tokens),
             })),
     }));
 const previouslyReleasedPackageReleases = releasedPackageReleases
@@ -174,33 +184,37 @@ const previouslyReleasedPackageReleases = releasedPackageReleases
             .filter(({ major }) => major !== packageRelease.major && packageRelease.major !== null)
             .map((release) => ({
                 ...release,
-                html: renderTokens(release.tokens),
+                md: renderTokens(release.tokens),
             })),
     }));
 
 for (const release of upcoming) {
-    fs.writeFileSync(`overrides/partials/generated/releases-upcoming-${release.package}.html`, release.html);
+    fs.writeFileSync(`overrides/partials/generated/releases-upcoming-${release.package}.md`, release.md);
 }
 for (const release of changelogFiles.filter(({ file }) => !upcoming.some(packageRelease => packageRelease.file === file))) {
-    fs.writeFileSync(`overrides/partials/generated/releases-upcoming-${release.package}.html`, '');
+    fs.writeFileSync(`overrides/partials/generated/releases-upcoming-${release.package}.md`, '');
 }
 
 for (const packageRelease of latestMajor) {
     fs.writeFileSync(
-        `overrides/partials/generated/releases-major-latest-${packageRelease.package}.html`,
-        packageRelease.releases.map(({ releaseDate, name, html }) => `<h2>[${name}] - ${releaseDate}</h2>${html}`).join(''),
+        `overrides/partials/generated/releases-major-latest-${packageRelease.package}.md`,
+        packageRelease.releases.map(({ releaseDate, name, md }) => `## [${name}] - ${releaseDate}
+
+${md}`).join(''),
     );
 }
 for (const release of changelogFiles.filter(({ file }) => !latestMajor.some(packageRelease => packageRelease.file === file))) {
-    fs.writeFileSync(`overrides/partials/generated/releases-major-latest-${release.package}.html`, '');
+    fs.writeFileSync(`overrides/partials/generated/releases-major-latest-${release.package}.md`, '');
 }
 
 for (const packageRelease of previouslyReleasedPackageReleases) {
     fs.writeFileSync(
-        `overrides/partials/generated/releases-major-previously-${packageRelease.package}.html`,
-        packageRelease.releases.map(({ releaseDate, name, html }) => `<h2>[${name}] - ${releaseDate}</h2>${html}`).join(''),
+        `overrides/partials/generated/releases-major-previously-${packageRelease.package}.md`,
+        packageRelease.releases.map(({ releaseDate, name, md }) => `## [${name}] - ${releaseDate}
+
+${md}`).join(''),
     );
 }
 for (const release of changelogFiles.filter(({ file }) => !previouslyReleasedPackageReleases.some(packageRelease => packageRelease.file === file))) {
-    fs.writeFileSync(`overrides/partials/generated/releases-major-previously-${release.package}.html`, '');
+    fs.writeFileSync(`overrides/partials/generated/releases-major-previously-${release.package}.md`, '');
 }
