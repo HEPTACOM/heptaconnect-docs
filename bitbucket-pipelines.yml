@@ -1,4 +1,4 @@
-image: node:14-alpine
+image: node:18-alpine
 
 definitions:
     steps:
@@ -14,7 +14,7 @@ definitions:
                     - node
                 artifacts:
                     - 'site/**'
-                image: heptacom/mkdocs-pipeline
+                image: heptacom/mkdocs-pipeline:2.0.0
                 name: Build documentation assets
                 script:
                     - npm install --global cross-env
