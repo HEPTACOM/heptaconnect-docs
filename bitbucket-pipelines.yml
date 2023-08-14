@@ -14,7 +14,7 @@ definitions:
                     - node
                 artifacts:
                     - 'site/**'
-                image: heptacom/mkdocs-pipeline
+                image: heptacom/mkdocs-pipeline:1.0.0
                 name: Build documentation assets
                 script:
                     - npm install --global cross-env
