@@ -256,7 +256,7 @@ body.hc-role-contributor .md-header {
 
 .heptaconnect-footer-copyright,
 .heptaconnect-footer-download,
-.md-footer-social {
+.md-social {
     flex-basis: 100%;
     text-align: center;
 }
@@ -279,7 +279,7 @@ body.hc-role-contributor .md-header {
     text-align: left;
 }
 
-.md-footer-social__link {
+.md-social__link {
     width: 2.1rem;
     padding-left: .25rem;
     padding-right: .25rem;
@@ -288,7 +288,7 @@ body.hc-role-contributor .md-header {
 @media screen and (min-width: 45rem) {
     .heptaconnect-footer-copyright,
     .heptaconnect-footer-download,
-    .md-footer-social {
+    .md-social {
         font-size: .64rem;
         flex-basis: 30%;
     }
@@ -303,7 +303,7 @@ body.hc-role-contributor .md-header {
         order: 2;
     }
 
-    .md-footer-social {
+    .md-social {
         text-align: right;
         order: 3;
     }
