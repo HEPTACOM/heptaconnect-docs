@@ -5,11 +5,8 @@ title: Package HTTP Changelog
 
 --8<-- "overrides/partials/generated/releases-major-latest-package-http.md"
 
-<details>
-  <summary>
-    Past changes
-  </summary>
+<!--open-previous-releases-->
 
 --8<-- "overrides/partials/generated/releases-major-previously-package-http.md"
 
-</details>
+<!--close-previous-releases-->

@@ -5,11 +5,8 @@ title: Storage Shopware DAL Changelog
 
 --8<-- "overrides/partials/generated/releases-major-latest-storage-shopware-dal.md"
 
-<details>
-  <summary>
-    Past changes
-  </summary>
+<!--open-previous-releases-->
 
 --8<-- "overrides/partials/generated/releases-major-previously-storage-shopware-dal.md"
 
-</details>
+<!--close-previous-releases-->

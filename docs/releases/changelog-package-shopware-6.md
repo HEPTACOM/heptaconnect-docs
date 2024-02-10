@@ -5,11 +5,8 @@ title: Package Shopware 6 Changelog
 
 --8<-- "overrides/partials/generated/releases-major-latest-package-shopware-6.md"
 
-<details>
-  <summary>
-    Past changes
-  </summary>
+<!--open-previous-releases-->
 
 --8<-- "overrides/partials/generated/releases-major-previously-package-shopware-6.md"
 
-</details>
+<!--close-previous-releases-->

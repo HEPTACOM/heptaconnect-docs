@@ -5,11 +5,8 @@ title: Core Changelog
 
 --8<-- "overrides/partials/generated/releases-major-latest-core.md"
 
-<details>
-  <summary>
-    Past changes
-  </summary>
+<!--open-previous-releases-->
 
 --8<-- "overrides/partials/generated/releases-major-previously-core.md"
 
-</details>
+<!--close-previous-releases-->
