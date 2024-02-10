@@ -13,7 +13,11 @@ mkdocs.plugins.push({
         cover: true,
         cover_title: 'HEPTAconnect',
         cover_subtitle: '',
-        render_js: false
+        render_js: false,
+        exclude_pages: [
+            'guides/integrator/',
+            'guides/administrator/',
+        ],
     }
 });
 
