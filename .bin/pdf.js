@@ -14,10 +14,6 @@ mkdocs.plugins.push({
         cover_title: 'HEPTAconnect',
         cover_subtitle: '',
         render_js: false,
-        exclude_pages: [
-            'guides/integrator/',
-            'guides/administrator/',
-        ],
     }
 });
 
@@ -60,5 +56,6 @@ function removeNoPdfContent(nav) {
 
 mkdocs.nav = generateNavigation(mkdocs.nav, 'HEPTAconnect');
 mkdocs.nav = removeNoPdfContent(mkdocs.nav);
+mkdocs.theme.icon.heptaconnectCards = false;
 
 fs.writeFileSync('mkdocs-pdf.yml', yaml.dump(mkdocs), 'utf8');

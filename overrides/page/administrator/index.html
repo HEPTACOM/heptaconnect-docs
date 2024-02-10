@@ -12,83 +12,98 @@
     {% endif %}
 
     {% set content = page.content %}
-    {% set openCard %}
+    {% set openCard = '' %}
+    {% set closeCard = '' %}
+
+    {% if config.theme.icon.heptaconnectCards %}
+        {% set openCard %}
         <section class="md-typeset md-grid-dense hc-cards">
             <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/portal-node/'|url }}">
                 <picture>
                     {% include ".icons/fontawesome/solid/diagram-project.svg" %}
                 </picture>
-    {% endset %}
+        {% endset %}
 
-    {% set closeCard %}
+        {% set closeCard %}
             </a>
-    {% endset %}
+        {% endset %}
+    {% endif %}
 
     {% set content = content|replace('<!--open-f5ae91335169404e85f3e121357aade0-->', openCard)|replace('<!--close-f5ae91335169404e85f3e121357aade0-->', closeCard) %}
 
-    {% set openCard %}
+    {% if config.theme.icon.heptaconnectCards %}
+        {% set openCard %}
             <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/routing/'|url }}">
                 <picture>
                     {% include ".icons/fontawesome/solid/route.svg" %}
                 </picture>
-    {% endset %}
+        {% endset %}
 
-    {% set closeCard %}
+        {% set closeCard %}
             </a>
-    {% endset %}
+        {% endset %}
+    {% endif %}
 
     {% set content = content|replace('<!--open-cb1a50171cfe41bea30d1437ab32aa02-->', openCard)|replace('<!--close-cb1a50171cfe41bea30d1437ab32aa02-->', closeCard) %}
 
-    {% set openCard %}
+    {% if config.theme.icon.heptaconnectCards %}
+        {% set openCard %}
             <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/status-reporting/'|url }}">
                 <picture>
                     {% include ".icons/fontawesome/solid/sensor.svg" %}
                 </picture>
-    {% endset %}
+        {% endset %}
 
-    {% set closeCard %}
+        {% set closeCard %}
             </a>
-    {% endset %}
+        {% endset %}
+    {% endif %}
 
     {% set content = content|replace('<!--open-82cbda7a53ff4843bc69a3cb717ceaee-->', openCard)|replace('<!--close-82cbda7a53ff4843bc69a3cb717ceaee-->', closeCard) %}
 
-    {% set openCard %}
+    {% if config.theme.icon.heptaconnectCards %}
+        {% set openCard %}
             <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/http-apis/'|url }}">
                 <picture>
                     {% include ".icons/fontawesome/solid/globe-europe.svg" %}
                 </picture>
-    {% endset %}
+        {% endset %}
 
-    {% set closeCard %}
+        {% set closeCard %}
             </a>
-    {% endset %}
+        {% endset %}
+    {% endif %}
 
     {% set content = content|replace('<!--open-5a19b7d8a81d427ab43b2685c6b4e8c3-->', openCard)|replace('<!--close-5a19b7d8a81d427ab43b2685c6b4e8c3-->', closeCard) %}
 
-    {% set openCard %}
+    {% if config.theme.icon.heptaconnectCards %}
+        {% set openCard %}
             <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/filesystem/'|url }}">
                 <picture>
                     {% include ".icons/fontawesome/solid/folder-tree.svg" %}
                 </picture>
-    {% endset %}
+        {% endset %}
 
-    {% set closeCard %}
+        {% set closeCard %}
             </a>
-    {% endset %}
+        {% endset %}
+    {% endif %}
 
     {% set content = content|replace('<!--open-4027d68e85cb49c886bb36db119507e1-->', openCard)|replace('<!--close-4027d68e85cb49c886bb36db119507e1-->', closeCard) %}
 
-    {% set openCard %}
+    {% if config.theme.icon.heptaconnectCards %}
+        {% set openCard %}
             <a class="hc-card hc-card--administrator" href="{{ 'guides/administrator/logs/'|url }}">
                 <picture>
                     {% include ".icons/fontawesome/solid/cabinet-filing.svg" %}
                 </picture>
-    {% endset %}
+        {% endset %}
 
-    {% set closeCard %}
+        {% set closeCard %}
             </a>
         </section>
-    {% endset %}
+        {% endset %}
+    {% endif %}
 
     {% set content = content|replace('<!--open-123d7ed379034757ac79ac2431b411a9-->', openCard)|replace('<!--close-123d7ed379034757ac79ac2431b411a9-->', closeCard) %}
 

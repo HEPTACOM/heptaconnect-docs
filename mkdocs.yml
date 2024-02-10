@@ -59,6 +59,7 @@ theme:
     favicon: assets/favicon/favicon-32x32.png
     icon:
         repo: fontawesome/brands/github
+        heptaconnectCards: true
     palette:
         -
             media: "(prefers-color-scheme: light)"
