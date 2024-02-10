@@ -18,11 +18,13 @@ markdown_extensions:
     - pymdownx.superfences
     - pymdownx.highlight:
         use_pygments: false
-    - pymdownx.tabbed
+    - pymdownx.tabbed:
+        alternate_style: true
 
 # Plugins
 plugins:
-    - search
+    - search:
+        separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
     - gen-files:
         scripts:
             - generators/inject_role_metadata.py
@@ -48,13 +50,16 @@ theme:
     custom_dir: overrides
     features:
         - navigation.tabs
+        - navigation.footer
         - search.suggest
         - search.highlight
+        - content.code.copy
     language: en
     logo: assets/gfx/heptaconnect-icon.svg
     favicon: assets/favicon/favicon-32x32.png
     icon:
         repo: fontawesome/brands/github
+        heptaconnectCards: true
     palette:
         -
             media: "(prefers-color-scheme: light)"
@@ -88,7 +93,7 @@ extra:
             icon: fontawesome/brands/twitter
             link: https://twitter.com/heptacom_gmbh
         -
-            icon: fontawesome/solid/rss-square
+            icon: fontawesome/solid/square-rss
             link: /news/
 
 # Page tree

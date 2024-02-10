@@ -51,3 +51,7 @@
 /overrides/partials/github.json
 /docs/assets/uml
 /mkdocs-pdf.yml
+
+# Devenv
+.devenv*
+devenv.local.nix

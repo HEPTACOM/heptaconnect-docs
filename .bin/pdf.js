@@ -13,7 +13,7 @@ mkdocs.plugins.push({
         cover: true,
         cover_title: 'HEPTAconnect',
         cover_subtitle: '',
-        render_js: false
+        render_js: false,
     }
 });
 
@@ -56,5 +56,6 @@ function removeNoPdfContent(nav) {
 
 mkdocs.nav = generateNavigation(mkdocs.nav, 'HEPTAconnect');
 mkdocs.nav = removeNoPdfContent(mkdocs.nav);
+mkdocs.theme.icon.heptaconnectCards = false;
 
 fs.writeFileSync('mkdocs-pdf.yml', yaml.dump(mkdocs), 'utf8');
