@@ -58,7 +58,7 @@
     {% endif %}
     {% endblock %}
     {% for path in config["extra_css"] %}
-    <link rel="stylesheet" href="{{ path | url }}?break=replace-this-with-now">
+    <link rel="stylesheet" href="{{ path | url }}?break=replace-this-with-hash">
     {% endfor %}
     {% include "partials/javascripts/base.html" %}
     {% block analytics %}
