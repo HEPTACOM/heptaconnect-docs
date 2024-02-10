@@ -316,3 +316,15 @@ body.hc-role-contributor .md-header {
         order: 5;
     }
 }
+
+@media print {
+    .admonition {
+        .admonition-title {
+            padding-left: 0.6rem;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
