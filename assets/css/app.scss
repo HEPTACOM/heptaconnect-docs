@@ -318,12 +318,15 @@ body.hc-role-contributor .md-header {
 }
 
 @media print {
-    .admonition {
-        .admonition-title {
-            padding-left: 0.6rem;
+    .md-typeset {
+        .admonition {
+            .admonition-title {
+                padding-left: 0.6rem !important;
 
-            &::before {
-                display: none;
+                &::before {
+                    display: none !important;
+                    content: unset !important;
+                }
             }
         }
     }

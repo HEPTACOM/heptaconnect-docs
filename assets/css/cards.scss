@@ -66,7 +66,11 @@
             border-bottom-style: solid;
 
             @media print {
-                display: none;
+                display: none !important;
+                height: 0 !important;
+                width: 0 !important;
+                min-height: 0 !important;
+                min-width: 0 !important;
             }
         }
 
