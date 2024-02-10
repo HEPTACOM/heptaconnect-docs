@@ -15,7 +15,21 @@
         {% set content = content|replace('<h1 id="changelog">Changelog</h1>', '<h1 id="changelog">%s</h1>'|format(page.title)) %}
     {% endif %}
 
-    {{ content|replace("<p>All notable changes to this project will be documented in this file.</p>\n",'') }}
+{% set openSummary %}
+<details>
+    <summary>
+        Past changes
+    </summary>
+{% endset %}
+
+{% set closeSummary %}
+    </details>
+{% endset %}
+
+    {% set content = content|replace('<!--open-previous-releases-->', openSummary)|replace('<!--close-previous-releases-->', closeSummary) %}
+    {% set content = content|replace("<p>All notable changes to this project will be documented in this file.</p>\n",'') %}
+
+    {{ content }}
 
     {% if page and page.meta %}
         {% if page.meta.git_revision_date_localized or page.meta.revision_date %}

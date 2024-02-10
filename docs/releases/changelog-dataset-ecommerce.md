@@ -3,11 +3,10 @@ template: page/releases/changelog.html
 title: Dataset Ecommerce Changelog
 ---
 
---8<-- "overrides/partials/generated/releases-major-latest-dataset-ecommerce.html"
+--8<-- "overrides/partials/generated/releases-major-latest-dataset-ecommerce.md"
 
-<details>
-  <summary>
-    Past changes
-  </summary>
---8<-- "overrides/partials/generated/releases-major-previously-dataset-ecommerce.html"
-</details>
+<!--open-previous-releases-->
+
+--8<-- "overrides/partials/generated/releases-major-previously-dataset-ecommerce.md"
+
+<!--close-previous-releases-->

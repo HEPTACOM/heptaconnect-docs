@@ -7,6 +7,8 @@ REPOS = heptaconnect-bridge-shopware-platform \
 		heptaconnect-framework \
 		heptaconnect-portal-base \
 		heptaconnect-portal-local-shopware-platform \
+		heptaconnect-package-http \
+		heptaconnect-package-web-frontend \
 		heptaconnect-package-shopware-6 \
 		heptaconnect-storage-base \
 		heptaconnect-storage-shopware-dal \
@@ -50,10 +52,18 @@ all: build
 .PHONY: clean
 clean:
 	rm -rf ${GENERATED_DATA_DIR}/
+	rm -rf mkdocs-pdf.yml
 	rm -rf site/
+	rm -rf assets/css/vendor/
+	rm -rf node_modules/
 	rm -rf overrides/partials/github.json
-	rm -rf docs/assets/stylesheets/vendor
-	rm -rf docs/assets/javascripts/vendor
+	rm -rf overrides/partials/generated/*.html
+	rm -rf overrides/partials/generated/*.md
+	rm -rf docs/assets/app.css
+	rm -rf docs/assets/uml/
+	rm -rf docs/assets/stylesheets/vendor/
+	rm -rf docs/assets/javascripts/vendor/
+	rm -rf docs/news/
 
 .PHONY: build
 build: assets/css/vendor/highlight.js/atom-one-dark.min.css docs/assets/javascripts/vendor/highlight.js/highlight.min.js github_stats rss adr node_modules git-code-dependencies
