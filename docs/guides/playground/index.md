@@ -1,108 +1,109 @@
-# Getting Started
+# Playground
 
-There are two ways to quickly get started with HEPTAconnect.
-If you would like a setup with pre-configured portals and a working runtime, you should check out the playground.
-If you want to develop your own packages for HEPTAconnect, you should install the SDK first.
+You can take your first steps with HEPTAconnect by installing the Playground and inspecting its code.
+The Playground is our demo-project to showcase various features of HEPTAconnect and explain our approach to customization.
 
-## Playground
+## Requirements
 
-The playground provides environments (e.g. Shopware 6) for you to try out and fiddle with HEPTAconnect for different occasions.
-It is the easiest way to get your hands on a simple environment and test some portals you found online.
-Read more in the [playground articles](./intro.md).
+- [PHP](https://www.php.net/): 8.2 or higher
+- [MySQL](https://www.mysql.com/): 5.7 or 8.x
+    - [MariaDB](https://mariadb.org/) is known to have issues
+- [Composer](https://getcomposer.org/): 2.0 or higher
+- Any web server that is able to serve [Symfony](https://symfony.com/) applications
+    - Learn more about [Configuring a Web Server](https://symfony.com/doc/5.x/setup/web_server_configuration.html) from the official Symfony documentation.
+    - For local environments, we recommend [Laravel Herd](https://herd.laravel.com/) (which is based on PHP-FPM and Nginx).
 
-
-## SDK
-
-The SDK is similar to the playground as it also comes with a minimal Shopware 6 system as its runtime.
-But here it is even more trimmed down to focus on the development of HEPTAconnect packages.
-It also comes with some utility commands designed to improve the developer experience.
-
-You can install the SDK in a directory of your choice.
-Upon installation it will create a symlink to the `heptaconnect-sdk` binary file in a directory of your `PATH` environment variable, so you can access it from anywhere in your terminal using `heptaconnect-sdk`.
-Start the installation like so.
+## Installation
 
 ```sh
-composer create-project heptacom/heptaconnect-sdk:dev-master
+composer create-project heptaconnect/playground
 ```
 
-If you are using Composer 2.x, the installation wizard should start immediately.
-If you are using Composer 1.x, it will ask you to execute the wizard manually using this command.
+This command will execute these steps:
+
+1. Download the Playground project
+2. Download the project's dependencies
+3. Ask you some questions during the setup process
+    - Environment (dev / prod)
+    - URL (for user interface)
+    - Database information
+4. Create the database and run all migrations
+
+Alternatively, you can do it manually using these steps.
+This way, you have more control over the installation process.
 
 ```sh
-heptaconnect-sdk sdk:install
+# Download the Playground project
+composer create-project heptaconnect/playground --no-install --no-scripts
+
+# Move into Playground directory
+cd playground
+
+# Download the project's dependencies
+composer install
+
+# Ask you some questions during the setup process
+bin/console system:setup
+
+# Create the database and run all migrations
+bin/console system:install
 ```
 
-The installation wizard will ask you for database credentials of your MySQL server.
-Afterwards it will setup the database.
+Now the last step is to configure your web server to serve the Playground project.
+Set `<project-dir>/public` as the document root directory.
 
 !!! success
-    Great job! You installed the SDK. Let's make a package now.
+    That's it. The system installation is complete.
 
-### Building your own portal
+## User Interface
 
-Initialize a new package using the SDK.
-This will start a short questionnaire to gather information about your package.
+By default, HEPTAconnect does not come with a user interface.
+However, we did create a minimalistic interface to demonstrate, how you could build such interfaces in your own project.
+
+Open the URL that you provided during the setup process. You should be greeted by this page.
+
+![](../../assets/screenshot/heptaconnect-playground-start.png)
+
+## Pre-Installed Portals
+
+The Playground showcases a basic transfer of product data without an actual real-life data source for products.
+Instead, we use the portal `niemand-online/heptaconnect-portal-amiibo` which uses [amiiboapi.com](https://amiiboapi.com/docs/) to fetch structured data about Amiibo toys.
+This data is then transformed into product entities and emitted into HEPTAconnect.
+
+The target portal for this transfer is a generic dumper implementation.
+This portal receives any data entities you throw at it and stores it in the HEPTAconnect database.
+It also provides a page for the user interface to display the products in its storage.
+
+## Transfer Data
+
+HEPTAconnect uses [Symfony Messenger](https://symfony.com/doc/5.x/messenger.html) to process data transfers asynchronously.
+To start a worker process, you can run this command.
 
 ```sh
-heptaconnect-sdk sdk:package:init <target-dir>
+bin/console messenger:consume
 ```
 
-The SDK will ask you a few questions about your new package and prepare your project accordingly.
-You can choose between creating a dataset, a portal and a storage.
-In this example we create a portal package.
+This is a long-running process.
+The command will not exit, unless it receives a stop-signal (e.g. `SIGINT` or `SIGTERM`).
 
-```
- Choose the type of package you want to build:
-  [0] heptaconnect-dataset
-  [1] heptaconnect-portal
-  [2] heptaconnect-storage
- > heptaconnect-portal
+To initiate the transfer, you have to trigger an exploration.
+The easiest way to do that is by clicking the button `Start exploration` in the user interface.
+Alternatively, you could also run this command.
 
- Give your package a name. [<my-username>/<target-dir>]:
- > example-vendor/my-portal-package
-
- Specify a PSR-4 compliant namespace. [ExampleVendor\MyPortalPackage]:
- > 
-
-Loading composer repositories with package information
-Updating dependencies
-...
+```sh
+bin/console heptaconnect:explore amiibo 'Heptacom\HeptaConnect\Dataset\Ecommerce\Product\Product'
 ```
 
-Your `<target-dir>` should now have the following contents:
+The exploration will fetch data from the data source and transform it into entity objects.
+These entities are then emitted to HEPTAconnect.
+That means, jobs for data receptions are dispatched to the message queue.
+These jobs are then picked up by the worker process and executed.
+This sends the entities to the receiver of the target portal.
 
-```
-<target-dir>
-├── composer.json
-├── composer.lock
-├── src
-│   └── Portal.php
-└── vendor
-    └── autoload.php
-    └── ...
-```
+Once you have started an exploration and the worker has processed all subsequent jobs, you can view the received products in the user interface by clicking the button `List of dumped products`.
 
 !!! success
-    You successfully created your first portal!
+    Well done! You just transferred your first entities via HEPTAconnect.
 
-### Adding your package to the SDK runtime
-
-You now have a shiny new package and can start developing.
-When you want to execute your code in a HEPTAconnect runtime to see if it works, you first have to add the package to your SDK installation.
-This will make the SDK aware of your package and you can then use commands in the `heptaconnect` namespace with your package.
-Run this command to add your package.
-
-```sh
-heptaconnect-sdk sdk:package:add <target-dir>
-```
-
-You should see Composer updating the SDK with your package as a dependency.
-The SDK will now load your package with every command you execute.
-You can verify this (for portals) by running this command.
-
-```sh
-heptaconnect-sdk heptaconnect:portal:list
-```
-
-!!! success
-    Your portal is now available in the SDK!
+Now you can work your way through the source code and learn how we build this demo.
+Most of the interesting files are located in the `<project-dir>/src` directory.
