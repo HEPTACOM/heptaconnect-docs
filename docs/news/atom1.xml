@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://heptaconnect.io/</id>
+    <title>HEPTAconnect feed</title>
+    <updated>2024-09-04T20:57:50.615Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>HEPTACOM GmbH</name>
+        <uri>https://www.heptacom.de</uri>
+    </author>
+    <link rel="alternate" href="https://heptaconnect.io/"/>
+    <link rel="self" href="https://heptaconnect.io/news/atom1.xml"/>
+    <subtitle>A newsfeed regarding changes in HEPTAconnect that are worthwhile a note</subtitle>
+    <logo>https://heptaconnect.io/assets/favicon/android-chrome-512x512.png</logo>
+    <icon>https://heptaconnect.io/assets/favicon/favicon-32x32.png</icon>
+    <rights>HEPTACOM GmbH</rights>
+    <entry>
+        <title type="html"><![CDATA[Initialization of a feed]]></title>
+        <id>https://heptaconnect.io/news/2021-02-02-init/</id>
+        <link href="https://heptaconnect.io/news/2021-02-02-init/"/>
+        <updated>2021-02-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[To react to community feedback we will start a feed to summarize every now and then interesting changes in this feed]]></summary>
+        <content type="html"><![CDATA[<p>To react to community feedback we will start a feed to summarize every now and then interesting changes in this feed.</p>
+<p>This does not replace the <a href="https://heptaconnect.io/reference/adr/2020-08-10-architecture-decision-records/">ADR</a> section at all.
+As we have a lot of repositories and this will be a channel to summarize the news that are shared across the packages.
+This will also be the way to get informed about new packages as we follow our <a href="https://heptaconnect.io/reference/general-resources/package-structure/">flexible package structure</a>.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[shopcast.fm appearance]]></title>
+        <id>https://heptaconnect.io/news/2021-02-08-shopcast/</id>
+        <link href="https://heptaconnect.io/news/2021-02-08-shopcast/"/>
+        <updated>2021-02-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Joshua Behrens had the chance to talk about HEPTAconnect on shopcast.fm]]></summary>
+        <content type="html"><![CDATA[<p>Edin Dedagic - host at the German podcast shopcast.fm - invited us to have a talk about HEPTACOM as part of the Shopware community and the guest Joshua Behrens.
+It was inevitable to talk as well about HEPTAconnect.
+A lot about HEPTAconnect which even results in a split into two parts.</p>
+<p>Have a deep dive into two hours of HEPTAconnect knowledge and its creators:</p>
+<ul>
+<li><a href="https://shopcast.fm/casts/017-interview-joschua-pt-1/">Part 1</a></li>
+<li><a href="https://shopcast.fm/casts/018-interview-joschua-pt-2/">Part 2</a></li>
+</ul>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Data flows and direct emission exploration]]></title>
+        <id>https://heptaconnect.io/news/2021-03-23-data-flow-explorer/</id>
+        <link href="https://heptaconnect.io/news/2021-03-23-data-flow-explorer/"/>
+        <updated>2021-03-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Introduction to data flows and direct emission exploration]]></summary>
+        <content type="html"><![CDATA[<p>In the recent past we decided to allow <a href="https://heptaconnect.io/guides/portal-developer/explorer/">explorers</a> behave like <a href="https://heptaconnect.io/guides/portal-developer/emitter/">emitters</a> to allow easier processing of inefficient-to-read data sources.
+We call this direct emission.
+How to prepare your explorer for a direct emission is explained in the <a href="https://heptaconnect.io/guides/portal-developer/direct-emission-explorer/">direct emission explorer</a> page.
+To show the differences in the data flow we introduce a place where you can find multiple scenarios on the new <a href="https://heptaconnect.io/reference/general-resources/data-flow/">data flow</a> overview.</p>
+<p><strong>Coming soon</strong>:
+We are currently setting up an integration guide that holds up our integration knowledge and explains our decisions that you should consider as well.
+Stay tuned to let your next project experience the full data transfer expertise.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[HEPTAconnect and playground support for Shopware 6.4]]></title>
+        <id>https://heptaconnect.io/news/2021-05-23-playground-shopware-6-4/</id>
+        <link href="https://heptaconnect.io/news/2021-05-23-playground-shopware-6-4/"/>
+        <updated>2021-05-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The playground supports Shopware 6.4 and the docs will tell you how to use it in just a few steps]]></summary>
+        <content type="html"><![CDATA[<p>A wave of huge changes hit the playground and ironed some kinks.</p>
+<p><strong>The major update at Shopware from 6.3 to 6.4 has been rolled out onto the HEPTAconnect packages.</strong>
+To experience Shopware 6.4 with HEPTAconnect you can now easily grab yourself a fresh copy of the <a href="https://heptaconnect.io/guides/playground/intro/">playground</a> and dive in.
+To allow the playground be used with your <a href="https://heptaconnect.io/guides/playground/first-time/with-shopware-6/">familiar ecommerce framework</a> in a more complete manner you will now find an integrated <code>shopware/administration</code>.
+This way you can use the playground to fiddle with HEPTAconnect within Shopware and in addition also with Shopware itself after importing your favorite data.</p>
+<p><strong>How to get your favorite data in, you might ask?</strong>
+Just use the bundled shopware platform portal.
+On creating the shopware instance in the playground you will get a portal node for the shopware instance as well as for the artificial portal for bottles.
+Require other portals you can already find online on GitHub under the tag <a href="https://github.com/topics/heptaconnect-portal">heptaconnect-portal</a> into the shopware composer.json.
+They are automatically discovered for you to draw your first routes between the portal nodes.</p>
+<p><strong>What is that /repos/ folder at root level?</strong>
+We had a look at the <a href="https://heptaconnect.io/guides/playground/contribution/">contribution and experimenting flow</a> we currently provide and chose to rework that.
+The new folder contains every HEPTAconnect package as a clone from GitHub.
+They are linked into the vendor folder.
+Having the different packages on this directory level makes it much easier to discover and change HEPTAconnect.
+As they are clones from GitHub it also allows a direct way to share your work on HEPTAconnect in a bleeding edge manner.</p>
+<p><strong>How can you know all of this?</strong> The documentation got a truck load of new content about:</p>
+<ul>
+<li><a href="https://heptaconnect.io/guides/playground/intro/">the playground</a></li>
+<li><a href="https://heptaconnect.io/guides/playground/command-line/">commands</a></li>
+</ul>
+<p>Some of these new pages are also linked within this article so have a look around.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Queue and job memory utilization reduction up to 95%]]></title>
+        <id>https://heptaconnect.io/news/2021-05-31-queue-and-job-storage/</id>
+        <link href="https://heptaconnect.io/news/2021-05-31-queue-and-job-storage/"/>
+        <updated>2021-05-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Switching to dedicated job storages reduced the memory utilization and improves job management]]></summary>
+        <content type="html"><![CDATA[<p>This week we completed our <a href="https://heptaconnect.io/reference/adr/2020-10-30-job-messages-and-payload/">ADR about jobs</a>.
+Working on that issue really created lots of space for further tasks in the architecture of HEPTAconnect as well as on the storage layer used for the message broker.</p>
+<p>In detail, we've been using the message broker to completely keep the data in question for each transfer.
+Read our <a href="https://heptaconnect.io/reference/adr/2020-10-30-job-messages-and-payload/">ADR about jobs and their payloads</a> to follow our thoughts but here are the basic pros:</p>
+<ul>
+<li>When emptying a message queue, the messages can be reconstructed</li>
+<li>The message provider has fewer data to store</li>
+<li>It is easy to change job types and payload structures</li>
+</ul>
+<p>We were testing the storage sizes on a default Shopware 6 setup.
+It uses php serialization to store messages on the database.
+After our change we only store a job reference in the message and store the payload on the database.
+Our referenced payload takes up from 40% to 95% less memory on the same database driver than in the message table.
+The following tasks benefit from the size difference:</p>
+<ul>
+<li>database query times</li>
+<li>database backup sizes</li>
+<li>message broking on various providers</li>
+<li>restoring and duplicating systems</li>
+</ul>
+<p>Above mentioned the architecture also draws a big benefit from that change:
+As we now have the job payloads separated from their execution scheduling, it is easier to add reference between these jobs.
+This is especially useful for <a href="https://en.wikipedia.org/wiki/Boolean_satisfiability_problem">SAT</a> algorithms that will make their way into HEPTAconnect one day.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Symfony dependency injection for portal developers]]></title>
+        <id>https://heptaconnect.io/news/2021-06-21-symfony-dependency-injection/</id>
+        <link href="https://heptaconnect.io/news/2021-06-21-symfony-dependency-injection/"/>
+        <updated>2021-06-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Integrating a well known dependency injection container provides lots of cool features]]></summary>
+        <content type="html"><![CDATA[<h2>TL;DR</h2>
+<p>Write less. <br>
+Achieve more in less time. <br>
+Look at your results faster.</p>
+<p>Read more about <a href="https://heptaconnect.io/guides/portal-developer/dependency-injection/">Dependency injection</a> and the new <a href="https://heptaconnect.io/guides/portal-developer/default-utilities/">default utilities</a>.</p>
+<h2>Preamble</h2>
+<p>One of our main goals for HEPTAconnect is the ability to replace lots of different implementations to gain a frictionless integrability.
+When we were looking for the service container feature, we had an issue to solve:
+As service container builders have not been addressed in the <a href="https://www.php-fig.org/psr/psr-11/">PSR-11</a>, we had to implement service container and builder.
+The custom implementation holds a 47 lines-of-code container implementation, a 36 lines-of-code container builder and a single entry point for portal developers in their code.</p>
+<h2>What we achieved</h2>
+<p>We were able to get yet another PSR compatibility and its benefits: build and share reusable components.
+By now our implementation of a service container is about half a year old, and we are missing features.
+We didn't expect our small implementation to have it all right away, but it is a bit impractical in daily usage.</p>
+<ul>
+<li>Tagged services are missing</li>
+<li>Every service had to have a service definition</li>
+<li>Service decoration was possible but very unpleasant</li>
+<li>Services could only be pulled out of the container</li>
+</ul>
+<p>It served the purpose, but it wasn't quite right.</p>
+<h2>What we were looking for</h2>
+<p>Basically we were looking for what we were missing:</p>
+<ul>
+<li>Tagged services</li>
+<li>Write no boilerplate service definitions (in the best case)</li>
+<li>Easy service decoration</li>
+<li>Dependency injection (instead of pulling)</li>
+</ul>
+<p>We were accustomed to the Symfony and Laravel worlds having all these features.
+Laravel didn't make the cut for us as it is difficult to pull Illuminate components out of their ecosystem.
+Symfony gave us similar expectations back when we noticed Bundles are part of the HttpKernel and also quite baked into the Symfony framework <code>/rant</code>.</p>
+<h2>The future is now</h2>
+<p>On our search for a good implementation for service containers with dependency injection we stumbled upon <a href="https://kocsismate.github.io/php-di-container-benchmarks/benchmark.html">a benchmark</a>.
+The Symfony implementation was most of the time in second place but had all we ever wanted.
+So we revisited that package and were happy to see that it had barely any dependencies which is good for an almost frictionless package.
+Having the service definition files based on xml and yml also allows portal developers to define services without knowing the exact Symfony version behind the scenes.</p>
+<p>We gave the implementation a try and got hooked right back into it.
+Enabling all the nice things and sprinkling some more educated guesses into the container builder gave us the shiny new developer experience for portal developers we always wanted to provide:</p>
+<ul>
+<li>Even in bigger scenarios there is no definition file needed as we are using the composer.json of the portal for prototyping definitions</li>
+<li>Auto-wiring allows for smart service injection guesses</li>
+<li>Auto-configuration allows for smart service kind detection</li>
+<li>Integrations are now able to alter the containers almost effortlessly</li>
+<li>Flow components (explorer, emitter, receivers) and status reporters can make use of dependency injection</li>
+<li>Portal developers are most likely from a Laravel or Symfony background and should be already quite familiar with the logic behind the scenes</li>
+</ul>
+<h2>Documentation</h2>
+<p>When you already had a deeper look into our documentation, you can notice the reduction of boilerplate code in almost every portal developer code sample.
+We added <a href="https://heptaconnect.io/guides/portal-developer/dependency-injection/">a new chapter</a> to the documentation under portal development containing everything you need to know to use dependency injection with the new service container.
+This way we also took the chance to provide a <a href="https://heptaconnect.io/guides/portal-developer/default-utilities/">complete list of utility service</a> we provide out of the box.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Short notation for flow components]]></title>
+        <id>https://heptaconnect.io/news/2021-07-12-short-notation/</id>
+        <link href="https://heptaconnect.io/news/2021-07-12-short-notation/"/>
+        <updated>2021-07-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Reduce the lines of code for connecting your API to HEPTAconnect]]></summary>
+        <content type="html"><![CDATA[<h2>TL;DR</h2>
+<p>Write less. <br>
+Achieve more in less time. <br>
+Look at your results faster.</p>
+<p>Read more about <a href="https://heptaconnect.io/guides/portal-developer/short-notation-for-flow-components/">short notation for flow components</a>.</p>
+<h2>Preamble</h2>
+<p>No, the <strong>TL;DR</strong> is not a copy mistake from the <a href="https://heptaconnect.io/news/2021-06-21-symfony-dependency-injection/">previous feed entry about dependency injection</a>.
+We once more achieved to improve the developer experience by adding more tools to reduce your boilerplate code.
+Summarizing our <a href="https://heptaconnect.io/reference/adr/2021-06-17-flow-component-short-notation/">ADR</a> you can now stop writing <strong>sections</strong> of code and start to write <strong>lines</strong> of code.
+Previously you had to write:</p>
+<pre><code class="language-php">&lt;?php
+
+declare(strict_types=1);
+
+namespace FooBar\Emitter;
+
+use FooBar\Packer\BottlePacker;
+use FooBar\Service\ApiClient;
+use Heptacom\HeptaConnect\Dataset\Base\Contract\DatasetEntityContract;
+use Heptacom\HeptaConnect\Portal\Base\Emission\Contract\EmitContextInterface;
+use Heptacom\HeptaConnect\Portal\Base\Emission\Contract\EmitterContract;
+
+class BottleEmitter extends EmitterContract
+{
+    private ApiClient $client;
+    
+    private BottlePacker $packer;
+    
+    public function __construct(ApiClient $client, BottlePacker $packer)
+    { 
+        $this-&gt;client = $client;
+        $this-&gt;packer = $packer;
+    }
+
+    public function run(string $externalId, EmitContextInterface $context) : ?DatasetEntityContract
+    {
+        return $this-&gt;packer-&gt;pack($this-&gt;client-&gt;getBottleData($externalId));
+    }
+}
+</code></pre>
+<p>Sieve out the boilerplate lines and you have:</p>
+<pre><code class="language-php">&lt;?php
+
+declare(strict_types=1);
+
+use FooBar\Packer\BottlePacker;
+use FooBar\Service\ApiClient;
+use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
+
+FlowComponent::emitter(Bottle::class)-&gt;run(
+    fn (ApiClient $client, BottlePacker $packer, string $id) =&gt; $packer-&gt;pack($client-&gt;getBottleData($id))
+);
+</code></pre>
+<p>When this reminds you of Laravel routes and commands, you are right.
+This is heavily inspired by Laravel's nature of quickly scribbling down some lines to get something big running.
+To get an overview of the short notation and how to use it visit <a href="https://heptaconnect.io/guides/portal-developer/short-notation-for-flow-components/">the documentation page</a>.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Easy batch just like step-by-step runs]]></title>
+        <id>https://heptaconnect.io/news/2021-07-23-easy-batch/</id>
+        <link href="https://heptaconnect.io/news/2021-07-23-easy-batch/"/>
+        <updated>2021-07-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Convert your single runs into batch runs more easily and gain performance]]></summary>
+        <content type="html"><![CDATA[<h2>TL;DR</h2>
+<p>Train in step-by-step. <br>
+Run in batches.</p>
+<p>Read more about the way how to batch in <a href="https://heptaconnect.io/guides/portal-developer/short-notation-for-flow-components/">short notation for flow components</a> and flow components like <a href="https://heptaconnect.io/guides/portal-developer/emitter/">emitter</a> and <a href="https://heptaconnect.io/guides/portal-developer/receiver/">receiver</a>.</p>
+<h2>Batches and step by step runs</h2>
+<p>Every emitting or receiving flow component can improve on performance when data is processed in batches.
+In general HEPTAconnect groups data into batches to allow the flow components to be able to act in reasonable batch sizes.
+The documentation in the past only explained how to make a single step-by-step API interactions.
+Running through a data transfer in such a sequential manner is due to its complexity better to outline its inner statements.
+The flow component loops that unrolled the batches into single steps are now accessible for child classes to override.
+Compare the following real life examples how to receive manufacturer data to its successor within Shopware 6:</p>
+<pre><code class="language-php">&lt;?php
+
+use Heptacom\HeptaConnect\Dataset\Ecommerce\Product\Manufacturer;
+use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
+use Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Support\DalAccess;
+use Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Unpacker;
+
+FlowComponent::receiver(Manufacturer::class)-&gt;run(static fn (
+    DalAccess $dal,
+    Manufacturer $manufacturer,
+    Unpacker\ManufacturerUnpacker $unpacker
+) =&gt; $dal-&gt;createSyncer()-&gt;upsert('product_manufacturer', [$unpacker-&gt;unpack($manufacturer)])-&gt;flush());
+</code></pre>
+<pre><code class="language-php">&lt;?php
+
+use Heptacom\HeptaConnect\Dataset\Base\TypedDatasetEntityCollection;
+use Heptacom\HeptaConnect\Dataset\Ecommerce\Product\Manufacturer;
+use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
+use Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Support\DalAccess;
+use Heptacom\HeptaConnect\Portal\LocalShopwarePlatform\Unpacker;
+
+FlowComponent::receiver(Manufacturer::class)-&gt;batch(static fn (
+    DalAccess $dal,
+    TypedDatasetEntityCollection $manufacturers,
+    Unpacker\ManufacturerUnpacker $unpacker
+) =&gt; $dal-&gt;createSyncer()-&gt;upsert('product_manufacturer', $manufacturers-&gt;map([$unpacker, 'unpack']))-&gt;flush());
+</code></pre>
+<p>There is basically no difference.
+Your project can make use of this today when you are in the lucky position to have a batch-ready API, and you've been following architectural patterns to use packer and unpacker services.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[New Documentation]]></title>
+        <id>https://heptaconnect.io/news/2021-08-10-new-documentation/</id>
+        <link href="https://heptaconnect.io/news/2021-08-10-new-documentation/"/>
+        <updated>2021-08-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Big changes to the docs! New domain, new search, new diagrams! Read everything you need to know here.]]></summary>
+        <content type="html"><![CDATA[<h2>TL;DR</h2>
+<ul>
+<li>New domain</li>
+<li>New style</li>
+<li>New search</li>
+<li>New diagrams</li>
+<li>New PDF export</li>
+</ul>
+<p>Maybe you already noticed it:
+We have a beautiful new documentation website, and we think you will love it.
+Our new website is based on the material theme for MkDocs with some customizations and it's rocking a bunch of new and improved features.</p>
+<p>The HEPTAconnect documentation is now available under a new domain: <a href="https://heptaconnect.io/">heptaconnect.io</a>.
+We have moved from a subdomain under heptacom.de to a dedicated domain and we are also using the .io domain ending.</p>
+<p>Perhaps the most notable change are the stunning visuals.
+The <a href="https://heptaconnect.io/">main landing page</a> shows the HEPTAconnect logo and prominently advertises the four most important sections of the documentation.
+Have you noticed the glowing backdrop behind the cards when you hover over them?</p>
+<p>Speaking of sections:
+We have restructured our content into different sections.
+Most of our existing content went into <a href="https://heptaconnect.io/guides/portal-developer/">Portal Developer</a> and <a href="https://heptaconnect.io/reference/">Reference</a>.
+The sections Integrator and Administrator are completely new and bring different perspectives into the documentation.
+Truth be told, they are not finished yet.
+But we have big plans to extend the documentation with new content for them, so stay tuned.</p>
+<p>And when we are already on the topic of staying tuned:
+We noticed that most RSS readers don't update as frequently as we would like them to.
+So starting from today we will additionally publish our blog entries on Twitter.
+So if your RSS reader is giving you trouble, feel free to <a href="https://twitter.com/heptacom_gmbh">follow us there</a>.</p>
+<p>Let's get back to the star of today's show:
+The new documentation website has an amazing new search function.
+A big problem we had with the search on the old website was the small space where the search results would get crammed into.
+Search results were nearly indistinguishable from one another rendering them downright useless.
+The new search bar makes use of all the space it can get to give results that are actually helpful.</p>
+<p>If you are hyped to try it out, a good first search term would be &quot;Basic flow&quot;.
+The first result will take you to a brand-new page with our <a href="https://heptaconnect.io/reference/general-resources/data-flows/basic-flow/">new sequence diagrams</a> to visualize how data flows through HEPTAconnect.
+Those diagrams show both the perspective of a portal and the perspective of HEPTAconnect core components during an exploration, an emission and a reception in a basic flow.
+Let us know if they could help you to better grasp the big picture.</p>
+<p>And there is still more.
+MkDocs has another trick up its sleeve.
+The entire documentation is available for download as a PDF file with a cover page and a linked table of contents.
+So when your client demands a copy of the documentation, it's just one click away.
+Take a look on the left side of the footer.</p>
+<p>Last but not least, the switch from docsify to MkDocs means that our documentation is finally visible for Google and other search engines.
+So hopefully you can soon find your answers even faster from your favourite search engine.</p>
+]]></content>
+        <author>
+            <name>Julian Krzefski</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[HTTP handler flow component]]></title>
+        <id>https://heptaconnect.io/news/2021-12-07-http-handler-flow-component/</id>
+        <link href="https://heptaconnect.io/news/2021-12-07-http-handler-flow-component/"/>
+        <updated>2021-12-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[HTTP handlers for webhook, OAuth flows and hosting files]]></summary>
+        <content type="html"><![CDATA[<h2>TL;DR</h2>
+<ul>
+<li>New flow component: HTTP handler</li>
+</ul>
+<p>In the last news the new documentation structure and engine have been celebrated.
+Now we can suggest once again to read into the new pages about our new flow component: <a href="https://heptaconnect.io/guides/portal-developer/http-handler/">HTTP handler</a>.
+This new component already has some configuration which can be managed as administrator that can be read upon in the <a href="https://heptaconnect.io/guides/administrator/http-apis/">HTTP APIs</a> page of the administrator section.</p>
+<h2>Underlying technology</h2>
+<p>We rely fully on <a href="https://www.php-fig.org/psr/psr-7/"><code>PSR-7</code></a> and <a href="https://www.php-fig.org/psr/psr-17/"><code>PSR-17</code></a>.
+Unfortunately <a href="https://www.php-fig.org/psr/psr-15/"><code>PSR-15</code></a> does not fit into our just released HTTP handler structure.
+It behaves similar to other flow components in terms of stacked processing, extensibility by portal extensions and integrations, ability to write definition in a short-notation and an object-oriented manner.</p>
+<h2>New flow options</h2>
+<p>In the past you had to be an integration to host an HTTP controller to create an event driven flow over HTTP messages.
+With HTTP handlers at hand you can now use incoming web requests and transfer them into publications or already a direct emission.
+We already use it in the Business Central portal to build an OAuth 2 authentication flow.
+The following example shows how to convert an incoming request into a publication of external ids about new data that is ready to pick up.</p>
+<pre><code class="language-php">use Heptacom\HeptaConnect\Playground\Dataset\Bottle;
+use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
+use Heptacom\HeptaConnect\Portal\Base\Mapping\MappingComponentCollection;
+use Heptacom\HeptaConnect\Portal\Base\Mapping\MappingComponentStruct;
+use Heptacom\HeptaConnect\Portal\Base\StorageKey\Contract\PortalNodeKeyInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+
+FlowComponent::httpHandler('bottle')-&gt;post(static function (
+    ServerRequestInterface $request,
+    ResponseInterface $response,
+    PortalNodeKeyInterface $portalNodeKey
+): ResponseInterface {
+    $bottleIds = \json_decode($request-&gt;getQueryParams()['bottle-ids']);
+
+    $bottleMappings = \array_map(static fn (string $bottleId) =&gt; new MappingComponentStruct(
+        $portalNodeKey,
+        Bottle::class,
+        $bottleId
+    ), $bottleIds);
+
+    $this-&gt;publisher-&gt;publishBatch(new MappingComponentCollection($bottleMappings));
+
+    return $response-&gt;withStatus(201);
+});
+</code></pre>
+<p>Direct emission based flows can be created quickly when you already use <a href="https://heptaconnect.io/reference/glossary/#packer">packers to pack</a> API data into HEPTAconnect entities.
+With packers at hand you can use the request body, pass it into the packer and use the packed entity directly into the <a href="https://heptaconnect.io/guides/portal-developer/default-utilities/#directemissionflowcontract">DirectEmissionFlow</a>.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Changelogs for safer and understandable updating]]></title>
+        <id>https://heptaconnect.io/news/2022-01-11-changelogs/</id>
+        <link href="https://heptaconnect.io/news/2022-01-11-changelogs/"/>
+        <updated>2022-01-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Updating your project would be a mess without proper changelogs]]></summary>
+        <content type="html"><![CDATA[<h2>TL;DR</h2>
+<ul>
+<li>Feature focussed changelogs</li>
+<li>Human-readable</li>
+<li>Machine-readable</li>
+<li>Guides for <a href="https://heptaconnect.io/guides/portal-developer/upgrade/">portal developer</a> and <a href="https://heptaconnect.io/guides/integrator/upgrade/">integrator</a>.</li>
+</ul>
+<p>With the release of version 0.7 we started to add changelogs.
+These are important news and therefore reside in our <a href="https://heptaconnect.io/releases/">news section</a>.
+There you can find a human-readable and easy to browse version of the changelogs.
+So with each upcoming release of HEPTAconnect you should check out the documentation about the new changes and get excited.</p>
+<h2>Why is that important to me?</h2>
+<p>Updating to the most recent version of HEPTAconnect is always a combination of:</p>
+<ul>
+<li>Oh, something new I want to use to write less code in the future</li>
+<li>Oh, something new I can adapt to improve performance or flexibility</li>
+<li>Oh, something broke, and I should check my tuned application as well</li>
+</ul>
+<p>So you can check your version of HEPTAconnect using <code>$ composer show heptacom/heptaconnect-\*</code>, understand the news and compare.</p>
+<h2>How do I understand?</h2>
+<p>That is super easy as we write them in a non code-exclusive focussed view to explain the changes of the public API.
+We are focussing on feature based logs so the generic changes of a <code>git diff</code> turns into a human understandable view on the change.
+The <a href="https://keepachangelog.com/en/1.0.0/">keep a changelog project</a> thinks alike, therefore we follow its guidelines for a good changelog.
+To summarize: Every version has a clear title with a <a href="https://semver.org/spec/v2.0.0.html">semantic version</a> and the release date.
+Each version has a section filled changes grouped by their classification of additions, changes, deprecations, removals, fixes and security fixes.</p>
+<p>Looking at the changelog lines you will see they always reveal quite technical information.
+We add them to the messages to visualize a clear connection of features to code components.
+It makes it easy to research for unique code components and understand why they have been changed.
+When we do package internal changes you won't see them as they probably won't bother you.
+Don't worry though, when we change e.g. database interactions this is often considered an internal change but still resides under the changes classification for e.g. resources usage reasons.</p>
+<h2>How do I compare?</h2>
+<p>You have to take every log and look up whether it affects your code changes as every log should contain enough technical reference.
+When you have a match you can understand the connected feature and apply the knowledge.</p>
+<p>The process sounds correct but tedious, right?
+We thought so as well, so we decided to snoop around one step ahead again and had a look on how to automate this, so we all have less to do again.</p>
+<h2>How do I upgrade my code?</h2>
+<p>So we like our code a bit magical but still reasonable.
+As we do it ourselves, we are aware how people can turn PHP into anything.
+Therefore, we can't provide an automatic upgrade yet, but we are working on a tool which either supports or fixes code automatically for you.
+We prepared guides to do upgrades for <a href="https://heptaconnect.io/guides/portal-developer/upgrade/">portal developers</a> and <a href="https://heptaconnect.io/guides/integrator/upgrade/">integrators</a> as well for <a href="https://heptaconnect.io/guides/contributor/changelog/">contributors</a> which we will both upgrade regularly.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Documentation at source code level]]></title>
+        <id>https://heptaconnect.io/news/2022-04-19-code-documentation/</id>
+        <link href="https://heptaconnect.io/news/2022-04-19-code-documentation/"/>
+        <updated>2022-04-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Providing documentation on a point that is quickly reached]]></summary>
+        <content type="html"><![CDATA[<h2>TL;DR</h2>
+<ul>
+<li>Easy queryable documentation within source code</li>
+<li>Documentation on interfaces and contracts</li>
+</ul>
+<p>With the release of 0.9 we started to document every interface and contract.
+This way we ensure clear communication how to use the interface as an API consumer and as an API provider.</p>
+<p>Adding documentation on source code is a delicate discussion topic in most developer conversations.
+We evaluated our experience with other documentations and were (and still are) really happy with the approach of the PSR composer packages.
+When looking at e.g. the <code>\Psr\Log\LoggerInterface</code>, there is a common description at the interface and a short hint on every method.
+In everyday usage it was nice to use a logger instance, navigate to the interface symbol or one of the methods and see right away how the intended use is.
+A similar pattern can be seen in the documentation stubs PHPStorm ships for native PHP functions.
+This kept the developer in the IDE without losing their focus.</p>
+<p>We see the possibility that these comments may go out of date.
+To prevent this from happening too often, we decided to only write expected usage and possible implementation hints.
+With this rule of thumb we are not fixed to a certain implementation that may change over time.
+Instead, we use the intended use case as comment when the component was introduced so everyone shares the same expectation.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Release 0.9.0.0]]></title>
+        <id>https://heptaconnect.io/news/2022-04-26-release-0-9-0-0/</id>
+        <link href="https://heptaconnect.io/news/2022-04-26-release-0-9-0-0/"/>
+        <updated>2022-04-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Fast file transfers, storage stability, configuration by environment variables, improved API design]]></summary>
+        <content type="html"><![CDATA[<h2>TL;DR</h2>
+<ul>
+<li>Fast file transfers</li>
+<li>Flow component stacking re-imagined with more configuration</li>
+<li>Improved performance and stability for management storage</li>
+<li>Flexible portal node configurations by the integration environment</li>
+<li>Improved API Design
+<ul>
+<li>Feature-rich HTTP client</li>
+<li>More quality logging</li>
+<li>Reduction of technical debt</li>
+<li>Code documentation</li>
+</ul>
+</li>
+<li>Peek into the future for administrators</li>
+</ul>
+<h2>Release 0.9</h2>
+<p>Two weeks ago we released the first 0.9 version.
+To be more specific it is 0.9.0.0 and so the first version following the new version scheme described in <a href="https://heptaconnect.io/reference/adr/2022-01-24-semver-with-generation-version/">this ADR</a>.
+Updated changelogs for your updating strategy can be found in the <a href="https://heptaconnect.io/releases/">release news section</a>.
+Let's get more detailed and hydrate the TL;DR above.</p>
+<h3>File references</h3>
+<p>The file references are a new way to transfer files with the focus on availability via HTTP and reduction of I/O operations in the HEPTAconnect installation.
+The datasets and portals have been updated accordingly to use the new performant transport.
+<a href="https://heptaconnect.io/guides/portal-developer/patterns/transfer-file-reference-by-public-url/">See a sample usage here</a>.</p>
+<h3>Flow component stacks</h3>
+<p>Flow components are now loaded deferred and only grouped when used.
+This allows portal extensions to provide as much flexibility as portals in terms of flow components.
+New flexibilities are also given to portal extension developers and administrators as portal extension can now be deactivated on a stack and declared as optional.</p>
+<h3>Normalization of storage actions</h3>
+<p>We restructured the internal management storage handling to ensure the stability and performance it deserves.
+This includes a new package full of test scenarios against the storage base interfaces to allow also pre-built tests for any future storage provider.
+<a href="https://heptaconnect.io/reference/adr/2021-09-25-optimized-storage-actions/">Read more here</a>.</p>
+<h3>Flexible portal node configuration</h3>
+<p>New utilities for integrators are now available to build automatically assigned portal node configurations by patterns.
+This enables various configurations sources like JSON files from hosting services or environment variables.
+<a href="https://heptaconnect.io/guides/integrator/portal-node-configuration/">Read more here</a>.</p>
+<h3>HTTP client</h3>
+<p>We provide a new service for portals to make HTTP API usage a step easier.
+The PSR-18 compatible <a href="https://heptaconnect.io/reference/portal-developer/service/http-client-contract/"><code>HttpClientContract</code></a> is preconfigured to throw exceptions for 4XX and 5XX status codes, add missing headers, follow redirects and retry in case of an error or rate limit.</p>
+<h3>Logging</h3>
+<p>When a flow component is put into the log context it will be swapped out with its code origin.
+This supports navigation to the source of an error, that is not identified by an exception.</p>
+<p>All our storage implementations start to add some form of unique identifier to the request, so it can be found more easily in the source code when found in logs.</p>
+<p>Even more log messages we write and exceptions we throw have unique identifiers for quick search in the code and in the online changelog.</p>
+<p>Jobs have a state history that can be inspected for processing and performance analysis.</p>
+<h3>Dependency updates</h3>
+<p>The dependency version range is changed to keep everything up to date.
+This affects <code>doctrine/dbal</code>, <code>shopware/core</code>, <code>ramsey/uuid</code> and <code>dragonmantank/cron-expression</code> as library usage has been updated to match known deprecations and raised or removed.
+Read more about its details <a href="https://heptaconnect.io/releases/">in the changelogs</a>.</p>
+<h3>Developer Experience</h3>
+<p>As HEPTAconnect is looking to achieve a state-of-the-art experience on using our API, we improved our API design by ensuring to <a href="https://heptaconnect.io/reference/adr/2022-03-02-final-classes/">use <code>final</code> more frequently</a> without removing extensibility.
+To ensure code documentation browsing is easy, we add it to a <a href="https://heptaconnect.io/reference/adr/2022-01-05-code-documentation/">lot of places within the code</a>.
+Even small subtleties are taken into account like <code>$this</code> in short notation flow components now refers to the wrapping object-oriented flow component.</p>
+<h3>Administrators</h3>
+<p>Everyone managing an HEPTAconnect instance on setup can now use <code>--bidirectional</code> on <code>heptaconnect:router:add</code> to also create a route in the reverse direction.
+More CLI commands are supporting JSON output for easier scripting use.
+Spoiler alert: There is a huge change coming to raise the quality bar for administrator tools in the not so distant future.</p>
+<h2>Future</h2>
+<p>Follow the news section by subscribing to the RSS feeds:</p>
+<ul>
+<li><a href="https://heptaconnect.io/news/rss2.xml">RSS</a></li>
+<li><a href="https://heptaconnect.io/news/atom1.xml">Atom</a></li>
+<li><a href="https://heptaconnect.io/news/json1.json">JSON</a></li>
+</ul>
+<p>Or follow us on <a href="https://twitter.com/heptacom_gmbh">Twitter</a> to get more insights on the briefly touched topics in here in the future.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Exception and log messages in action]]></title>
+        <id>https://heptaconnect.io/news/2022-05-17-exception-and-log-message-codes/</id>
+        <link href="https://heptaconnect.io/news/2022-05-17-exception-and-log-message-codes/"/>
+        <updated>2022-05-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[First-responders looking into logging facilities will love these]]></summary>
+        <content type="html"><![CDATA[<h2>TL;DR</h2>
+<ul>
+<li>Log messages and exceptions have unique codes</li>
+<li>Documentation explains these codes</li>
+<li>These are not correlation identifiers</li>
+</ul>
+<h2>Unique codes</h2>
+<p>Since the version of 0.8 we add unique codes to exceptions and log messages.
+The full explanation can be read in <a href="https://heptaconnect.io/reference/adr/2021-09-06-exception-and-log-message-codes/">this ADR</a>.</p>
+<p>In short: these unique codes are quickly looked out for.
+Either online in our documentation or your IDE.
+They describe a point in the source code and keeps consistent in meaning even after an update.</p>
+<h2>Documenting the codes</h2>
+<p>Although we use the unique codes for log messages and exceptions, you will likely only look them up because you are a first-responder to an issue of your system.
+So whenever you get a code from your log message's metadata you can just look them up in the search of our documentation.
+In general, you get a single hit within changelogs when the code has been introduced.
+There can be more hits, when the code has been moved to a different place or removed.
+In this scenario you can match by your installed HEPTAconnect version to find your issue.
+As these codes are part of our public API and are in the changelogs, you will find a <a href="https://heptaconnect.io/news/2022-01-11-changelogs/">technical reference and a human-readable meaning</a> to it.</p>
+<p>The real life scenario could now be something like this:</p>
+<p>When there is the exception code 123 in your logs, and you find this message in the changelogs:</p>
+<blockquote>
+<p>Add code <code>123</code> in <code>\Heptacom\HeptaConnect\TechnicalReference::doSomething</code> when JSON configuration file is invalid JSON.</p>
+</blockquote>
+<p>And someone recently edited a JSON file, you can combine these hints and find a solution on your own.
+As the changelogs are shipped with the code, you can also find this hint with a <code>grep</code> call in your installation.
+When you search the files, you will also find that single piece of code that triggered the exception right away.</p>
+<p>This will make first-responders more helpful and independent.</p>
+<h2>Correlation identifiers</h2>
+<p>When we talk about codes in log messages, we should point out that these are not correlation identifiers.
+Correlation identifiers could only be queried in the HEPTAconnect installation as they identify a single situation like a specific web request or a job run.</p>
+<p>To keep posted with our news, that will definitely contain information on correlation ids once they are released, subscribe our feeds:</p>
+<ul>
+<li><a href="https://heptaconnect.io/news/rss2.xml">RSS</a></li>
+<li><a href="https://heptaconnect.io/news/atom1.xml">Atom</a></li>
+<li><a href="https://heptaconnect.io/news/json1.json">JSON</a></li>
+</ul>
+<p>Or follow us on <a href="https://twitter.com/heptacom_gmbh">Twitter</a>.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[File reference for direct and fast file transfer]]></title>
+        <id>https://heptaconnect.io/news/2022-06-07-file-references/</id>
+        <link href="https://heptaconnect.io/news/2022-06-07-file-references/"/>
+        <updated>2022-06-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Tunnel file transfer and make best use of external APIs]]></summary>
+        <content type="html"><![CDATA[<h2>TL;DR</h2>
+<ul>
+<li>Don't store any files to transfer publicly hosted content</li>
+<li>Tunnel FTP access (and other protocols) through HTTP for more versatile usage</li>
+<li>Avoid obsolete I/O operations whenever possible</li>
+</ul>
+<p>With the release of 0.9 we introduce a new feature for portal developers to vastly improve performances of file transfers.
+Previously, transferring files always required to write them to an intermediate storage and later read them from this storage again.
+The new <strong>FileReferences</strong> will respect the source of a file and choose the optimal transfer method accordingly.
+A portal developer can choose from three available file sources:</p>
+<ol>
+<li>Public URL
+<ul>
+<li>An HTTP request with the GET method will be responded with the file contents.
+No authentication will be performed.</li>
+</ul>
+</li>
+<li>HTTP Request
+<ul>
+<li>This HTTP request will be responded with the file contents.
+Every aspect of the request can be customized.</li>
+</ul>
+</li>
+<li>File contents
+<ul>
+<li>The raw file contents are provided directly.
+This is the only source that leads to I/O operations in the intermediate storage.</li>
+</ul>
+</li>
+</ol>
+<p>These three strategies already cover many use cases.
+Here are some example usages for each source type:</p>
+<pre><code class="language-php">use Heptacom\HeptaConnect\Dataset\Ecommerce\Media\Media;
+use Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent;
+use Heptacom\HeptaConnect\Portal\Base\File\FileReferenceFactoryContract;
+use League\Flysystem\Filesystem;
+use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\StreamFactoryInterface;
+
+FlowComponent::explorer(Media::class, function (
+    FileReferenceFactoryContract $fileReferenceFactory
+): iterable {
+    $publicUrl = 'https://picsum.photos/seed/php/300/300';
+    
+    $fileReference = $fileReferenceFactory-&gt;fromPublicUrl($publicUrl);
+
+    $mediaEntity = new Media();
+    $mediaEntity-&gt;setPrimaryKey('ad9e5b8a46364e019d9b3045b5172623');
+    $mediaEntity-&gt;setFile($fileReference);
+
+    yield $mediaEntity;
+});
+
+FlowComponent::explorer(Media::class, function (
+    FileReferenceFactoryContract $fileReferenceFactory,
+    RequestFactoryInterface $requestFactory,
+    StreamFactoryInterface $streamFactory
+): iterable {
+    $request = $requestFactory
+        -&gt;createRequest('POST', 'https://private-image-server.test/api/download-image/28664337703749c49af4bf198e94c396')
+        -&gt;withHeader('Authorization', 'Basic aGVwdGFjb25uZWN0OmlzIGNvb2w=')
+        -&gt;withBody($streamFactory-&gt;createStream(\json_encode([
+            'foo' =&gt; 'bar'
+        ])));
+
+    $fileReference = $fileReferenceFactory-&gt;fromRequest($request);
+
+    $mediaEntity = new Media();
+    $mediaEntity-&gt;setPrimaryKey('ad9e5b8a46364e019d9b3045b5172623');
+    $mediaEntity-&gt;setFile($fileReference);
+
+    yield $mediaEntity;
+});
+
+FlowComponent::explorer(Media::class, function (
+    FileReferenceFactoryContract $fileReferenceFactory,
+    Filesystem $filesystem
+): iterable {
+    $fileContents = $filesystem-&gt;read('data/images/a2ef9e0ef17e4b3585041ea36c4cde13/1.jpg');
+
+    $fileReference = $fileReferenceFactory-&gt;fromContents($fileContents);
+
+    $mediaEntity = new Media();
+    $mediaEntity-&gt;setPrimaryKey('ad9e5b8a46364e019d9b3045b5172623');
+    $mediaEntity-&gt;setFile($fileReference);
+
+    yield $mediaEntity;
+});
+</code></pre>
+<p>We recommend to avoid using the source type &quot;File contents&quot;, because it leads to I/O operations and preventing those will greatly improve performance.
+In an effort to prevent usages of &quot;File contents&quot; and therefore improve performance, you can utilize <strong>HTTP handlers</strong> to tunnel file downloads through HEPTAconnect.
+The idea is to generate a URL to be used as &quot;Public URL&quot; file source.
+This URL points to an HTTP handler that will perform the file download and return its contents as its response body.
+Take a look at the new article <a href="https://heptaconnect.io/guides/portal-developer/patterns/transfer-files-from-ftp-server/">Send files from an FTP server</a> to learn more about this topic and see our example code.</p>
+]]></content>
+        <author>
+            <name>Julian Krzefski</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[New repository: HEPTAconnect production template]]></title>
+        <id>https://heptaconnect.io/news/2022-11-29-production-template/</id>
+        <link href="https://heptaconnect.io/news/2022-11-29-production-template/"/>
+        <updated>2022-11-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Kickstart your new HEPTAconnect integration projects]]></summary>
+        <content type="html"><![CDATA[<h2>TL;DR</h2>
+<ul>
+<li>New repository: Production template</li>
+<li>Kickstart your own projects</li>
+<li>More documentation coming soon™</li>
+</ul>
+<h2>Template repository for production-ready integrations</h2>
+<p>HEPTAconnect is (at its core) completely framework-agnostic.
+That means, it can virtually be integrated into any kind of PHP-based application.
+This approach makes HEPTAconnect highly versatile, but it also requires integrating HEPTAconnect into an application to provide a runtime environment.</p>
+<p>We aim to make setting up HEPTAconnect projects as simple as possible, so we created a template repository to kickstart your projects.
+This repository is designed to be forked and then adjusted to your requirements.
+Here you can check out our <a href="https://github.com/HEPTACOM/heptaconnect-production">HEPTAconnect production template repository</a> on GitHub and fork it yourself.
+You can also use <code>composer create-project</code> to start your new project.</p>
+<pre><code class="language-sh">composer create-project heptaconnect/production my-project -s dev
+</code></pre>
+<p>At this point you should take a look at the <a href="https://github.com/HEPTACOM/heptaconnect-production/blob/master/README.md"><code>README.md</code></a> file.
+There you will find a quick introduction and useful first steps.</p>
+<p>This repository template is our recommendation to create new projects with HEPTAconnect.
+We will continue to maintain it to stay up to date with the latest HEPTAconnect releases.
+We also use this repository internally to kickstart our own HEPTAconnect integrations.</p>
+<h2>Future</h2>
+<p>Currently, the production template depends on <code>shopware/core</code> for some dev-ops utilities and uses it as runtime environment for HEPTAconnect.
+While this is not really a problem, we aim to be fully independent from <code>shopware/core</code> to trim down on our required composer packages.
+We have that planned for version 0.10 of HEPTAconnect.</p>
+<p>Furthermore, we plan to release more documentation content about the production template.
+As of now, the <code>README.md</code> file inside the repository is the only documentation for it.
+More detailed documentation that covers more use cases will follow soon™ in the <a href="https://heptaconnect.io/guides/integrator/">Integrator section on the HEPTAconnect documentation website</a>.</p>
+]]></content>
+        <author>
+            <name>Julian Krzefski</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[HTTP middlewares for clients and servers]]></title>
+        <id>https://heptaconnect.io/news/2023-02-14-http-middleware/</id>
+        <link href="https://heptaconnect.io/news/2023-02-14-http-middleware/"/>
+        <updated>2023-02-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Interception points for HTTP requests and responses in every direction]]></summary>
+        <content type="html"><![CDATA[<h2>TL;DR</h2>
+<ul>
+<li>Support for PSR-15 middlewares for HTTP handlers</li>
+<li>PSR-15 is not enough, so we add HTTP middlewares for HTTP clients as well</li>
+</ul>
+<h2>HTTP handlers</h2>
+<p>With HTTP handlers we already solved different challenges in the past:</p>
+<ul>
+<li>We built visual setup wizards, which are able to handle OAuth2 authorization flows.</li>
+<li>We built development tools, which we reuse in our own projects.</li>
+<li>We react to webhooks and we build a lot of other stuff.</li>
+</ul>
+<p>So many use cases, where we could use an abstraction layer to share common code efficiently.
+Good news: <a href="https://www.php-fig.org/psr/psr-15/"><code>PSR-15</code></a> solves this problem conceptually.</p>
+<p>With 0.9.2 we added support for PSR-15 middlewares for HTTP handlers.
+This means, you can add middlewares to your portal, which are automatically applied to all inbound HTTP requests and responses.
+Using this very powerful concept allows you to add custom logic like authorization, logging, caching, etc. to your portal.</p>
+<h2>HTTP clients</h2>
+<p>PSR-15 is unfortunately not made for HTTP clients.
+The PSR-7 HTTP client can already have shared common code with the use of decorators, which are very similar to PSR-15 middlewares.
+Using these decorators is a good and known strategy but it is not as easy to use as the automatically applied PSR-15 middlewares.
+Therefore, we created our own middleware interface for HTTP clients, that is similar to PSR-15 middleware specification.</p>
+<p>These two middleware interfaces will support you to build your own helpful tools for your project.
+Have a look at the documentation pages for the <a href="https://heptaconnect.io/guides/portal-developer/http-handler-middleware/">PSR-15 middleware interface</a> and the <a href="https://heptaconnect.io/guides/portal-developer/http-client-middleware/">HTTP client middleware interface</a> to learn more about the interfaces and how to use them.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Code execution in REPL]]></title>
+        <id>https://heptaconnect.io/news/2023-08-15-code-execution-in-repl/</id>
+        <link href="https://heptaconnect.io/news/2023-08-15-code-execution-in-repl/"/>
+        <updated>2023-08-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Development and production intervention sometimes need a REPL]]></summary>
+        <content type="html"><![CDATA[<h2>TL;DR</h2>
+<ul>
+<li>REPLs allow code execution without prior writing and deployment</li>
+<li><a href="https://psysh.org/">psysh</a> is a ready to use REPL for PHP</li>
+<li>Once you <code>composer require psysh</code> you can use <code>heptaconnect:repl</code>, which integrates psysh into HEPTAconnect</li>
+</ul>
+<h2>What is a REPL?</h2>
+<p>REPL stands for Read-Eval-Print-Loop.
+It is a common pattern in programming languages to provide a way to execute code without prior writing and deployment.
+You are likely familiar with this pattern from the browser console or the <code>php -a</code>/<code>php --interactive</code> command.
+The <code>php -a</code> command is a REPL for PHP, that is shipped with the PHP interpreter itself.
+Try it out yourself by simply typing <code>php -a</code> into your terminal and execute a command like <code>var_dump(new DateTime())</code>.
+It will print the current date and time.
+The execution did not stop though.
+You can execute multiple commands in a row now by entering a new command.
+This is where the loop comes in.
+It will keep executing commands until you exit the REPL by typing <code>exit</code> or pressing <code>Ctrl+D</code>.</p>
+<h2>What is psysh?</h2>
+<p>The php interactive mode is a very simple REPL, that does not provide any additional features you are used to from IDEs or other development tools.
+<a href="https://psysh.org/">psysh</a> is a REPL for PHP written in PHP itself and shipped as a standalone package, that can be used as a replacement for <code>php --interactive</code>.
+In comparison, it is a very powerful REPL, that provides a lot of features, that you know from your IDE.
+You can look up code behind classes, read documentation, autocomplete code and much more.
+It is really versatile and that is why we integrated it into HEPTAconnect.</p>
+<h2>How to use psysh with HEPTAconnect?</h2>
+<p>Once you <code>composer require psysh</code> you can use the <code>heptaconnect:repl</code> command, which integrates psysh into HEPTAconnect.
+It will automatically load a portal node container of your choice and provide you with a REPL, that is already configured to work with that specific portal node.</p>
+<p>As example you can paste the following code into the REPL and execute it:</p>
+<pre><code class="language-php">service(\Psr\Log\LoggerInterface::class)-&gt;info('Hello World');
+</code></pre>
+<p>This will log the message <code>Hello World</code> to the portal node specific logger.
+You can access any service out of the portal node container and execute any code you want.</p>
+]]></content>
+        <author>
+            <name>Joshua Behrens</name>
+        </author>
+    </entry>
+</feed>

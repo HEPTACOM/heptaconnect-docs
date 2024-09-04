@@ -1,0 +1,2375 @@
+
+<!doctype html>
+<html lang="en"class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<link rel="icon"href="../../assets/favicon/favicon-32x32.png">
+<title>Core Changelog - HEPTAconnect</title>
+<link rel="stylesheet"href="../../assets/stylesheets/main.26e3688c.min.css">
+<link rel="stylesheet"href="../../assets/stylesheets/palette.ecc896b0.min.css">
+<link rel="stylesheet"href="../../assets/app.css?break=8dad1a720072b117f41b57fe3958bd6e">
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script>
+(sessionStorage || window.sessionStorage).setItem('/.__source', JSON.stringify({
+  "stars": 114,
+  "forks": 4,
+  "repositories": 13
+}));
+</script>
+<link rel="apple-touch-icon"sizes="180x180"href="/assets/favicon/apple-touch-icon.png">
+<link rel="icon"type="image/png"sizes="32x32"href="/assets/favicon/favicon-32x32.png">
+<link rel="icon"type="image/png"sizes="16x16"href="/assets/favicon/favicon-16x16.png">
+<link rel="manifest"href="/assets/favicon/site.webmanifest">
+<link rel="mask-icon"href="/assets/favicon/safari-pinned-tab.svg"color="#3c3c3c">
+<meta name="msapplication-TileColor"content="#c3c3c3">
+<meta name="theme-color"content="#c3c3c3">
+<link rel="alternate"type="application/atom+xml"title="HEPTAconnect - Atom Feed"href="/news/atom1.xml">
+<link rel="alternate"type="application/json"title="HEPTAconnect - JSON Feed"href="/news/json1.json">
+<link rel="alternate"type="application/rss+xml"title="HEPTAconnect - RSS2 Feed"href="/news/rss2.xml">
+</head>
+<body dir="ltr"class="hc-role-releases"data-md-color-scheme="default"data-md-color-primary=""data-md-color-accent="">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input class="md-toggle"data-md-toggle="drawer"type="checkbox"id="__drawer"autocomplete="off">
+<input class="md-toggle"data-md-toggle="search"type="checkbox"id="__search"autocomplete="off">
+<label class="md-overlay"for="__drawer"></label>
+<div data-md-component="skip">
+<a href="#0970-2024-02-10"class="md-skip">
+</a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header"data-md-component="header">
+<nav class="md-header__inner md-grid"aria-label="Header">
+<a href="../.."title="HEPTAconnect"class="md-header__button md-logo"aria-label="HEPTAconnect"data-md-component="logo">
+<img src="../../assets/gfx/heptaconnect-icon.svg"alt="logo">
+</a>
+<label class="md-header__button md-icon"for="__drawer">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+</label>
+<div class="md-header__title"data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+HEPTAconnect
+</span>
+</div>
+<div class="md-header__topic"data-md-component="header-topic">
+<span class="md-ellipsis">
+Core Changelog
+</span>
+</div>
+</div>
+</div>
+<form class="md-header__option"data-md-component="palette">
+<input class="md-option"data-md-color-media="(prefers-color-scheme: light)"data-md-color-scheme="default"data-md-color-primary="indigo"data-md-color-accent="indigo"aria-label="Switch to dark mode"type="radio"name="__palette"id="__palette_1">
+<label class="md-header__button md-icon"title="Switch to dark mode"for="__palette_2"hidden>
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M384 128c70.7 0 128 57.3 128 128s-57.3 128-128 128H192c-70.7 0-128-57.3-128-128s57.3-128 128-128h192zm192 128c0-106-86-192-192-192H192C86 64 0 150 0 256s86 192 192 192h192c106 0 192-86 192-192zm-384 96a96 96 0 1 0 0-192 96 96 0 1 0 0 192z"/></svg>
+</label>
+<input class="md-option"data-md-color-media="(prefers-color-scheme: dark)"data-md-color-scheme="slate"data-md-color-primary="indigo"data-md-color-accent="indigo"aria-label="Switch to light mode"type="radio"name="__palette"id="__palette_2">
+<label class="md-header__button md-icon"title="Switch to light mode"for="__palette_1"hidden>
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M192 64C86 64 0 150 0 256s86 192 192 192h192c106 0 192-86 192-192S490 64 384 64H192zm192 96a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
+</label>
+</form>
+<label class="md-header__button md-icon"for="__search">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+</label>
+<div class="md-search"data-md-component="search"role="dialog">
+<label class="md-search__overlay"for="__search"></label>
+<div class="md-search__inner"role="search">
+<form class="md-search__form"name="search">
+<input type="text"class="md-search__input"name="query"aria-label="Search"placeholder="Search"autocapitalize="off"autocorrect="off"autocomplete="off"spellcheck="false"data-md-component="search-query"required>
+<label class="md-search__icon md-icon"for="__search">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+</label>
+<nav class="md-search__options"aria-label="Search">
+<button type="reset"class="md-search__icon md-icon"title="Clear"aria-label="Clear"tabindex="-1">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+</button>
+</nav>
+<div class="md-search__suggest"data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap"data-md-scrollfix>
+<div class="md-search-result"data-md-component="search-result">
+<div class="md-search-result__meta">
+Initializing search
+</div>
+<ol class="md-search-result__list"role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a href="https://github.com/topics/heptaconnect"title="Go to repository"class="md-source"data-md-component="source">
+<div class="md-source__icon md-icon">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</div>
+<div class="md-source__repository">
+HEPTAconnect on GitHub
+</div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container"data-md-component="container">
+<nav class="md-tabs"aria-label="Tabs"data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a href="../../guides/portal-developer/"class="md-tabs__link">
+Portal Developer
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="../../guides/integrator/"class="md-tabs__link">
+Integrator
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="../../guides/administrator/"class="md-tabs__link">
+Administrator
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="../../guides/playground/"class="md-tabs__link">
+Playground
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="../../guides/contributor/"class="md-tabs__link">
+Contributor
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="../../reference/"class="md-tabs__link">
+Reference
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="../../news/"class="md-tabs__link md-tabs__link--active">
+News
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="https://www.heptacom.de/heptaconnect/"class="md-tabs__link">
+Pricing
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main"data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary"data-md-component="sidebar"data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--primary md-nav--lifted"aria-label="Navigation"data-md-level="0">
+<label class="md-nav__title"for="__drawer">
+<a href="../.."title="HEPTAconnect"class="md-nav__button md-logo"aria-label="HEPTAconnect"data-md-component="logo">
+<img src="../../assets/gfx/heptaconnect-icon.svg"alt="logo">
+</a>
+HEPTAconnect
+</label>
+<div class="md-nav__source">
+<a href="https://github.com/topics/heptaconnect"title="Go to repository"class="md-source"data-md-component="source">
+<div class="md-source__icon md-icon">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</div>
+<div class="md-source__repository">
+HEPTAconnect on GitHub
+</div>
+</a>
+</div>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_1">
+<div class="md-nav__link md-nav__link--index">
+<a href="../../guides/portal-developer/">Portal Developer</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_1_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+Portal Developer
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/dataset/"class="md-nav__link">
+Dataset
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/portal/"class="md-nav__link">
+Portal
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/explorer/"class="md-nav__link">
+Explorer
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/emitter/"class="md-nav__link">
+Emitter
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/receiver/"class="md-nav__link">
+Receiver
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/http-client-middleware/"class="md-nav__link">
+HTTP Client Middleware
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/http-handler/"class="md-nav__link">
+HTTP Handler
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/http-handler-middleware/"class="md-nav__link">
+HTTP Handler Middleware
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/status-reporting/"class="md-nav__link">
+Status reporting
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/morphers/"class="md-nav__link">
+Morphers
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/key-value-storage/"class="md-nav__link">
+Key value storage
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/explorer-decoration/"class="md-nav__link">
+Explorer decoration
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/emitter-decoration/"class="md-nav__link">
+Emitter decoration
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/receiver-decoration/"class="md-nav__link">
+Receiver decoration
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/direct-emission-explorer/"class="md-nav__link">
+Direct emission explorer
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/dependency-injection/"class="md-nav__link">
+Dependency injection
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/default-utilities/"class="md-nav__link">
+Default utilities
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/short-notation-for-flow-components/"class="md-nav__link">
+Short notation for flow components
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/upgrade/"class="md-nav__link">
+Upgrade
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/file-reference/"class="md-nav__link">
+File references
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/filesystem/"class="md-nav__link">
+Filesystem
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_1_22">
+<label class="md-nav__link"for="__nav_1_22"id="__nav_1_22_label"tabindex="0">
+Patterns
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="2"aria-labelledby="__nav_1_22_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_1_22">
+<span class="md-nav__icon md-icon"></span>
+Patterns
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/patterns/transfer-file-reference-by-public-url/"class="md-nav__link">
+Transfer file reference by public URL
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/patterns/transfer-files-from-ftp-server/"class="md-nav__link">
+Send files from an FTP server
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/patterns/list-files-from-filesystem/"class="md-nav__link">
+List files from filesystem
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/patterns/serve-file-from-filesystem-using-http-handler/"class="md-nav__link">
+Serve a file from filesystem using HTTP handler
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/patterns/http-client-middleware-dumping-on-bad-request/"class="md-nav__link">
+Client Middleware dumping bad request HTTP messages
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_1_23">
+<label class="md-nav__link"for="__nav_1_23"id="__nav_1_23_label"tabindex="0">
+Services
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="2"aria-labelledby="__nav_1_23_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_1_23">
+<span class="md-nav__icon md-icon"></span>
+Services
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../reference/portal-developer/service/filesystem-interface/"class="md-nav__link">
+FilesystemInterface
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/portal-developer/service/http-client-contract/"class="md-nav__link">
+HttpClientContract
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_2">
+<div class="md-nav__link md-nav__link--index">
+<a href="../../guides/integrator/">Integrator</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_2_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+Integrator
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/integrator/portals/"class="md-nav__link">
+Portals
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/bridges/"class="md-nav__link">
+Bridges
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/message-brokers/"class="md-nav__link">
+Message broking
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/filesystem/"class="md-nav__link">
+Filesystem
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/http-handlers/"class="md-nav__link">
+HTTP Handlers
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/portal-node-configuration/"class="md-nav__link">
+Portal node configuration
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/logging/"class="md-nav__link">
+Logging
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/upgrade/"class="md-nav__link">
+Upgrade
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_2_9">
+<label class="md-nav__link"for="__nav_2_9"id="__nav_2_9_label"tabindex="0">
+Patterns
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="2"aria-labelledby="__nav_2_9_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+Patterns
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/integrator/patterns/filesystem-change-for-specific-portal-node/"class="md-nav__link">
+Change the filesystem for a specific portal node
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/patterns/http-handler-dump-format-to-curl-shell-scripts/"class="md-nav__link">
+Change dump format for HTTP handler to cURL shell
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/patterns/http-handler-dump-with-spx-trigger/"class="md-nav__link">
+Use SPX as trigger for HTTP handler dumps
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/patterns/http-handler-dump-with-xdebug-trigger/"class="md-nav__link">
+Use Xdebug as trigger for HTTP handler dumps
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_3">
+<div class="md-nav__link md-nav__link--index">
+<a href="../../guides/administrator/">Administrator</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_3_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+Administrator
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/administrator/portal-node/"class="md-nav__link">
+Portal node
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/administrator/routing/"class="md-nav__link">
+Route
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/administrator/status-reporting/"class="md-nav__link">
+Status reporting
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/administrator/http-apis/"class="md-nav__link">
+HTTP APIs
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/administrator/filesystem/"class="md-nav__link">
+Filesystem
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/administrator/logs/"class="md-nav__link">
+Logs
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_4">
+<div class="md-nav__link md-nav__link--index">
+<a href="../../guides/playground/">Playground</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_4_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+Playground
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/playground/add-portals/"class="md-nav__link">
+Add portals
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/playground/contribution/"class="md-nav__link">
+Contribution
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_5">
+<div class="md-nav__link md-nav__link--index">
+<a href="../../guides/contributor/">Contributor</a>
+<label for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_5_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+Contributor
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/contributor/changelog/"class="md-nav__link">
+Writing changelogs
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/contributor/build-flow-components/"class="md-nav__link">
+Build flow components
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/contributor/build-storage-actions/"class="md-nav__link">
+Build storage actions
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/contributor/cla/"class="md-nav__link">
+Contributor License Agreement
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_6">
+<label class="md-nav__link"for="__nav_6"id="__nav_6_label"tabindex="0">
+Reference
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_6_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+Reference
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../reference/"class="md-nav__link">
+Overview
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_6_2">
+<label class="md-nav__link"for="__nav_6_2"id="__nav_6_2_label"tabindex="0">
+General resources
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="2"aria-labelledby="__nav_6_2_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+General resources
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../reference/general-resources/package-structure/"class="md-nav__link">
+Package structure
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_6_2_2">
+<div class="md-nav__link md-nav__link--index">
+<a href="../../reference/general-resources/data-flow/">Data flow</a>
+<label for="__nav_6_2_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="3"aria-labelledby="__nav_6_2_2_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_6_2_2">
+<span class="md-nav__icon md-icon"></span>
+Data flow
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../reference/general-resources/data-flows/basic-flow/"class="md-nav__link">
+Basic flow
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/general-resources/mapping/"class="md-nav__link">
+Mapping
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_6_3">
+<label class="md-nav__link"for="__nav_6_3"id="__nav_6_3_label"tabindex="0">
+ADRs
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="2"aria-labelledby="__nav_6_3_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+ADRs
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-01-27-telemetry-recording/"class="md-nav__link">
+Telemetry recording
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-04-30-contracts-and-interfaces/"class="md-nav__link">
+Contracts and interfaces
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-08-10-architecture-decision-records/"class="md-nav__link">
+Architecture decision records
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-08-28-parallelization-locks/"class="md-nav__link">
+Parallelization locks
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-10-15-portal-status-reporters/"class="md-nav__link">
+Portal status reporters
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-10-30-job-messages-and-payload/"class="md-nav__link">
+Job messages and payload
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-12-10-portal-service-container/"class="md-nav__link">
+Portal service container
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-02-03-direct-emission-exploration/"class="md-nav__link">
+Direct emission exploration
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-04-13-portal-dependency-injection-implementation/"class="md-nav__link">
+Portal dependency injection implementation
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-06-17-flow-component-short-notation/"class="md-nav__link">
+Flow component short notation
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-08-24-php-8-named-arguments/"class="md-nav__link">
+PHP 8.0 named arguments
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-09-06-exception-and-log-message-codes/"class="md-nav__link">
+Exception and log message codes
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-09-25-optimized-storage-actions/"class="md-nav__link">
+Optimized storage actions
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-10-29-flow-components-are-not-crud/"class="md-nav__link">
+Flow components are not CRUD
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-10-30-route-capabilities/"class="md-nav__link">
+Route capabilities
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2022-01-05-code-documentation/"class="md-nav__link">
+Code documentation
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2022-01-24-semver-with-generation-version/"class="md-nav__link">
+SemVer with generation version
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2022-03-02-final-classes/"class="md-nav__link">
+Final classes
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2022-06-12-type-safe-class-strings/"class="md-nav__link">
+Type safe class strings
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2022-10-06-filesystem-stream-wrapper/"class="md-nav__link">
+Filesystem abstraction with stream wrapper
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/glossary/"class="md-nav__link">
+Glossary
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/license/"class="md-nav__link">
+License
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_7"checked="checked">
+<label class="md-nav__link"for="__nav_7"id="__nav_7_label"tabindex="0">
+News
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_7_label"aria-expanded="true">
+<label class="md-nav__title"for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+News
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../news/"class="md-nav__link">
+Blog
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_7_2"checked="checked">
+<div class="md-nav__link md-nav__link--index">
+<a href="../">Release</a>
+<label for="__nav_7_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="2"aria-labelledby="__nav_7_2_label"aria-expanded="true">
+<label class="md-nav__title"for="__nav_7_2">
+<span class="md-nav__icon md-icon"></span>
+Release
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../upcoming/"class="md-nav__link">
+Upcoming
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-bridge-shopware-platform/"class="md-nav__link">
+Bridge Shopware Platform
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__toc">
+<label class="md-nav__link md-nav__link--active"for="__toc">
+Core
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a href="./"class="md-nav__link md-nav__link--active">
+Core
+</a>
+<nav class="md-nav md-nav--secondary"aria-label="Table of contents">
+<label class="md-nav__title"for="__toc">
+<span class="md-nav__icon md-icon"></span>
+Table of contents
+</label>
+<ul class="md-nav__list"data-md-component="toc"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="#0970-2024-02-10"class="md-nav__link">
+[0.9.7.0] - 2024-02-10
+</a>
+<nav class="md-nav"aria-label="[0.9.7.0] - 2024-02-10">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#deprecated"class="md-nav__link">
+Deprecated
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0960-2023-07-10"class="md-nav__link">
+[0.9.6.0] - 2023-07-10
+</a>
+<nav class="md-nav"aria-label="[0.9.6.0] - 2023-07-10">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_1"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0950-2023-05-27"class="md-nav__link">
+[0.9.5.0] - 2023-05-27
+</a>
+<nav class="md-nav"aria-label="[0.9.5.0] - 2023-05-27">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_2"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_1"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_1"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0940-2023-03-04"class="md-nav__link">
+[0.9.4.0] - 2023-03-04
+</a>
+<nav class="md-nav"aria-label="[0.9.4.0] - 2023-03-04">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_3"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_2"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#deprecated_1"class="md-nav__link">
+Deprecated
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_2"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0930-2022-11-26"class="md-nav__link">
+[0.9.3.0] - 2022-11-26
+</a>
+<nav class="md-nav"aria-label="[0.9.3.0] - 2022-11-26">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_4"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_3"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_3"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0920-2022-10-16"class="md-nav__link">
+[0.9.2.0] - 2022-10-16
+</a>
+<nav class="md-nav"aria-label="[0.9.2.0] - 2022-10-16">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_5"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_4"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0911-2022-09-28"class="md-nav__link">
+[0.9.1.1] - 2022-09-28
+</a>
+<nav class="md-nav"aria-label="[0.9.1.1] - 2022-09-28">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_6"class="md-nav__link">
+Added
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0910-2022-08-15"class="md-nav__link">
+[0.9.1.0] - 2022-08-15
+</a>
+<nav class="md-nav"aria-label="[0.9.1.0] - 2022-08-15">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#changed_4"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_5"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0902-2022-04-23"class="md-nav__link">
+[0.9.0.2] - 2022-04-23
+</a>
+<nav class="md-nav"aria-label="[0.9.0.2] - 2022-04-23">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_6"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0901-2022-04-19"class="md-nav__link">
+[0.9.0.1] - 2022-04-19
+</a>
+<nav class="md-nav"aria-label="[0.9.0.1] - 2022-04-19">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_7"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0900-2022-04-02"class="md-nav__link">
+[0.9.0.0] - 2022-04-02
+</a>
+<nav class="md-nav"aria-label="[0.9.0.0] - 2022-04-02">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_7"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_5"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#removed"class="md-nav__link">
+Removed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_8"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#086-2022-03-07"class="md-nav__link">
+[0.8.6] - 2022-03-07
+</a>
+<nav class="md-nav"aria-label="[0.8.6] - 2022-03-07">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_9"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#085-2021-12-28"class="md-nav__link">
+[0.8.5] - 2021-12-28
+</a>
+<nav class="md-nav"aria-label="[0.8.5] - 2021-12-28">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_10"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#084-2021-12-16"class="md-nav__link">
+[0.8.4] - 2021-12-16
+</a>
+<nav class="md-nav"aria-label="[0.8.4] - 2021-12-16">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#removed_1"class="md-nav__link">
+Removed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_11"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#083-2021-12-02"class="md-nav__link">
+[0.8.3] - 2021-12-02
+</a>
+<nav class="md-nav"aria-label="[0.8.3] - 2021-12-02">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_12"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#082-2021-11-25"class="md-nav__link">
+[0.8.2] - 2021-11-25
+</a>
+<nav class="md-nav"aria-label="[0.8.2] - 2021-11-25">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_13"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#081-2021-11-22"class="md-nav__link">
+[0.8.1] - 2021-11-22
+</a>
+<nav class="md-nav"aria-label="[0.8.1] - 2021-11-22">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_14"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#080-2021-11-22"class="md-nav__link">
+[0.8.0] - 2021-11-22
+</a>
+<nav class="md-nav"aria-label="[0.8.0] - 2021-11-22">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_8"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_6"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#deprecated_2"class="md-nav__link">
+Deprecated
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#removed_2"class="md-nav__link">
+Removed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_15"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#070-2021-09-25"class="md-nav__link">
+[0.7.0] - 2021-09-25
+</a>
+<nav class="md-nav"aria-label="[0.7.0] - 2021-09-25">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_9"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_7"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#removed_3"class="md-nav__link">
+Removed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#060-2021-07-26"class="md-nav__link">
+[0.6.0] - 2021-07-26
+</a>
+<nav class="md-nav"aria-label="[0.6.0] - 2021-07-26">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_10"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_8"class="md-nav__link">
+Changed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#051-2021-07-13"class="md-nav__link">
+[0.5.1] - 2021-07-13
+</a>
+<nav class="md-nav"aria-label="[0.5.1] - 2021-07-13">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_16"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#050-2021-07-11"class="md-nav__link">
+[0.5.0] - 2021-07-11
+</a>
+<nav class="md-nav"aria-label="[0.5.0] - 2021-07-11">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_11"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_9"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#deprecated_3"class="md-nav__link">
+Deprecated
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#removed_4"class="md-nav__link">
+Removed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-dataset-base/"class="md-nav__link">
+Dataset base
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-dataset-ecommerce/"class="md-nav__link">
+Dataset ecommerce
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-portal-base/"class="md-nav__link">
+Portal base
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-portal-local-shopware-platform/"class="md-nav__link">
+Portal Local Shopware Platform
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-package-http/"class="md-nav__link">
+Package HTTP
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-package-web-frontend/"class="md-nav__link">
+Package Web Frontend
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-package-shopware-6/"class="md-nav__link">
+Package Shopware 6
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-storage-base/"class="md-nav__link">
+Storage base
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-storage-shopware-dal/"class="md-nav__link">
+Storage Shopware DAL
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="https://www.heptacom.de/heptaconnect/"class="md-nav__link">
+Pricing
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary"data-md-component="sidebar"data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--secondary"aria-label="Table of contents">
+<label class="md-nav__title"for="__toc">
+<span class="md-nav__icon md-icon"></span>
+Table of contents
+</label>
+<ul class="md-nav__list"data-md-component="toc"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="#0970-2024-02-10"class="md-nav__link">
+[0.9.7.0] - 2024-02-10
+</a>
+<nav class="md-nav"aria-label="[0.9.7.0] - 2024-02-10">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#deprecated"class="md-nav__link">
+Deprecated
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0960-2023-07-10"class="md-nav__link">
+[0.9.6.0] - 2023-07-10
+</a>
+<nav class="md-nav"aria-label="[0.9.6.0] - 2023-07-10">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_1"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0950-2023-05-27"class="md-nav__link">
+[0.9.5.0] - 2023-05-27
+</a>
+<nav class="md-nav"aria-label="[0.9.5.0] - 2023-05-27">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_2"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_1"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_1"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0940-2023-03-04"class="md-nav__link">
+[0.9.4.0] - 2023-03-04
+</a>
+<nav class="md-nav"aria-label="[0.9.4.0] - 2023-03-04">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_3"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_2"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#deprecated_1"class="md-nav__link">
+Deprecated
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_2"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0930-2022-11-26"class="md-nav__link">
+[0.9.3.0] - 2022-11-26
+</a>
+<nav class="md-nav"aria-label="[0.9.3.0] - 2022-11-26">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_4"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_3"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_3"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0920-2022-10-16"class="md-nav__link">
+[0.9.2.0] - 2022-10-16
+</a>
+<nav class="md-nav"aria-label="[0.9.2.0] - 2022-10-16">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_5"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_4"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0911-2022-09-28"class="md-nav__link">
+[0.9.1.1] - 2022-09-28
+</a>
+<nav class="md-nav"aria-label="[0.9.1.1] - 2022-09-28">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_6"class="md-nav__link">
+Added
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0910-2022-08-15"class="md-nav__link">
+[0.9.1.0] - 2022-08-15
+</a>
+<nav class="md-nav"aria-label="[0.9.1.0] - 2022-08-15">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#changed_4"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_5"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0902-2022-04-23"class="md-nav__link">
+[0.9.0.2] - 2022-04-23
+</a>
+<nav class="md-nav"aria-label="[0.9.0.2] - 2022-04-23">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_6"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0901-2022-04-19"class="md-nav__link">
+[0.9.0.1] - 2022-04-19
+</a>
+<nav class="md-nav"aria-label="[0.9.0.1] - 2022-04-19">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_7"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0900-2022-04-02"class="md-nav__link">
+[0.9.0.0] - 2022-04-02
+</a>
+<nav class="md-nav"aria-label="[0.9.0.0] - 2022-04-02">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_7"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_5"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#removed"class="md-nav__link">
+Removed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_8"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#086-2022-03-07"class="md-nav__link">
+[0.8.6] - 2022-03-07
+</a>
+<nav class="md-nav"aria-label="[0.8.6] - 2022-03-07">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_9"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#085-2021-12-28"class="md-nav__link">
+[0.8.5] - 2021-12-28
+</a>
+<nav class="md-nav"aria-label="[0.8.5] - 2021-12-28">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_10"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#084-2021-12-16"class="md-nav__link">
+[0.8.4] - 2021-12-16
+</a>
+<nav class="md-nav"aria-label="[0.8.4] - 2021-12-16">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#removed_1"class="md-nav__link">
+Removed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_11"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#083-2021-12-02"class="md-nav__link">
+[0.8.3] - 2021-12-02
+</a>
+<nav class="md-nav"aria-label="[0.8.3] - 2021-12-02">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_12"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#082-2021-11-25"class="md-nav__link">
+[0.8.2] - 2021-11-25
+</a>
+<nav class="md-nav"aria-label="[0.8.2] - 2021-11-25">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_13"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#081-2021-11-22"class="md-nav__link">
+[0.8.1] - 2021-11-22
+</a>
+<nav class="md-nav"aria-label="[0.8.1] - 2021-11-22">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_14"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#080-2021-11-22"class="md-nav__link">
+[0.8.0] - 2021-11-22
+</a>
+<nav class="md-nav"aria-label="[0.8.0] - 2021-11-22">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_8"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_6"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#deprecated_2"class="md-nav__link">
+Deprecated
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#removed_2"class="md-nav__link">
+Removed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_15"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#070-2021-09-25"class="md-nav__link">
+[0.7.0] - 2021-09-25
+</a>
+<nav class="md-nav"aria-label="[0.7.0] - 2021-09-25">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_9"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_7"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#removed_3"class="md-nav__link">
+Removed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#060-2021-07-26"class="md-nav__link">
+[0.6.0] - 2021-07-26
+</a>
+<nav class="md-nav"aria-label="[0.6.0] - 2021-07-26">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_10"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_8"class="md-nav__link">
+Changed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#051-2021-07-13"class="md-nav__link">
+[0.5.1] - 2021-07-13
+</a>
+<nav class="md-nav"aria-label="[0.5.1] - 2021-07-13">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_16"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#050-2021-07-11"class="md-nav__link">
+[0.5.0] - 2021-07-11
+</a>
+<nav class="md-nav"aria-label="[0.5.0] - 2021-07-11">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_11"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_9"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#deprecated_3"class="md-nav__link">
+Deprecated
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#removed_4"class="md-nav__link">
+Removed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content"data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="0970-2024-02-10">[0.9.7.0] - 2024-02-10</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Add exception code <code>1693671570</code> in <code>\Heptacom\HeptaConnect\Core\Portal\ServiceContainerCompilerPass\BuildDefinitionForFlowComponentRegistryCompilerPass::getServiceReferencesGroupedBySource</code> when a flow component service is missing a source attribute on its tag</li>
+<li>Add exception code <code>1693698154</code> in <code>\Heptacom\HeptaConnect\Core\Portal\ServiceContainerCompilerPass\BuildDefinitionForFlowComponentRegistryCompilerPass::getSourcePackage</code> when a referenced flow component package is not found in known packages</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Sort flow components by priority, if the service definition tag has a priority attribute</li>
+</ul>
+<h3 id="deprecated">Deprecated</h3>
+<ul>
+<li>Deprecate parameter <code>$source</code> in method <code>\Heptacom\HeptaConnect\Core\Portal\FlowComponentRegistry::getExplorers</code></li>
+<li>Deprecate parameter <code>$source</code> in method <code>\Heptacom\HeptaConnect\Core\Portal\FlowComponentRegistry::getEmitters</code></li>
+<li>Deprecate parameter <code>$source</code> in method <code>\Heptacom\HeptaConnect\Core\Portal\FlowComponentRegistry::getReceivers</code></li>
+<li>Deprecate parameter <code>$source</code> in method <code>\Heptacom\HeptaConnect\Core\Portal\FlowComponentRegistry::getStatusReporters</code></li>
+<li>Deprecate parameter <code>$source</code> in method <code>\Heptacom\HeptaConnect\Core\Portal\FlowComponentRegistry::getWebHttpHandlers</code></li>
+<li>Deprecate method <code>\Heptacom\HeptaConnect\Core\Portal\FlowComponentRegistry::getOrderedSources</code></li>
+</ul>
+<h2 id="0960-2023-07-10">[0.9.6.0] - 2023-07-10</h2>
+<h3 id="added_1">Added</h3>
+<ul>
+<li>Add log message code <code>1686752874</code> when handling of job failed in <code>\Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler</code></li>
+<li>Add log message code <code>1686752879</code> when handling of job failed in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler</code></li>
+<li>Add log message code <code>1686752889</code> when handling of job failed in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code></li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Fix a bug in <code>\Heptacom\HeptaConnect\Core\Storage\Filesystem\AbstractFilesystem</code> that occurred when adapters don't populate the <code>path</code> key in metadata.</li>
+<li>Fix a bug in <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpKernel</code> that broke sub-requests when the request contains no <code>Cookie</code> header.</li>
+<li>Fix order of packages when building a portal-container in <code>\Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerBuilder</code>. Packages can now access services of other packages in their service definition, if they list that package in <code>\Heptacom\HeptaConnect\Portal\Base\Portal\Contract\PackageContract::getAdditionalPackages</code>.</li>
+<li>Fix emission check in <code>\Heptacom\HeptaConnect\Core\Support\EntityStatus::isMappedByEmitter</code> by validating external id instead of foreign key</li>
+</ul>
+<h2 id="0950-2023-05-27">[0.9.5.0] - 2023-05-27</h2>
+<h3 id="added_2">Added</h3>
+<ul>
+<li>Add service <code>Heptacom\HeptaConnect\Portal\Base\Portal\PackageCollection</code> to portal-container, containing the portal, all portal-extensions and all packages involved in building the container</li>
+<li>Add service <code>Psr\Http\Message\ServerRequestFactoryInterface</code> to portal-container</li>
+<li>Add service <code>Psr\Http\Message\UploadedFileFactoryInterface</code> to portal-container</li>
+<li>Add service <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpKernelInterface</code> to portal-container to execute a <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpHandlerStackInterface</code> from inside a portal</li>
+<li>Add implementation <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandleContext::forward</code> for <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpHandleContextInterface::forward</code></li>
+<li>Add composer dependency <code>riverline/multipart-parser:^2.1</code> to support parsing body-data of <code>\Psr\Http\Message\ServerRequestInterface</code> in <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpKernel</code></li>
+<li>Add implementation <code>\Heptacom\HeptaConnect\Core\Web\Http\Psr7MessageMultiPartFormDataBuilder</code> for <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageMultiPartFormDataBuilderInterface</code> to build HTTP payloads for multipart messages</li>
+<li>Add exception code <code>1682806294</code> in <code>\Heptacom\HeptaConnect\Core\Web\Http\Psr7MessageMultiPartFormDataBuilder::build</code> when an input parameter is of an illegal type</li>
+</ul>
+<h3 id="changed_1">Changed</h3>
+<ul>
+<li>Use <code>\Psr\Http\Message\StreamInterface::__toString</code> instead of <code>\Psr\Http\Message\StreamInterface::getContents</code> to retrieve stream contents in <code>\Heptacom\HeptaConnect\Core\File\ResolvedReference\ResolvedContentsFileReference</code>, <code>\Heptacom\HeptaConnect\Core\File\ResolvedReference\ResolvedPublicUrlFileReference</code> and <code>\Heptacom\HeptaConnect\Core\File\ResolvedReference\ResolvedRequestFileReference</code>. This way, all stream contents are retrieved, regardless of the position of the stream pointer.</li>
+<li>Add dependency on <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobFailActionInterface</code> into <code>\Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler</code>, <code>\Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler</code> and <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code> to set job-states to <code>failed</code> in case of an error</li>
+<li>Allow handling of HTTP requests, even when no HTTP handler exists for the requested path. This means, middlewares for HTTP handlers will run for every request.</li>
+<li>Add argument <code>bool $isStackEmpty</code> to <code>\Heptacom\HeptaConnect\Core\Web\Http\Handler\HttpMiddlewareChainHandler</code> to indicate whether the related instance of <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpHandlerStackInterface</code> is empty.</li>
+<li>Change log level of code <code>1636845086</code> from <code>critical</code> to <code>notice</code></li>
+</ul>
+<h3 id="fixed_1">Fixed</h3>
+<ul>
+<li>Remove a step in building a portal-container that would remove all services that extend <code>\Heptacom\HeptaConnect\Portal\Base\Portal\Contract\PackageContract</code></li>
+<li>Catch exceptions when running jobs and setting the affected jobs to failed state. Also change behavior in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler</code>, <code>\Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler</code> and <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code> to continue with the remaining jobs.</li>
+</ul>
+<h2 id="0940-2023-03-04">[0.9.4.0] - 2023-03-04</h2>
+<h3 id="added_3">Added</h3>
+<ul>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Web\Http\Formatter\Support\HeaderUtility</code> described by <code>\Heptacom\HeptaConnect\Core\Web\Http\Formatter\Support\Contract\HeaderUtilityInterface</code> to work with PSR-7 message headers</li>
+<li>Add implementation <code>\Heptacom\HeptaConnect\Core\Web\Http\Formatter\Psr7MessageRawHttpFormatter</code> extending <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageRawHttpFormatter</code> to provide raw HTTP message formatting</li>
+<li>Add implementation <code>\Heptacom\HeptaConnect\Core\Web\Http\Formatter\Psr7MessageCurlShellFormatter</code> extending <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageCurlShellFormatterContract</code> to provide cURL shell command formatting</li>
+<li>Add exception code <code>1674950000</code> in <code>\Heptacom\HeptaConnect\Core\Web\Http\Formatter\Psr7MessageRawHttpFormatter::formatMessage</code> when the given message is neither a request nor a response</li>
+<li>Add exception code <code>1674950001</code> in <code>\Heptacom\HeptaConnect\Core\Web\Http\Formatter\Psr7MessageRawHttpFormatter::getFileExtension</code> when the given message is neither a request nor a response</li>
+<li>Add exception code <code>1674950002</code> in <code>\Heptacom\HeptaConnect\Core\Web\Http\Formatter\Psr7MessageCurlShellFormatter::formatMessage</code> when the given message is neither a request nor a response</li>
+<li>Add exception code <code>1674950003</code> in <code>\Heptacom\HeptaConnect\Core\Web\Http\Formatter\Psr7MessageCurlShellFormatter::getFileExtension</code> when the given message is neither a request nor a response</li>
+<li>Add interface <code>\Heptacom\HeptaConnect\Core\Bridge\File\HttpHandlerDumpPathProviderInterface</code>, that needs to be implemented by bridges and integrations, to return the path for placing HTTP handler dumps</li>
+<li>Add constant <code>\Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandleServiceInterface::REQUEST_ATTRIBUTE_PREFIX</code> to identify all request attributes, that can be used as value holders for additional parameters attached to requests to the core layer</li>
+<li>Add constant <code>\Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandleServiceInterface::REQUEST_ATTRIBUTE_ORIGINAL_REQUEST</code> as request attribute key holding an instance of <code>\Psr\Http\Message\ServerRequestInterface</code> of the original inbound HTTP request used for debugging purposes</li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Web\Http\Dump\ServerRequestCycleDumper</code> described by <code>\Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumperInterface</code> to dump a request cycle in a way, that they can be associated, when accessing the dumps</li>
+<li>Add sample rate strategy implementation <code>\Heptacom\HeptaConnect\Core\Web\Http\Dump\SampleRateServerRequestCycleDumpChecker</code> for new interface <code>\Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumpCheckerInterface</code> using configuration <code>dump-sample-rate</code> for HTTP handlers, which can be an integer between 0 and 100, that will be used to determine whether a request-cycle will be dumped. Use value 100 for a request-response dump on every request</li>
+</ul>
+<h3 id="changed_2">Changed</h3>
+<ul>
+<li>Add dependency on <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageCurlShellFormatterContract</code> into <code>\Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerBuilder</code> to provide service for raw HTTP message formatting</li>
+<li>Add dependency on <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageRawHttpFormatterContract</code> into <code>\Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerBuilder</code> to provide service for cURL shell command formatting</li>
+<li>Add dependency on <code>\Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumpCheckerInterface</code> and <code>\Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumperInterface</code> into <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandleService</code> to dump requests and responses from HTTP handling</li>
+</ul>
+<h3 id="deprecated_1">Deprecated</h3>
+<ul>
+<li>Deprecate class <code>\Heptacom\HeptaConnect\Core\Portal\Exception\DelegatingLoaderLoadException</code>. Use <code>\Heptacom\HeptaConnect\Portal\Base\Portal\Exception\DelegatingLoaderLoadException</code> instead.</li>
+</ul>
+<h3 id="fixed_2">Fixed</h3>
+<ul>
+<li>Fix issue in <code>\Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerBuilder</code> when a composer package with a portal has multiple PSR-4 entries in its <code>composer.json</code></li>
+<li>Fix container compile error when an excluded service has an automatic alias from its interface.</li>
+</ul>
+<h2 id="0930-2022-11-26">[0.9.3.0] - 2022-11-26</h2>
+<h3 id="added_4">Added</h3>
+<ul>
+<li>Add <code>\Heptacom\HeptaConnect\Core\File\Filesystem\StreamUriSchemePathConverter</code> described by <code>\Heptacom\HeptaConnect\Core\File\Filesystem\Contract\StreamUriSchemePathConverterInterface</code> to convert between URIs and paths when using paths as contextualized URIs</li>
+<li>Add exception code <code>1666942800</code> in <code>\Heptacom\HeptaConnect\Core\File\Filesystem\StreamUriSchemePathConverter::convertToUri</code> when the path is not a compatible URI</li>
+<li>Add exception code <code>1666942801</code> in <code>\Heptacom\HeptaConnect\Core\File\Filesystem\StreamUriSchemePathConverter::convertToUri</code> when the path already has a protocol</li>
+<li>Add exception code <code>1666942802</code> in <code>\Heptacom\HeptaConnect\Core\File\Filesystem\StreamUriSchemePathConverter::convertToUri</code> when the path has a port</li>
+<li>Add exception code <code>1666942803</code> in <code>\Heptacom\HeptaConnect\Core\File\Filesystem\StreamUriSchemePathConverter::convertToUri</code> when the path has query parameters</li>
+<li>Add exception code <code>1666942804</code> in <code>\Heptacom\HeptaConnect\Core\File\Filesystem\StreamUriSchemePathConverter::convertToUri</code> when the path has a URI fragment</li>
+<li>Add exception code <code>1666942810</code> in <code>\Heptacom\HeptaConnect\Core\File\Filesystem\StreamUriSchemePathConverter::convertToPath</code> when the URI is not a URI</li>
+<li>Add exception code <code>1666942811</code> in <code>\Heptacom\HeptaConnect\Core\File\Filesystem\StreamUriSchemePathConverter::convertToPath</code> when the URI has no host</li>
+<li>Add exception code <code>1666942812</code> in <code>\Heptacom\HeptaConnect\Core\File\Filesystem\StreamUriSchemePathConverter::convertToPath</code> when the URI has a port</li>
+<li>Add exception code <code>1666942813</code> in <code>\Heptacom\HeptaConnect\Core\File\Filesystem\StreamUriSchemePathConverter::convertToPath</code> when the URI has query parameters</li>
+<li>Add exception code <code>1666942814</code> in <code>\Heptacom\HeptaConnect\Core\File\Filesystem\StreamUriSchemePathConverter::convertToPath</code> when the URI has a URI fragment</li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Portal\File\Filesystem\Filesystem</code> as implementation of <code>\Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface</code> to provide a path conversion for portals</li>
+<li>Add interface <code>\Heptacom\HeptaConnect\Core\File\Filesystem\Contract\StreamWrapperInterface</code> to describe, what the PHP documentation describes as signatures for a class to use as a stream wrapper</li>
+<li>Add interface <code>\Heptacom\HeptaConnect\Core\Bridge\File\PortalNodeFilesystemStreamProtocolProviderInterface</code>, that needs to be implemented by bridges and integrations, to create portal node specific stream protocols</li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Portal\File\Filesystem\FilesystemFactory</code> described by <code>\Heptacom\HeptaConnect\Core\Portal\File\Filesystem\Contract\FilesystemFactoryInterface</code> to create portal node specific instances of <code>\Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface</code></li>
+<li>Add stream wrapper implementation <code>\Heptacom\HeptaConnect\Core\File\Filesystem\RewritePathStreamWrapper</code> to rewrite requested paths to a new protocol while changing the protocol and the path itself</li>
+</ul>
+<h3 id="changed_3">Changed</h3>
+<ul>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Storage\Filesystem\AbstractFilesystem::getConfig</code> to forward the decorated filesystem config</li>
+<li>Wrap result of <code>\Heptacom\HeptaConnect\Core\Storage\Filesystem\PrefixFilesystem::getAdapter</code> into an adaptor decorator of <code>\Heptacom\HeptaConnect\Core\Storage\Filesystem\PrefixAdapter</code> to ensure that adapter usage will apply same path rewrites like the filesystem itself</li>
+<li>Add dependency on <code>\Heptacom\HeptaConnect\Core\Portal\File\Filesystem\Contract\FilesystemFactoryInterface</code> into <code>\Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerBuilder</code> to provide a <code>Heptacom\HeptaConnect\Portal\Base\File\Filesystem\Contract\FilesystemInterface</code> service for portal nodes</li>
+</ul>
+<h3 id="fixed_3">Fixed</h3>
+<ul>
+<li>Changed return type of <code>\Heptacom\HeptaConnect\Core\Storage\Filesystem\AbstractFilesystem::getAdapter</code> from <code>\League\Flysystem\FilesystemInterface</code> to <code>\League\Flysystem\AdapterInterface</code> by returning the decorated filesystem adapter instead of the filesystem itself</li>
+</ul>
+<h2 id="0920-2022-10-16">[0.9.2.0] - 2022-10-16</h2>
+<h3 id="added_5">Added</h3>
+<ul>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpMiddlewareClient</code> to execute a chain of <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpClientMiddlewareInterface</code> services for outbound HTTP requests via <code>\Psr\Http\Client\ClientInterface</code> from a portal-node context.</li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Portal\ServiceContainerCompilerPass\AddHttpMiddlewareClientCompilerPass</code> to automatically tag services implementing <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpClientMiddlewareInterface</code> with <code>heptaconnect.http.client.middleware</code>.</li>
+<li>Execute a chain of <code>\Psr\Http\Server\MiddlewareInterface</code> services for inbound HTTP request via <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpHandlerContract</code></li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Portal\ServiceContainerCompilerPass\AddHttpMiddlewareCollectorCompilerPass</code> to automatically tag services implementing <code>\Psr\Http\Server\MiddlewareInterface</code> with <code>heptaconnect.http.handler.middleware</code>.</li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Support\HttpMiddlewareCollector</code> as a service in the portal-node container. It is used to retrieve tagged middleware services from the container.</li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Web\Http\Handler\HttpMiddlewareChainHandler</code> and <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpMiddlewareHandler</code> to wrap execution of middleware chain</li>
+<li>Add composer dependency <code>psr/http-server-handler: ^1.0</code> and <code>psr/http-server-middleware: ^1.0</code> to support PSR-15 middlewares for HTTP handlers</li>
+<li>Add exception code <code>1651338559</code> in <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage::list</code> when unpacking a single entry fails</li>
+<li>Add exception code <code>1651338621</code> in <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage</code> when denormalizing any stored value fails</li>
+</ul>
+<h3 id="fixed_4">Fixed</h3>
+<ul>
+<li>Only load dev-packages from <code>composer.lock</code> file when dev-mode is active in <code>\Heptacom\HeptaConnect\Core\Component\Composer\PackageConfigurationLoader</code></li>
+<li>Only check for dev-mode in <code>\Heptacom\HeptaConnect\Core\Component\Composer\PackageConfigurationLoader</code>, if the installed version of composer supports it.</li>
+<li>Skip broken entries in <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage::list</code> instead of returning an empty list</li>
+</ul>
+<h2 id="0911-2022-09-28">[0.9.1.1] - 2022-09-28</h2>
+<h3 id="added_6">Added</h3>
+<ul>
+<li>Load composer packages also from <code>require-dev</code> section of <code>composer.lock</code> file in <code>\Heptacom\HeptaConnect\Core\Component\Composer\PackageConfigurationLoader</code></li>
+</ul>
+<h2 id="0910-2022-08-15">[0.9.1.0] - 2022-08-15</h2>
+<h3 id="changed_4">Changed</h3>
+<ul>
+<li>Move decision of exclusion by class for automatically created portal node container services from <code>\Heptacom\HeptaConnect\Core\Portal\ServiceContainerCompilerPass\RemoveAutoPrototypedDefinitionsCompilerPass</code> into <code>\Heptacom\HeptaConnect\Portal\Base\Portal\Contract\PackageContract::getContainerExcludedClasses</code></li>
+</ul>
+<h3 id="fixed_5">Fixed</h3>
+<ul>
+<li>Fix reception of multiple entities with the same identity within a single batch in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code></li>
+<li>Add fallback value for the reported topic in <code>\Heptacom\HeptaConnect\Core\StatusReporting\StatusReportingService::reportSingleTopic</code></li>
+<li>Prevent parallelization lock from being released immediately after creating or checking it in <code>\Heptacom\HeptaConnect\Core\Parallelization\ResourceLockStorage</code></li>
+</ul>
+<h2 id="0902-2022-04-23">[0.9.0.2] - 2022-04-23</h2>
+<h3 id="fixed_6">Fixed</h3>
+<ul>
+<li>Portal instances and portal extension instances are not shared across multiple portal node service containers anymore. If these instances are used stateful, portal node A can affect portal node B. All packages we provide have been checked negative against stateful usage of portal and portal extension instances.</li>
+<li>Portal extension stacks are now built for each portal node instead for each portal. This resulted in portal node service containers with active portal extension that have not been set active for the stack's portal node. It only occurs when more than one portal node service containers of the same portal is created in a single PHP process e.g. a message consumption process.</li>
+<li>Portal node configuration for preview portal nodes are now loaded statically again</li>
+<li>Portal node service container for preview portal nodes are now loaded statically again</li>
+</ul>
+<h2 id="0901-2022-04-19">[0.9.0.1] - 2022-04-19</h2>
+<h3 id="fixed_7">Fixed</h3>
+<ul>
+<li>Fix order of portals and portal extensions in <code>\Heptacom\HeptaConnect\Core\Portal\FlowComponentRegistry</code></li>
+<li>Fix creating identity error messages in <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\MarkAsFailedPostProcessor::handle</code></li>
+<li>Fix a critical error when writing portal node configuration</li>
+</ul>
+<h2 id="0900-2022-04-02">[0.9.0.0] - 2022-04-02</h2>
+<h3 id="added_7">Added</h3>
+<ul>
+<li>Implement <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpHandlerCodeOriginFinderInterface</code> in <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlerCodeOriginFinder</code></li>
+<li>Add exception code <code>1637607699</code> in <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlerCodeOriginFinder::findOrigin</code> when HTTP handler is a short-notation HTTP handler and has no configured callback</li>
+<li>Add exception code <code>1637607700</code> in <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlerCodeOriginFinder::findOrigin</code> when HTTP handler class cannot be read via reflection</li>
+<li>Add exception code <code>1637607701</code> in <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlerCodeOriginFinder::findOrigin</code> when HTTP handler class does not belong to a physical file</li>
+<li>Implement <code>\Heptacom\HeptaConnect\Portal\Base\Emission\Contract\EmitterCodeOriginFinderInterface</code> in <code>\Heptacom\HeptaConnect\Core\Emission\EmitterCodeOriginFinder</code></li>
+<li>Add exception code <code>1637607653</code> in <code>\Heptacom\HeptaConnect\Core\Emission\EmitterCodeOriginFinder::findOrigin</code> when emitter is a short-notation emitter and has no configured callback</li>
+<li>Add exception code <code>1637607654</code> in <code>\Heptacom\HeptaConnect\Core\Emission\EmitterCodeOriginFinder::findOrigin</code> when emitter class cannot be read via reflection</li>
+<li>Add exception code <code>1637607655</code> in <code>\Heptacom\HeptaConnect\Core\Emission\EmitterCodeOriginFinder::findOrigin</code> when emitter class does not belong to a physical file</li>
+<li>Implement <code>\Heptacom\HeptaConnect\Portal\Base\Exploration\Contract\ExplorerCodeOriginFinderInterface</code> in <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerCodeOriginFinder</code></li>
+<li>Add exception code <code>1637421327</code> in <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerCodeOriginFinder::findOrigin</code> when explorer is a short-notation explorer and has no configured callback</li>
+<li>Add exception code <code>1637421328</code> in <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerCodeOriginFinder::findOrigin</code> when explorer class cannot be read via reflection</li>
+<li>Add exception code <code>1637421329</code> in <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerCodeOriginFinder::findOrigin</code> when explorer class does not belong to a physical file</li>
+<li>Implement <code>\Heptacom\HeptaConnect\Portal\Base\Reception\Contract\ReceiverCodeOriginFinderInterface</code> in <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverCodeOriginFinder</code></li>
+<li>Add exception code <code>1641079368</code> in <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverCodeOriginFinder::findOrigin</code> when receiver is a short-notation receiver and has no configured callback</li>
+<li>Add exception code <code>1641079369</code> in <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverCodeOriginFinder::findOrigin</code> when receiver class cannot be read via reflection</li>
+<li>Add exception code <code>1641079370</code> in <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverCodeOriginFinder::findOrigin</code> when receiver class does not belong to a physical file</li>
+<li>Implement <code>\Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReporterCodeOriginFinderInterface</code> in <code>\Heptacom\HeptaConnect\Core\StatusReporting\StatusReporterCodeOriginFinder</code></li>
+<li>Add exception code <code>1641079371</code> in <code>\Heptacom\HeptaConnect\Core\StatusReporting\StatusReporterCodeOriginFinder::findOrigin</code> when status reporter is a short-notation status reporter and has no configured callback</li>
+<li>Add exception code <code>1641079372</code> in <code>\Heptacom\HeptaConnect\Core\StatusReporting\StatusReporterCodeOriginFinder::findOrigin</code> when status reporter class cannot be read via reflection</li>
+<li>Add exception code <code>1641079373</code> in <code>\Heptacom\HeptaConnect\Core\StatusReporting\StatusReporterCodeOriginFinder::findOrigin</code> when status reporter class does not belong to a physical file</li>
+<li>Add logger decorator <code>\Heptacom\HeptaConnect\Core\Component\Logger\FlowComponentCodeOriginFinderLogger</code> that replaces instances of <code>\Heptacom\HeptaConnect\Portal\Base\Emission\Contract\EmitterContract</code>, <code>\Heptacom\HeptaConnect\Portal\Base\Exploration\Contract\ExplorerContract</code>, <code>\Heptacom\HeptaConnect\Portal\Base\Reception\Contract\ReceiverContract</code>, <code>\Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReporterContract</code> and <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpHandlerContract</code> within the context with their code origin</li>
+<li>Add new service <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpClientContract</code> to portal node container as an alternative to <code>Psr\Http\Client\ClientInterface</code> with behaviour by configuration e.g. that can throw <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Exception\HttpException</code> on certain status code</li>
+<li>Add class <code>\Heptacom\HeptaConnect\Core\Component\Logger\ExceptionCodeLogger</code> intended as a decorator to prepend the exception code to log messages if available</li>
+<li>Add log message code <code>1647396033</code> in <code>\Heptacom\HeptaConnect\Core\Flow\MessageQueueFlow\MessageHandler::handleJob</code> when jobs from message cannot be loaded</li>
+<li>Add log message code <code>1647396034</code> in <code>\Heptacom\HeptaConnect\Core\Flow\MessageQueueFlow\MessageHandler::handleJob</code> when jobs from message cannot be processed</li>
+<li>Add contract <code>\Heptacom\HeptaConnect\Core\Parallelization\Contract\ResourceLockStorageContract</code> migrated from <code>\Heptacom\HeptaConnect\Storage\Base\Contract\ResourceLockStorageContract</code></li>
+<li>Add implementation <code>\Heptacom\HeptaConnect\Core\Parallelization\ResourceLockStorage</code> for <code>\Heptacom\HeptaConnect\Core\Parallelization\Contract\ResourceLockStorageContract</code> that depends on <code>symfony/lock</code> which is already required</li>
+<li>Add log message code <code>1646383738</code> in <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage::list</code> when reading portal node storage entries fails</li>
+<li>Add implementation <code>\Heptacom\HeptaConnect\Core\Portal\PreviewPortalNodeStorage</code> for the interface <code>\Heptacom\HeptaConnect\Portal\Base\Portal\Contract\PortalStorageInterface</code> to support interactions on <code>\Heptacom\HeptaConnect\Storage\Base\PreviewPortalNodeKey</code></li>
+<li>Add interface <code>\Heptacom\HeptaConnect\Core\Bridge\File\FileContentsUrlProviderInterface</code> to provide public URLs for normalized streams</li>
+<li>Add interface <code>\Heptacom\HeptaConnect\Core\Bridge\File\FileRequestUrlProviderInterface</code> to prode public URLs for serialized requests</li>
+<li>Add class <code>\Heptacom\HeptaConnect\Core\File\FileReferenceFactory</code> to create file references from public URLs, request objects or file contents</li>
+<li>Add class <code>\Heptacom\HeptaConnect\Core\File\FileReferenceResolver</code> to resolve file references for read operations</li>
+<li>Add class <code>\Heptacom\HeptaConnect\Core\File\Reference\ContentsFileReference</code> as implementation of <code>\Heptacom\HeptaConnect\Dataset\Base\File\FileReferenceContract</code> that is created from file contents</li>
+<li>Add class <code>\Heptacom\HeptaConnect\Core\File\Reference\PublicUrlFileReference</code> as implementation of <code>\Heptacom\HeptaConnect\Dataset\Base\File\FileReferenceContract</code> that is created from a public URL</li>
+<li>Add class <code>\Heptacom\HeptaConnect\Core\File\Reference\RequestFileReference</code> as implementation of <code>\Heptacom\HeptaConnect\Dataset\Base\File\FileReferenceContract</code> that is created from a PSR-7 request object</li>
+<li>Add class <code>\Heptacom\HeptaConnect\Core\File\ResolvedReference\ResolvedContentsFileReference</code> as implementation of <code>\Heptacom\HeptaConnect\Portal\Base\File\ResolvedFileReferenceContract</code> for file references that were created from file contents</li>
+<li>Add class <code>\Heptacom\HeptaConnect\Core\File\ResolvedReference\ResolvedPublicUrlFileReference</code> as implementation of <code>\Heptacom\HeptaConnect\Portal\Base\File\ResolvedFileReferenceContract</code> for file references that were created from a public URL</li>
+<li>Add class <code>\Heptacom\HeptaConnect\Core\File\ResolvedReference\ResolvedRequestFileReference</code> as implementation of <code>\Heptacom\HeptaConnect\Portal\Base\File\ResolvedFileReferenceContract</code> for file references that were created from a PSR-7 request object</li>
+<li>Add class <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\Psr7RequestDenormalizer</code> to deserialize instances of <code>\Psr\Http\Message\RequestInterface</code></li>
+<li>Add class <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\Psr7RequestNormalizer</code> to serialize instances of <code>\Psr\Http\Message\RequestInterface</code></li>
+<li>Add contract <code>\Heptacom\HeptaConnect\Core\Storage\Contract\RequestStorageContract</code> with implementation in <code>\Heptacom\HeptaConnect\Core\Storage\RequestStorage</code> to persist and load instances of <code>\Psr\Http\Message\RequestInterface</code></li>
+<li>Add exception code <code>1647788744</code> in <code>\Heptacom\HeptaConnect\Core\File\FileReferenceFactory::fromContents</code> when the NormalizationRegistry is missing a normalizer for streams</li>
+<li>Add exception code <code>1648315863</code> in <code>\Heptacom\HeptaConnect\Core\File\FileReferenceFactory::fromContents</code> when the normalizer is unable to serialize the given file contents</li>
+<li>Add exception code <code>1647788896</code> in <code>\Heptacom\HeptaConnect\Core\File\FileReferenceResolver::resolve</code> when the NormalizationRegistry is missing a denormalizer for streams</li>
+<li>Add exception code <code>1647789133</code> in <code>\Heptacom\HeptaConnect\Core\File\FileReferenceResolver::resolve</code> when the FileReference has an unsupported source</li>
+<li>Add exception code <code>1647789503</code> in <code>\Heptacom\HeptaConnect\Core\File\ResolvedReference\ResolvedContentsFileReference::getContents</code> when denormalizing a normalized stream fails</li>
+<li>Add exception code <code>1647789809</code> in <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\Psr7RequestNormalizer::normalize</code> when trying to normalize anything other than a request object</li>
+<li>Add exception code <code>1647790094</code> in <code>\Heptacom\HeptaConnect\Core\Storage\RequestStorage::load</code> when denormalizing a serialized request fails</li>
+<li>Add exception code <code>1647791094</code> in <code>\Heptacom\HeptaConnect\Core\Storage\RequestStorage::load</code> when a serialized request is not found</li>
+<li>Add exception code <code>1647791390</code> in <code>\Heptacom\HeptaConnect\Core\Storage\RequestStorage::persist</code> when persisting a serialized request fails</li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\Contract\InstructionTokenContract</code> to define a contract for changing portal node configurations</li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\ClosureInstructionToken</code> that changes portal node configuration by the given closure</li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\PortalNodeConfigurationHelper</code> to generate closures for processing configuration sources like json files and environment variables</li>
+<li>Add exception code <code>1647801828</code> in return callable from <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\PortalNodeConfigurationHelper::ini</code> when the ini file can not be loaded and parsed</li>
+<li>Add exception code <code>1647801829</code> in return callable from <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\PortalNodeConfigurationHelper::json</code> when the JSON file can not be loaded and parsed</li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\Config</code> to collect <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\Contract\InstructionTokenContract</code> in a short-notation manner</li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\Contract\InstructionLoaderInterface</code> to identify services that provide <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\Contract\InstructionTokenContract</code></li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\InstructionFileLoader</code> to provide <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\Contract\InstructionTokenContract</code> using <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\Config</code></li>
+<li>Add exception code <code>1645611612</code> in <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\InstructionFileLoader::loadInstructions</code> when referenced file can not be loaded</li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Configuration\PortalNodeConfigurationInstructionProcessor</code> as <code>\Heptacom\HeptaConnect\Core\Configuration\Contract\PortalNodeConfigurationProcessorInterface</code> to change portal node configuration by instructions from given <code>\Heptacom\HeptaConnect\Core\Bridge\PortalNode\Configuration\Contract\InstructionLoaderInterface</code> instances</li>
+<li>Add log message code <code>1647826121</code> in <code>\Heptacom\HeptaConnect\Core\Configuration\PortalNodeConfigurationInstructionProcessor</code> when an error happens during instruction loading</li>
+</ul>
+<h3 id="changed_5">Changed</h3>
+<ul>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Flow\MessageQueueFlow\MessageHandler</code> from <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> and <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobPayloadRepositoryContract</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobGetActionInterface</code> to improve performance by batching job reading</li>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler</code> from <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobStartActionInterface</code> and <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobFinishActionInterface</code> to improve performance by batching job state changes</li>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler</code> from <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobStartActionInterface</code> and <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobFinishActionInterface</code> to improve performance by batching job state changes</li>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code> from <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobStartActionInterface</code> and <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobFinishActionInterface</code> to improve performance by batching job state changes</li>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Job\JobDispatcher</code> from <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> and <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobPayloadRepositoryContract</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobCreateActionInterface</code> to improve performance by batching job insertion</li>
+<li>Switch storage access in <code>\Heptacom\HeptaConnect\Core\Portal\PortalRegistry</code> from <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\PortalNodeRepositoryContract</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNode\PortalNodeGetActionInterface</code></li>
+<li>Use portal node container tags <code>heptaconnect.flow_component.status_reporter_source</code>, <code>heptaconnect.flow_component.emitter_source</code>, <code>heptaconnect.flow_component.explorer_source</code>, <code>heptaconnect.flow_component.receiver_source</code>, <code>heptaconnect.flow_component.web_http_handler_source</code> instead of <code>heptaconnect.flow_component.emitter</code>, <code>heptaconnect.flow_component.emitter_decorator</code>, <code>heptaconnect.flow_component.explorer</code>, <code>heptaconnect.flow_component.explorer_decorator</code>, <code>heptaconnect.flow_component.receiver</code>, <code>heptaconnect.flow_component.receiver_decorator</code> and <code>heptaconnect.flow_component.web_http_handler</code> to collect flow component services</li>
+<li>Short-noted flow components by portals load on first flow component usage instead of on container building using <code>\Heptacom\HeptaConnect\Core\Portal\FlowComponentRegistry</code></li>
+<li>Add dependency onto <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalExtension\PortalExtensionFindActionInterface</code> into <code>\Heptacom\HeptaConnect\Core\Portal\PortalRegistry</code> for loading portal extension availability</li>
+<li>Use instance of <code>\Heptacom\HeptaConnect\Portal\Base\Emission\Contract\EmitterContract</code> in log context instead of its class in the message in <code>\Heptacom\HeptaConnect\Core\Emission\EmitterStackBuilder</code> logger usage</li>
+<li>Use instance of <code>\Heptacom\HeptaConnect\Portal\Base\Exploration\Contract\ExplorerContract</code> in log context instead of its class in the message in <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerStackBuilder</code> logger usage</li>
+<li>Use instance of <code>\Heptacom\HeptaConnect\Portal\Base\Reception\Contract\ReceiverContract</code> in log context instead of its class in the message in <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverStackBuilder</code> logger usage</li>
+<li>Use instance of <code>\Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpHandlerContract</code> in log context instead of its class in the message in <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlerStackBuilder</code> logger usage</li>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Configuration\ConfigurationService</code> from <code>\Heptacom\HeptaConnect\Storage\Base\Contract\ConfigurationStorageContract</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeConfiguration\PortalNodeConfigurationGetActionInterface</code> and <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeConfiguration\PortalNodeConfigurationSetActionInterface</code> to improve performance on reading and writing portal node configuration</li>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code> from <code>\Heptacom\HeptaConnect\Storage\Base\Contract\EntityMapperContract</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityMapActionInterface</code> as previous service is renamed</li>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code> from <code>\Heptacom\HeptaConnect\Storage\Base\Contract\EntityReflectorContract</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityReflectActionInterface</code> as previous service is renamed</li>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorationActor</code> from <code>\Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityMapActionInterface</code></li>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\SaveMappingsPostProcessor</code> from <code>\Heptacom\HeptaConnect\Storage\Base\MappingPersister\Contract\MappingPersisterContract</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityPersistActionInterface</code> as previous service is renamed</li>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorageFactory</code> and <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage</code> from <code>\Heptacom\HeptaConnect\Storage\Base\Contract\PortalStorageContract</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageClearActionInterface</code>, <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageDeleteActionInterface</code>, <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageGetActionInterface</code> and <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageListActionInterface</code>, <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageSetActionInterface</code></li>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Emission\EmitContext</code> from <code>\Heptacom\HeptaConnect\Storage\Core\Mapping\Contract\MappingServiceInterface</code> and <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingNodeRepositoryContract</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\IdentityError\IdentityErrorCreateActionInterface</code> as previous services are removed</li>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Emission\EmitContextFactory</code> from <code>\Heptacom\HeptaConnect\Storage\Core\Mapping\Contract\MappingServiceInterface</code> and <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingNodeRepositoryContract</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\IdentityError\IdentityErrorCreateActionInterface</code> as previous services are removed</li>
+<li>Replace dependencies in <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\MarkAsFailedPostProcessor</code> from <code>\Heptacom\HeptaConnect\Storage\Core\Mapping\Contract\MappingServiceInterface</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\IdentityError\IdentityErrorCreateActionInterface</code> as previous service is removed</li>
+<li>Split argument in <code>\Heptacom\HeptaConnect\Core\Reception\Contract\ReceiveServiceInterface::receive</code> of type <code>\Heptacom\HeptaConnect\Portal\Base\Mapping\TypedMappedDatasetEntityCollection</code> into <code>\Heptacom\HeptaConnect\Dataset\Base\TypedDatasetEntityCollection</code> and <code>\Heptacom\HeptaConnect\Portal\Base\StorageKey\Contract\PortalNodeKeyInterface</code> to state target portal clearly</li>
+<li>Extract caching of <code>\Heptacom\HeptaConnect\Core\Configuration\ConfigurationService</code> into new class <code>\Heptacom\HeptaConnect\Core\Configuration\PortalNodeConfigurationCacheProcessor</code> using the <code>\Heptacom\HeptaConnect\Core\Configuration\Contract\PortalNodeConfigurationProcessorInterface</code> interface</li>
+<li>Make classes final: <code>\Heptacom\HeptaConnect\Core\Component\Composer\PackageConfigurationLoader</code>, <code>\Heptacom\HeptaConnect\Core\Configuration\ConfigurationService</code>, <code>\Heptacom\HeptaConnect\Core\Emission\EmissionActor</code>, <code>\Heptacom\HeptaConnect\Core\Emission\EmitContext</code>, <code>\Heptacom\HeptaConnect\Core\Emission\EmitContextFactory</code>, <code>\Heptacom\HeptaConnect\Core\Emission\EmitService</code>, <code>\Heptacom\HeptaConnect\Core\Emission\EmitterStackBuilder</code>, <code>\Heptacom\HeptaConnect\Core\Emission\EmitterStackBuilderFactory</code>, <code>\Heptacom\HeptaConnect\Core\Exploration\DirectEmitter</code>, <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorationActor</code>, <code>\Heptacom\HeptaConnect\Core\Exploration\ExploreContext</code>, <code>\Heptacom\HeptaConnect\Core\Exploration\ExploreContextFactory</code>, <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerStackBuilder</code>, <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerStackBuilderFactory</code>, <code>\Heptacom\HeptaConnect\Core\Exploration\ExploreService</code>, <code>\Heptacom\HeptaConnect\Core\Flow\DirectEmissionFlow\DirectEmissionFlow</code>, <code>\Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler</code>, <code>\Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler</code>, <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code>, <code>\Heptacom\HeptaConnect\Core\Job\DelegatingJobActor</code>, <code>\Heptacom\HeptaConnect\Core\Job\JobDispatcher</code>, <code>\Heptacom\HeptaConnect\Core\Mapping\MappingNodeStruct</code>, <code>\Heptacom\HeptaConnect\Core\Mapping\MappingStruct</code>, <code>\Heptacom\HeptaConnect\Core\Mapping\Publisher</code>, <code>\Heptacom\HeptaConnect\Core\Portal\ServiceContainerCompilerPass\AddPortalConfigurationBindingsCompilerPass</code>, <code>\Heptacom\HeptaConnect\Core\Portal\ServiceContainerCompilerPass\AllDefinitionDefaultsCompilerPass</code>, <code>\Heptacom\HeptaConnect\Core\Portal\ServiceContainerCompilerPass\BuildDefinitionForFlowComponentRegistryCompilerPass</code>, <code>\Heptacom\HeptaConnect\Core\Portal\ServiceContainerCompilerPass\RemoveAutoPrototypedDefinitionsCompilerPass</code>, <code>\Heptacom\HeptaConnect\Core\Portal\PortalConfiguration</code>, <code>\Heptacom\HeptaConnect\Core\Portal\PortalFactory</code>, <code>\Heptacom\HeptaConnect\Core\Portal\PortalRegistry</code>, <code>\Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerBuilder</code>, <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage</code>, <code>\Heptacom\HeptaConnect\Core\Portal\PreviewPortalNodeStorage</code>, <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\MarkAsFailedPostProcessor</code>, <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\SaveMappingsPostProcessor</code>, <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveContext</code>, <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveContextFactory</code>, <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverStackBuilder</code>, <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverStackBuilderFactory</code>, <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveService</code>, <code>\Heptacom\HeptaConnect\Core\Reception\ReceptionActor</code>, <code>\Heptacom\HeptaConnect\Core\StatusReporting\StatusReportingContext</code>, <code>\Heptacom\HeptaConnect\Core\StatusReporting\StatusReportingContextFactory</code>, <code>\Heptacom\HeptaConnect\Core\StatusReporting\StatusReportingService</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\ScalarDenormalizer</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\ScalarNormalizer</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\SerializableCompressDenormalizer</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\SerializableDenormalizer</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\SerializableNormalizer</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamDenormalizer</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamNormalizer</code>, <code>\Heptacom\HeptaConnect\Core\Storage\NormalizationRegistry</code>, <code>\Heptacom\HeptaConnect\Core\Support\EntityStatus</code>, <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandleContext</code>, <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandleContextFactory</code>, <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlerStackBuilder</code>, <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlerStackBuilderFactory</code>, <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandleService</code> and <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlingActor</code></li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>Remove separation of source flow components and decorator flow components in <code>\Heptacom\HeptaConnect\Core\Emission\EmitterStackBuilder</code>, <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerStackBuilder</code>, <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverStackBuilder</code> and <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlerStackBuilder</code>. First flow component in list is always the source</li>
+<li>Remove portal node container service ids <code>Heptacom\HeptaConnect\Portal\Base\Emission\EmitterCollection</code>, <code>Heptacom\HeptaConnect\Portal\Base\Emission\EmitterCollection.decorator</code>, <code>Heptacom\HeptaConnect\Portal\Base\Exploration\ExplorerCollection</code>, <code>Heptacom\HeptaConnect\Portal\Base\Exploration\ExplorerCollection.decorator</code>, <code>Heptacom\HeptaConnect\Portal\Base\StatusReporting\StatusReporterCollection</code>, <code>Heptacom\HeptaConnect\Portal\Base\Reception\ReceiverCollection</code>, <code>Heptacom\HeptaConnect\Portal\Base\Reception\ReceiverCollection.decorator</code>, <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerCollection</code> and <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerCollection.decorator</code> due to refactoring of flow component stack building</li>
+<li>Remove dependency on <code>\Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent</code> in <code>\Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerBuilder</code></li>
+<li>Remove classes <code>\Heptacom\HeptaConnect\Core\Cronjob\CronjobContext</code>, <code>\Heptacom\HeptaConnect\Core\Cronjob\CronjobContextFactory</code> and <code>\Heptacom\HeptaConnect\Core\Cronjob\CronjobService</code> as the feature of cronjobs in its current implementation is removed</li>
+<li>Remove composer dependency <code>dragonmantank/cron-expression</code></li>
+<li>Remove unused implementation <code>\Heptacom\HeptaConnect\Core\Mapping\MappingService::get</code> of <code>\Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface::get</code></li>
+<li>Remove unused implementation <code>\Heptacom\HeptaConnect\Core\Mapping\MappingService::save</code> of <code>\Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface::save</code></li>
+<li>Remove unused implementation <code>\Heptacom\HeptaConnect\Core\Mapping\MappingService::reflect</code> of <code>\Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface::reflect</code></li>
+<li>Remove unused implementation <code>\Heptacom\HeptaConnect\Core\Mapping\MappingService::addException</code> of <code>\Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface::addException</code></li>
+<li>Remove <code>\Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface::getListByExternalIds</code> in favour of <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityMapActionInterface::map</code></li>
+<li>Remove <code>\Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface::merge</code>, <code>\Heptacom\HeptaConnect\Core\Mapping\Exception\MappingNodeAreUnmergableException</code> and <code>\Heptacom\HeptaConnect\Core\Mapping\Exception\MappingNodeNotCreatedException</code> in favour of <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityOverviewActionInterface</code> and <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityPersistActionInterface</code></li>
+<li>Remove log message code <code>1631563639</code>, <code>1631563699</code>, <code>1631565446</code> and <code>1631565376</code> from <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage</code></li>
+<li>Remove deprecated methods <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage::canSet</code> and <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage::canGet</code></li>
+<li>Remove unused <code>\Heptacom\HeptaConnect\Core\Router\CumulativeMappingException</code></li>
+<li>Remove dependency on <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingNodeRepositoryContract</code> in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code></li>
+<li>Remove deprecated method <code>Heptacom\HeptaConnect\Core\Mapping\Publisher::publish</code> inherited from <code>Heptacom\HeptaConnect\Portal\Base\Publication\Contract\PublisherInterface::publish</code></li>
+</ul>
+<h3 id="fixed_8">Fixed</h3>
+<ul>
+<li>Portal node extensions can supply source flow components for data types that have not been introduced by the decorated portal</li>
+<li>All aliases in the dependency-injection container for portals are now public. This enables injection of aliased services in short-notation flow-components.</li>
+</ul>
+<details>
+<summary>
+Past changes
+</summary>
+<h2 id="086-2022-03-07">[0.8.6] - 2022-03-07</h2>
+<h3 id="fixed_9">Fixed</h3>
+<ul>
+<li>Prevent leak of <code>\Heptacom\HeptaConnect\Portal\Base\Reception\Support\PostProcessorDataBag</code> into subsequent iterations of <code>\Heptacom\HeptaConnect\Core\Reception\ReceptionActor::performReception</code>. Every entry of <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\MarkAsFailedData</code> is now only handled once.</li>
+</ul>
+<h2 id="085-2021-12-28">[0.8.5] - 2021-12-28</h2>
+<h3 id="fixed_10">Fixed</h3>
+<ul>
+<li>Change composer dependency <code>bentools/iterable-functions: &gt;=1 &lt;2</code> to <code>bentools/iterable-functions: &gt;=1.4 &lt;2</code> to ensure availability of <code>\iterable_map</code> in a lowest-dependency-version installation</li>
+<li>Change composer dependency <code>composer/composer: &gt;=1</code> to <code>composer/composer: &gt;=1.9</code> to ensure correct composer project and library parsing in a lowest-dependency-version installation</li>
+<li>Change composer dependency <code>php-http/discovery: ^1.0</code> to <code>php-http/discovery: ^1.11</code> to ensure availability of <code>\Http\Discovery\Psr17FactoryDiscovery</code> and <code>\Http\Discovery\Psr17FactoryDiscovery::findUriFactory</code> in a lowest-dependency-version installation</li>
+<li>Add composer dependency <code>symfony/event-dispatcher-contracts: &gt;=1.1</code> to ensure availability of <code>\Symfony\Contracts\EventDispatcher\Event</code> in a lowest-dependency-version installation</li>
+<li>Change composer dependency <code>symfony/polyfill-php80: &gt;=1.15</code> to <code>symfony/polyfill-php80: &gt;=1.16</code> to ensure availability of <code>\str_starts_with</code> a php 7.4 and lowest-dependency-version installation</li>
+<li>Amend signature of <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\ScalarDenormalizer::denormalize</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\ScalarDenormalizer::supportsDenormalization</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\ScalarNormalizer::normalize</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\ScalarNormalizer::supportsNormalization</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\SerializableCompressDenormalizer::denormalize</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\SerializableCompressDenormalizer::supportsDenormalization</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\SerializableCompressNormalizer::normalize</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\SerializableDenormalizer::denormalize</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\SerializableDenormalizer::supportsDenormalization</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\SerializableNormalizer::normalize</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\SerializableNormalizer::supportsNormalization</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamDenormalizer::denormalize</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamDenormalizer::supportsDenormalization</code>, <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamNormalizer::normalize</code> and <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamNormalizer::supportsNormalization</code> to allow installations of <code>symfony/serializer: &gt;=4</code> and <code>symfony/serializer: &gt;= 5</code></li>
+</ul>
+<h2 id="084-2021-12-16">[0.8.4] - 2021-12-16</h2>
+<h3 id="removed_1">Removed</h3>
+<ul>
+<li>Remove the code for unit tests, configuration for style checks as well as the Makefile</li>
+</ul>
+<h3 id="fixed_11">Fixed</h3>
+<ul>
+<li>Provide portal node container services as definition instead of synthetic service to allow decoration for service ids <code>Heptacom\HeptaConnect\Portal\Base\Support\Contract\DeepCloneContract</code>, <code>Heptacom\HeptaConnect\Portal\Base\Support\Contract\DeepObjectIteratorContract</code>, <code>Psr\Http\Client\ClientInterface</code>, <code>Psr\Http\Message\RequestFactoryInterface</code>, <code>Psr\Http\Message\UriFactoryInterface</code>, <code>Psr\Http\Message\ResponseFactoryInterface</code> and <code>Psr\Http\Message\StreamFactoryInterface</code></li>
+<li>Remove expired keys from the result of <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage::getMultiple</code></li>
+</ul>
+<h2 id="083-2021-12-02">[0.8.3] - 2021-12-02</h2>
+<h3 id="fixed_12">Fixed</h3>
+<ul>
+<li>Fix auto-wiring array values from portal configuration</li>
+</ul>
+<h2 id="082-2021-11-25">[0.8.2] - 2021-11-25</h2>
+<h3 id="fixed_13">Fixed</h3>
+<ul>
+<li>Fix type error during reception when entity with numeric primary key is received</li>
+</ul>
+<h2 id="081-2021-11-22">[0.8.1] - 2021-11-22</h2>
+<h3 id="fixed_14">Fixed</h3>
+<ul>
+<li>Fix stack building to allow for decorators. Previously when a portal extension had provided a decorator for a flow component, the stack would only contain the decorator and would miss the source component. (<code>\Heptacom\HeptaConnect\Core\Emission\EmitterStackBuilder::pushSource</code>, <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerStackBuilder::pushSource</code>, <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverStackBuilder::pushSource</code>, <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlerStackBuilder::pushSource</code>)</li>
+</ul>
+<h2 id="080-2021-11-22">[0.8.0] - 2021-11-22</h2>
+<h3 id="added_8">Added</h3>
+<ul>
+<li>Add calls to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract::start</code> and <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract::finish</code> in <code>\Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler::triggerEmission</code>, <code>\Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler::triggerExplorations</code> and <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler::triggerReception</code> to track job states</li>
+<li>Add caching layer to <code>\Heptacom\HeptaConnect\Core\Configuration\ConfigurationService::getPortalNodeConfiguration</code></li>
+<li>Add composer dependency <code>symfony/event-dispatcher: ^4.0 || ^5.0</code></li>
+<li>Add log message <code>\Heptacom\HeptaConnect\Core\Component\LogMessage::MARK_AS_FAILED_ENTITY_IS_UNMAPPED</code> with log message code <code>1637456198</code> for issues during logging error messages during reception</li>
+<li>Add log message <code>\Heptacom\HeptaConnect\Core\Component\LogMessage::RECEIVE_NO_SAVE_MAPPINGS_NOT_PROCESSED</code> for issues after saving mappings after a reception</li>
+<li>Introduce <code>\Heptacom\HeptaConnect\Core\Event\PostReceptionEvent</code> for reception new event dispatcher in reception</li>
+<li>Add post-processing type <code>\Heptacom\HeptaConnect\Portal\Base\Reception\PostProcessing\MarkAsFailedData</code></li>
+<li>Implement new method <code>\Heptacom\HeptaConnect\Portal\Base\Reception\Contract\ReceiveContextInterface::getEventDispatcher</code> in <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveContext::getEventDispatcher</code></li>
+<li>Implement new method <code>\Heptacom\HeptaConnect\Portal\Base\Reception\Contract\ReceiveContextInterface::getPostProcessingBag</code> in <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveContext::getEventDispatcher</code></li>
+<li>Add post-processor base class <code>\Heptacom\HeptaConnect\Core\Reception\Contract\PostProcessorContract</code></li>
+<li>Add post-processing for failed receptions using <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\MarkAsFailedData</code> and handled in <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\MarkAsFailedPostProcessor</code></li>
+<li>Add post-processing for saving mappings after receptions using <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\SaveMappingsData</code> and handled in <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\SaveMappingsPostProcessor</code></li>
+<li>Extract path building from <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamNormalizer</code> and <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamDenormalizer</code> into new service <code>\Heptacom\HeptaConnect\Core\Storage\Contract\StreamPathContract</code></li>
+<li>Add log messages codes <code>1634868818</code>, <code>1634868819</code> to <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamDenormalizer</code></li>
+<li>Add log message <code>\Heptacom\HeptaConnect\Core\Component\LogMessage::STORAGE_STREAM_NORMALIZER_CONVERTS_HINT_TO_FILENAME</code> with the message code <code>1635462690</code> to track generated filenames from the stream file storage in <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamNormalizer</code></li>
+<li>Add log exception code <code>1636503503</code> to <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler::triggerReception</code> when job has no related route</li>
+<li>Add log exception code <code>1636503504</code> to <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler::triggerReception</code> when job has no entity</li>
+<li>Add log exception code <code>1636503505</code> to <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler::triggerReception</code> when job refers a non-existing route</li>
+<li>Add log exception code <code>1636503506</code> to <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler::triggerReception</code> when job refers to a route that is not configured to allow receptions</li>
+<li>Add log exception code <code>1636503507</code> to <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler::triggerReception</code> when job has an entity, that is of a different type than the route's entity type</li>
+<li>Add log exception code <code>1636503508</code> to <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler::triggerReception</code> when job has an entity, that has a different primary key than the one saved on the job</li>
+<li>Add web HTTP handler context factory interface <code>\Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandleContextFactoryInterface</code> and implementation <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandleContextFactory</code> as well as <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandleContext</code></li>
+<li>Add web HTTP stack building interfaces <code>\Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandlerStackBuilderFactoryInterface</code>, <code>\Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandlerStackBuilderInterface</code> and implementations <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlerStackBuilderFactory</code>, <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlerStackBuilder</code> for acting with web HTTP handlers</li>
+<li>Add web HTTP service interface <code>\Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandleServiceInterface</code> and implementation <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandleService</code> to validate and handle requests</li>
+<li>Add web HTTP actor interface <code>\Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandlingActorInterface</code> and implementation <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlingActor</code> to process any request through a web HTTP handler stack</li>
+<li>Add interface <code>\Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandlerUrlProviderFactoryInterface</code> for bridges to provide implementation as bridges implement routing</li>
+<li>Add log message <code>\Heptacom\HeptaConnect\Core\Component\LogMessage::WEB_HTTP_HANDLE_NO_THROW</code> used with log message code <code>1636845126</code> when handling the web request triggered an exception in the flow component</li>
+<li>Add log message <code>\Heptacom\HeptaConnect\Core\Component\LogMessage::WEB_HTTP_HANDLE_NO_HANDLER_FOR_PATH</code> used with log message code <code>1636845086</code> when handling the web request could not match any flow component</li>
+<li>Add log message <code>\Heptacom\HeptaConnect\Core\Component\LogMessage::WEB_HTTP_HANDLE_DISABLED</code> used with log message code <code>1636845085</code> when route is disabled and still called</li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Storage\Exception\GzipCompressException</code> for cases when gzip related methods fail</li>
+<li>Add exception code <code>1637432095</code> in <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\SerializableCompressNormalizer::normalize</code> when <code>gzcompress</code> fails to compress</li>
+<li>Add exception code <code>1637101289</code> in <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamDenormalizer::denormalize</code> when file to denormalize does not exist</li>
+<li>Add exception code <code>1637432853</code> in <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamNormalizer::normalize</code> when object is no <code>\Heptacom\HeptaConnect\Portal\Base\Serialization\Contract\SerializableStream</code></li>
+<li>Add exception code <code>1637432854</code> in <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamNormalizer::normalize</code> when object does not hold a valid stream</li>
+<li>Add exception code <code>1637433403</code> in <code>\Heptacom\HeptaConnect\Core\Portal\ServiceContainerCompilerPass\AddPortalConfigurationBindingsCompilerPass::process</code> when an array_combine call fails that logically should not be able to fail</li>
+<li>Add log message <code>\Heptacom\HeptaConnect\Core\Component\LogMessage::EMIT_NO_PRIMARY_KEY</code> used with log message code <code>1637434358</code> when emitted entity has no primary key</li>
+<li>Add parameter <code>$jobKey</code> in <code>\Heptacom\HeptaConnect\Core\Job\JobData::__construct</code></li>
+<li>Add method <code>\Heptacom\HeptaConnect\Core\Job\JobData::getJobKey</code></li>
+<li>Add service <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerUrlProviderInterface</code> to portal container</li>
+<li>Add service <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerCollection</code> to portal container</li>
+<li>Add service <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\HttpHandlerCollection.decorator</code> to portal container</li>
+<li>Add log message code <code>1637527920</code> in <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\SaveMappingsPostProcessor::handle</code> when an entity has been received with a primary key but has no mapping data</li>
+<li>Add log message code <code>1637527921</code> in <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\SaveMappingsPostProcessor::handle</code> when an entity has been received with a primary key but has invalid mapping data</li>
+</ul>
+<h3 id="changed_6">Changed</h3>
+<ul>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Emission\EmitContext::markAsFailed</code> from <code>$datasetEntityClassName</code> to <code>$entityType</code></li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Emission\Contract\EmitterStackBuilderFactoryInterface::createEmitterStackBuilder</code> from <code>$entityClassName</code> to <code>$entityType</code>, respective change in its implementing class <code>\Heptacom\HeptaConnect\Core\Emission\EmitterStackBuilderFactory::createEmitterStackBuilder</code></li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Emission\EmitterStackBuilder::__construct</code> from <code>$entityClassName</code> to <code>$entityType</code>. Change the field name in corresponding functions that use the field (<code>\Heptacom\HeptaConnect\Core\Emission\EmitterStackBuilder::push</code>, <code>\Heptacom\HeptaConnect\Core\Emission\EmitterStackBuilder::pushSource</code>, <code>\Heptacom\HeptaConnect\Core\Emission\EmitterStackBuilder::pushDecorators</code>)</li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Emission\EmitService::getEmitterStack</code> from <code>$entityClassName</code> to <code>$entityType</code></li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Exploration\Contract\ExplorerStackBuilderFactoryInterface::createExplorerStackBuilder</code> from <code>$entityClassName</code> to <code>$entityType</code>, respective change in its implementing class <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerStackBuilderFactory::createExplorerStackBuilder</code></li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Exploration\Contract\ExplorationActorInterface::performExploration</code> from <code>$entityClassName</code> to <code>$entityType</code>, respective change in its implementing class <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorationActor::performExploration</code></li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerStackBuilder::__construct</code> from <code>$entityClassName</code> to <code>$entityType</code>. Change the field name in corresponding functions that use the field (<code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerStackBuilder::push</code>, <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerStackBuilder::pushSource</code>, <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerStackBuilder::pushDecorators</code>)</li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Reception\Contract\ReceiverStackBuilderFactoryInterface::createReceiverStackBuilder</code> from <code>$entityClassName</code> to <code>$entityType</code>, respective change in its implementing class <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverStackBuilderFactory::createReceiverStackBuilder</code></li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverStackBuilder::__construct</code> from <code>$entityClassName</code> to <code>$entityType</code>. Change the field name in corresponding functions that use the field (<code>\Heptacom\HeptaConnect\Core\Reception\ReceiverStackBuilder::push</code>, <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverStackBuilder::pushSource</code>, <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverStackBuilder::pushDecorators</code>)</li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveService::getReceiverStack</code> from <code>$entityClassName</code> to <code>$entityType</code></li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface::get</code> from <code>$datasetEntityClassName</code> to <code>$entityType</code>, respective change in its implementing class for <code>\Heptacom\HeptaConnect\Core\Mapping\MappingService::get</code></li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface::getListByExternalIds</code> from <code>$datasetEntityClassName</code> to <code>$entityType</code>, respective change in its implementing class for <code>\Heptacom\HeptaConnect\Core\Mapping\MappingService::getListByExternalIds</code></li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Mapping\MappingNodeStruct::__construct</code> from <code>$datasetEntityClassName</code> to <code>$entityType</code></li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Mapping\Publisher::publish</code> from <code>$datasetEntityClassName</code> to <code>$entityType</code></li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Core\Reception\Support\PrimaryKeyChangesAttachable::__construct</code> from <code>$datasetEntityClassName</code> to <code>$entityType</code></li>
+<li>Change method name from <code>\Heptacom\HeptaConnect\Portal\Base\Mapping\Contract\MappingComponentStructContract::getDatasetEntityClassName</code> to <code>\Heptacom\HeptaConnect\Portal\Base\Mapping\Contract\MappingComponentStructContract::getEntityType</code></li>
+<li>Change method name from <code>\Heptacom\HeptaConnect\Core\Mapping\MappingStruct::getDatasetEntityClassName</code> to <code>\Heptacom\HeptaConnect\Core\Mapping\MappingStruct::getEntityType</code></li>
+<li>Change method name from <code>\Heptacom\HeptaConnect\Core\Mapping\MappingNodeStruct::getDatasetEntityClassName</code> to <code>\Heptacom\HeptaConnect\Core\Mapping\MappingNodeStruct::getEntityType</code></li>
+<li>Change method name from <code>\Heptacom\HeptaConnect\Core\Mapping\MappingNodeStruct::setDatasetEntityClassName</code> to <code>\Heptacom\HeptaConnect\Core\Mapping\MappingNodeStruct::setEntityType</code></li>
+<li>Change method name from <code>\Heptacom\HeptaConnect\Core\Reception\Support\PrimaryKeyChangesAttachable::getForeignDatasetEntityClassName</code> to <code>\Heptacom\HeptaConnect\Core\Reception\Support\PrimaryKeyChangesAttachable::getForeignEntityType</code></li>
+<li>Change method name from <code>\Heptacom\HeptaConnect\Core\Reception\Support\PrimaryKeyChangesAttachable::setForeignDatasetEntityClassName</code> to <code>\Heptacom\HeptaConnect\Core\Reception\Support\PrimaryKeyChangesAttachable::setForeignEntityType</code></li>
+<li>Add dependency onto <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> into <code>\Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler</code>, <code>\Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler</code> and <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code> for job tracking</li>
+<li>Add dependency onto <code>\Psr\Cache\CacheItemPoolInterface</code> into <code>\Heptacom\HeptaConnect\Core\Configuration\ConfigurationService</code> for configuration caching</li>
+<li>Remove parameter <code>$mappingService</code> from <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveContext::__construct</code> and <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveContextFactory::__construct</code> as it is no longer needed</li>
+<li>Add parameter <code>$postProcessors</code> to <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveContext::__construct</code> and <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveContextFactory::__construct</code> to contain every post-processing handler for this context</li>
+<li>Change <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveContext::markAsFailed</code> to add <code>\Heptacom\HeptaConnect\Portal\Base\Reception\PostProcessing\MarkAsFailedData</code> to the post-processing data bag instead of directly passing to <code>\Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface::addException</code></li>
+<li>Remove parameter <code>$mappingPersister</code> from <code>\Heptacom\HeptaConnect\Core\Reception\ReceptionActor::__construct</code> as its usage has been moved into <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\SaveMappingsPostProcessor</code></li>
+<li>Move of saving mappings from <code>\Heptacom\HeptaConnect\Core\Reception\ReceptionActor::performReception</code> into <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\SaveMappingsPostProcessor::handle</code></li>
+<li>Add dependency onto <code>\Psr\Log\LoggerInterface</code> into <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamNormalizer</code> for logging filename conversions</li>
+<li>Change dependency in <code>\Heptacom\HeptaConnect\Core\Emission\EmissionActor</code> from <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\RouteRepositoryContract</code> into <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Listing\ReceptionRouteListActionInterface</code> for more performant route lookup</li>
+<li>Change dependency in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code> from <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\RouteRepositoryContract</code> into <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Get\RouteGetActionInterface</code> for more performant route reading</li>
+<li>Allow <code>\Heptacom\HeptaConnect\Core\Job\Contract\ReceptionHandlerInterface::triggerReception</code> to throw <code>\Heptacom\HeptaConnect\Core\Job\Exception\ReceptionJobHandlingException</code></li>
+<li>Add dependency onto <code>\Psr\Log\LoggerInterface</code> into <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code> for logging exceptions</li>
+<li>Add dependency onto <code>\Psr\Log\LoggerInterface</code> into <code>\Heptacom\HeptaConnect\Core\Reception\PostProcessing\SaveMappingsPostProcessor</code> for logging unclearmapping scenarios</li>
+</ul>
+<h3 id="deprecated_2">Deprecated</h3>
+<ul>
+<li>Move <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamNormalizer::STORAGE_LOCATION</code> into <code>\Heptacom\HeptaConnect\Core\Storage\Contract\StreamPathContract::STORAGE_LOCATION</code></li>
+</ul>
+<h3 id="removed_2">Removed</h3>
+<ul>
+<li>Remove <code>\Heptacom\HeptaConnect\Core\Webhook\Contract\UrlProviderInterface</code></li>
+<li>Remove <code>\Heptacom\HeptaConnect\Core\Webhook\WebhookContext</code> in favour of <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandleContext</code></li>
+<li>Remove <code>\Heptacom\HeptaConnect\Core\Webhook\WebhookContextFactory</code> in favour of <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandleContextFactory</code></li>
+<li>Remove <code>\Heptacom\HeptaConnect\Core\Webhook\WebhookService</code></li>
+<li>Remove interface <code>\Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface::ensurePersistence</code> and implementation <code>\Heptacom\HeptaConnect\Core\Mapping\MappingService::ensurePersistence</code> in favour of <code>\Heptacom\HeptaConnect\Storage\Base\MappingPersister\Contract\MappingPersisterContract</code></li>
+</ul>
+<h3 id="fixed_15">Fixed</h3>
+<ul>
+<li>Provide callback-function to \array_filter in <code>Heptacom\HeptaConnect\Core\Flow\DirectEmissionFlow\DirectEmissionFlow::run</code> to only filter out primary keys with null and not 0</li>
+<li><code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamDenormalizer</code> rejects null and empty string as data</li>
+<li>Usage of <code>\Ramsey\Uuid\Uuid</code> in <code>\Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamNormalizer</code> only supported <code>ramsey/uuid: 3</code> but composer configuration allowed installation of <code>ramsey/uuid: 4</code>. Now it is used cross-compatible to work with <code>ramsey/uuid: 3 || 4</code></li>
+<li><code>\Heptacom\HeptaConnect\Core\Configuration\ConfigurationService::setPortalNodeConfiguration</code> removes nested <code>null</code> values and does not store <code>null</code> anymore</li>
+<li>Fix automatic prototyping when a portal provides an interface in <code>\Heptacom\HeptaConnect\Core\Portal\ServiceContainerCompilerPass\RemoveAutoPrototypedDefinitionsCompilerPass::isPrototypable</code></li>
+</ul>
+<h2 id="070-2021-09-25">[0.7.0] - 2021-09-25</h2>
+<h3 id="added_9">Added</h3>
+<ul>
+<li>Change implementation for <code>\Heptacom\HeptaConnect\Portal\Base\Portal\Contract\PortalStorageInterface</code> in <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage</code> to allow PSR simple cache compatibility</li>
+<li>Add log messages codes <code>1631387202</code>, <code>1631387363</code>, <code>1631387430</code>, <code>1631387448</code>, <code>1631387470</code>, <code>1631387510</code>, <code>1631561839</code>, <code>1631562097</code>, <code>1631562285</code>, <code>1631562928</code>, <code>1631563058</code>, <code>1631563639</code>, <code>1631563699</code>, <code>1631565257</code>, <code>1631565376</code>, <code>1631565446</code> to <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage</code></li>
+<li>Add interface <code>\Heptacom\HeptaConnect\Core\Reception\Contract\ReceiveContextFactoryInterface</code> to <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveContextFactory</code></li>
+<li>Add interface <code>\Heptacom\HeptaConnect\Core\Job\Contract\ReceptionHandlerInterface</code> to <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code></li>
+<li>Add interface <code>\Heptacom\HeptaConnect\Core\Job\Contract\ExplorationHandlerInterface</code> to <code>\Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler</code></li>
+<li>Add interface <code>\Heptacom\HeptaConnect\Core\Job\Contract\EmissionHandlerInterface</code> to <code>\Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler</code></li>
+<li>Add interface <code>\Heptacom\HeptaConnect\Core\Emission\Contract\EmitContextFactoryInterface</code> to <code>\Heptacom\HeptaConnect\Core\Emission\EmitContextFactory</code></li>
+<li>Add method <code>\Heptacom\HeptaConnect\Core\Exploration\DirectEmitter::batch</code> for better performance in direct emissions</li>
+</ul>
+<h3 id="changed_7">Changed</h3>
+<ul>
+<li><code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage::get</code> and <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage::set</code> will now throw exceptions when normalization could not happen</li>
+<li>Add parameter for <code>\Psr\Log\LoggerInterface</code> dependency in <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorage::__construct</code> and <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorageFactory::__construct</code></li>
+<li>Change type of parameter <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveContextFactory</code> to its new interface <code>\Heptacom\HeptaConnect\Core\Reception\Contract\ReceiveContextFactoryInterface</code> in <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveService::__construct</code></li>
+<li>Change type of parameter <code>\Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler</code> to its new interface <code>\Heptacom\HeptaConnect\Core\Job\Contract\EmissionHandlerInterface</code> in <code>\Heptacom\HeptaConnect\Core\Job\DelegatingJobActor::__construct</code></li>
+<li>Change type of parameter <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code> to its new interface <code>\Heptacom\HeptaConnect\Core\Job\Contract\ReceptionHandlerInterface</code> in <code>\Heptacom\HeptaConnect\Core\Job\DelegatingJobActor::__construct</code></li>
+<li>Change type of parameter <code>\Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler</code> to its new interface <code>\Heptacom\HeptaConnect\Core\Job\Contract\ExplorationHandlerInterface</code> in <code>\Heptacom\HeptaConnect\Core\Job\DelegatingJobActor::__construct</code></li>
+<li>Change type of parameter <code>\Heptacom\HeptaConnect\Core\Emission\EmitContextFactory</code> to its new interface <code>\Heptacom\HeptaConnect\Core\Emission\Contract\EmitContextFactoryInterface</code> in <code>\Heptacom\HeptaConnect\Core\Emission\EmitService::__construct</code></li>
+<li>Change behavior of service <code>\Heptacom\HeptaConnect\Core\Flow\DirectEmissionFlow\DirectEmissionFlow</code> to not create mappings anymore</li>
+<li>Remove parameter <code>\Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface</code> from <code>\Heptacom\HeptaConnect\Core\Flow\DirectEmissionFlow\DirectEmissionFlow::__construct</code></li>
+<li>Change method <code>\Heptacom\HeptaConnect\Core\Reception\ReceptionActor::saveMappings</code> to use new service <code>\Heptacom\HeptaConnect\Storage\Base\MappingPersister\Contract\MappingPersisterContract</code></li>
+<li><code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerStackBuilder::pushSource</code> and <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerStackBuilder::pushDecorators</code> don't push explorers onto the stack when they are already in the stack</li>
+<li><code>\Heptacom\HeptaConnect\Core\Emission\EmitterStackBuilder::pushSource</code> and <code>\Heptacom\HeptaConnect\Core\Emission\EmitterStackBuilder::pushDecorators</code> don't push emitters onto the stack when they already in the stack</li>
+<li><code>\Heptacom\HeptaConnect\Core\Reception\ReceiverStackBuilder::pushSource</code> and <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverStackBuilder::pushDecorators</code> don't push receivers onto the stack when they already in the stack</li>
+</ul>
+<h3 id="removed_3">Removed</h3>
+<ul>
+<li>Remove method <code>\Heptacom\HeptaConnect\Core\Exploration\DirectEmitter::run</code> as it became obsolete</li>
+</ul>
+<h2 id="060-2021-07-26">[0.6.0] - 2021-07-26</h2>
+<h3 id="added_10">Added</h3>
+<ul>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Exploration\Contract\ExploreServiceInterface::dispatchExploreJob</code> to start an exploration as a job via <code>\Heptacom\HeptaConnect\Core\Job\Contract\JobDispatcherContract::dispatch</code></li>
+<li>Add <code>\Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler</code> to handle exploration jobs <code>\Heptacom\HeptaConnect\Core\Job\Type\Exploration</code></li>
+<li>Add support for handling exploration jobs in <code>\Heptacom\HeptaConnect\Core\Job\DelegatingJobActor</code> with using <code>\Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler</code></li>
+<li>Add <code>\Psr\Http\Message\ResponseFactoryInterface</code> service to the portal containers in <code>\Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerBuilder</code> for better HTTP and messaging PSR support for portal developers</li>
+<li>Add <code>\Psr\Http\Message\StreamFactoryInterface</code> service to the portal containers in <code>\Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerBuilder</code> for better HTTP and messaging PSR support for portal developers</li>
+</ul>
+<h3 id="changed_8">Changed</h3>
+<ul>
+<li>Direct emission and explorations create mappings via <code>\Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface::getListByExternalIds</code> on <code>\Heptacom\HeptaConnect\Core\Exploration\Contract\ExplorationActorInterface::performExploration</code> when implemented by <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorationActor::performExploration</code></li>
+</ul>
+<h2 id="051-2021-07-13">[0.5.1] - 2021-07-13</h2>
+<h3 id="fixed_16">Fixed</h3>
+<ul>
+<li>Remove impact of entity primary keys on lock keys in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler::triggerReception</code></li>
+</ul>
+<h2 id="050-2021-07-11">[0.5.0] - 2021-07-11</h2>
+<h3 id="added_11">Added</h3>
+<ul>
+<li>Add composer dependency <code>symfony/yaml: ^4.4|^5.0</code></li>
+<li>Add base class <code>\Heptacom\HeptaConnect\Portal\Base\Flow\DirectEmission\DirectEmissionFlowContract</code> to <code>\Heptacom\HeptaConnect\Core\Flow\DirectEmissionFlow</code> to expose service for portals</li>
+<li>Add classes to hold job data for batch processing <code>\Heptacom\HeptaConnect\Core\Job\JobData</code> and <code>\Heptacom\HeptaConnect\Core\Job\JobDataCollection</code></li>
+<li>Add class <code>\Heptacom\HeptaConnect\Core\Portal\PortalLogger</code> that can decorate any <code>\Psr\Log\LoggerInterface</code> to apply any additional message prefix and context to all logs</li>
+<li>Add <code>\Heptacom\HeptaConnect\Portal\Base\Publication\Contract\PublisherInterface</code> to portal node service container</li>
+<li>Add <code>\Heptacom\HeptaConnect\Portal\Base\Flow\DirectEmission\DirectEmissionFlowContract</code> to portal node service container</li>
+</ul>
+<h3 id="changed_9">Changed</h3>
+<ul>
+<li>The acting to jobs in <code>\Heptacom\HeptaConnect\Core\Job\Contract\DelegatingJobActorContract::performJob</code> will now happen in batches in <code>\Heptacom\HeptaConnect\Core\Job\Contract\DelegatingJobActorContract::performJobs</code> and expects different parameters</li>
+<li>The trigger on emission jobs in <code>\Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler::triggerEmission</code> will now happen in batches and expects different parameters</li>
+<li>The trigger on reception jobs in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler::triggerReception</code> will now happen in batches and expects different parameters</li>
+<li>Change signature of <code>\Heptacom\HeptaConnect\Core\Reception\Contract\ReceptionActorInterface::performReception</code> to not rely on previously entities bound to <code>\Heptacom\HeptaConnect\Portal\Base\Mapping\Contract\MappingInterface</code> objects</li>
+<li>Change signature of <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveContext::markAsFailed</code> to not rely on previously entities bound to <code>\Heptacom\HeptaConnect\Portal\Base\Mapping\Contract\MappingInterface</code> objects</li>
+<li>Do most of the business logic for reception in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code> to have job related logic less bound to reception processes in general</li>
+</ul>
+<h3 id="deprecated_3">Deprecated</h3>
+<ul>
+<li>Deprecate cronjobs and therefore mark <code>\Heptacom\HeptaConnect\Core\Cronjob\CronjobContext</code>, <code>\Heptacom\HeptaConnect\Core\Cronjob\CronjobContextFactory</code>, <code>\Heptacom\HeptaConnect\Core\Cronjob\CronjobService</code> as internal</li>
+<li>Deprecate webhooks and therefore mark <code>\Heptacom\HeptaConnect\Core\Webhook\WebhookContext</code>, <code>\Heptacom\HeptaConnect\Core\Webhook\WebhookContextFactory</code>, <code>\Heptacom\HeptaConnect\Core\Webhook\WebhookService</code>, <code>\Heptacom\HeptaConnect\Core\Webhook\Contact\UrlProviderInterface</code> as internal</li>
+</ul>
+<h3 id="removed_4">Removed</h3>
+<ul>
+<li>Move <code>\Heptacom\HeptaConnect\Core\Flow\DirectEmissionFlow\DirectEmissionResult</code> into the portal base package as <code>\Heptacom\HeptaConnect\Portal\Base\Flow\DirectEmission\DirectEmissionResult</code></li>
+<li>Move <code>\Heptacom\HeptaConnect\Core\Flow\DirectEmissionFlow\Exception\UnidentifiedEntityException</code> into the portal base package as <code>\Heptacom\HeptaConnect\Portal\Base\Flow\DirectEmission\Exception\UnidentifiedEntityException</code></li>
+<li>The handling of jobs in <code>\Heptacom\HeptaConnect\Core\Flow\MessageQueueFlow\MessageHandler::handleJob</code> does not republish failed jobs anymore. That feature will be added back again in a different form</li>
+<li>The trigger on emission jobs in <code>\Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler::triggerEmission</code> will no longer report back success</li>
+<li>The trigger on reception jobs in <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler::triggerReception</code> will no longer report back success</li>
+<li>Remove automatically registered services in <code>\Heptacom\HeptaConnect\Core\Portal\ServiceContainerCompilerPass\RemoveAutoPrototypedDefinitionsCompilerPass</code> that is based on <code>\Throwable</code>, <code>\Heptacom\HeptaConnect\Dataset\Base\Contract\AttachableInterface</code>, <code>\Heptacom\HeptaConnect\Dataset\Base\Contract\CollectionInterface</code> and <code>\Heptacom\HeptaConnect\Dataset\Base\Contract\DatasetEntityContract</code></li>
+</ul>
+</details>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav class="md-footer__inner md-grid"aria-label="Footer">
+<a href="../changelog-bridge-shopware-platform/"class="md-footer__link md-footer__link--prev"aria-label="Previous: Bridge Shopware Platform"rel="prev">
+<div class="md-footer__button md-icon">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+Previous
+</span>
+Bridge Shopware Platform
+</div>
+</div>
+</a>
+<a href="../changelog-dataset-base/"class="md-footer__link md-footer__link--next"aria-label="Next: Dataset base"rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+Next
+</span>
+Dataset base
+</div>
+</div>
+<div class="md-footer__button md-icon">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<a class="heptaconnect-footer-download"href="/HEPTAconnect.pdf"download="HEPTAconnect.pdf">
+<span>
+Download complete PDF
+</span>
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v144H176c-35.3 0-64 28.7-64 64v144H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128zM176 352h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368z"/></svg>
+</a>
+<div class="heptaconnect-footer-copyright">
+<div class="md-footer-copyright__highlight">
+Made with <span style="color: #fff">❤️ </span>&nbsp;by <a href="https://www.heptacom.de">HEPTACOM</a>
+</div>
+</div>
+<div class="heptaconnect-footer-privacy">
+<a href="https://www.heptacom.de/datenschutz/">Privacy</a>
+</div>
+<div class="heptaconnect-footer-imprint">
+<a href="https://www.heptacom.de/impressum/">Imprint</a>
+</div>
+<div class="md-social">
+<a href="https://github.com/topics/heptaconnect"target="_blank"rel="noopener"title="github.com"class="md-social__link">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</a>
+<a href="https://twitter.com/heptacom_gmbh"target="_blank"rel="noopener"title="twitter.com"class="md-social__link">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+</a>
+<a href="/news/"target="_blank"rel="noopener"title=""class="md-social__link">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm32 104c0-13.3 10.7-24 24-24 137 0 248 111 248 248 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-110.5-89.5-200-200-200-13.3 0-24-10.7-24-24zm0 96c0-13.3 10.7-24 24-24 83.9 0 152 68.1 152 152 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-57.4-46.6-104-104-104-13.3 0-24-10.7-24-24zm0 120a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog"data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config"type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": ""}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+<script src="../../assets/javascripts/vendor/highlight.js/highlight.min.js"></script>
+<script src="../../assets/javascripts/config.js"></script>
+</body>
+</html>

@@ -1,0 +1,1973 @@
+
+<!doctype html>
+<html lang="en"class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"content="width=device-width,initial-scale=1">
+<link rel="icon"href="../../assets/favicon/favicon-32x32.png">
+<title>Bridge Shopware Platform Changelog - HEPTAconnect</title>
+<link rel="stylesheet"href="../../assets/stylesheets/main.26e3688c.min.css">
+<link rel="stylesheet"href="../../assets/stylesheets/palette.ecc896b0.min.css">
+<link rel="stylesheet"href="../../assets/app.css?break=8dad1a720072b117f41b57fe3958bd6e">
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script>
+(sessionStorage || window.sessionStorage).setItem('/.__source', JSON.stringify({
+  "stars": 114,
+  "forks": 4,
+  "repositories": 13
+}));
+</script>
+<link rel="apple-touch-icon"sizes="180x180"href="/assets/favicon/apple-touch-icon.png">
+<link rel="icon"type="image/png"sizes="32x32"href="/assets/favicon/favicon-32x32.png">
+<link rel="icon"type="image/png"sizes="16x16"href="/assets/favicon/favicon-16x16.png">
+<link rel="manifest"href="/assets/favicon/site.webmanifest">
+<link rel="mask-icon"href="/assets/favicon/safari-pinned-tab.svg"color="#3c3c3c">
+<meta name="msapplication-TileColor"content="#c3c3c3">
+<meta name="theme-color"content="#c3c3c3">
+<link rel="alternate"type="application/atom+xml"title="HEPTAconnect - Atom Feed"href="/news/atom1.xml">
+<link rel="alternate"type="application/json"title="HEPTAconnect - JSON Feed"href="/news/json1.json">
+<link rel="alternate"type="application/rss+xml"title="HEPTAconnect - RSS2 Feed"href="/news/rss2.xml">
+</head>
+<body dir="ltr"class="hc-role-releases"data-md-color-scheme="default"data-md-color-primary=""data-md-color-accent="">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input class="md-toggle"data-md-toggle="drawer"type="checkbox"id="__drawer"autocomplete="off">
+<input class="md-toggle"data-md-toggle="search"type="checkbox"id="__search"autocomplete="off">
+<label class="md-overlay"for="__drawer"></label>
+<div data-md-component="skip">
+<a href="#0970-2024-02-10"class="md-skip">
+</a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header"data-md-component="header">
+<nav class="md-header__inner md-grid"aria-label="Header">
+<a href="../.."title="HEPTAconnect"class="md-header__button md-logo"aria-label="HEPTAconnect"data-md-component="logo">
+<img src="../../assets/gfx/heptaconnect-icon.svg"alt="logo">
+</a>
+<label class="md-header__button md-icon"for="__drawer">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+</label>
+<div class="md-header__title"data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+HEPTAconnect
+</span>
+</div>
+<div class="md-header__topic"data-md-component="header-topic">
+<span class="md-ellipsis">
+Bridge Shopware Platform Changelog
+</span>
+</div>
+</div>
+</div>
+<form class="md-header__option"data-md-component="palette">
+<input class="md-option"data-md-color-media="(prefers-color-scheme: light)"data-md-color-scheme="default"data-md-color-primary="indigo"data-md-color-accent="indigo"aria-label="Switch to dark mode"type="radio"name="__palette"id="__palette_1">
+<label class="md-header__button md-icon"title="Switch to dark mode"for="__palette_2"hidden>
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M384 128c70.7 0 128 57.3 128 128s-57.3 128-128 128H192c-70.7 0-128-57.3-128-128s57.3-128 128-128h192zm192 128c0-106-86-192-192-192H192C86 64 0 150 0 256s86 192 192 192h192c106 0 192-86 192-192zm-384 96a96 96 0 1 0 0-192 96 96 0 1 0 0 192z"/></svg>
+</label>
+<input class="md-option"data-md-color-media="(prefers-color-scheme: dark)"data-md-color-scheme="slate"data-md-color-primary="indigo"data-md-color-accent="indigo"aria-label="Switch to light mode"type="radio"name="__palette"id="__palette_2">
+<label class="md-header__button md-icon"title="Switch to light mode"for="__palette_1"hidden>
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M192 64C86 64 0 150 0 256s86 192 192 192h192c106 0 192-86 192-192S490 64 384 64H192zm192 96a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
+</label>
+</form>
+<label class="md-header__button md-icon"for="__search">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+</label>
+<div class="md-search"data-md-component="search"role="dialog">
+<label class="md-search__overlay"for="__search"></label>
+<div class="md-search__inner"role="search">
+<form class="md-search__form"name="search">
+<input type="text"class="md-search__input"name="query"aria-label="Search"placeholder="Search"autocapitalize="off"autocorrect="off"autocomplete="off"spellcheck="false"data-md-component="search-query"required>
+<label class="md-search__icon md-icon"for="__search">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+</label>
+<nav class="md-search__options"aria-label="Search">
+<button type="reset"class="md-search__icon md-icon"title="Clear"aria-label="Clear"tabindex="-1">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+</button>
+</nav>
+<div class="md-search__suggest"data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap"data-md-scrollfix>
+<div class="md-search-result"data-md-component="search-result">
+<div class="md-search-result__meta">
+Initializing search
+</div>
+<ol class="md-search-result__list"role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a href="https://github.com/topics/heptaconnect"title="Go to repository"class="md-source"data-md-component="source">
+<div class="md-source__icon md-icon">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</div>
+<div class="md-source__repository">
+HEPTAconnect on GitHub
+</div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container"data-md-component="container">
+<nav class="md-tabs"aria-label="Tabs"data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a href="../../guides/portal-developer/"class="md-tabs__link">
+Portal Developer
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="../../guides/integrator/"class="md-tabs__link">
+Integrator
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="../../guides/administrator/"class="md-tabs__link">
+Administrator
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="../../guides/playground/"class="md-tabs__link">
+Playground
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="../../guides/contributor/"class="md-tabs__link">
+Contributor
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="../../reference/"class="md-tabs__link">
+Reference
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="../../news/"class="md-tabs__link md-tabs__link--active">
+News
+</a>
+</li>
+<li class="md-tabs__item">
+<a href="https://www.heptacom.de/heptaconnect/"class="md-tabs__link">
+Pricing
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main"data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary"data-md-component="sidebar"data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--primary md-nav--lifted"aria-label="Navigation"data-md-level="0">
+<label class="md-nav__title"for="__drawer">
+<a href="../.."title="HEPTAconnect"class="md-nav__button md-logo"aria-label="HEPTAconnect"data-md-component="logo">
+<img src="../../assets/gfx/heptaconnect-icon.svg"alt="logo">
+</a>
+HEPTAconnect
+</label>
+<div class="md-nav__source">
+<a href="https://github.com/topics/heptaconnect"title="Go to repository"class="md-source"data-md-component="source">
+<div class="md-source__icon md-icon">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</div>
+<div class="md-source__repository">
+HEPTAconnect on GitHub
+</div>
+</a>
+</div>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_1">
+<div class="md-nav__link md-nav__link--index">
+<a href="../../guides/portal-developer/">Portal Developer</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_1_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+Portal Developer
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/dataset/"class="md-nav__link">
+Dataset
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/portal/"class="md-nav__link">
+Portal
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/explorer/"class="md-nav__link">
+Explorer
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/emitter/"class="md-nav__link">
+Emitter
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/receiver/"class="md-nav__link">
+Receiver
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/http-client-middleware/"class="md-nav__link">
+HTTP Client Middleware
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/http-handler/"class="md-nav__link">
+HTTP Handler
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/http-handler-middleware/"class="md-nav__link">
+HTTP Handler Middleware
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/status-reporting/"class="md-nav__link">
+Status reporting
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/morphers/"class="md-nav__link">
+Morphers
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/key-value-storage/"class="md-nav__link">
+Key value storage
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/explorer-decoration/"class="md-nav__link">
+Explorer decoration
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/emitter-decoration/"class="md-nav__link">
+Emitter decoration
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/receiver-decoration/"class="md-nav__link">
+Receiver decoration
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/direct-emission-explorer/"class="md-nav__link">
+Direct emission explorer
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/dependency-injection/"class="md-nav__link">
+Dependency injection
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/default-utilities/"class="md-nav__link">
+Default utilities
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/short-notation-for-flow-components/"class="md-nav__link">
+Short notation for flow components
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/upgrade/"class="md-nav__link">
+Upgrade
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/file-reference/"class="md-nav__link">
+File references
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/filesystem/"class="md-nav__link">
+Filesystem
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_1_22">
+<label class="md-nav__link"for="__nav_1_22"id="__nav_1_22_label"tabindex="0">
+Patterns
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="2"aria-labelledby="__nav_1_22_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_1_22">
+<span class="md-nav__icon md-icon"></span>
+Patterns
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/patterns/transfer-file-reference-by-public-url/"class="md-nav__link">
+Transfer file reference by public URL
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/patterns/transfer-files-from-ftp-server/"class="md-nav__link">
+Send files from an FTP server
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/patterns/list-files-from-filesystem/"class="md-nav__link">
+List files from filesystem
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/patterns/serve-file-from-filesystem-using-http-handler/"class="md-nav__link">
+Serve a file from filesystem using HTTP handler
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/portal-developer/patterns/http-client-middleware-dumping-on-bad-request/"class="md-nav__link">
+Client Middleware dumping bad request HTTP messages
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_1_23">
+<label class="md-nav__link"for="__nav_1_23"id="__nav_1_23_label"tabindex="0">
+Services
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="2"aria-labelledby="__nav_1_23_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_1_23">
+<span class="md-nav__icon md-icon"></span>
+Services
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../reference/portal-developer/service/filesystem-interface/"class="md-nav__link">
+FilesystemInterface
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/portal-developer/service/http-client-contract/"class="md-nav__link">
+HttpClientContract
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_2">
+<div class="md-nav__link md-nav__link--index">
+<a href="../../guides/integrator/">Integrator</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_2_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+Integrator
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/integrator/portals/"class="md-nav__link">
+Portals
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/bridges/"class="md-nav__link">
+Bridges
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/message-brokers/"class="md-nav__link">
+Message broking
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/filesystem/"class="md-nav__link">
+Filesystem
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/http-handlers/"class="md-nav__link">
+HTTP Handlers
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/portal-node-configuration/"class="md-nav__link">
+Portal node configuration
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/logging/"class="md-nav__link">
+Logging
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/upgrade/"class="md-nav__link">
+Upgrade
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_2_9">
+<label class="md-nav__link"for="__nav_2_9"id="__nav_2_9_label"tabindex="0">
+Patterns
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="2"aria-labelledby="__nav_2_9_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+Patterns
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/integrator/patterns/filesystem-change-for-specific-portal-node/"class="md-nav__link">
+Change the filesystem for a specific portal node
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/patterns/http-handler-dump-format-to-curl-shell-scripts/"class="md-nav__link">
+Change dump format for HTTP handler to cURL shell
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/patterns/http-handler-dump-with-spx-trigger/"class="md-nav__link">
+Use SPX as trigger for HTTP handler dumps
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/integrator/patterns/http-handler-dump-with-xdebug-trigger/"class="md-nav__link">
+Use Xdebug as trigger for HTTP handler dumps
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_3">
+<div class="md-nav__link md-nav__link--index">
+<a href="../../guides/administrator/">Administrator</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_3_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+Administrator
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/administrator/portal-node/"class="md-nav__link">
+Portal node
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/administrator/routing/"class="md-nav__link">
+Route
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/administrator/status-reporting/"class="md-nav__link">
+Status reporting
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/administrator/http-apis/"class="md-nav__link">
+HTTP APIs
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/administrator/filesystem/"class="md-nav__link">
+Filesystem
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/administrator/logs/"class="md-nav__link">
+Logs
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_4">
+<div class="md-nav__link md-nav__link--index">
+<a href="../../guides/playground/">Playground</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_4_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+Playground
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/playground/add-portals/"class="md-nav__link">
+Add portals
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/playground/contribution/"class="md-nav__link">
+Contribution
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_5">
+<div class="md-nav__link md-nav__link--index">
+<a href="../../guides/contributor/">Contributor</a>
+<label for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_5_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+Contributor
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../guides/contributor/changelog/"class="md-nav__link">
+Writing changelogs
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/contributor/build-flow-components/"class="md-nav__link">
+Build flow components
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/contributor/build-storage-actions/"class="md-nav__link">
+Build storage actions
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../guides/contributor/cla/"class="md-nav__link">
+Contributor License Agreement
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_6">
+<label class="md-nav__link"for="__nav_6"id="__nav_6_label"tabindex="0">
+Reference
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_6_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+Reference
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../reference/"class="md-nav__link">
+Overview
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_6_2">
+<label class="md-nav__link"for="__nav_6_2"id="__nav_6_2_label"tabindex="0">
+General resources
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="2"aria-labelledby="__nav_6_2_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+General resources
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../reference/general-resources/package-structure/"class="md-nav__link">
+Package structure
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_6_2_2">
+<div class="md-nav__link md-nav__link--index">
+<a href="../../reference/general-resources/data-flow/">Data flow</a>
+<label for="__nav_6_2_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="3"aria-labelledby="__nav_6_2_2_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_6_2_2">
+<span class="md-nav__icon md-icon"></span>
+Data flow
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../reference/general-resources/data-flows/basic-flow/"class="md-nav__link">
+Basic flow
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/general-resources/mapping/"class="md-nav__link">
+Mapping
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_6_3">
+<label class="md-nav__link"for="__nav_6_3"id="__nav_6_3_label"tabindex="0">
+ADRs
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="2"aria-labelledby="__nav_6_3_label"aria-expanded="false">
+<label class="md-nav__title"for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+ADRs
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-01-27-telemetry-recording/"class="md-nav__link">
+Telemetry recording
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-04-30-contracts-and-interfaces/"class="md-nav__link">
+Contracts and interfaces
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-08-10-architecture-decision-records/"class="md-nav__link">
+Architecture decision records
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-08-28-parallelization-locks/"class="md-nav__link">
+Parallelization locks
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-10-15-portal-status-reporters/"class="md-nav__link">
+Portal status reporters
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-10-30-job-messages-and-payload/"class="md-nav__link">
+Job messages and payload
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2020-12-10-portal-service-container/"class="md-nav__link">
+Portal service container
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-02-03-direct-emission-exploration/"class="md-nav__link">
+Direct emission exploration
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-04-13-portal-dependency-injection-implementation/"class="md-nav__link">
+Portal dependency injection implementation
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-06-17-flow-component-short-notation/"class="md-nav__link">
+Flow component short notation
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-08-24-php-8-named-arguments/"class="md-nav__link">
+PHP 8.0 named arguments
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-09-06-exception-and-log-message-codes/"class="md-nav__link">
+Exception and log message codes
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-09-25-optimized-storage-actions/"class="md-nav__link">
+Optimized storage actions
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-10-29-flow-components-are-not-crud/"class="md-nav__link">
+Flow components are not CRUD
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2021-10-30-route-capabilities/"class="md-nav__link">
+Route capabilities
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2022-01-05-code-documentation/"class="md-nav__link">
+Code documentation
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2022-01-24-semver-with-generation-version/"class="md-nav__link">
+SemVer with generation version
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2022-03-02-final-classes/"class="md-nav__link">
+Final classes
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2022-06-12-type-safe-class-strings/"class="md-nav__link">
+Type safe class strings
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/adr/2022-10-06-filesystem-stream-wrapper/"class="md-nav__link">
+Filesystem abstraction with stream wrapper
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/glossary/"class="md-nav__link">
+Glossary
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../../reference/license/"class="md-nav__link">
+License
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_7"checked="checked">
+<label class="md-nav__link"for="__nav_7"id="__nav_7_label"tabindex="0">
+News
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav class="md-nav"data-md-level="1"aria-labelledby="__nav_7_label"aria-expanded="true">
+<label class="md-nav__title"for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+News
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../../news/"class="md-nav__link">
+Blog
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__nav_7_2"checked="checked">
+<div class="md-nav__link md-nav__link--index">
+<a href="../">Release</a>
+<label for="__nav_7_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav class="md-nav"data-md-level="2"aria-labelledby="__nav_7_2_label"aria-expanded="true">
+<label class="md-nav__title"for="__nav_7_2">
+<span class="md-nav__icon md-icon"></span>
+Release
+</label>
+<ul class="md-nav__list"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="../upcoming/"class="md-nav__link">
+Upcoming
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle"type="checkbox"id="__toc">
+<label class="md-nav__link md-nav__link--active"for="__toc">
+Bridge Shopware Platform
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a href="./"class="md-nav__link md-nav__link--active">
+Bridge Shopware Platform
+</a>
+<nav class="md-nav md-nav--secondary"aria-label="Table of contents">
+<label class="md-nav__title"for="__toc">
+<span class="md-nav__icon md-icon"></span>
+Table of contents
+</label>
+<ul class="md-nav__list"data-md-component="toc"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="#0970-2024-02-10"class="md-nav__link">
+[0.9.7.0] - 2024-02-10
+</a>
+<nav class="md-nav"aria-label="[0.9.7.0] - 2024-02-10">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#changed"class="md-nav__link">
+Changed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0960-2024-01-03"class="md-nav__link">
+[0.9.6.0] - 2024-01-03
+</a>
+<nav class="md-nav"aria-label="[0.9.6.0] - 2024-01-03">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0950-2023-07-10"class="md-nav__link">
+[0.9.5.0] - 2023-07-10
+</a>
+<nav class="md-nav"aria-label="[0.9.5.0] - 2023-07-10">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_1"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_1"class="md-nav__link">
+Changed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0940-2023-05-27"class="md-nav__link">
+[0.9.4.0] - 2023-05-27
+</a>
+<nav class="md-nav"aria-label="[0.9.4.0] - 2023-05-27">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_2"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_2"class="md-nav__link">
+Changed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0930-2023-03-04"class="md-nav__link">
+[0.9.3.0] - 2023-03-04
+</a>
+<nav class="md-nav"aria-label="[0.9.3.0] - 2023-03-04">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_3"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_3"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_1"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0920-2022-11-26"class="md-nav__link">
+[0.9.2.0] - 2022-11-26
+</a>
+<nav class="md-nav"aria-label="[0.9.2.0] - 2022-11-26">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_4"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_2"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0911-2022-10-03"class="md-nav__link">
+[0.9.1.1] - 2022-10-03
+</a>
+<nav class="md-nav"aria-label="[0.9.1.1] - 2022-10-03">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_5"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_3"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0910-2022-07-19"class="md-nav__link">
+[0.9.1.0] - 2022-07-19
+</a>
+<nav class="md-nav"aria-label="[0.9.1.0] - 2022-07-19">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_6"class="md-nav__link">
+Added
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0903-2022-06-08"class="md-nav__link">
+[0.9.0.3] - 2022-06-08
+</a>
+<nav class="md-nav"aria-label="[0.9.0.3] - 2022-06-08">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_4"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0902-2022-04-27"class="md-nav__link">
+[0.9.0.2] - 2022-04-27
+</a>
+<nav class="md-nav"aria-label="[0.9.0.2] - 2022-04-27">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_5"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0901-2022-04-19"class="md-nav__link">
+[0.9.0.1] - 2022-04-19
+</a>
+<nav class="md-nav"aria-label="[0.9.0.1] - 2022-04-19">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_6"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0900-2022-04-02"class="md-nav__link">
+[0.9.0.0] - 2022-04-02
+</a>
+<nav class="md-nav"aria-label="[0.9.0.0] - 2022-04-02">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_7"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_4"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#removed"class="md-nav__link">
+Removed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_7"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#081-2022-03-04"class="md-nav__link">
+[0.8.1] - 2022-03-04
+</a>
+<nav class="md-nav"aria-label="[0.8.1] - 2022-03-04">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_8"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#080-2021-11-22"class="md-nav__link">
+[0.8.0] - 2021-11-22
+</a>
+<nav class="md-nav"aria-label="[0.8.0] - 2021-11-22">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_8"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_5"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#removed_1"class="md-nav__link">
+Removed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_9"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#070-2021-09-25"class="md-nav__link">
+[0.7.0] - 2021-09-25
+</a>
+<nav class="md-nav"aria-label="[0.7.0] - 2021-09-25">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_9"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_6"class="md-nav__link">
+Changed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-core/"class="md-nav__link">
+Core
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-dataset-base/"class="md-nav__link">
+Dataset base
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-dataset-ecommerce/"class="md-nav__link">
+Dataset ecommerce
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-portal-base/"class="md-nav__link">
+Portal base
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-portal-local-shopware-platform/"class="md-nav__link">
+Portal Local Shopware Platform
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-package-http/"class="md-nav__link">
+Package HTTP
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-package-web-frontend/"class="md-nav__link">
+Package Web Frontend
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-package-shopware-6/"class="md-nav__link">
+Package Shopware 6
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-storage-base/"class="md-nav__link">
+Storage base
+</a>
+</li>
+<li class="md-nav__item">
+<a href="../changelog-storage-shopware-dal/"class="md-nav__link">
+Storage Shopware DAL
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="https://www.heptacom.de/heptaconnect/"class="md-nav__link">
+Pricing
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary"data-md-component="sidebar"data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--secondary"aria-label="Table of contents">
+<label class="md-nav__title"for="__toc">
+<span class="md-nav__icon md-icon"></span>
+Table of contents
+</label>
+<ul class="md-nav__list"data-md-component="toc"data-md-scrollfix>
+<li class="md-nav__item">
+<a href="#0970-2024-02-10"class="md-nav__link">
+[0.9.7.0] - 2024-02-10
+</a>
+<nav class="md-nav"aria-label="[0.9.7.0] - 2024-02-10">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#changed"class="md-nav__link">
+Changed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0960-2024-01-03"class="md-nav__link">
+[0.9.6.0] - 2024-01-03
+</a>
+<nav class="md-nav"aria-label="[0.9.6.0] - 2024-01-03">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0950-2023-07-10"class="md-nav__link">
+[0.9.5.0] - 2023-07-10
+</a>
+<nav class="md-nav"aria-label="[0.9.5.0] - 2023-07-10">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_1"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_1"class="md-nav__link">
+Changed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0940-2023-05-27"class="md-nav__link">
+[0.9.4.0] - 2023-05-27
+</a>
+<nav class="md-nav"aria-label="[0.9.4.0] - 2023-05-27">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_2"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_2"class="md-nav__link">
+Changed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0930-2023-03-04"class="md-nav__link">
+[0.9.3.0] - 2023-03-04
+</a>
+<nav class="md-nav"aria-label="[0.9.3.0] - 2023-03-04">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_3"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_3"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_1"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0920-2022-11-26"class="md-nav__link">
+[0.9.2.0] - 2022-11-26
+</a>
+<nav class="md-nav"aria-label="[0.9.2.0] - 2022-11-26">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_4"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_2"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0911-2022-10-03"class="md-nav__link">
+[0.9.1.1] - 2022-10-03
+</a>
+<nav class="md-nav"aria-label="[0.9.1.1] - 2022-10-03">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_5"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_3"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0910-2022-07-19"class="md-nav__link">
+[0.9.1.0] - 2022-07-19
+</a>
+<nav class="md-nav"aria-label="[0.9.1.0] - 2022-07-19">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_6"class="md-nav__link">
+Added
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0903-2022-06-08"class="md-nav__link">
+[0.9.0.3] - 2022-06-08
+</a>
+<nav class="md-nav"aria-label="[0.9.0.3] - 2022-06-08">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_4"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0902-2022-04-27"class="md-nav__link">
+[0.9.0.2] - 2022-04-27
+</a>
+<nav class="md-nav"aria-label="[0.9.0.2] - 2022-04-27">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_5"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0901-2022-04-19"class="md-nav__link">
+[0.9.0.1] - 2022-04-19
+</a>
+<nav class="md-nav"aria-label="[0.9.0.1] - 2022-04-19">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_6"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#0900-2022-04-02"class="md-nav__link">
+[0.9.0.0] - 2022-04-02
+</a>
+<nav class="md-nav"aria-label="[0.9.0.0] - 2022-04-02">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_7"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_4"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#removed"class="md-nav__link">
+Removed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_7"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#081-2022-03-04"class="md-nav__link">
+[0.8.1] - 2022-03-04
+</a>
+<nav class="md-nav"aria-label="[0.8.1] - 2022-03-04">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#fixed_8"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#080-2021-11-22"class="md-nav__link">
+[0.8.0] - 2021-11-22
+</a>
+<nav class="md-nav"aria-label="[0.8.0] - 2021-11-22">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_8"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_5"class="md-nav__link">
+Changed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#removed_1"class="md-nav__link">
+Removed
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#fixed_9"class="md-nav__link">
+Fixed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a href="#070-2021-09-25"class="md-nav__link">
+[0.7.0] - 2021-09-25
+</a>
+<nav class="md-nav"aria-label="[0.7.0] - 2021-09-25">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a href="#added_9"class="md-nav__link">
+Added
+</a>
+</li>
+<li class="md-nav__item">
+<a href="#changed_6"class="md-nav__link">
+Changed
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content"data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h2 id="0970-2024-02-10">[0.9.7.0] - 2024-02-10</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Command <code>heptaconnect:job:run</code> now accepts multiple values for argument <code>job-key</code> and runs the jobs simultaneously</li>
+</ul>
+<h2 id="0960-2024-01-03">[0.9.6.0] - 2024-01-03</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Add interface <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Parallelization\LockStoreFactoryInterface</code> with corresponding implementation <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Parallelization\LockStoreFactory</code> to provide lock stores for parallelization</li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Fix service container when no database url is configured by catching connection errors and falling back to in-memory lock store in <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Parallelization\LockStoreFactory</code></li>
+</ul>
+<h2 id="0950-2023-07-10">[0.9.5.0] - 2023-07-10</h2>
+<h3 id="added_1">Added</h3>
+<ul>
+<li>Add dependency <code>heptacom_heptaconnect.logger</code> to service <code>Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler</code></li>
+<li>Add dependency <code>heptacom_heptaconnect.logger</code> to service <code>Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler</code></li>
+</ul>
+<h3 id="changed_1">Changed</h3>
+<ul>
+<li>Raise composer dependency constraint for <code>heptacom/heptaconnect-core</code>, <code>heptacom/heptaconnect-dataset-base</code>, <code>heptacom/heptaconnect-portal-base</code> and <code>heptacom/heptaconnect-storage-base</code> from <code>^0.9.4</code> to <code>^0.9.6</code></li>
+</ul>
+<h2 id="0940-2023-05-27">[0.9.4.0] - 2023-05-27</h2>
+<h3 id="added_2">Added</h3>
+<ul>
+<li>Add service definition <code>Psr\Http\Message\StreamFactoryInterface.heptaconnect</code> factorized by <code>\Http\Discovery\Psr17FactoryDiscovery::findStreamFactory</code></li>
+<li>Add service definition <code>Psr\Http\Message\UploadedFileFactoryInterface.heptaconnect</code> factorized by <code>\Http\Discovery\Psr17FactoryDiscovery::findUploadedFileFactory</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageMultiPartFormDataBuilderInterface</code> for class <code>Heptacom\HeptaConnect\Core\Web\Http\Psr7MessageMultiPartFormDataBuilder</code></li>
+<li>Add alternative service id <code>Heptacom\HeptaConnect\Core\Component\Composer\Contract\PackageConfigurationLoaderInterface</code> for definition <code>Heptacom\HeptaConnect\Core\Component\Composer\PackageConfigurationLoader</code></li>
+<li>Add alternative service id <code>Heptacom\HeptaConnect\Core\Emission\Contract\EmitServiceInterface</code> for definition <code>Heptacom\HeptaConnect\Core\Emission\EmitService</code></li>
+<li>Add alternative service id <code>Heptacom\HeptaConnect\Core\Exploration\Contract\ExplorationActorInterface</code> for definition <code>Heptacom\HeptaConnect\Core\Exploration\ExplorationActor</code></li>
+<li>Add alternative service id <code>Heptacom\HeptaConnect\Core\Exploration\Contract\ExploreServiceInterface</code> for definition <code>Heptacom\HeptaConnect\Core\Exploration\ExploreService</code></li>
+<li>Add alternative service id <code>Heptacom\HeptaConnect\Core\Exploration\Contract\ExplorerStackBuilderFactoryInterface</code> for definition <code>Heptacom\HeptaConnect\Core\Exploration\ExplorerStackBuilderFactory</code></li>
+<li>Add alternative service id <code>Heptacom\HeptaConnect\Core\Portal\Contract\PortalFactoryContract</code> for definition <code>Heptacom\HeptaConnect\Core\Portal\PortalFactory</code></li>
+<li>Add alternative service id <code>Heptacom\HeptaConnect\Core\Portal\Contract\PortalRegistryInterface</code> for definition <code>Heptacom\HeptaConnect\Core\Portal\PortalRegistry</code></li>
+<li>Add alternative service id <code>Heptacom\HeptaConnect\Portal\Base\Parallelization\Contract\ResourceLockingContract</code> for definition <code>Heptacom\HeptaConnect\Core\Parallelization\ResourceLocking</code></li>
+<li>Add alternative service id <code>Heptacom\HeptaConnect\Core\Reception\Contract\ReceiverStackBuilderFactoryInterface</code> for definition <code>Heptacom\HeptaConnect\Core\Reception\ReceiverStackBuilderFactory</code></li>
+<li>Add alternative service id <code>Heptacom\HeptaConnect\Core\Reception\Contract\ReceiveServiceInterface</code> for definition <code>Heptacom\HeptaConnect\Core\Reception\ReceiveService</code></li>
+<li>Add alternative service id <code>Heptacom\HeptaConnect\Core\Reception\Contract\ReceptionActorInterface</code> for definition <code>Heptacom\HeptaConnect\Core\Reception\ReceptionActor</code></li>
+<li>Add alternative service id <code>Heptacom\HeptaConnect\Portal\Base\Support\Contract\EntityStatusContract</code> for definition <code>Heptacom\HeptaConnect\Core\Support\EntityStatus</code></li>
+</ul>
+<h3 id="changed_2">Changed</h3>
+<ul>
+<li>Add dependency in <code>Heptacom\HeptaConnect\Core\Job\Contract\ExplorationHandlerInterface</code> on <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobFailActionInterface</code></li>
+<li>Add dependency in <code>Heptacom\HeptaConnect\Core\Job\Contract\EmissionHandlerInterface</code> on <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobFailActionInterface</code></li>
+<li>Add dependency in <code>Heptacom\HeptaConnect\Core\Job\Contract\ReceptionHandlerInterface</code> on <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobFailActionInterface</code></li>
+<li>Add method call <code>setHttpHandleService</code> to service definition <code>Heptacom\HeptaConnect\Core\Portal\Contract\PortalStackServiceContainerBuilderInterface</code></li>
+<li>Add dependency in <code>Heptacom\HeptaConnect\Core\Portal\Contract\PortalStackServiceContainerBuilderInterface</code> on <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageMultiPartFormDataBuilderInterface</code></li>
+<li>Add dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Web\Http\HttpHandlerController</code> on <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageMultiPartFormDataBuilderInterface</code></li>
+<li>Add dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Web\Http\HttpHandlerController</code> on <code>Psr\Http\Message\StreamFactoryInterface.heptaconnect</code></li>
+<li>Add dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Web\Http\HttpHandlerController</code> on <code>Psr\Http\Message\UploadedFileFactoryInterface.heptaconnect</code></li>
+</ul>
+<h2 id="0930-2023-03-04">[0.9.3.0] - 2023-03-04</h2>
+<h3 id="added_3">Added</h3>
+<ul>
+<li>Add option <code>time-limit</code> to command <code>heptaconnect:job:cleanup-finished</code> to limit the time the command is running measured in seconds</li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Web\Http\Formatter\Support\Contract\HeaderUtilityInterface</code> for class <code>\Heptacom\HeptaConnect\Core\Web\Http\Formatter\Support\HeaderUtility</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageCurlShellFormatterContract</code> for class <code>\Heptacom\HeptaConnect\Core\Web\Http\Formatter\Psr7MessageCurlShellFormatter</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageRawHttpFormatterContract</code> for class <code>\Heptacom\HeptaConnect\Core\Web\Http\Formatter\Psr7MessageRawHttpFormatter</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumpCheckerInterface</code> for class <code>\Heptacom\HeptaConnect\Core\Web\Http\Dump\SampleRateServerRequestCycleDumpChecker</code></li>
+<li>Add service alias <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageFormatterContract</code> to set <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageRawHttpFormatterContract</code> as default implementation</li>
+<li>Implement <code>\Heptacom\HeptaConnect\Core\Bridge\File\HttpHandlerDumpPathProviderInterface</code> in <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\File\HttpHandlerDumpPathProvider</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumperInterface</code> for class <code>\Heptacom\HeptaConnect\Core\Web\Http\Dump\ServerRequestCycleDumper</code></li>
+<li>Add dependency <code>Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumpCheckerInterface</code> and <code>Heptacom\HeptaConnect\Core\Web\Http\Dump\Contract\ServerRequestCycleDumperInterface</code> to service <code>Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandleServiceInterface</code></li>
+<li>Add dependency <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageCurlShellFormatterContract</code> and <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\Psr7MessageRawHttpFormatterContract</code> to service <code>Heptacom\HeptaConnect\Core\Portal\Contract\PortalStackServiceContainerBuilderInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\IdentityRedirect\IdentityRedirectDeleteActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\IdentityRedirect\IdentityRedirectCreateActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\IdentityRedirect\IdentityRedirectOverviewActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add command <code>heptaconnect:identity-redirect:add</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\IdentityRedirect\AddIdentityRedirect</code> to add an identity redirect</li>
+<li>Add command <code>heptaconnect:identity-redirect:remove</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\IdentityRedirect\RemoveIdentityRedirect</code> to remove an identity redirect</li>
+<li>Add command <code>heptaconnect:identity-redirect:list</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\IdentityRedirect\ListIdentityRedirects</code> to list identity redirects</li>
+<li>Add identity redirect into evaluation of <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\MappingNode\ListMappingNodeSiblings</code></li>
+</ul>
+<h3 id="changed_3">Changed</h3>
+<ul>
+<li>Use count of deleted jobs as progress indicator in command <code>heptaconnect:job:cleanup-finished</code></li>
+<li>Delete jobs, that have not been finished at the start of the command <code>heptaconnect:job:cleanup-finished</code>, but finished during the command run</li>
+<li>Remove Symfony, connection, proxy and transfer related header from requests handled in <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Web\Http\HttpHandlerController</code></li>
+<li>Raise composer dependency constraint for <code>heptacom/heptaconnect-core</code>, <code>heptacom/heptaconnect-dataset-base</code>, <code>heptacom/heptaconnect-portal-base</code> and <code>heptacom/heptaconnect-storage-base</code> from <code>^0.9.3</code> to <code>^0.9.4</code></li>
+<li>Raise composer dependency constraint for <code>heptacom/heptaconnect-storage-shopware-dal</code> from <code>^0.9</code> to <code>^0.9.1</code></li>
+</ul>
+<h3 id="fixed_1">Fixed</h3>
+<ul>
+<li>Ensure missing query parameters in the request's URI passed on to the HTTP handler in <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Web\Http\HttpHandlerController</code></li>
+<li>Interpret <code>entity-type</code> option in <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\MappingNode\ListMappingNodeSiblings</code> as filter criteria for identities</li>
+<li>Show an empty result if first search did not find a mapping node to search for its siblings <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\MappingNode\ListMappingNodeSiblings</code></li>
+</ul>
+<h2 id="0920-2022-11-26">[0.9.2.0] - 2022-11-26</h2>
+<h3 id="added_4">Added</h3>
+<ul>
+<li>Add composer dependency <code>kor3k/flysystem-stream-wrapper: ^1.0.11</code> to register flysystem filesystems to a stream wrapper</li>
+<li>Add service definition for implementation <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\File\PortalNodeFilesystemStreamProtocolProvider</code> described by <code>\Heptacom\HeptaConnect\Core\Bridge\File\PortalNodeFilesystemStreamProtocolProviderInterface</code> to provide stream wrapper protocol and register flysystem filesystems for portal nodes</li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Portal\File\Filesystem\Contract\FilesystemFactoryInterface</code> for class <code>\Heptacom\HeptaConnect\Core\Portal\File\Filesystem\FilesystemFactory</code></li>
+<li>Add dependency <code>Heptacom\HeptaConnect\Core\Portal\File\Filesystem\Contract\FilesystemFactoryInterface</code> to service <code>Heptacom\HeptaConnect\Core\Portal\Contract\PortalStackServiceContainerBuilderInterface</code></li>
+<li>Add command <code>heptaconnect:emit</code> to emit one or more entities</li>
+<li>Add composer suggestion <code>psy/psysh</code> for an interactive read–eval–print loop in the scope of a portal-node</li>
+<li>Add command <code>heptaconnect:repl</code> for an interactive read–eval–print loop in the scope of a portal-node</li>
+</ul>
+<h3 id="fixed_2">Fixed</h3>
+<ul>
+<li>Change base filesystem for portal nodes in <code>Heptacom\HeptaConnect\Core\Storage\Filesystem\FilesystemFactory</code> from the Shopware bundle provided private filesystem to a custom prefixed filesystem based on the Shopware instance private filesystem to keep the same default directory but to support adapter access on the file system</li>
+</ul>
+<h2 id="0911-2022-10-03">[0.9.1.1] - 2022-10-03</h2>
+<h3 id="added_5">Added</h3>
+<ul>
+<li>Show progress-bar in command <code>heptaconnect:job:cleanup-finished</code></li>
+</ul>
+<h3 id="fixed_3">Fixed</h3>
+<ul>
+<li>Remove service <code>Shopware\Core\Framework\MessageQueue\Monitoring\MonitoringBusDecorator</code> from container as it has been renamed from <code>Shopware\Core\Framework\MessageQueue\MonitoringBusDecorator</code>.</li>
+<li>Fix command <code>heptaconnect:portal-node:status:list-topics</code> when there are no topics</li>
+</ul>
+<h2 id="0910-2022-07-19">[0.9.1.0] - 2022-07-19</h2>
+<h3 id="added_6">Added</h3>
+<ul>
+<li>Add service <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\FrameworkX\XAppFactoryInterface</code> to initialize a framework-x app. Requires optional dependency <code>clue/framework-x</code>.</li>
+</ul>
+<h2 id="0903-2022-06-08">[0.9.0.3] - 2022-06-08</h2>
+<h3 id="fixed_4">Fixed</h3>
+<ul>
+<li>Fix command <code>heptaconnect:portal-node:status:list-topics</code> by using the <code>Heptacom\HeptaConnect\Core\Portal\FlowComponentRegistry</code> from the portal container</li>
+<li>Fix command <code>heptaconnect:job:cleanup-finished</code> by using only the job-keys of the <code>Heptacom\HeptaConnect\Storage\Base\Action\Job\Listing\JobListFinishedResult</code> objects</li>
+</ul>
+<h2 id="0902-2022-04-27">[0.9.0.2] - 2022-04-27</h2>
+<h3 id="fixed_5">Fixed</h3>
+<ul>
+<li>Create lock tables <code>heptaconnect_core_reception_lock</code> and <code>heptaconnect_portal_node_resource_lock</code> manually as <code>Symfony\Component\Lock\Store\PdoStore</code> does not create them automatically for MySQL driver</li>
+</ul>
+<h2 id="0901-2022-04-19">[0.9.0.1] - 2022-04-19</h2>
+<h3 id="fixed_6">Fixed</h3>
+<ul>
+<li>Use different locking implementation to follow Shopware master-slave database setup warning in <code>\Shopware\Core\Profiling\Doctrine\DebugStack</code></li>
+</ul>
+<h2 id="0900-2022-04-02">[0.9.0.0] - 2022-04-02</h2>
+<h3 id="added_7">Added</h3>
+<ul>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobGetActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobCreateActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobListFinishedActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobDeleteActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobStartActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobFinishActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobFailActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobScheduleActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNode\PortalNodeCreateActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNode\PortalNodeDeleteActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNode\PortalNodeListActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNode\PortalNodeGetActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNode\PortalNodeOverviewActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add command <code>heptaconnect:portal-node:extensions:activate</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\Extension\ActivateExtension</code> to activate a portal extension on a portal node</li>
+<li>Add command <code>heptaconnect:portal-node:extensions:deactivate</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\Extension\DeactivateExtension</code> to deactivate a portal extension on a portal node</li>
+<li>Add command <code>heptaconnect:portal-node:extensions:list</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\Extension\ListExtensions</code> to list activity state of portal extensions on a portal node</li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalExtension\PortalExtensionFindActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalExtension\PortalExtensionActivateActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalExtension\PortalExtensionDeactivateActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add option <code>--bidirectional</code> and its functionality to <code>heptaconnect:router:add-route</code> defined in class <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Router\AddRoute</code> to automate creation of the route back</li>
+<li>Add service definition <code>\Heptacom\HeptaConnect\Core\Component\Logger\FlowComponentCodeOriginFinderLogger</code> for decorating <code>heptacom_heptaconnect.logger</code> to stringify flow component into human readable code origins in log messages</li>
+<li>Add command <code>heptaconnect:portal-node:list-flow-components</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\ListFlowComponentsForPortalNode</code> to list all flow components for a given entity type, job type (by base class) and portal node</li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlerCodeOriginFinder</code> as <code>Heptacom\HeptaConnect\Portal\Base\Web\Http\Contract\HttpHandlerCodeOriginFinderInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Core\Emission\EmitterCodeOriginFinder</code> as <code>Heptacom\HeptaConnect\Portal\Base\Emission\Contract\EmitterCodeOriginFinderInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Core\Exploration\ExplorerCodeOriginFinder</code> as <code>Heptacom\HeptaConnect\Portal\Base\Exploration\Contract\ExplorerCodeOriginFinderInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Core\Reception\ReceiverCodeOriginFinder</code> as <code>Heptacom\HeptaConnect\Portal\Base\Reception\Contract\ReceiverCodeOriginFinderInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Core\StatusReporting\StatusReporterCodeOriginFinder</code> as <code>Heptacom\HeptaConnect\Portal\Base\StatusReporting\Contract\StatusReporterCodeOriginFinderInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Bridge\StorageFacade</code> as <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code> that is used to create all storage based service</li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeConfiguration\PortalNodeConfigurationGetActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeConfiguration\PortalNodeConfigurationSetActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Component\Logger\ExceptionCodeLogger</code> for decorating <code>heptacom_heptaconnect.logger</code> to add exception codes in log messages</li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityMapActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityPersistActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityOverviewActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityReflectActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\RouteDeleteActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageClearActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageDeleteActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageGetActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageListActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageSetActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\IdentityError\IdentityErrorCreateActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add command <code>heptaconnect:router:remove-route</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Router\RemoveRoute</code> to remove a route by id seen on <code>heptaconnect:router:list-routes</code></li>
+<li>Implement <code>\Heptacom\HeptaConnect\Core\Bridge\File\FileContentsUrlProviderInterface</code> in <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\File\FileContentsUrlProvider</code></li>
+<li>Implement <code>\Heptacom\HeptaConnect\Core\Bridge\File\FileRequestUrlProviderInterface</code> in <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\File\FileRequestUrlProvider</code></li>
+<li>Add HTTP route <code>heptaconnect.file.request</code> in <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\File\FileReferenceController::request</code> to send a stored request of a file reference and pass the response through to the client</li>
+<li>Add HTTP route <code>heptaconnect.file.contents</code> in <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\File\FileReferenceController::contents</code> to read a normalized stream of a file reference and respond with its contents and an arbitrary mime type</li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Portal\Base\File\FileReferenceResolverContract</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Storage\Contract\RequestStorageContract</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Storage\Normalizer\Psr7RequestDenormalizer</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Storage\Normalizer\Psr7RequestNormalizer</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Support\RequestContextHelper</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\FileReference\FileReferenceGetRequestActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\FileReference\FileReferencePersistRequestActionInterface</code> provided by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Bridge\File\FileContentsUrlProviderInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Bridge\File\FileRequestUrlProviderInterface</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\File\FileReferenceController</code></li>
+<li>Add class <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Support\RequestContextHelper</code> to scope a request context to a base URL</li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Configuration\PortalNodeConfigurationInstructionProcessor</code> with dependency onto <code>heptacom_heptaconnect.logger</code>, <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Support\AliasStorageKeyGenerator</code>, <code>Heptacom\HeptaConnect\Core\Portal\PortalRegistry</code> and all tagged services by tag <code>heptaconnect_core.portal_node_configuration.instruction_file_loader</code> tagged as <code>heptaconnect_core.portal_node_configuration.processor</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Configuration\PortalNodeConfigurationCacheProcessor</code> with dependency onto <code>cache.system</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\StorageKeyGeneratorContract</code> tagged as <code>heptaconnect_core.portal_node_configuration.processor</code></li>
+<li>Add service and definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Support\AliasValidator</code> to validate portal node aliases</li>
+<li>Add command <code>heptaconnect:portal-node:alias:find</code> in service definition <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\Alias\Find</code> to resolve alias to a portal node key</li>
+<li>Add command <code>heptaconnect:portal-node:alias:get</code> in service definition <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\Alias\Get</code> to get an alias by a portal node key</li>
+</ul>
+<h3 id="changed_4">Changed</h3>
+<ul>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Job\CleanupFinished</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobListFinishedActionInterface</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobDeleteActionInterface</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Job\Run</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobPayloadRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobGetActionInterface</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Core\Flow\MessageQueueFlow\MessageHandler</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobPayloadRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobGetActionInterface</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Core\Job\Contract\JobDispatcherContract</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobStartActionInterface</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobFinishActionInterface</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Core\Job\Contract\ReceptionHandlerInterface</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobStartActionInterface</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobFinishActionInterface</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Core\Job\Contract\ExplorationHandlerInterface</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobStartActionInterface</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Job\JobFinishActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\MappingNode\ListMappingNodeSiblings</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\PortalNodeRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNode\PortalNodeListActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\AddPortalNode</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\PortalNodeRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNode\PortalNodeCreateActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\ListPortalNodes</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\PortalNodeRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNode\PortalNodeOverviewActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\RemovePortalNode</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\PortalNodeRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNode\PortalNodeDeleteActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Web\HttpHandler\ListHandlers</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\PortalNodeRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNode\PortalNodeListActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Core\Portal\PortalRegistry</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\PortalNodeRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNode\PortalNodeGetActionInterface</code></li>
+<li>Remove argument <code>Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent</code> from service definition <code>Heptacom\HeptaConnect\Core\Portal\Contract\PortalStackServiceContainerBuilderInterface</code></li>
+<li>Add dependency <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalExtension\PortalExtensionFindActionInterface</code> to the service definition <code>Heptacom\HeptaConnect\Core\Portal\PortalRegistry</code></li>
+<li>Change service id from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Listing\ReceptionRouteListActionInterface</code> to <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\ReceptionRouteListActionInterface</code></li>
+<li>Change service id from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Overview\RouteOverviewActionInterface</code> to <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\RouteOverviewActionInterface</code></li>
+<li>Change service id from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Find\RouteFindActionInterface</code> to <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\RouteFindActionInterface</code></li>
+<li>Change service id from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Get\RouteGetActionInterface</code> to <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\RouteGetActionInterface</code></li>
+<li>Change service id from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Get\RouteCreateActionInterface</code> to <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\RouteCreateActionInterface</code></li>
+<li>Change service id from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\RouteCapability\Overview\RouteCapabilityOverviewActionInterface</code> to <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\RouteCapability\RouteCapabilityOverviewActionInterface</code></li>
+<li>Change service id from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\WebHttpHandlerConfiguration\Find\WebHttpHandlerConfigurationFindActionInterface</code> to <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\WebHttpHandlerConfiguration\WebHttpHandlerConfigurationFindActionInterface</code></li>
+<li>Change service id from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\WebHttpHandlerConfiguration\Set\WebHttpHandlerConfigurationSetActionInterface</code> to <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\WebHttpHandlerConfiguration\WebHttpHandlerConfigurationSetActionInterface</code></li>
+<li>Change behavior of command <code>heptaconnect:portal-node:config:get</code> to throw an exception when the output cannot be converted to JSON</li>
+<li>Change output of command <code>heptaconnect:portal-node:config:get</code> to not escape slashes in JSON</li>
+<li>Change output of command <code>heptaconnect:portal-node:status:report</code> to not escape slashes in JSON</li>
+<li>Change behavior of command <code>heptaconnect:http-handler:get-configuration</code> to throw an exception when the output cannot be converted to JSON</li>
+<li>Change output of command <code>heptaconnect:http-handler:get-configuration</code> to not escape slashes in JSON</li>
+<li>Change service id from <code>Heptacom\HeptaConnect\Core\Configuration\ConfigurationService</code> to <code>Heptacom\HeptaConnect\Core\Configuration\Contract\ConfigurationServiceInterface</code> to prioritize service interface as id</li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Core\Configuration\Contract\ConfigurationServiceInterface</code> from <code>Heptacom\HeptaConnect\Storage\ShopwareDal\ConfigurationStorage</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeConfiguration\PortalNodeConfigurationGetActionInterface</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeConfiguration\PortalNodeConfigurationSetActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Core\Job\Contract\ReceptionHandlerInterface</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\EntityMapperContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityMapActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Core\Job\Contract\ReceptionHandlerInterface</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\EntityReflectorContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityReflectActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Core\Exploration\ExplorationActor</code> from <code>Heptacom\HeptaConnect\Core\Mapping\MappingService</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityMapActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\MappingNode\ListMappingNodes</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityOverviewActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\MappingNode\ListMappingNodeSiblings</code> from <code>Heptacom\HeptaConnect\Core\Portal\ComposerPortalLoader</code>, <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingNodeRepositoryContract</code>, <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingRepositoryContract</code>, <code>Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerFactory</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNode\PortalNodeListActionInterface</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityOverviewActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\MappingNode\MergeMappingNodes</code> from <code>Heptacom\HeptaConnect\Core\Mapping\Contract\MappingServiceInterface</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityOverviewActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Core\Reception\PostProcessing\SaveMappingsPostProcessor</code> from <code>Heptacom\HeptaConnect\Storage\Base\MappingPersister\Contract\MappingPersisterContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityPersistActionInterface</code></li>
+<li>Switch implementation of <code>Heptacom\HeptaConnect\Core\Router\Router.lock_factory</code> from <code>Symfony\Component\Lock\Store\FlockStore</code> to <code>Symfony\Component\Lock\Store\PdoStore</code> to support horizontally scaled setups out of the box</li>
+<li>Switch implementation of <code>Heptacom\HeptaConnect\Storage\ShopwareDal\ResourceLockStorage.lock_factory</code> from <code>Symfony\Component\Lock\Store\FlockStore</code> to <code>Symfony\Component\Lock\Store\PdoStore</code> to support horizontally scaled setups out of the box</li>
+<li>Change id and implementation of <code>Heptacom\HeptaConnect\Storage\ShopwareDal\ResourceLockStorage</code> to <code>Heptacom\HeptaConnect\Core\Parallelization\Contract\ResourceLockStorageContract</code> implemented by <code>Heptacom\HeptaConnect\Core\Parallelization\ResourceLockStorage</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Core\Portal\PortalStorageFactory</code> from <code>Heptacom\HeptaConnect\Storage\ShopwareDal\PortalStorage</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageClearActionInterface</code>, <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageDeleteActionInterface</code>, <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageListActionInterface</code>, <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageSetActionInterface</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageGetActionInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Core\Emission\EmitContextFactory</code> from <code>Heptacom\HeptaConnect\Storage\Core\Mapping\Contract\MappingServiceInterface</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingNodeRepositoryContract</code> to <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\IdentityError\IdentityErrorCreateActionInterface</code> as previous services are removed</li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Core\Reception\PostProcessing\MarkAsFailedPostProcessor</code> from <code>Heptacom\HeptaConnect\Storage\Core\Mapping\Contract\MappingServiceInterface</code> to <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Action\IdentityError\IdentityErrorCreateActionInterface</code> as previous service is removed</li>
+<li>Remove argument <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingNodeRepositoryContract</code> from service definition <code>Heptacom\HeptaConnect\Core\Job\Contract\ReceptionHandlerInterface</code></li>
+<li>Rename route <code>heptaconnect.http.handler</code> to <code>api.heptaconnect.http.handler</code></li>
+<li>Change usage of deprecated <code>Heptacom\HeptaConnect\Portal\Base\Publication\Contract\PublisherInterface::publish</code> to <code>Heptacom\HeptaConnect\Portal\Base\Publication\Contract\PublisherInterface::publishBatch</code> in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Explore::execute</code> and <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Core\Mapping\PublisherDecorator::flushBuffer</code></li>
+<li>Add final modifier to <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Core\Mapping\PublisherDecorator</code>, <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\DependencyInjection\CompilerPass\RemoveBusMonitoring</code>, <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\DependencyInjection\CompilerPass\RemoveEntityCache</code>, <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Profiling\Profiler</code>, <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Profiling\ProfilerFactory</code>, <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Support\CommandsPrintLogsSubscriber</code>, <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Web\Http\HttpHandlerUrlProvider</code> and <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Web\Http\HttpHandlerUrlProviderFactory</code> to ensure correct usage of implementation. Decoration by their interfaces or base classes is still possible</li>
+<li>Add argument <code>Heptacom\HeptaConnect\Core\Storage\Contract\RequestStorageContract</code> to service definition <code>Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerBuilder</code></li>
+<li>Add call to <code>\Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerBuilder::setFileReferenceResolver</code> with argument <code>Heptacom\HeptaConnect\Portal\Base\File\FileReferenceResolverContract</code> to service definition <code>Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerBuilder</code></li>
+<li>Add argument <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Support\RequestContextHelper</code> to service definition <code>Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandlerUrlProviderFactoryInterface</code></li>
+<li>Switch dependency in <code>Heptacom\HeptaConnect\Core\Configuration\Contract\ConfigurationServiceInterface</code> from <code>cache.system</code>, <code>Heptacom\HeptaConnect\Storage\ShopwareDal\StorageKeyGenerator</code> and <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Support\AliasStorageKeyGenerator</code> to all tagged services by tag <code>heptaconnect_core.portal_node_configuration.processor</code></li>
+<li>Change service id from <code>Heptacom\HeptaConnect\Storage\ShopwareDal\StorageKeyGenerator</code> to <code>Heptacom\HeptaConnect\Storage\Base\Contract\StorageKeyGeneratorContract</code> and provide by <code>Heptacom\HeptaConnect\Storage\Base\Bridge\Contract\StorageFacadeInterface</code></li>
+<li>Add argument <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Support\AliasValidator</code> to service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\AddPortalNode</code></li>
+<li>Replace <code>heptaconnect:support:alias:list</code> in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Support\Alias\ListAliases</code> with new command <code>heptaconnect:portal-node:alias:overview</code> in service definition <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\Alias\Overview</code> to list all portal node keys and their aliases</li>
+<li>Replace <code>heptaconnect:support:alias:reset</code> in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Support\Alias\Reset</code> with new command <code>heptaconnect:portal-node:alias:reset</code> in service definition <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\Alias\Reset</code> to remove an alias from a portal node key</li>
+<li>Replace <code>heptaconnect:support:alias:set</code> in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Support\Alias\Set</code> with new command <code>heptaconnect:portal-node:alias:set</code> in service definition <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\Alias\Set</code> to set an alias to a portal node key</li>
+<li>Change implementation of <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Support\CommandsPrintLogsSubscriber</code> to support decoration of the logger. Replace argument <code>\Psr\Log\LoggerInterface</code> with <code>\Monolog\Handler\StreamHandler</code>.</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>Remove command <code>heptaconnect:job:cleanup-payloads</code> and service <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Job\CleanupPayloads</code> in favour of storages removing unused payloads with their jobs</li>
+<li>Remove service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code></li>
+<li>Remove service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobPayloadRepositoryContract</code></li>
+<li>Remove service definition <code>Heptacom\HeptaConnect\Storage\ShopwareDal\Repository\PortalNodeRepository</code> and its alias <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\PortalNodeRepositoryContract</code></li>
+<li>Remove unused service <code>Heptacom\HeptaConnect\Portal\Base\Builder\FlowComponent</code></li>
+<li>Remove service definition <code>Heptacom\HeptaConnect\Storage\ShopwareDal\ConfigurationStorage</code> in favour of <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeConfiguration\PortalNodeConfigurationGetActionInterface</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeConfiguration\PortalNodeConfigurationSetActionInterface</code></li>
+<li>Remove command <code>heptaconnect:cronjob:ensure-queue</code> and service <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Cronjob\EnsureQueue</code> as the feature of cronjobs in its current implementation is removed</li>
+<li>Remove command <code>heptaconnect:cronjob:queue</code> and service <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Cronjob\Queue</code> as the feature of cronjobs in its current implementation is removed</li>
+<li>Remove class and its service <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Messaging\Cronjob\CronjobRunHandler</code> and <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Messaging\Cronjob\CronjobRunMessageHandler</code> as the feature of cronjobs in its current implementation is removed</li>
+<li>Remove class <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Messaging\Cronjob\CronjobRunMessage</code> as the feature of cronjobs in its current implementation is removed</li>
+<li>Remove service <code>\Heptacom\HeptaConnect\Core\Cronjob\CronjobService</code>, <code>Heptacom\HeptaConnect\Core\Cronjob\CronjobContextFactory</code>, <code>Heptacom\HeptaConnect\Storage\ShopwareDal\Repository\CronjobRepository</code>, <code>Heptacom\HeptaConnect\Storage\ShopwareDal\Repository\CronjobRunRepository</code>, <code>Heptacom\HeptaConnect\Storage\ShopwareDal\Content\Cronjob\CronjobDefinition</code> and <code>Heptacom\HeptaConnect\Storage\ShopwareDal\Content\Cronjob\CronjobRunDefinition</code> as the feature of cronjobs in its current implementation is removed</li>
+<li>Remove service <code>Heptacom\HeptaConnect\Storage\Base\Contract\EntityMapperContract</code> in favour of storage action <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityMapActionInterface</code></li>
+<li>Remove service <code>Heptacom\HeptaConnect\Storage\Base\MappingPersister\Contract\MappingPersisterContract</code> in favour of storage action <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityPersistActionInterface</code></li>
+<li>Remove service <code>Heptacom\HeptaConnect\Storage\ShopwareDal\Repository\MappingRepository</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingRepositoryContract</code> in favour of storage action <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityPersistActionInterface</code>, <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityMapActionInterface</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Identity\IdentityOverviewActionInterface</code></li>
+<li>Remove service <code>Heptacom\HeptaConnect\Core\Mapping\MappingService</code></li>
+<li>Remove service <code>Heptacom\HeptaConnect\Storage\ShopwareDal\Repository\MappingExceptionRepository</code></li>
+<li>Remove service <code>Heptacom\HeptaConnect\Storage\ShopwareDal\EntityReflector</code></li>
+<li>Remove service <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingNodeRepositoryContract</code></li>
+<li>Remove service <code>Heptacom\HeptaConnect\Storage\ShopwareDal\DalAccess</code></li>
+<li>Remove service <code>Heptacom\HeptaConnect\Storage\Base\MappingPersister\Contract\MappingPersisterContract</code></li>
+<li>Remove service <code>Heptacom\HeptaConnect\Storage\ShopwareDal\EntityTypeAccessor</code></li>
+<li>Remove composer dependency <code>dragonmantank/cron-expression</code></li>
+<li>Integrate service definition <code>Heptacom\HeptaConnect\Core\Router\Router.lock_store</code> as anonymous service parameter directly into the definition of <code>Heptacom\HeptaConnect\Core\Router\Router.lock_factory</code></li>
+<li>Integrate service definition <code>Heptacom\HeptaConnect\Storage\ShopwareDal\ResourceLockStorage.lock_store</code> as anonymous service parameter directly into the definition of <code>Heptacom\HeptaConnect\Core\Parallelization\Contract\ResourceLockStorageContract.lock_factory</code></li>
+<li>Remove support for <code>symfony/lock: &gt;=4 &lt;5.2</code> so the <code>Symfony\Component\Lock\Store\PdoStore</code> will automatically create the lock tables</li>
+<li>Remove support for <code>shopware/core: 6.3.*</code></li>
+<li>Remove service definition <code>Heptacom\HeptaConnect\Storage\ShopwareDal\PortalStorage</code> in favour of storage actions <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageClearActionInterface</code>, <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageDeleteActionInterface</code>, <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageListActionInterface</code>, <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageSetActionInterface</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\PortalNodeStorage\PortalNodeStorageGetActionInterface</code></li>
+<li>Remove service definitions for classes <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\ContextFactory</code>, <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Content\EntityType\EntityTypeDefinition</code>, <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Content\Mapping\MappingDefinition</code>, <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Content\Mapping\MappingErrorMessageDefinition</code>, <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Content\Mapping\MappingNodeDefinition</code>, <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Content\PortalNode\PortalNodeDefinition</code>, <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Content\PortalNode\PortalNodeStorageDefinition</code>, <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Content\Job\JobDefinition</code>, <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Content\Job\JobPayloadDefinition</code>, <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Content\Job\JobTypeDefinition</code> and <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Content\Route\RouteDefinition</code> as well as their generated services <code>heptaconnect_entity_type.repository</code>, <code>heptaconnect_mapping.repository</code>, <code>heptaconnect_mapping_error_message.repository</code>, <code>heptaconnect_mapping_node.repository</code>, <code>heptaconnect_portal_node.repository</code>, <code>heptaconnect_portal_node_storage.repository</code>, <code>heptaconnect_job.repository</code>, <code>heptaconnect_job_payload.repository</code>, <code>heptaconnect_job_type.repository</code> and <code>heptaconnect_route.repository</code> as DAL usage is removed in <code>heptacom/heptaconnect-storage-shopware-dal</code></li>
+<li>Remove deprecated <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Core\Mapping\PublisherDecorator::publish</code> inherited by <code>Heptacom\HeptaConnect\Portal\Base\Publication\Contract\PublisherInterface::publish</code></li>
+<li>Remove support for <code>doctrine/dbal: &gt;=2.1 &lt;2.11</code></li>
+<li>Remove implementation <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Support\AliasStorageKeyGenerator</code> as portal node alias support is integrated into <code>heptacom/heptaconnect-core</code></li>
+<li>Remove Shopware entity classes <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Content\KeyAlias\KeyAliasCollection</code>, <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Content\KeyAlias\KeyAliasDefinition</code> and <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Content\KeyAlias\KeyAliasEntity</code> for table <code>heptaconnect_bridge_key_alias</code></li>
+</ul>
+<h3 id="fixed_7">Fixed</h3>
+<ul>
+<li>Change hardcoded <code>prod</code> environment in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\AbstractIntegration::getLifecycleContainer</code> to using the current one</li>
+<li>Add tag <code>console.command</code> to service definition of <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Job\CleanupFinished</code> to make the command available</li>
+<li>Add tag <code>console.command</code> to service definition of <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Job\Run</code> to make the command available</li>
+</ul>
+<details>
+<summary>
+Past changes
+</summary>
+<h2 id="081-2022-03-04">[0.8.1] - 2022-03-04</h2>
+<h3 id="fixed_8">Fixed</h3>
+<ul>
+<li>Add missing service tag for command <code>heptaconnect:job:run</code></li>
+<li>Add missing service tag for command <code>heptaconnect:job:cleanup-finished</code></li>
+</ul>
+<h2 id="080-2021-11-22">[0.8.0] - 2021-11-22</h2>
+<h3 id="added_8">Added</h3>
+<ul>
+<li>Add command <code>heptaconnect:job:run</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Job\Run</code> to run jobs by key from the commandline</li>
+<li>Add command <code>heptaconnect:job:cleanup-finished</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Job\CleanupFinished</code> to remove finished jobs from the storage</li>
+<li>Add command <code>heptaconnect:job:cleanup-payloads</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Job\CleanupPayloads</code> to remove unused job data from the storage</li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Core\Storage\Contract\StreamPathContract</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Support\Query\QueryIterator</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Action\Route\ReceptionRouteList</code> as <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Listing\ReceptionRouteListActionInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Action\Route\RouteOverview</code> as <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Overview\RouteOverviewActionInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Action\Route\RouteFind</code> as <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Find\RouteFindActionInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Action\Route\RouteGet</code> as <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Get\RouteGetActionInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Action\Route\RouteCreate</code> as <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Create\RouteCreateActionInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Action\RouteCapability\RouteCapabilityOverview</code> as <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\RouteCapability\Overview\RouteCapabilityOverviewActionInterface</code></li>
+<li>Add command <code>heptaconnect:router:list-capabilities</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Router\ListRouteCapabilities</code> to list available route capabilities</li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\RouteCapabilityAccessor</code></li>
+<li>Add column for route primary key and route capabilities to the output of <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Router\ListRoutes</code> named <code>heptaconnect:router:list-routes</code></li>
+<li>Add command <code>heptaconnect:http-handler:set-configuration</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Web\HttpHandler\Set</code> to set http handler configuration</li>
+<li>Add command <code>heptaconnect:http-handler:get-configuration</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Web\HttpHandler\Get</code> to read http handler configuration</li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\WebHttpHandlerAccessor</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\WebHttpHandlerPathAccessor</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\WebHttpHandlerPathIdResolver</code></li>
+<li>Add command <code>heptaconnect:config:base-url:get</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Config\GetBaseUrlCommand</code> to get base url for http handlers</li>
+<li>Add command <code>heptaconnect:config:base-url:set</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Config\SetBaseUrlCommand</code> to set base url for http handlers</li>
+<li>Add service definition <code>Psr\Http\Message\ResponseFactoryInterface.heptaconnect</code> factorized by <code>\Http\Discovery\Psr17FactoryDiscovery::findResponseFactory</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Action\WebHttpHandlerConfiguration\WebHttpHandlerConfigurationFind</code> as <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\WebHttpHandlerConfiguration\Find\WebHttpHandlerConfigurationFindActionInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Action\WebHttpHandlerConfiguration\WebHttpHandlerConfigurationSet</code> as <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\WebHttpHandlerConfiguration\Set\WebHttpHandlerConfigurationSetActionInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandleContextFactory</code> as <code>Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandleContextFactoryInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlerStackBuilderFactory</code> as <code>Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandlerStackBuilderFactoryInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandleService</code> as <code>Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandleServiceInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Core\Web\Http\HttpHandlingActor</code> as <code>Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandlingActorInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Web\Http\HttpHandlerUrlProviderFactory</code> as <code>Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandlerUrlProviderFactoryInterface</code></li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Web\Http\HttpHandlerController</code> and http handling implementation</li>
+<li>Add service definition based upon class <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Web\Http\HttpHostProviderContract</code> and implementation to simplify base URL configuration for integrators</li>
+<li>Add command <code>heptaconnect:http-handler:list-handlers</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Web\HttpHandler\ListHandlers</code> to list available HTTP handlers</li>
+<li>Add command <code>heptaconnect:portal-node:status:list-topics</code> in service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\PortalNode\ListStatusReportTopics</code> to list all supported status topics</li>
+</ul>
+<h3 id="changed_5">Changed</h3>
+<ul>
+<li>Change service definition id from <code>Heptacom\HeptaConnect\Storage\ShopwareDal\DatasetEntityTypeAccessor</code> to <code>Heptacom\HeptaConnect\Storage\ShopwareDal\EntityTypeAccessor</code> and set new id for definitions of services <code>Heptacom\HeptaConnect\Storage\Base\Contract\EntityMapperContract</code>, <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code>, <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingNodeRepositoryContract</code>, <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\RouteRepositoryContract</code></li>
+<li>Change parameter name of <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Core\Mapping\PublisherDecorator::publish</code> from <code>$datasetEntityClassName</code> to <code>$entityType</code></li>
+<li>Change name of service <code>heptaconnect_dataset_entity_type.repository.patched</code> to <code>heptaconnect_entity_type.repository.patched</code></li>
+<li>Change <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Content\DatasetEntityType\DatasetEntityTypeDefinition</code> to <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Content\EntityType\EntityTypeDefinition</code></li>
+<li>Change argument and variable names in <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\MappingNode\ListMappingNodes::configure</code>, <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\MappingNode\ListMappingNodes::execute</code> and <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\MappingNode\ListMappingNodeSiblings::configure</code>, <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\MappingNode\ListMappingNodeSiblings::execute</code></li>
+<li>Add dependency <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> to the service definition <code>Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler</code></li>
+<li>Add dependency <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> to the service definition <code>Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler</code></li>
+<li>Add dependency <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> to the service definition <code>Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code></li>
+<li>Add dependency <code>cache.system</code> in the service definition <code>Heptacom\HeptaConnect\Core\Configuration\ConfigurationService</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Reception\PostProcessing\MarkAsFailedPostProcessor</code> with dependencies on <code>Heptacom\HeptaConnect\Core\Mapping\MappingService</code> and <code>heptacom_heptaconnect.logger</code></li>
+<li>Add service definition <code>Heptacom\HeptaConnect\Core\Reception\PostProcessing\SaveMappingsPostProcessor</code> with dependencies on <code>Heptacom\HeptaConnect\Portal\Base\Support\Contract\DeepObjectIteratorContract</code> and <code>Heptacom\HeptaConnect\Storage\Base\MappingPersister\Contract\MappingPersisterContract</code></li>
+<li>Add dependency to tagged services of tag <code>heptaconnect.postprocessor</code> to service definition <code>Heptacom\HeptaConnect\Core\Reception\Contract\ReceiveContextFactoryInterface</code>. The service that are tagged like this are <code>Heptacom\HeptaConnect\Core\Reception\PostProcessing\MarkAsFailedPostProcessor</code> and <code>Heptacom\HeptaConnect\Core\Reception\PostProcessing\SaveMappingsPostProcessor</code></li>
+<li>Remove argument <code>Heptacom\HeptaConnect\Core\Mapping\MappingService</code> from service definition <code>Heptacom\HeptaConnect\Core\Reception\Contract\ReceiveContextFactoryInterface</code></li>
+<li>Remove argument <code>Heptacom\HeptaConnect\Storage\Base\MappingPersister\Contract\MappingPersisterContract</code> from service definition <code>Heptacom\HeptaConnect\Core\Reception\ReceptionActor</code></li>
+<li>Add dependency <code>Heptacom\HeptaConnect\Core\Storage\Contract\StreamPathContract</code> in the service definition <code>Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamDenormalizer</code></li>
+<li>Add dependency <code>Heptacom\HeptaConnect\Core\Storage\Contract\StreamPathContract</code> in the service definition <code>Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamNormalizer</code></li>
+<li>Add dependency <code>heptacom_heptaconnect.logger</code> in the service definition <code>Heptacom\HeptaConnect\Core\Storage\Normalizer\StreamNormalizer</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Core\Emission\EmissionActor</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\RouteRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Listing\ReceptionRouteListActionInterface</code></li>
+<li>Change service definition id based upon class <code>Heptacom\HeptaConnect\Core\Emission\EmissionActor</code> to match its interface <code>Heptacom\HeptaConnect\Core\Emission\Contract\EmissionActorInterface</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Router\ListRoutes</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\RouteRepositoryContract</code>, <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\PortalNodeRepositoryContract</code> and <code>Heptacom\HeptaConnect\Core\Portal\PortalStackServiceContainerFactory</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Overview\RouteOverviewActionInterface</code></li>
+<li>Add dependency <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Find\RouteFindActionInterface</code> in the service definition <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Router\AddRoute</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Core\Job\Contract\ReceptionHandlerInterface</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\RouteRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Get\RouteGetActionInterface</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Router\AddRoute</code> from <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\RouteRepositoryContract</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\PortalNodeRepositoryContract</code> into <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Create\RouteCreateActionInterface</code> and <code>Heptacom\HeptaConnect\Storage\Base\Contract\Action\Route\Get\RouteGetActionInterface</code></li>
+<li>Change output from <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Router\AddRoute</code> named <code>heptaconnect:router:add-route</code> to show all route information like <code>heptaconnect:router:list-routes</code></li>
+<li>Add dependency <code>Heptacom\HeptaConnect\Core\Web\Http\Contract\HttpHandlerUrlProviderFactoryInterface</code> in the service definition <code>Heptacom\HeptaConnect\Core\Portal\Contract\PortalStackServiceContainerBuilderInterface</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\ShopwareDal\EntityReflector</code> from <code>heptaconnect_mapping.repository.patched</code> to <code>heptaconnect_mapping.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\ShopwareDal\PortalStorage</code> from <code>heptaconnect_portal_node_storage.repository.patched</code> to <code>heptaconnect_portal_node_storage.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\ShopwareDal\Repository\CronjobRepository</code> from <code>heptaconnect_cronjob.repository.patched</code> to <code>heptaconnect_cronjob.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\ShopwareDal\Repository\CronjobRunRepository</code> from <code>heptaconnect_cronjob.repository.patched</code> to <code>heptaconnect_cronjob.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\ShopwareDal\Repository\CronjobRunRepository</code> from <code>heptaconnect_cronjob_run.repository.patched</code> to <code>heptaconnect_cronjob_run.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\ShopwareDal\Repository\MappingExceptionRepository</code> from <code>heptaconnect_mapping_error_message.repository.patched</code> to <code>heptaconnect_mapping_error_message.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingRepositoryContract</code> from <code>heptaconnect_mapping.repository.patched</code> to <code>heptaconnect_mapping.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\PortalNodeRepositoryContract</code> from <code>heptaconnect_portal_node.repository.patched</code> to <code>heptaconnect_portal_node.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\ShopwareDal\StorageKeyGenerator</code> from <code>heptaconnect_mapping_node.repository.patched</code> to <code>heptaconnect_mapping_node.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\ShopwareDal\StorageKeyGenerator</code> from <code>heptaconnect_mapping.repository.patched</code> to <code>heptaconnect_mapping.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\Base\MappingPersister\Contract\MappingPersisterContract</code> from <code>heptaconnect_mapping.repository.patched</code> to <code>heptaconnect_mapping.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> from <code>heptaconnect_job.repository.patched</code> to <code>heptaconnect_job.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobRepositoryContract</code> from <code>heptaconnect_job_type.repository.patched</code> to <code>heptaconnect_job_type.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\JobPayloadRepositoryContract</code> from <code>heptaconnect_job_payload.repository.patched</code> to <code>heptaconnect_job_payload.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingNodeRepositoryContract</code> from <code>heptaconnect_mapping_node.repository.patched</code> to <code>heptaconnect_mapping_node.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingNodeRepositoryContract</code> from <code>heptaconnect_mapping.repository.patched</code> to <code>heptaconnect_mapping.repository</code></li>
+<li>Change dependency in <code>Heptacom\HeptaConnect\Storage\ShopwareDal\EntityTypeAccessor</code> from <code>heptaconnect_entity_type.repository.patched</code> to <code>heptaconnect_entity_type.repository</code></li>
+<li>Move route annotation registration from <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Webhook\WebhookController</code> to <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Web\Http\HttpHandlerController</code></li>
+<li>Change command name from <code>heptaconnect:portal-node:status</code> to <code>heptaconnect:portal-node:status:report</code></li>
+<li>Change option from <code>--dataset-entity-class</code> (<code>-d</code>) to <code>--entity-type</code> (<code>-t</code>) in <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\MappingNode\ListMappingNodeSiblings</code> (<code>heptaconnect:mapping-node:siblings-list</code>)</li>
+<li>Add dependency <code>heptacom_heptaconnect.logger</code> in the service definition <code>Heptacom\HeptaConnect\Core\Reception\PostProcessing\SaveMappingsPostProcessor</code></li>
+<li>Add dependency <code>heptacom_heptaconnect.logger</code> in the service definition <code>Heptacom\HeptaConnect\Core\Job\Contract\ReceptionHandlerInterface</code></li>
+</ul>
+<h3 id="removed_1">Removed</h3>
+<ul>
+<li>Remove service definition <code>Heptacom\HeptaConnect\Storage\Base\Contract\Repository\RouteRepositoryContract</code></li>
+<li>Remove service definition <code>Heptacom\HeptaConnect\Core\Webhook\WebhookContextFactory</code></li>
+<li>Remove service definition <code>Heptacom\HeptaConnect\Core\Webhook\WebhookService</code></li>
+<li>Remove service definition <code>Heptacom\HeptaConnect\Storage\ShopwareDal\Content\Webhook\WebhookDefinition</code></li>
+<li>Remove service definition <code>heptaconnect_webhook.repository.patched</code></li>
+<li>Remove service definition <code>Heptacom\HeptaConnect\Storage\ShopwareDal\Repository\WebhookRepository</code></li>
+<li>Remove class and its service definition <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Webhook\WebhookController</code> in favour of <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Web\Http\HttpHandlerController</code></li>
+<li>Remove class and its service definition <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Webhook\UrlProvider</code> in favour of <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Web\Http\HttpHandlerUrlProviderFactory</code></li>
+<li>Remove patched entity repository services <code>heptaconnect_mapping_node.repository.patched</code>, <code>heptaconnect_mapping.repository.patched</code>, <code>heptaconnect_job.repository.patched</code>, <code>heptaconnect_job_type.repository.patched</code>, <code>heptaconnect_job_payload.repository.patched</code>, <code>heptaconnect_entity_type.repository.patched</code>, <code>heptaconnect_route.repository.patched</code>, <code>heptaconnect_portal_node_storage.repository.patched</code>, <code>heptaconnect_portal_node.repository.patched</code>, <code>heptaconnect_mapping_error_message.repository.patched</code>, <code>heptaconnect_cronjob_run.repository.patched</code> and <code>heptaconnect_cronjob.repository.patched</code></li>
+<li>Remove support for <code>shopware/core: 6.2.*</code> and therefore the compatibility patching process with <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\PatchProvider\EntityRepository</code> and <code>\Heptacom\HeptaConnect\Bridge\ShopwarePlatform\PatchProvider\EntityRepositoryPatch587</code></li>
+</ul>
+<h3 id="fixed_9">Fixed</h3>
+<ul>
+<li>Change behaviour of command <code>heptaconnect:router:list-routes</code> in <code>Heptacom\HeptaConnect\Bridge\ShopwarePlatform\Command\Router\ListRoutes</code> to also list created routes that do not have supported flow components (anymore)</li>
+</ul>
+<h2 id="070-2021-09-25">[0.7.0] - 2021-09-25</h2>
+<h3 id="added_9">Added</h3>
+<ul>
+<li>Add service definition <code>Heptacom\HeptaConnect\Storage\Base\MappingPersister\Contract\MappingPersisterContract</code></li>
+</ul>
+<h3 id="changed_6">Changed</h3>
+<ul>
+<li>Add dependency <code>heptacom_heptaconnect.logger</code> to service definition <code>\Heptacom\HeptaConnect\Core\Portal\PortalStorageFactory</code></li>
+<li>Change service definition id based upon class <code>\Heptacom\HeptaConnect\Core\Emission\EmitContextFactory</code> to match its interface <code>\Heptacom\HeptaConnect\Core\Emission\Contract\EmitContextFactoryInterface</code></li>
+<li>Change service definition id based upon class <code>\Heptacom\HeptaConnect\Core\Job\Handler\EmissionHandler</code> to match its interface <code>\Heptacom\HeptaConnect\Core\Job\Contract\EmissionHandlerInterface</code></li>
+<li>Change service definition id based upon class <code>\Heptacom\HeptaConnect\Core\Job\Handler\ExplorationHandler</code> to match its interface <code>\Heptacom\HeptaConnect\Core\Job\Contract\ExplorationHandlerInterface</code></li>
+<li>Change service definition id based upon class <code>\Heptacom\HeptaConnect\Core\Job\Handler\ReceptionHandler</code> to match its interface <code>\Heptacom\HeptaConnect\Core\Job\Contract\ReceptionHandlerInterface</code></li>
+<li>Change service definition id based upon class <code>\Heptacom\HeptaConnect\Core\Reception\ReceiveContextFactory</code> to match its interface <code>\Heptacom\HeptaConnect\Core\Reception\Contract\ReceiveContextFactoryInterface</code></li>
+<li>Change service definition id based upon class <code>\Heptacom\HeptaConnect\Storage\ShopwareDal\Repository\MappingRepository</code> to match its contract <code>\Heptacom\HeptaConnect\Storage\Base\Contract\Repository\MappingRepositoryContract</code></li>
+<li>Remove argument <code>Heptacom\HeptaConnect\Core\Mapping\MappingService</code> from service definition <code>Heptacom\HeptaConnect\Portal\Base\Flow\DirectEmission\DirectEmissionFlowContract</code></li>
+</ul>
+</details>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav class="md-footer__inner md-grid"aria-label="Footer">
+<a href="../upcoming/"class="md-footer__link md-footer__link--prev"aria-label="Previous: Upcoming"rel="prev">
+<div class="md-footer__button md-icon">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+Previous
+</span>
+Upcoming
+</div>
+</div>
+</a>
+<a href="../changelog-core/"class="md-footer__link md-footer__link--next"aria-label="Next: Core"rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+Next
+</span>
+Core
+</div>
+</div>
+<div class="md-footer__button md-icon">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<a class="heptaconnect-footer-download"href="/HEPTAconnect.pdf"download="HEPTAconnect.pdf">
+<span>
+Download complete PDF
+</span>
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 64C0 28.7 28.7 0 64 0h160v128c0 17.7 14.3 32 32 32h128v144H176c-35.3 0-64 28.7-64 64v144H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0l128 128zM176 352h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368z"/></svg>
+</a>
+<div class="heptaconnect-footer-copyright">
+<div class="md-footer-copyright__highlight">
+Made with <span style="color: #fff">❤️ </span>&nbsp;by <a href="https://www.heptacom.de">HEPTACOM</a>
+</div>
+</div>
+<div class="heptaconnect-footer-privacy">
+<a href="https://www.heptacom.de/datenschutz/">Privacy</a>
+</div>
+<div class="heptaconnect-footer-imprint">
+<a href="https://www.heptacom.de/impressum/">Imprint</a>
+</div>
+<div class="md-social">
+<a href="https://github.com/topics/heptaconnect"target="_blank"rel="noopener"title="github.com"class="md-social__link">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</a>
+<a href="https://twitter.com/heptacom_gmbh"target="_blank"rel="noopener"title="twitter.com"class="md-social__link">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+</a>
+<a href="/news/"target="_blank"rel="noopener"title=""class="md-social__link">
+<svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm32 104c0-13.3 10.7-24 24-24 137 0 248 111 248 248 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-110.5-89.5-200-200-200-13.3 0-24-10.7-24-24zm0 96c0-13.3 10.7-24 24-24 83.9 0 152 68.1 152 152 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-57.4-46.6-104-104-104-13.3 0-24-10.7-24-24zm0 120a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog"data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config"type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": ""}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+<script src="../../assets/javascripts/vendor/highlight.js/highlight.min.js"></script>
+<script src="../../assets/javascripts/config.js"></script>
+</body>
+</html>
